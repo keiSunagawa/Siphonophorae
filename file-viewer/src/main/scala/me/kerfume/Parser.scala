@@ -26,7 +26,7 @@ object Parser extends JavaTokenParsers {
     }
   }
 
-  private[this] val column: Parser[String] = """[a-zA-Z0-9]+""".r ^^ { _.toString }
+  private[this] val column: Parser[String] = """[a-zA-Z0-9_-]+""".r ^^ { _.toString }
 
   private[this] val orderType: Parser[OrderType] = """(asc|desc)""".r ^^ {
     case "asc" => Asc

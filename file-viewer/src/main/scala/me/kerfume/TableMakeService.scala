@@ -1,12 +1,6 @@
 package me.kerfume
 
-
-import scala.scalajs.js
-import scala.scalajs.js.annotation.{ JSExport, ScalaJSDefined }
-
-@ScalaJSDefined
-@JSExport("TableMakeService")
-object TableMakeService extends js.Object {
+object TableMakeService {
   import Outside._
   import Functions._
   import Parser._
@@ -25,7 +19,7 @@ object TableMakeService extends js.Object {
     _ <- filterError(filteredE)
     filtered = filteredE.right.getOrElse(table)
 
-    expredE = expr.toRight("invalid order format.").flatMap(procExpr(filtered, _))
+    expredE = expr.toRight("invalid expr format.").flatMap(procExpr(filtered, _))
     _ <- exprError(expredE)
     expred = expredE.right.getOrElse(filtered)
 
@@ -33,6 +27,6 @@ object TableMakeService extends js.Object {
     _ <- orderError(orderedE)
     ordered = orderedE.right.getOrElse(expred)
 
-    _ <- printTable(expred)
+    _ <- printTable(ordered)
   } yield ()
 }

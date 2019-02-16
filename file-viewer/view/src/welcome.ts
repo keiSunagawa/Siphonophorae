@@ -1,62 +1,74 @@
 //import {computedFrom} from 'aurelia-framework';
-import { Hello, Service } from './scala-js-test-fastopt'
+import { EntryPoint } from './scala/file-viewer-fastopt'
+import { read } from 'fs';
 
 export class Welcome {
-  heading: string = 'Welcome to the Aurelia Navigation App';
-  firstName: string = 'John';
-  lastName: string = 'Doe';
-    previousValue: string = this.fullName;
+  filter: String = ""
+  expr: String = ""
+  order: String = ""
+  loadTable: String[][] = []
+  printHeader: String[] = []
+  allBody: String[][] = []
+  printBody: String[][] = []
+  csvFile: any
 
-    pf(s: String) {
-        console.log(s)
-    }
-    constructor() {
-        let h = new Hello()
-        console.log(h.getA);
-        console.log(h.succ(5));
-        console.log(h.printman(this.pf));
-        // 無名関数もー
-        let f = (s: String) => console.log(s)
-        h.printman(f)
+  fileManager = new FileManager()
+  service: any // TODO class annotation
 
-        // let compiler = Service.makeCompiler(
-        //     () => "hoge",
-        //     (msg: String) => console.log(msg),
-        //     (msg: String) => console.log(msg)
-        // )
-        // Service.program("fuga").foldMap(compiler)
-        let svc = new Service()
-        svc.production(
-            "fuga ",
-            () => "hoge",
-            (msg: String) => console.log(msg),
-            (msg: String) => console.log(msg)
-        )
-    }
-
-  //Getters can't be directly observed, so they must be dirty checked.
-  //However, if you tell Aurelia the dependencies, it no longer needs to dirty check the property.
-  //To optimize by declaring the properties that this getter is computed from, uncomment the line below
-  //as well as the corresponding import above.
-  //@computedFrom('firstName', 'lastName')
-  get fullName(): string {
-    return `${this.firstName} ${this.lastName}`;
+  constructor() {
+    this.service = EntryPoint.compile(
+      // input
+      () => this.loadTable,
+      () => {
+        console.log(this.filter)
+        return this.filter
+      },
+      () => this.expr,
+      () => this.order,
+      // output
+      (arr: String[][]) => {
+        const [h, ...t] = arr
+        this.printHeader = h
+        this.allBody = t
+        this.printBody = this.allBody.slice(0, 100)
+      },
+      (error: String) => console.log(error),
+      (error: String) => console.log(error),
+      (error: String) => console.log(error)
+    )
   }
 
   submit() {
-    this.previousValue = this.fullName;
-    alert(`Welcome, ${this.fullName}!`);
-  }
-
-  canDeactivate(): boolean | undefined {
-    if (this.fullName !== this.previousValue) {
-      return confirm('Are you sure you want to leave?');
-    }
+    const file = this.csvFile[0]
+    this.fileManager.read(file).then((res) => {
+      try {
+        this.loadTable = res
+        this.service.run()
+      } catch(err) {
+        console.log(err)
+      }
+    })
   }
 }
 
 export class UpperValueConverter {
   toView(value: string): string {
     return value && value.toUpperCase();
+  }
+}
+
+class FileManager {
+  read(file: File) {
+    return new Promise<String[][]>((resolve, _) => {
+      const fr = new FileReader()
+      fr.onload = (event: any) => {
+        // TODO error handling?
+        const res = event.target.result
+        const lines: String[] = res.split('\n').filter((l) => l !== "")
+        const table: String[][] = lines.map((l) => l.split(','))
+        resolve(table);
+      }
+      fr.readAsText(file)
+    });
   }
 }

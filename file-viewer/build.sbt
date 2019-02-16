@@ -15,5 +15,8 @@ lazy val root = (project in file("."))
       "org.scala-lang.modules" %%% "scala-parser-combinators" % "1.1.1",
       "org.typelevel" %%% "cats-core" % "1.6.0",
       "org.typelevel" %%% "cats-free" % "1.6.0"
+    ),
+    scalacOptions ++= Seq(
+      "-P:scalajs:sjsDefinedByDefault"
     )
   )
