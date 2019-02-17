@@ -9,6 +9,7 @@ export class App {
     config.title = 'Aurelia';
     config.map([
       { route: ['', 'welcome'], name: 'welcome',      moduleId: PLATFORM.moduleName('./welcome'),      nav: true, title: 'Welcome' },
+      { route: 'query',         name: 'query',        moduleId: PLATFORM.moduleName('./query'),        nav: true, title: 'NegligentQuery' },
       { route: 'users',         name: 'users',        moduleId: PLATFORM.moduleName('./users'),        nav: true, title: 'Github Users' },
       { route: 'child-router',  name: 'child-router', moduleId: PLATFORM.moduleName('./child-router'), nav: true, title: 'Child Router' },
     ]);
