@@ -1,12 +1,10 @@
-package me.kerfume
+package me.kerfume.fileviewer
 
-import cats.free._
-import cats.free.Free._
-import cats.{ Id, ~> }
 import cats.arrow.FunctionK
+import cats.{ Id, ~> }
 
-object TableMakeServiceDevelop {
-  import TableMakeService._
+object Develop {
+  import Module._
 
   def devCompiler(filter: String, expr: String, order: String): Outside ~> Id = new FunctionK[Outside, Id] {
     override def apply[A](fa: Outside[A]): Id[A] = fa match {
@@ -37,5 +35,5 @@ object TableMakeServiceDevelop {
     }
   }
 
-  def run(filter: String, expr: String, order: String) = makeService.foldMap(devCompiler(filter, expr, order))
+  def run(filter: String, expr: String, order: String) = processTable.foldMap(devCompiler(filter, expr, order))
 }

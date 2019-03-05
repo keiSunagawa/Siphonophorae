@@ -1,5 +1,5 @@
 //import {computedFrom} from 'aurelia-framework';
-import { EntryPoint } from './scala/file-viewer-fastopt'
+import { EntryPoint } from './scala/frontend-backend-fastopt'
 import { read } from 'fs';
 
 export class Welcome {

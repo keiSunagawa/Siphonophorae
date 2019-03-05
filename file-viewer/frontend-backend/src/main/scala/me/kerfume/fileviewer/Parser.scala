@@ -1,7 +1,8 @@
-package me.kerfume
+package me.kerfume.fileviewer
+
+import Command._
 
 import scala.util.parsing.combinator._
-import Command._
 
 object Parser extends JavaTokenParsers {
   def decodeOrder(value: String): Option[Order] = {

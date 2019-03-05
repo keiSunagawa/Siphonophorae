@@ -1,8 +1,8 @@
-package me.kerfume
+package me.kerfume.fileviewer
 
-import cats.free._
 import cats.free.Free._
-import me.kerfume.Outside.Table
+import cats.free._
+import Outside.Table
 
 sealed trait Outside[A]
 case object GetTable extends Outside[Table]
@@ -16,7 +16,7 @@ case class OrderError(msg: String) extends Outside[Unit]
 case class FilterError(msg: String) extends Outside[Unit]
 case class ExprError(msg: String) extends Outside[Unit]
 
-import me.kerfume.Command._
+import Command._
 
 trait Command
 case class Order(column: String, orderType: OrderType) extends Command

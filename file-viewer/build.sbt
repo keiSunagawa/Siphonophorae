@@ -1,16 +1,15 @@
 import Dependencies._
 
-scalaJSModuleKind := ModuleKind.CommonJSModule
-enablePlugins(ScalaJSPlugin)
-
 ThisBuild / scalaVersion     := "2.12.8"
 ThisBuild / version          := "0.1.0-SNAPSHOT"
 ThisBuild / organization     := "me.kerfume"
 
-lazy val root = (project in file("."))
+lazy val frontendBackend = (project in file("frontend-backend"))
+  .enablePlugins(ScalaJSPlugin)
   .settings(
-    name := "file-viewer",
+    name := "frontend-backend",
     libraryDependencies += scalaTest % Test,
+    scalaJSModuleKind := ModuleKind.CommonJSModule,
     libraryDependencies ++= Seq(
       "org.scala-lang.modules" %%% "scala-parser-combinators" % "1.1.1",
       "org.typelevel" %%% "cats-core" % "1.6.0",

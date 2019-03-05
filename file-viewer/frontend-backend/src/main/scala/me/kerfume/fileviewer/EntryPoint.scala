@@ -1,11 +1,11 @@
-package me.kerfume
+package me.kerfume.fileviewer
 
 import cats.arrow.FunctionK
 import cats.{ Id, ~> }
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.{ JSExport, JSExportTopLevel, ScalaJSDefined }
-import js.JSConverters._
+import scala.scalajs.js.JSConverters._
+import scala.scalajs.js.annotation.{ JSExport, JSExportTopLevel }
 
 @JSExportTopLevel("EntryPoint")
 object EntryPoint {
@@ -49,6 +49,6 @@ object EntryPoint {
     compiler: Outside ~> Id
   ) {
     @JSExport
-    def run(): Unit = TableMakeService.makeService.foldMap(compiler)
+    def run(): Unit = Module.processTable.foldMap(compiler)
   }
 }

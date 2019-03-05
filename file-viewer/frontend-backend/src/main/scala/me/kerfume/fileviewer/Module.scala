@@ -1,11 +1,11 @@
-package me.kerfume
+package me.kerfume.fileviewer
 
-object TableMakeService {
-  import Outside._
+object Module {
   import Functions._
+  import Outside._
   import Parser._
 
-  val makeService: OutSideF[Unit] = for {
+  val processTable: OutSideF[Unit] = for {
     table <- getTable()
     orderStr <- getOrder()
     filterStr <- getFilter()

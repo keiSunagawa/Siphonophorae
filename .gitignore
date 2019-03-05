@@ -1,5 +1,6 @@
 tmp
 target
+build
 dist
 out
 logs
@@ -23,6 +24,7 @@ node_modules
 .ensime
 .ensime_cache/
 \#*\#
+.metals
 
 # bloop
 .bloop/

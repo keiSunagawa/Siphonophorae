@@ -1,6 +1,6 @@
-package me.kerfume
+package me.kerfume.fileviewer
 
-import me.kerfume.Outside.Table
+import Outside.Table
 import Command._
 
 import scala.util.{ Failure, Success, Try }

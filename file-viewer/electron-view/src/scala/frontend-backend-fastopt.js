@@ -1096,104 +1096,43 @@ function $isArrayOf_F1(obj, depth) {
 function $asArrayOf_F1(obj, depth) {
   return (($isArrayOf_F1(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.Function1;", depth))
 }
-function $is_Lme_kerfume_Command$ExprOperator(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_Command$ExprOperator)))
+function $is_Lme_kerfume_fileviewer_Command$ExprOperator(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_fileviewer_Command$ExprOperator)))
 }
-function $as_Lme_kerfume_Command$ExprOperator(obj) {
-  return (($is_Lme_kerfume_Command$ExprOperator(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.Command$ExprOperator"))
+function $as_Lme_kerfume_fileviewer_Command$ExprOperator(obj) {
+  return (($is_Lme_kerfume_fileviewer_Command$ExprOperator(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.fileviewer.Command$ExprOperator"))
 }
-function $isArrayOf_Lme_kerfume_Command$ExprOperator(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_Command$ExprOperator)))
+function $isArrayOf_Lme_kerfume_fileviewer_Command$ExprOperator(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_fileviewer_Command$ExprOperator)))
 }
-function $asArrayOf_Lme_kerfume_Command$ExprOperator(obj, depth) {
-  return (($isArrayOf_Lme_kerfume_Command$ExprOperator(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.Command$ExprOperator;", depth))
+function $asArrayOf_Lme_kerfume_fileviewer_Command$ExprOperator(obj, depth) {
+  return (($isArrayOf_Lme_kerfume_fileviewer_Command$ExprOperator(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.fileviewer.Command$ExprOperator;", depth))
 }
-function $is_Lme_kerfume_Command$FilterOperator(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_Command$FilterOperator)))
+function $is_Lme_kerfume_fileviewer_Command$FilterOperator(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_fileviewer_Command$FilterOperator)))
 }
-function $as_Lme_kerfume_Command$FilterOperator(obj) {
-  return (($is_Lme_kerfume_Command$FilterOperator(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.Command$FilterOperator"))
+function $as_Lme_kerfume_fileviewer_Command$FilterOperator(obj) {
+  return (($is_Lme_kerfume_fileviewer_Command$FilterOperator(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.fileviewer.Command$FilterOperator"))
 }
-function $isArrayOf_Lme_kerfume_Command$FilterOperator(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_Command$FilterOperator)))
+function $isArrayOf_Lme_kerfume_fileviewer_Command$FilterOperator(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_fileviewer_Command$FilterOperator)))
 }
-function $asArrayOf_Lme_kerfume_Command$FilterOperator(obj, depth) {
-  return (($isArrayOf_Lme_kerfume_Command$FilterOperator(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.Command$FilterOperator;", depth))
+function $asArrayOf_Lme_kerfume_fileviewer_Command$FilterOperator(obj, depth) {
+  return (($isArrayOf_Lme_kerfume_fileviewer_Command$FilterOperator(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.fileviewer.Command$FilterOperator;", depth))
 }
-function $is_Lme_kerfume_Command$OrderType(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_Command$OrderType)))
+function $is_Lme_kerfume_fileviewer_Command$OrderType(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_fileviewer_Command$OrderType)))
 }
-function $as_Lme_kerfume_Command$OrderType(obj) {
-  return (($is_Lme_kerfume_Command$OrderType(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.Command$OrderType"))
+function $as_Lme_kerfume_fileviewer_Command$OrderType(obj) {
+  return (($is_Lme_kerfume_fileviewer_Command$OrderType(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.fileviewer.Command$OrderType"))
 }
-function $isArrayOf_Lme_kerfume_Command$OrderType(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_Command$OrderType)))
+function $isArrayOf_Lme_kerfume_fileviewer_Command$OrderType(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_fileviewer_Command$OrderType)))
 }
-function $asArrayOf_Lme_kerfume_Command$OrderType(obj, depth) {
-  return (($isArrayOf_Lme_kerfume_Command$OrderType(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.Command$OrderType;", depth))
+function $asArrayOf_Lme_kerfume_fileviewer_Command$OrderType(obj, depth) {
+  return (($isArrayOf_Lme_kerfume_fileviewer_Command$OrderType(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.fileviewer.Command$OrderType;", depth))
 }
-function $f_Lme_kerfume_ExprFunctions__procExpr__sci_Vector__Lme_kerfume_Expr__s_util_Either($thiz, table, expr) {
-  matchEnd4: {
-    var x$1_$_$$und1$f;
-    var x$1_$_$$und2$f;
-    var o7 = $m_s_package$().$$plus$colon$1.unapply__sc_SeqLike__s_Option(table);
-    if ((!o7.isEmpty__Z())) {
-      var header = $as_sci_Vector($as_T2(o7.get__O()).$$und1$f);
-      var body = $as_sci_Vector($as_T2(o7.get__O()).$$und2$f);
-      var x$1_$_$$und1$f = header;
-      var x$1_$_$$und2$f = body;
-      break matchEnd4
-    };
-    throw new $c_s_MatchError().init___O(table)
-  };
-  var header$2 = $as_sci_Vector(x$1_$_$$und1$f);
-  var body$2 = $as_sci_Vector(x$1_$_$$und2$f);
-  var this$1 = $as_Lme_kerfume_Functions($thiz);
-  var columnName = expr.column1$1;
-  var this$2 = $f_Lme_kerfume_Functions__columnIndex__sci_Vector__T__s_util_Either(this$1, header$2, columnName);
-  if ($is_s_util_Right(this$2)) {
-    var x2 = $as_s_util_Right(this$2);
-    var b = x2.value$2;
-    var index1 = $uI(b);
-    var this$3 = $as_Lme_kerfume_Functions($thiz);
-    var columnName$1 = expr.column2$1;
-    var this$4 = $f_Lme_kerfume_Functions__columnIndex__sci_Vector__T__s_util_Either(this$3, header$2, columnName$1);
-    if ($is_s_util_Right(this$4)) {
-      var x2$1 = $as_s_util_Right(this$4);
-      var b$1 = x2$1.value$2;
-      var index2 = $uI(b$1);
-      var f = expr.op$1.calc__F2();
-      var this$5 = $f_Lme_kerfume_ExprFunctions__runCalc__pLme_kerfume_ExprFunctions__sci_Vector__I__I__F2__s_util_Either($thiz, body$2, index1, index2, f);
-      if ($is_s_util_Right(this$5)) {
-        var x2$2 = $as_s_util_Right(this$5);
-        var b$2 = x2$2.value$2;
-        var newBody = $as_sci_Vector(b$2);
-        var newHeader = $as_sci_Vector(header$2.$$colon$plus__O__scg_CanBuildFrom__O(expr.result$1, ($m_sci_Vector$(), $m_sc_IndexedSeq$().ReusableCBF$6)));
-        var this$7 = new $c_s_util_Right().init___O(new $c_T2().init___O__O(newBody, newHeader))
-      } else {
-        var this$7 = this$5
-      };
-      if ($is_s_util_Right(this$7)) {
-        var x2$3 = $as_s_util_Right(this$7);
-        var b$3 = x2$3.value$2;
-        var x$3 = $as_T2(b$3);
-        if ((x$3 === null)) {
-          throw new $c_s_MatchError().init___O(x$3)
-        };
-        var newBody$1 = $as_sci_Vector(x$3.$$und1$f);
-        var newHeader$1 = $as_sci_Vector(x$3.$$und2$f);
-        return new $c_s_util_Right().init___O($as_sci_Vector(newBody$1.$$plus$colon__O__scg_CanBuildFrom__O(newHeader$1, ($m_sci_Vector$(), $m_sc_IndexedSeq$().ReusableCBF$6))))
-      } else {
-        return this$7
-      }
-    } else {
-      return this$4
-    }
-  } else {
-    return this$2
-  }
-}
-function $f_Lme_kerfume_ExprFunctions__runCalc__pLme_kerfume_ExprFunctions__sci_Vector__I__I__F2__s_util_Either($thiz, tbl, i1, i2, f) {
+function $f_Lme_kerfume_fileviewer_ExprFunctions__runCalc__pLme_kerfume_fileviewer_ExprFunctions__sci_Vector__I__I__F2__s_util_Either($thiz, tbl, i1, i2, f) {
   try {
     $m_sci_Vector$();
     var bf = $m_sc_IndexedSeq$().ReusableCBF$6;
@@ -1246,8 +1185,69 @@ function $f_Lme_kerfume_ExprFunctions__runCalc__pLme_kerfume_ExprFunctions__sci_
     throw new $c_s_MatchError().init___O(x1)
   }
 }
-function $f_Lme_kerfume_FilterFunctions__procFilter__sci_Vector__Lme_kerfume_Filter__s_util_Either($thiz, table, filter) {
-  $as_Lme_kerfume_Functions($thiz);
+function $f_Lme_kerfume_fileviewer_ExprFunctions__procExpr__sci_Vector__Lme_kerfume_fileviewer_Expr__s_util_Either($thiz, table, expr) {
+  matchEnd4: {
+    var x$1_$_$$und1$f;
+    var x$1_$_$$und2$f;
+    var o7 = $m_s_package$().$$plus$colon$1.unapply__sc_SeqLike__s_Option(table);
+    if ((!o7.isEmpty__Z())) {
+      var header = $as_sci_Vector($as_T2(o7.get__O()).$$und1$f);
+      var body = $as_sci_Vector($as_T2(o7.get__O()).$$und2$f);
+      var x$1_$_$$und1$f = header;
+      var x$1_$_$$und2$f = body;
+      break matchEnd4
+    };
+    throw new $c_s_MatchError().init___O(table)
+  };
+  var header$2 = $as_sci_Vector(x$1_$_$$und1$f);
+  var body$2 = $as_sci_Vector(x$1_$_$$und2$f);
+  var this$1 = $as_Lme_kerfume_fileviewer_Functions($thiz);
+  var columnName = expr.column1$1;
+  var this$2 = $f_Lme_kerfume_fileviewer_Functions__columnIndex__sci_Vector__T__s_util_Either(this$1, header$2, columnName);
+  if ($is_s_util_Right(this$2)) {
+    var x2 = $as_s_util_Right(this$2);
+    var b = x2.value$2;
+    var index1 = $uI(b);
+    var this$3 = $as_Lme_kerfume_fileviewer_Functions($thiz);
+    var columnName$1 = expr.column2$1;
+    var this$4 = $f_Lme_kerfume_fileviewer_Functions__columnIndex__sci_Vector__T__s_util_Either(this$3, header$2, columnName$1);
+    if ($is_s_util_Right(this$4)) {
+      var x2$1 = $as_s_util_Right(this$4);
+      var b$1 = x2$1.value$2;
+      var index2 = $uI(b$1);
+      var f = expr.op$1.calc__F2();
+      var this$5 = $f_Lme_kerfume_fileviewer_ExprFunctions__runCalc__pLme_kerfume_fileviewer_ExprFunctions__sci_Vector__I__I__F2__s_util_Either($thiz, body$2, index1, index2, f);
+      if ($is_s_util_Right(this$5)) {
+        var x2$2 = $as_s_util_Right(this$5);
+        var b$2 = x2$2.value$2;
+        var newBody = $as_sci_Vector(b$2);
+        var newHeader = $as_sci_Vector(header$2.$$colon$plus__O__scg_CanBuildFrom__O(expr.result$1, ($m_sci_Vector$(), $m_sc_IndexedSeq$().ReusableCBF$6)));
+        var this$7 = new $c_s_util_Right().init___O(new $c_T2().init___O__O(newBody, newHeader))
+      } else {
+        var this$7 = this$5
+      };
+      if ($is_s_util_Right(this$7)) {
+        var x2$3 = $as_s_util_Right(this$7);
+        var b$3 = x2$3.value$2;
+        var x$3 = $as_T2(b$3);
+        if ((x$3 === null)) {
+          throw new $c_s_MatchError().init___O(x$3)
+        };
+        var newBody$1 = $as_sci_Vector(x$3.$$und1$f);
+        var newHeader$1 = $as_sci_Vector(x$3.$$und2$f);
+        return new $c_s_util_Right().init___O($as_sci_Vector(newBody$1.$$plus$colon__O__scg_CanBuildFrom__O(newHeader$1, ($m_sci_Vector$(), $m_sc_IndexedSeq$().ReusableCBF$6))))
+      } else {
+        return this$7
+      }
+    } else {
+      return this$4
+    }
+  } else {
+    return this$2
+  }
+}
+function $f_Lme_kerfume_fileviewer_FilterFunctions__procFilter__sci_Vector__Lme_kerfume_fileviewer_Filter__s_util_Either($thiz, table, filter) {
+  $as_Lme_kerfume_fileviewer_Functions($thiz);
   matchEnd4: {
     var x$1_$_$$und1$f;
     var x$1_$_$$und2$f;
@@ -1268,10 +1268,10 @@ function $f_Lme_kerfume_FilterFunctions__procFilter__sci_Vector__Lme_kerfume_Fil
   };
   var c = filter.column$1;
   var op = filter.op$1;
-  var this$2 = $as_Lme_kerfume_Functions($thiz);
-  var index = $f_Lme_kerfume_Functions__columnIndex__sci_Vector__T__s_util_Either(this$2, h$2, c);
-  if ($is_Lme_kerfume_Command$LT(op)) {
-    var x2 = $as_Lme_kerfume_Command$LT(op);
+  var this$2 = $as_Lme_kerfume_fileviewer_Functions($thiz);
+  var index = $f_Lme_kerfume_fileviewer_Functions__columnIndex__sci_Vector__T__s_util_Either(this$2, h$2, c);
+  if ($is_Lme_kerfume_fileviewer_Command$LT(op)) {
+    var x2 = $as_Lme_kerfume_fileviewer_Command$LT(op);
     var n = x2.value$1;
     if ($is_s_util_Right(index)) {
       var x2$1 = $as_s_util_Right(index);
@@ -1338,8 +1338,8 @@ function $f_Lme_kerfume_FilterFunctions__procFilter__sci_Vector__Lme_kerfume_Fil
     } else {
       var ft = index
     }
-  } else if ($is_Lme_kerfume_Command$LE(op)) {
-    var x3$1 = $as_Lme_kerfume_Command$LE(op);
+  } else if ($is_Lme_kerfume_fileviewer_Command$LE(op)) {
+    var x3$1 = $as_Lme_kerfume_fileviewer_Command$LE(op);
     var n$2 = x3$1.value$1;
     if ($is_s_util_Right(index)) {
       var x2$4 = $as_s_util_Right(index);
@@ -1406,8 +1406,8 @@ function $f_Lme_kerfume_FilterFunctions__procFilter__sci_Vector__Lme_kerfume_Fil
     } else {
       var ft = index
     }
-  } else if ($is_Lme_kerfume_Command$GT(op)) {
-    var x4 = $as_Lme_kerfume_Command$GT(op);
+  } else if ($is_Lme_kerfume_fileviewer_Command$GT(op)) {
+    var x4 = $as_Lme_kerfume_fileviewer_Command$GT(op);
     var n$3 = x4.value$1;
     if ($is_s_util_Right(index)) {
       var x2$7 = $as_s_util_Right(index);
@@ -1474,8 +1474,8 @@ function $f_Lme_kerfume_FilterFunctions__procFilter__sci_Vector__Lme_kerfume_Fil
     } else {
       var ft = index
     }
-  } else if ($is_Lme_kerfume_Command$GE(op)) {
-    var x5 = $as_Lme_kerfume_Command$GE(op);
+  } else if ($is_Lme_kerfume_fileviewer_Command$GE(op)) {
+    var x5 = $as_Lme_kerfume_fileviewer_Command$GE(op);
     var n$4 = x5.value$1;
     if ($is_s_util_Right(index)) {
       var x2$10 = $as_s_util_Right(index);
@@ -1542,8 +1542,8 @@ function $f_Lme_kerfume_FilterFunctions__procFilter__sci_Vector__Lme_kerfume_Fil
     } else {
       var ft = index
     }
-  } else if ($is_Lme_kerfume_Command$IN(op)) {
-    var x6 = $as_Lme_kerfume_Command$IN(op);
+  } else if ($is_Lme_kerfume_fileviewer_Command$IN(op)) {
+    var x6 = $as_Lme_kerfume_fileviewer_Command$IN(op);
     var s = x6.value$1;
     if ($is_s_util_Right(index)) {
       var x2$13 = $as_s_util_Right(index);
@@ -1608,10 +1608,10 @@ function $f_Lme_kerfume_FilterFunctions__procFilter__sci_Vector__Lme_kerfume_Fil
       var ft = index
     }
   } else {
-    if ((!$is_Lme_kerfume_Command$EQ(op))) {
+    if ((!$is_Lme_kerfume_fileviewer_Command$EQ(op))) {
       throw new $c_s_MatchError().init___O(op)
     };
-    var x7 = $as_Lme_kerfume_Command$EQ(op);
+    var x7 = $as_Lme_kerfume_fileviewer_Command$EQ(op);
     var s$2 = x7.value$1;
     if ($is_s_util_Right(index)) {
       var x2$16 = $as_s_util_Right(index);
@@ -1685,23 +1685,75 @@ function $f_Lme_kerfume_FilterFunctions__procFilter__sci_Vector__Lme_kerfume_Fil
     return ft
   }
 }
-function $f_Lme_kerfume_Functions__columnIndex__sci_Vector__T__s_util_Either($thiz, header, columnName) {
+function $f_Lme_kerfume_fileviewer_Functions__columnIndex__sci_Vector__T__s_util_Either($thiz, header, columnName) {
   var index = $f_sc_GenSeqLike__indexOf__O__I__I(header, columnName, 0);
   return ((index >= 0) ? ($m_s_package$(), new $c_s_util_Right().init___O(index)) : ($m_s_package$(), new $c_s_util_Left().init___O("column not found.")))
 }
-function $is_Lme_kerfume_Functions(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_Functions)))
+function $is_Lme_kerfume_fileviewer_Functions(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_fileviewer_Functions)))
 }
-function $as_Lme_kerfume_Functions(obj) {
-  return (($is_Lme_kerfume_Functions(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.Functions"))
+function $as_Lme_kerfume_fileviewer_Functions(obj) {
+  return (($is_Lme_kerfume_fileviewer_Functions(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.fileviewer.Functions"))
 }
-function $isArrayOf_Lme_kerfume_Functions(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_Functions)))
+function $isArrayOf_Lme_kerfume_fileviewer_Functions(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_fileviewer_Functions)))
 }
-function $asArrayOf_Lme_kerfume_Functions(obj, depth) {
-  return (($isArrayOf_Lme_kerfume_Functions(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.Functions;", depth))
+function $asArrayOf_Lme_kerfume_fileviewer_Functions(obj, depth) {
+  return (($isArrayOf_Lme_kerfume_fileviewer_Functions(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.fileviewer.Functions;", depth))
 }
-function $f_Lme_kerfume_OrderFunctions__orderBy__pLme_kerfume_OrderFunctions__I__sci_Vector__sci_Vector($thiz, index, tbl) {
+function $f_Lme_kerfume_fileviewer_OrderFunctions__procOrder__sci_Vector__Lme_kerfume_fileviewer_Order__s_util_Either($thiz, table, order) {
+  $as_Lme_kerfume_fileviewer_Functions($thiz);
+  matchEnd4: {
+    var x$1_$_$$und1$f;
+    var x$1_$_$$und2$f;
+    var o7 = $m_s_package$().$$plus$colon$1.unapply__sc_SeqLike__s_Option(table);
+    if ((!o7.isEmpty__Z())) {
+      var h = $as_sci_Vector($as_T2(o7.get__O()).$$und1$f);
+      var t = $as_sci_Vector($as_T2(o7.get__O()).$$und2$f);
+      var x$1_$_$$und1$f = h;
+      var x$1_$_$$und2$f = t;
+      break matchEnd4
+    };
+    throw new $c_s_MatchError().init___O(table)
+  };
+  var h$2 = $as_sci_Vector(x$1_$_$$und1$f);
+  var t$2 = $as_sci_Vector(x$1_$_$$und2$f);
+  var this$2 = $as_Lme_kerfume_fileviewer_Functions($thiz);
+  var columnName = order.column$1;
+  var this$3 = $f_Lme_kerfume_fileviewer_Functions__columnIndex__sci_Vector__T__s_util_Either(this$2, h$2, columnName);
+  if ($is_s_util_Right(this$3)) {
+    var x2 = $as_s_util_Right(this$3);
+    var b = x2.value$2;
+    var index = $uI(b);
+    var ordered = $f_Lme_kerfume_fileviewer_OrderFunctions__orderBy__pLme_kerfume_fileviewer_OrderFunctions__I__sci_Vector__sci_Vector($thiz, index, t$2);
+    var this$4 = new $c_s_util_Right().init___O(new $c_T2().init___O__O(index, ordered))
+  } else {
+    var this$4 = this$3
+  };
+  if ($is_s_util_Right(this$4)) {
+    var x2$1 = $as_s_util_Right(this$4);
+    var b$1 = x2$1.value$2;
+    var x$1$1 = $as_T2(b$1);
+    if ((x$1$1 === null)) {
+      throw new $c_s_MatchError().init___O(x$1$1)
+    };
+    var ordered$1 = $as_sci_Vector(x$1$1.$$und2$f);
+    var x = order.orderType$1;
+    var x$2 = $m_Lme_kerfume_fileviewer_Command$Asc$();
+    var ft = new $c_s_util_Right().init___O((((x !== null) && (x === x$2)) ? ordered$1 : $as_sci_Vector($f_sc_SeqLike__reverse__O(ordered$1))))
+  } else {
+    var ft = this$4
+  };
+  if ($is_s_util_Right(ft)) {
+    var x2$2 = $as_s_util_Right(ft);
+    var b$2 = x2$2.value$2;
+    var x$2$1 = $as_sci_Vector(b$2);
+    return new $c_s_util_Right().init___O($as_sci_Vector(x$2$1.$$plus$colon__O__scg_CanBuildFrom__O(h$2, ($m_sci_Vector$(), $m_sc_IndexedSeq$().ReusableCBF$6))))
+  } else {
+    return ft
+  }
+}
+function $f_Lme_kerfume_fileviewer_OrderFunctions__orderBy__pLme_kerfume_fileviewer_OrderFunctions__I__sci_Vector__sci_Vector($thiz, index, tbl) {
   try {
     var f = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, index$1) {
       return (function(x$2$2) {
@@ -1750,69 +1802,17 @@ function $f_Lme_kerfume_OrderFunctions__orderBy__pLme_kerfume_OrderFunctions__I_
     throw new $c_s_MatchError().init___O(x1)
   }
 }
-function $f_Lme_kerfume_OrderFunctions__procOrder__sci_Vector__Lme_kerfume_Order__s_util_Either($thiz, table, order) {
-  $as_Lme_kerfume_Functions($thiz);
-  matchEnd4: {
-    var x$1_$_$$und1$f;
-    var x$1_$_$$und2$f;
-    var o7 = $m_s_package$().$$plus$colon$1.unapply__sc_SeqLike__s_Option(table);
-    if ((!o7.isEmpty__Z())) {
-      var h = $as_sci_Vector($as_T2(o7.get__O()).$$und1$f);
-      var t = $as_sci_Vector($as_T2(o7.get__O()).$$und2$f);
-      var x$1_$_$$und1$f = h;
-      var x$1_$_$$und2$f = t;
-      break matchEnd4
-    };
-    throw new $c_s_MatchError().init___O(table)
-  };
-  var h$2 = $as_sci_Vector(x$1_$_$$und1$f);
-  var t$2 = $as_sci_Vector(x$1_$_$$und2$f);
-  var this$2 = $as_Lme_kerfume_Functions($thiz);
-  var columnName = order.column$1;
-  var this$3 = $f_Lme_kerfume_Functions__columnIndex__sci_Vector__T__s_util_Either(this$2, h$2, columnName);
-  if ($is_s_util_Right(this$3)) {
-    var x2 = $as_s_util_Right(this$3);
-    var b = x2.value$2;
-    var index = $uI(b);
-    var ordered = $f_Lme_kerfume_OrderFunctions__orderBy__pLme_kerfume_OrderFunctions__I__sci_Vector__sci_Vector($thiz, index, t$2);
-    var this$4 = new $c_s_util_Right().init___O(new $c_T2().init___O__O(index, ordered))
-  } else {
-    var this$4 = this$3
-  };
-  if ($is_s_util_Right(this$4)) {
-    var x2$1 = $as_s_util_Right(this$4);
-    var b$1 = x2$1.value$2;
-    var x$1$1 = $as_T2(b$1);
-    if ((x$1$1 === null)) {
-      throw new $c_s_MatchError().init___O(x$1$1)
-    };
-    var ordered$1 = $as_sci_Vector(x$1$1.$$und2$f);
-    var x = order.orderType$1;
-    var x$2 = $m_Lme_kerfume_Command$Asc$();
-    var ft = new $c_s_util_Right().init___O((((x !== null) && (x === x$2)) ? ordered$1 : $as_sci_Vector($f_sc_SeqLike__reverse__O(ordered$1))))
-  } else {
-    var ft = this$4
-  };
-  if ($is_s_util_Right(ft)) {
-    var x2$2 = $as_s_util_Right(ft);
-    var b$2 = x2$2.value$2;
-    var x$2$1 = $as_sci_Vector(b$2);
-    return new $c_s_util_Right().init___O($as_sci_Vector(x$2$1.$$plus$colon__O__scg_CanBuildFrom__O(h$2, ($m_sci_Vector$(), $m_sc_IndexedSeq$().ReusableCBF$6))))
-  } else {
-    return ft
-  }
+function $is_Lme_kerfume_fileviewer_Outside(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_fileviewer_Outside)))
 }
-function $is_Lme_kerfume_Outside(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_Outside)))
+function $as_Lme_kerfume_fileviewer_Outside(obj) {
+  return (($is_Lme_kerfume_fileviewer_Outside(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.fileviewer.Outside"))
 }
-function $as_Lme_kerfume_Outside(obj) {
-  return (($is_Lme_kerfume_Outside(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.Outside"))
+function $isArrayOf_Lme_kerfume_fileviewer_Outside(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_fileviewer_Outside)))
 }
-function $isArrayOf_Lme_kerfume_Outside(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_Outside)))
-}
-function $asArrayOf_Lme_kerfume_Outside(obj, depth) {
-  return (($isArrayOf_Lme_kerfume_Outside(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.Outside;", depth))
+function $asArrayOf_Lme_kerfume_fileviewer_Outside(obj, depth) {
+  return (($isArrayOf_Lme_kerfume_fileviewer_Outside(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.fileviewer.Outside;", depth))
 }
 /** @constructor */
 function $c_O() {
@@ -2628,27 +2628,27 @@ function $m_Lcats_package$() {
   return $n_Lcats_package$
 }
 /** @constructor */
-function $c_Lme_kerfume_EntryPoint$() {
+function $c_Lme_kerfume_fileviewer_EntryPoint$() {
   $c_O.call(this)
 }
-$c_Lme_kerfume_EntryPoint$.prototype = new $h_O();
-$c_Lme_kerfume_EntryPoint$.prototype.constructor = $c_Lme_kerfume_EntryPoint$;
+$c_Lme_kerfume_fileviewer_EntryPoint$.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_EntryPoint$.prototype.constructor = $c_Lme_kerfume_fileviewer_EntryPoint$;
 /** @constructor */
-function $h_Lme_kerfume_EntryPoint$() {
+function $h_Lme_kerfume_fileviewer_EntryPoint$() {
   /*<skip>*/
 }
-$h_Lme_kerfume_EntryPoint$.prototype = $c_Lme_kerfume_EntryPoint$.prototype;
-$c_Lme_kerfume_EntryPoint$.prototype.init___ = (function() {
+$h_Lme_kerfume_fileviewer_EntryPoint$.prototype = $c_Lme_kerfume_fileviewer_EntryPoint$.prototype;
+$c_Lme_kerfume_fileviewer_EntryPoint$.prototype.init___ = (function() {
   return this
 });
-$c_Lme_kerfume_EntryPoint$.prototype.compile__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__Lme_kerfume_EntryPoint$Service = (function(getTable, getFilter, getExpr, getOrder, printTable, filterError, exprError, orderError) {
-  var compiler = new $c_Lme_kerfume_EntryPoint$$anon$1().init___sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1(getTable, getFilter, getExpr, getOrder, printTable, filterError, exprError, orderError);
-  return new $c_Lme_kerfume_EntryPoint$Service().init___Lcats_arrow_FunctionK(compiler)
+$c_Lme_kerfume_fileviewer_EntryPoint$.prototype.$$js$exported$meth$compile__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__O = (function(getTable, getFilter, getExpr, getOrder, printTable, filterError, exprError, orderError) {
+  return this.compile__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__Lme_kerfume_fileviewer_EntryPoint$Service(getTable, getFilter, getExpr, getOrder, printTable, filterError, exprError, orderError)
 });
-$c_Lme_kerfume_EntryPoint$.prototype.$$js$exported$meth$compile__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__O = (function(getTable, getFilter, getExpr, getOrder, printTable, filterError, exprError, orderError) {
-  return this.compile__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__Lme_kerfume_EntryPoint$Service(getTable, getFilter, getExpr, getOrder, printTable, filterError, exprError, orderError)
+$c_Lme_kerfume_fileviewer_EntryPoint$.prototype.compile__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__Lme_kerfume_fileviewer_EntryPoint$Service = (function(getTable, getFilter, getExpr, getOrder, printTable, filterError, exprError, orderError) {
+  var compiler = new $c_Lme_kerfume_fileviewer_EntryPoint$$anon$1().init___sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1(getTable, getFilter, getExpr, getOrder, printTable, filterError, exprError, orderError);
+  return new $c_Lme_kerfume_fileviewer_EntryPoint$Service().init___Lcats_arrow_FunctionK(compiler)
 });
-$c_Lme_kerfume_EntryPoint$.prototype.compile = (function(arg$1, arg$2, arg$3, arg$4, arg$5, arg$6, arg$7, arg$8) {
+$c_Lme_kerfume_fileviewer_EntryPoint$.prototype.compile = (function(arg$1, arg$2, arg$3, arg$4, arg$5, arg$6, arg$7, arg$8) {
   var prep0 = arg$1;
   var prep1 = arg$2;
   var prep2 = arg$3;
@@ -2659,159 +2659,88 @@ $c_Lme_kerfume_EntryPoint$.prototype.compile = (function(arg$1, arg$2, arg$3, ar
   var prep7 = arg$8;
   return this.$$js$exported$meth$compile__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__O(prep0, prep1, prep2, prep3, prep4, prep5, prep6, prep7)
 });
-var $d_Lme_kerfume_EntryPoint$ = new $TypeData().initClass({
-  Lme_kerfume_EntryPoint$: 0
-}, false, "me.kerfume.EntryPoint$", {
-  Lme_kerfume_EntryPoint$: 1,
+var $d_Lme_kerfume_fileviewer_EntryPoint$ = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_EntryPoint$: 0
+}, false, "me.kerfume.fileviewer.EntryPoint$", {
+  Lme_kerfume_fileviewer_EntryPoint$: 1,
   O: 1
 });
-$c_Lme_kerfume_EntryPoint$.prototype.$classData = $d_Lme_kerfume_EntryPoint$;
-var $n_Lme_kerfume_EntryPoint$ = (void 0);
-function $m_Lme_kerfume_EntryPoint$() {
-  if ((!$n_Lme_kerfume_EntryPoint$)) {
-    $n_Lme_kerfume_EntryPoint$ = new $c_Lme_kerfume_EntryPoint$().init___()
+$c_Lme_kerfume_fileviewer_EntryPoint$.prototype.$classData = $d_Lme_kerfume_fileviewer_EntryPoint$;
+var $n_Lme_kerfume_fileviewer_EntryPoint$ = (void 0);
+function $m_Lme_kerfume_fileviewer_EntryPoint$() {
+  if ((!$n_Lme_kerfume_fileviewer_EntryPoint$)) {
+    $n_Lme_kerfume_fileviewer_EntryPoint$ = new $c_Lme_kerfume_fileviewer_EntryPoint$().init___()
   };
-  return $n_Lme_kerfume_EntryPoint$
+  return $n_Lme_kerfume_fileviewer_EntryPoint$
 }
 /** @constructor */
-function $c_Lme_kerfume_EntryPoint$Service() {
+function $c_Lme_kerfume_fileviewer_EntryPoint$Service() {
   $c_O.call(this);
   this.compiler$1 = null
 }
-$c_Lme_kerfume_EntryPoint$Service.prototype = new $h_O();
-$c_Lme_kerfume_EntryPoint$Service.prototype.constructor = $c_Lme_kerfume_EntryPoint$Service;
+$c_Lme_kerfume_fileviewer_EntryPoint$Service.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_EntryPoint$Service.prototype.constructor = $c_Lme_kerfume_fileviewer_EntryPoint$Service;
 /** @constructor */
-function $h_Lme_kerfume_EntryPoint$Service() {
+function $h_Lme_kerfume_fileviewer_EntryPoint$Service() {
   /*<skip>*/
 }
-$h_Lme_kerfume_EntryPoint$Service.prototype = $c_Lme_kerfume_EntryPoint$Service.prototype;
-$c_Lme_kerfume_EntryPoint$Service.prototype.run__V = (function() {
-  $m_Lme_kerfume_TableMakeService$().makeService$1.foldMap__Lcats_arrow_FunctionK__Lcats_Monad__O(this.compiler$1, $m_Lcats_package$().catsInstancesForId$1)
+$h_Lme_kerfume_fileviewer_EntryPoint$Service.prototype = $c_Lme_kerfume_fileviewer_EntryPoint$Service.prototype;
+$c_Lme_kerfume_fileviewer_EntryPoint$Service.prototype.run__V = (function() {
+  $m_Lme_kerfume_fileviewer_Module$().processTable$1.foldMap__Lcats_arrow_FunctionK__Lcats_Monad__O(this.compiler$1, $m_Lcats_package$().catsInstancesForId$1)
 });
-$c_Lme_kerfume_EntryPoint$Service.prototype.init___Lcats_arrow_FunctionK = (function(compiler) {
+$c_Lme_kerfume_fileviewer_EntryPoint$Service.prototype.init___Lcats_arrow_FunctionK = (function(compiler) {
   this.compiler$1 = compiler;
   return this
 });
-$c_Lme_kerfume_EntryPoint$Service.prototype.$$js$exported$meth$run__O = (function() {
+$c_Lme_kerfume_fileviewer_EntryPoint$Service.prototype.$$js$exported$meth$run__O = (function() {
   this.run__V()
 });
-$c_Lme_kerfume_EntryPoint$Service.prototype.run = (function() {
+$c_Lme_kerfume_fileviewer_EntryPoint$Service.prototype.run = (function() {
   return this.$$js$exported$meth$run__O()
 });
-var $d_Lme_kerfume_EntryPoint$Service = new $TypeData().initClass({
-  Lme_kerfume_EntryPoint$Service: 0
-}, false, "me.kerfume.EntryPoint$Service", {
-  Lme_kerfume_EntryPoint$Service: 1,
+var $d_Lme_kerfume_fileviewer_EntryPoint$Service = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_EntryPoint$Service: 0
+}, false, "me.kerfume.fileviewer.EntryPoint$Service", {
+  Lme_kerfume_fileviewer_EntryPoint$Service: 1,
   O: 1
 });
-$c_Lme_kerfume_EntryPoint$Service.prototype.$classData = $d_Lme_kerfume_EntryPoint$Service;
+$c_Lme_kerfume_fileviewer_EntryPoint$Service.prototype.$classData = $d_Lme_kerfume_fileviewer_EntryPoint$Service;
 /** @constructor */
-function $c_Lme_kerfume_Outside$() {
-  $c_O.call(this)
-}
-$c_Lme_kerfume_Outside$.prototype = new $h_O();
-$c_Lme_kerfume_Outside$.prototype.constructor = $c_Lme_kerfume_Outside$;
-/** @constructor */
-function $h_Lme_kerfume_Outside$() {
-  /*<skip>*/
-}
-$h_Lme_kerfume_Outside$.prototype = $c_Lme_kerfume_Outside$.prototype;
-$c_Lme_kerfume_Outside$.prototype.init___ = (function() {
-  return this
-});
-$c_Lme_kerfume_Outside$.prototype.exprError__s_util_Either__Lcats_free_Free = (function(res) {
-  if ($is_s_util_Left(res)) {
-    var x2 = $as_s_util_Left(res);
-    var msg = $as_T(x2.value$2);
-    var value = new $c_Lme_kerfume_ExprError().init___T(msg);
-    return new $c_Lcats_free_Free$Suspend().init___O(value)
-  } else if ($is_s_util_Right(res)) {
-    var value$1 = $m_Lme_kerfume_DoNothing$();
-    return new $c_Lcats_free_Free$Suspend().init___O(value$1)
-  } else {
-    throw new $c_s_MatchError().init___O(res)
-  }
-});
-$c_Lme_kerfume_Outside$.prototype.printTable__sci_Vector__Lcats_free_Free = (function(table) {
-  var value = new $c_Lme_kerfume_PrintTable().init___sci_Vector(table);
-  return new $c_Lcats_free_Free$Suspend().init___O(value)
-});
-$c_Lme_kerfume_Outside$.prototype.orderError__s_util_Either__Lcats_free_Free = (function(res) {
-  if ($is_s_util_Left(res)) {
-    var x2 = $as_s_util_Left(res);
-    var msg = $as_T(x2.value$2);
-    var value = new $c_Lme_kerfume_OrderError().init___T(msg);
-    return new $c_Lcats_free_Free$Suspend().init___O(value)
-  } else if ($is_s_util_Right(res)) {
-    var value$1 = $m_Lme_kerfume_DoNothing$();
-    return new $c_Lcats_free_Free$Suspend().init___O(value$1)
-  } else {
-    throw new $c_s_MatchError().init___O(res)
-  }
-});
-$c_Lme_kerfume_Outside$.prototype.filterError__s_util_Either__Lcats_free_Free = (function(res) {
-  if ($is_s_util_Left(res)) {
-    var x2 = $as_s_util_Left(res);
-    var msg = $as_T(x2.value$2);
-    var value = new $c_Lme_kerfume_FilterError().init___T(msg);
-    return new $c_Lcats_free_Free$Suspend().init___O(value)
-  } else if ($is_s_util_Right(res)) {
-    var value$1 = $m_Lme_kerfume_DoNothing$();
-    return new $c_Lcats_free_Free$Suspend().init___O(value$1)
-  } else {
-    throw new $c_s_MatchError().init___O(res)
-  }
-});
-var $d_Lme_kerfume_Outside$ = new $TypeData().initClass({
-  Lme_kerfume_Outside$: 0
-}, false, "me.kerfume.Outside$", {
-  Lme_kerfume_Outside$: 1,
-  O: 1
-});
-$c_Lme_kerfume_Outside$.prototype.$classData = $d_Lme_kerfume_Outside$;
-var $n_Lme_kerfume_Outside$ = (void 0);
-function $m_Lme_kerfume_Outside$() {
-  if ((!$n_Lme_kerfume_Outside$)) {
-    $n_Lme_kerfume_Outside$ = new $c_Lme_kerfume_Outside$().init___()
-  };
-  return $n_Lme_kerfume_Outside$
-}
-/** @constructor */
-function $c_Lme_kerfume_TableMakeService$() {
+function $c_Lme_kerfume_fileviewer_Module$() {
   $c_O.call(this);
-  this.makeService$1 = null
+  this.processTable$1 = null
 }
-$c_Lme_kerfume_TableMakeService$.prototype = new $h_O();
-$c_Lme_kerfume_TableMakeService$.prototype.constructor = $c_Lme_kerfume_TableMakeService$;
+$c_Lme_kerfume_fileviewer_Module$.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_Module$.prototype.constructor = $c_Lme_kerfume_fileviewer_Module$;
 /** @constructor */
-function $h_Lme_kerfume_TableMakeService$() {
+function $h_Lme_kerfume_fileviewer_Module$() {
   /*<skip>*/
 }
-$h_Lme_kerfume_TableMakeService$.prototype = $c_Lme_kerfume_TableMakeService$.prototype;
-$c_Lme_kerfume_TableMakeService$.prototype.init___ = (function() {
-  $n_Lme_kerfume_TableMakeService$ = this;
-  var value = $m_Lme_kerfume_GetTable$();
+$h_Lme_kerfume_fileviewer_Module$.prototype = $c_Lme_kerfume_fileviewer_Module$.prototype;
+$c_Lme_kerfume_fileviewer_Module$.prototype.init___ = (function() {
+  $n_Lme_kerfume_fileviewer_Module$ = this;
+  var value = $m_Lme_kerfume_fileviewer_GetTable$();
   var this$30 = new $c_Lcats_free_Free$Suspend().init___O(value);
   var f$6 = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
     return (function(table$2) {
       var table = $as_sci_Vector(table$2);
-      var value$1 = $m_Lme_kerfume_GetOrder$();
+      var value$1 = $m_Lme_kerfume_fileviewer_GetOrder$();
       var this$29 = new $c_Lcats_free_Free$Suspend().init___O(value$1);
       var f$5 = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this$1, table$1) {
         return (function(orderStr$2) {
           var orderStr = $as_T(orderStr$2);
-          var value$2 = $m_Lme_kerfume_GetFilter$();
+          var value$2 = $m_Lme_kerfume_fileviewer_GetFilter$();
           var this$28 = new $c_Lcats_free_Free$Suspend().init___O(value$2);
           var f$4 = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this$2, orderStr$1, table$1$1) {
             return (function(filterStr$2) {
               var filterStr = $as_T(filterStr$2);
-              var value$3 = $m_Lme_kerfume_GetExpr$();
+              var value$3 = $m_Lme_kerfume_fileviewer_GetExpr$();
               var this$27 = new $c_Lcats_free_Free$Suspend().init___O(value$3).map__F1__Lcats_free_Free(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this$3, filterStr$1, orderStr$1$1, table$1$2) {
                 return (function(exprStr$2) {
                   var exprStr = $as_T(exprStr$2);
-                  var filter = $m_Lme_kerfume_Parser$().decodeFilter__T__s_Option(filterStr$1);
-                  var order = $m_Lme_kerfume_Parser$().decodeOrder__T__s_Option(orderStr$1$1);
-                  var expr = $m_Lme_kerfume_Parser$().decodeExpr__T__s_Option(exprStr);
+                  var filter = $m_Lme_kerfume_fileviewer_Parser$().decodeFilter__T__s_Option(filterStr$1);
+                  var order = $m_Lme_kerfume_fileviewer_Parser$().decodeOrder__T__s_Option(orderStr$1$1);
+                  var expr = $m_Lme_kerfume_fileviewer_Parser$().decodeExpr__T__s_Option(exprStr);
                   if (filter.isEmpty__Z()) {
                     $m_s_package$();
                     var this$11 = new $c_s_util_Left().init___O("invalid filter format.")
@@ -2823,9 +2752,9 @@ $c_Lme_kerfume_TableMakeService$.prototype.init___ = (function() {
                   if ($is_s_util_Right(this$11)) {
                     var x2 = $as_s_util_Right(this$11);
                     var b = x2.value$2;
-                    var x$1 = $as_Lme_kerfume_Filter(b);
-                    var this$12 = $m_Lme_kerfume_Functions$();
-                    var filteredE = $f_Lme_kerfume_FilterFunctions__procFilter__sci_Vector__Lme_kerfume_Filter__s_util_Either(this$12, table$1$2, x$1)
+                    var x$1 = $as_Lme_kerfume_fileviewer_Filter(b);
+                    var this$12 = $m_Lme_kerfume_fileviewer_Functions$();
+                    var filteredE = $f_Lme_kerfume_fileviewer_FilterFunctions__procFilter__sci_Vector__Lme_kerfume_fileviewer_Filter__s_util_Either(this$12, table$1$2, x$1)
                   } else {
                     var filteredE = this$11
                   };
@@ -2839,7 +2768,7 @@ $c_Lme_kerfume_TableMakeService$.prototype.init___ = (function() {
                     var order$1 = $as_s_Option(x$10.$$und3$1);
                     var expr$1 = $as_s_Option(x$10.$$und4$1);
                     var filteredE$1 = $as_s_util_Either(x$10.$$und5$1);
-                    var this$26 = $m_Lme_kerfume_Outside$().filterError__s_util_Either__Lcats_free_Free(filteredE$1).map__F1__Lcats_free_Free(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this$4, filteredE$2, table$1$4, expr$2) {
+                    var this$26 = $m_Lme_kerfume_fileviewer_Outside$().filterError__s_util_Either__Lcats_free_Free(filteredE$1).map__F1__Lcats_free_Free(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this$4, filteredE$2, table$1$4, expr$2) {
                       return (function(x$4$2) {
                         var x$4 = $asUnit(x$4$2);
                         var this$13 = new $c_s_util_Either$RightProjection().init___s_util_Either(filteredE$2);
@@ -2863,9 +2792,9 @@ $c_Lme_kerfume_TableMakeService$.prototype.init___ = (function() {
                         if ($is_s_util_Right(this$16)) {
                           var x2$2 = $as_s_util_Right(this$16);
                           var b$2 = x2$2.value$2;
-                          var x$2 = $as_Lme_kerfume_Expr(b$2);
-                          var this$17 = $m_Lme_kerfume_Functions$();
-                          var expredE = $f_Lme_kerfume_ExprFunctions__procExpr__sci_Vector__Lme_kerfume_Expr__s_util_Either(this$17, filtered, x$2)
+                          var x$2 = $as_Lme_kerfume_fileviewer_Expr(b$2);
+                          var this$17 = $m_Lme_kerfume_fileviewer_Functions$();
+                          var expredE = $f_Lme_kerfume_fileviewer_ExprFunctions__procExpr__sci_Vector__Lme_kerfume_fileviewer_Expr__s_util_Either(this$17, filtered, x$2)
                         } else {
                           var expredE = this$16
                         };
@@ -2878,7 +2807,7 @@ $c_Lme_kerfume_TableMakeService$.prototype.init___ = (function() {
                         if ((x$9 !== null)) {
                           var filtered$1 = $as_sci_Vector(x$9.$$und2$1);
                           var expredE$1 = $as_s_util_Either(x$9.$$und3$1);
-                          var this$25 = $m_Lme_kerfume_Outside$().exprError__s_util_Either__Lcats_free_Free(expredE$1).map__F1__Lcats_free_Free(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this$5, expredE$2, filtered$2, order$1$1) {
+                          var this$25 = $m_Lme_kerfume_fileviewer_Outside$().exprError__s_util_Either__Lcats_free_Free(expredE$1).map__F1__Lcats_free_Free(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this$5, expredE$2, filtered$2, order$1$1) {
                             return (function(x$5$2) {
                               var x$5 = $asUnit(x$5$2);
                               var this$18 = new $c_s_util_Either$RightProjection().init___s_util_Either(expredE$2);
@@ -2902,9 +2831,9 @@ $c_Lme_kerfume_TableMakeService$.prototype.init___ = (function() {
                               if ($is_s_util_Right(this$21)) {
                                 var x2$4 = $as_s_util_Right(this$21);
                                 var b$4 = x2$4.value$2;
-                                var x$3 = $as_Lme_kerfume_Order(b$4);
-                                var this$22 = $m_Lme_kerfume_Functions$();
-                                var orderedE = $f_Lme_kerfume_OrderFunctions__procOrder__sci_Vector__Lme_kerfume_Order__s_util_Either(this$22, expred, x$3)
+                                var x$3 = $as_Lme_kerfume_fileviewer_Order(b$4);
+                                var this$22 = $m_Lme_kerfume_fileviewer_Functions$();
+                                var orderedE = $f_Lme_kerfume_fileviewer_OrderFunctions__procOrder__sci_Vector__Lme_kerfume_fileviewer_Order__s_util_Either(this$22, expred, x$3)
                               } else {
                                 var orderedE = this$21
                               };
@@ -2917,7 +2846,7 @@ $c_Lme_kerfume_TableMakeService$.prototype.init___ = (function() {
                               if ((x$8 !== null)) {
                                 var expred$1 = $as_sci_Vector(x$8.$$und2$1);
                                 var orderedE$1 = $as_s_util_Either(x$8.$$und3$1);
-                                var this$24 = $m_Lme_kerfume_Outside$().orderError__s_util_Either__Lcats_free_Free(orderedE$1).map__F1__Lcats_free_Free(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this$6, orderedE$2, expred$2) {
+                                var this$24 = $m_Lme_kerfume_fileviewer_Outside$().orderError__s_util_Either__Lcats_free_Free(orderedE$1).map__F1__Lcats_free_Free(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this$6, orderedE$2, expred$2) {
                                   return (function(x$6$2) {
                                     var x$6 = $asUnit(x$6$2);
                                     var this$23 = new $c_s_util_Either$RightProjection().init___s_util_Either(orderedE$2);
@@ -2938,7 +2867,7 @@ $c_Lme_kerfume_TableMakeService$.prototype.init___ = (function() {
                                     var x$7 = $as_T2(x$7$2);
                                     if ((x$7 !== null)) {
                                       var ordered$1 = $as_sci_Vector(x$7.$$und2$f);
-                                      return $m_Lme_kerfume_Outside$().printTable__sci_Vector__Lcats_free_Free(ordered$1).map__F1__Lcats_free_Free(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this$7) {
+                                      return $m_Lme_kerfume_fileviewer_Outside$().printTable__sci_Vector__Lcats_free_Free(ordered$1).map__F1__Lcats_free_Free(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this$7) {
                                         return (function(_$2) {
                                           $asUnit(_$2)
                                         })
@@ -2975,22 +2904,93 @@ $c_Lme_kerfume_TableMakeService$.prototype.init___ = (function() {
       return new $c_Lcats_free_Free$FlatMapped().init___Lcats_free_Free__F1(this$29, f$5)
     })
   })(this));
-  this.makeService$1 = new $c_Lcats_free_Free$FlatMapped().init___Lcats_free_Free__F1(this$30, f$6);
+  this.processTable$1 = new $c_Lcats_free_Free$FlatMapped().init___Lcats_free_Free__F1(this$30, f$6);
   return this
 });
-var $d_Lme_kerfume_TableMakeService$ = new $TypeData().initClass({
-  Lme_kerfume_TableMakeService$: 0
-}, false, "me.kerfume.TableMakeService$", {
-  Lme_kerfume_TableMakeService$: 1,
+var $d_Lme_kerfume_fileviewer_Module$ = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_Module$: 0
+}, false, "me.kerfume.fileviewer.Module$", {
+  Lme_kerfume_fileviewer_Module$: 1,
   O: 1
 });
-$c_Lme_kerfume_TableMakeService$.prototype.$classData = $d_Lme_kerfume_TableMakeService$;
-var $n_Lme_kerfume_TableMakeService$ = (void 0);
-function $m_Lme_kerfume_TableMakeService$() {
-  if ((!$n_Lme_kerfume_TableMakeService$)) {
-    $n_Lme_kerfume_TableMakeService$ = new $c_Lme_kerfume_TableMakeService$().init___()
+$c_Lme_kerfume_fileviewer_Module$.prototype.$classData = $d_Lme_kerfume_fileviewer_Module$;
+var $n_Lme_kerfume_fileviewer_Module$ = (void 0);
+function $m_Lme_kerfume_fileviewer_Module$() {
+  if ((!$n_Lme_kerfume_fileviewer_Module$)) {
+    $n_Lme_kerfume_fileviewer_Module$ = new $c_Lme_kerfume_fileviewer_Module$().init___()
   };
-  return $n_Lme_kerfume_TableMakeService$
+  return $n_Lme_kerfume_fileviewer_Module$
+}
+/** @constructor */
+function $c_Lme_kerfume_fileviewer_Outside$() {
+  $c_O.call(this)
+}
+$c_Lme_kerfume_fileviewer_Outside$.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_Outside$.prototype.constructor = $c_Lme_kerfume_fileviewer_Outside$;
+/** @constructor */
+function $h_Lme_kerfume_fileviewer_Outside$() {
+  /*<skip>*/
+}
+$h_Lme_kerfume_fileviewer_Outside$.prototype = $c_Lme_kerfume_fileviewer_Outside$.prototype;
+$c_Lme_kerfume_fileviewer_Outside$.prototype.init___ = (function() {
+  return this
+});
+$c_Lme_kerfume_fileviewer_Outside$.prototype.exprError__s_util_Either__Lcats_free_Free = (function(res) {
+  if ($is_s_util_Left(res)) {
+    var x2 = $as_s_util_Left(res);
+    var msg = $as_T(x2.value$2);
+    var value = new $c_Lme_kerfume_fileviewer_ExprError().init___T(msg);
+    return new $c_Lcats_free_Free$Suspend().init___O(value)
+  } else if ($is_s_util_Right(res)) {
+    var value$1 = $m_Lme_kerfume_fileviewer_DoNothing$();
+    return new $c_Lcats_free_Free$Suspend().init___O(value$1)
+  } else {
+    throw new $c_s_MatchError().init___O(res)
+  }
+});
+$c_Lme_kerfume_fileviewer_Outside$.prototype.printTable__sci_Vector__Lcats_free_Free = (function(table) {
+  var value = new $c_Lme_kerfume_fileviewer_PrintTable().init___sci_Vector(table);
+  return new $c_Lcats_free_Free$Suspend().init___O(value)
+});
+$c_Lme_kerfume_fileviewer_Outside$.prototype.orderError__s_util_Either__Lcats_free_Free = (function(res) {
+  if ($is_s_util_Left(res)) {
+    var x2 = $as_s_util_Left(res);
+    var msg = $as_T(x2.value$2);
+    var value = new $c_Lme_kerfume_fileviewer_OrderError().init___T(msg);
+    return new $c_Lcats_free_Free$Suspend().init___O(value)
+  } else if ($is_s_util_Right(res)) {
+    var value$1 = $m_Lme_kerfume_fileviewer_DoNothing$();
+    return new $c_Lcats_free_Free$Suspend().init___O(value$1)
+  } else {
+    throw new $c_s_MatchError().init___O(res)
+  }
+});
+$c_Lme_kerfume_fileviewer_Outside$.prototype.filterError__s_util_Either__Lcats_free_Free = (function(res) {
+  if ($is_s_util_Left(res)) {
+    var x2 = $as_s_util_Left(res);
+    var msg = $as_T(x2.value$2);
+    var value = new $c_Lme_kerfume_fileviewer_FilterError().init___T(msg);
+    return new $c_Lcats_free_Free$Suspend().init___O(value)
+  } else if ($is_s_util_Right(res)) {
+    var value$1 = $m_Lme_kerfume_fileviewer_DoNothing$();
+    return new $c_Lcats_free_Free$Suspend().init___O(value$1)
+  } else {
+    throw new $c_s_MatchError().init___O(res)
+  }
+});
+var $d_Lme_kerfume_fileviewer_Outside$ = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_Outside$: 0
+}, false, "me.kerfume.fileviewer.Outside$", {
+  Lme_kerfume_fileviewer_Outside$: 1,
+  O: 1
+});
+$c_Lme_kerfume_fileviewer_Outside$.prototype.$classData = $d_Lme_kerfume_fileviewer_Outside$;
+var $n_Lme_kerfume_fileviewer_Outside$ = (void 0);
+function $m_Lme_kerfume_fileviewer_Outside$() {
+  if ((!$n_Lme_kerfume_fileviewer_Outside$)) {
+    $n_Lme_kerfume_fileviewer_Outside$ = new $c_Lme_kerfume_fileviewer_Outside$().init___()
+  };
+  return $n_Lme_kerfume_fileviewer_Outside$
 }
 /** @constructor */
 function $c_jl_Class() {
@@ -8550,7 +8550,7 @@ var $d_Lcats_package$$anon$2 = new $TypeData().initClass({
 });
 $c_Lcats_package$$anon$2.prototype.$classData = $d_Lcats_package$$anon$2;
 /** @constructor */
-function $c_Lme_kerfume_EntryPoint$$anon$1() {
+function $c_Lme_kerfume_fileviewer_EntryPoint$$anon$1() {
   $c_O.call(this);
   this.getTable$1$1 = null;
   this.getFilter$1$1 = null;
@@ -8561,18 +8561,18 @@ function $c_Lme_kerfume_EntryPoint$$anon$1() {
   this.exprError$1$1 = null;
   this.orderError$1$1 = null
 }
-$c_Lme_kerfume_EntryPoint$$anon$1.prototype = new $h_O();
-$c_Lme_kerfume_EntryPoint$$anon$1.prototype.constructor = $c_Lme_kerfume_EntryPoint$$anon$1;
+$c_Lme_kerfume_fileviewer_EntryPoint$$anon$1.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_EntryPoint$$anon$1.prototype.constructor = $c_Lme_kerfume_fileviewer_EntryPoint$$anon$1;
 /** @constructor */
-function $h_Lme_kerfume_EntryPoint$$anon$1() {
+function $h_Lme_kerfume_fileviewer_EntryPoint$$anon$1() {
   /*<skip>*/
 }
-$h_Lme_kerfume_EntryPoint$$anon$1.prototype = $c_Lme_kerfume_EntryPoint$$anon$1.prototype;
-$c_Lme_kerfume_EntryPoint$$anon$1.prototype.apply__O__O = (function(fa) {
-  return this.apply__Lme_kerfume_Outside__O($as_Lme_kerfume_Outside(fa))
+$h_Lme_kerfume_fileviewer_EntryPoint$$anon$1.prototype = $c_Lme_kerfume_fileviewer_EntryPoint$$anon$1.prototype;
+$c_Lme_kerfume_fileviewer_EntryPoint$$anon$1.prototype.apply__O__O = (function(fa) {
+  return this.apply__Lme_kerfume_fileviewer_Outside__O($as_Lme_kerfume_fileviewer_Outside(fa))
 });
-$c_Lme_kerfume_EntryPoint$$anon$1.prototype.apply__Lme_kerfume_Outside__O = (function(fa) {
-  var x = $m_Lme_kerfume_GetTable$();
+$c_Lme_kerfume_fileviewer_EntryPoint$$anon$1.prototype.apply__Lme_kerfume_fileviewer_Outside__O = (function(fa) {
+  var x = $m_Lme_kerfume_fileviewer_GetTable$();
   if ((x === fa)) {
     var array = (0, this.getTable$1$1)();
     var array$1 = [];
@@ -8619,23 +8619,23 @@ $c_Lme_kerfume_EntryPoint$$anon$1.prototype.apply__Lme_kerfume_Outside__O = (fun
     b$1.$$plus$plus$eq__sc_TraversableOnce__scg_Growable(new $c_sjs_js_WrappedArray().init___sjs_js_Array(array$1));
     return $as_sci_Vector(b$1.result__O())
   } else {
-    var x$3 = $m_Lme_kerfume_GetFilter$();
+    var x$3 = $m_Lme_kerfume_fileviewer_GetFilter$();
     if ((x$3 === fa)) {
       return (0, this.getFilter$1$1)()
     } else {
-      var x$5 = $m_Lme_kerfume_GetExpr$();
+      var x$5 = $m_Lme_kerfume_fileviewer_GetExpr$();
       if ((x$5 === fa)) {
         return (0, this.getExpr$1$1)()
       } else {
-        var x$7 = $m_Lme_kerfume_GetOrder$();
+        var x$7 = $m_Lme_kerfume_fileviewer_GetOrder$();
         if ((x$7 === fa)) {
           return (0, this.getOrder$1$1)()
         } else {
-          var x$9 = $m_Lme_kerfume_DoNothing$();
+          var x$9 = $m_Lme_kerfume_fileviewer_DoNothing$();
           if ((x$9 === fa)) {
             return (void 0)
-          } else if ($is_Lme_kerfume_PrintTable(fa)) {
-            var x2 = $as_Lme_kerfume_PrintTable(fa);
+          } else if ($is_Lme_kerfume_fileviewer_PrintTable(fa)) {
+            var x2 = $as_Lme_kerfume_fileviewer_PrintTable(fa);
             var tbl = x2.table$1;
             var jsx$1 = $m_sjs_js_JSConverters$JSRichGenTraversableOnce$();
             $m_sci_Vector$();
@@ -8650,16 +8650,16 @@ $c_Lme_kerfume_EntryPoint$$anon$1.prototype.apply__Lme_kerfume_Outside__O = (fun
             var col = $as_sc_GenTraversableOnce(b$2.result__O());
             var converted = jsx$1.toJSArray$extension__sc_GenTraversableOnce__sjs_js_Array(col);
             return (0, this.printTable$1$1)(converted)
-          } else if ($is_Lme_kerfume_FilterError(fa)) {
-            var x3 = $as_Lme_kerfume_FilterError(fa);
+          } else if ($is_Lme_kerfume_fileviewer_FilterError(fa)) {
+            var x3 = $as_Lme_kerfume_fileviewer_FilterError(fa);
             var msg = x3.msg$1;
             return (0, this.filterError$1$1)(msg)
-          } else if ($is_Lme_kerfume_ExprError(fa)) {
-            var x4 = $as_Lme_kerfume_ExprError(fa);
+          } else if ($is_Lme_kerfume_fileviewer_ExprError(fa)) {
+            var x4 = $as_Lme_kerfume_fileviewer_ExprError(fa);
             var msg$2 = x4.msg$1;
             return (0, this.exprError$1$1)(msg$2)
-          } else if ($is_Lme_kerfume_OrderError(fa)) {
-            var x5 = $as_Lme_kerfume_OrderError(fa);
+          } else if ($is_Lme_kerfume_fileviewer_OrderError(fa)) {
+            var x5 = $as_Lme_kerfume_fileviewer_OrderError(fa);
             var msg$3 = x5.msg$1;
             return (0, this.orderError$1$1)(msg$3)
           } else {
@@ -8670,7 +8670,7 @@ $c_Lme_kerfume_EntryPoint$$anon$1.prototype.apply__Lme_kerfume_Outside__O = (fun
     }
   }
 });
-$c_Lme_kerfume_EntryPoint$$anon$1.prototype.init___sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1 = (function(getTable$1, getFilter$1, getExpr$1, getOrder$1, printTable$1, filterError$1, exprError$1, orderError$1) {
+$c_Lme_kerfume_fileviewer_EntryPoint$$anon$1.prototype.init___sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1 = (function(getTable$1, getFilter$1, getExpr$1, getOrder$1, printTable$1, filterError$1, exprError$1, orderError$1) {
   this.getTable$1$1 = getTable$1;
   this.getFilter$1$1 = getFilter$1;
   this.getExpr$1$1 = getExpr$1;
@@ -8681,18 +8681,18 @@ $c_Lme_kerfume_EntryPoint$$anon$1.prototype.init___sjs_js_Function0__sjs_js_Func
   this.orderError$1$1 = orderError$1;
   return this
 });
-var $d_Lme_kerfume_EntryPoint$$anon$1 = new $TypeData().initClass({
-  Lme_kerfume_EntryPoint$$anon$1: 0
-}, false, "me.kerfume.EntryPoint$$anon$1", {
-  Lme_kerfume_EntryPoint$$anon$1: 1,
+var $d_Lme_kerfume_fileviewer_EntryPoint$$anon$1 = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_EntryPoint$$anon$1: 0
+}, false, "me.kerfume.fileviewer.EntryPoint$$anon$1", {
+  Lme_kerfume_fileviewer_EntryPoint$$anon$1: 1,
   O: 1,
   Lcats_arrow_FunctionK: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_EntryPoint$$anon$1.prototype.$classData = $d_Lme_kerfume_EntryPoint$$anon$1;
+$c_Lme_kerfume_fileviewer_EntryPoint$$anon$1.prototype.$classData = $d_Lme_kerfume_fileviewer_EntryPoint$$anon$1;
 /** @constructor */
-function $c_Lme_kerfume_Parser$() {
+function $c_Lme_kerfume_fileviewer_Parser$() {
   $c_O.call(this);
   this.column$1 = null;
   this.orderType$1 = null;
@@ -8711,15 +8711,15 @@ function $c_Lme_kerfume_Parser$() {
   this.$$tilde$module$1 = null;
   this.bitmap$0$1 = false
 }
-$c_Lme_kerfume_Parser$.prototype = new $h_O();
-$c_Lme_kerfume_Parser$.prototype.constructor = $c_Lme_kerfume_Parser$;
+$c_Lme_kerfume_fileviewer_Parser$.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_Parser$.prototype.constructor = $c_Lme_kerfume_fileviewer_Parser$;
 /** @constructor */
-function $h_Lme_kerfume_Parser$() {
+function $h_Lme_kerfume_fileviewer_Parser$() {
   /*<skip>*/
 }
-$h_Lme_kerfume_Parser$.prototype = $c_Lme_kerfume_Parser$.prototype;
-$c_Lme_kerfume_Parser$.prototype.init___ = (function() {
-  $n_Lme_kerfume_Parser$ = this;
+$h_Lme_kerfume_fileviewer_Parser$.prototype = $c_Lme_kerfume_fileviewer_Parser$.prototype;
+$c_Lme_kerfume_fileviewer_Parser$.prototype.init___ = (function() {
+  $n_Lme_kerfume_fileviewer_Parser$ = this;
   $f_s_util_parsing_combinator_RegexParsers__$$init$__V(this);
   var this$2 = new $c_sci_StringOps().init___T("[a-zA-Z0-9_-]+");
   var groupNames = $m_sci_Nil$();
@@ -8739,9 +8739,9 @@ $c_Lme_kerfume_Parser$.prototype.init___ = (function() {
     return (function(x0$1$2) {
       var x0$1 = $as_T(x0$1$2);
       if ((x0$1 === "asc")) {
-        return $m_Lme_kerfume_Command$Asc$()
+        return $m_Lme_kerfume_fileviewer_Command$Asc$()
       } else if ((x0$1 === "desc")) {
-        return $m_Lme_kerfume_Command$Desc$()
+        return $m_Lme_kerfume_fileviewer_Command$Desc$()
       } else {
         throw new $c_s_MatchError().init___O(x0$1)
       }
@@ -8753,7 +8753,7 @@ $c_Lme_kerfume_Parser$.prototype.init___ = (function() {
   var r$2 = new $c_s_util_matching_Regex().init___T__sc_Seq($$this$2, groupNames$2);
   this.numFilterType$1 = new $c_s_util_parsing_combinator_RegexParsers$$anon$2().init___s_util_parsing_combinator_RegexParsers__s_util_matching_Regex(this, r$2).$$tilde__F0__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$3$1) {
     return (function() {
-      var this$10 = $m_Lme_kerfume_Parser$();
+      var this$10 = $m_Lme_kerfume_fileviewer_Parser$();
       return $f_s_util_parsing_combinator_JavaTokenParsers__wholeNumber__s_util_parsing_combinator_Parsers$Parser(this$10)
     })
   })(this))).$$up$up__F1__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$4$1) {
@@ -8767,13 +8767,13 @@ $c_Lme_kerfume_Parser$.prototype.init___ = (function() {
         var $$this$3 = this$12.repr$1;
         var n = this$14.parseInt__T__I__I($$this$3, 10);
         if ((op === ">=")) {
-          return new $c_Lme_kerfume_Command$GE().init___I(n)
+          return new $c_Lme_kerfume_fileviewer_Command$GE().init___I(n)
         } else if ((op === ">")) {
-          return new $c_Lme_kerfume_Command$GT().init___I(n)
+          return new $c_Lme_kerfume_fileviewer_Command$GT().init___I(n)
         } else if ((op === "<=")) {
-          return new $c_Lme_kerfume_Command$LE().init___I(n)
+          return new $c_Lme_kerfume_fileviewer_Command$LE().init___I(n)
         } else if ((op === "<")) {
-          return new $c_Lme_kerfume_Command$LT().init___I(n)
+          return new $c_Lme_kerfume_fileviewer_Command$LT().init___I(n)
         } else {
           throw new $c_s_MatchError().init___O(op)
         }
@@ -8788,10 +8788,10 @@ $c_Lme_kerfume_Parser$.prototype.init___ = (function() {
   var r$3 = new $c_s_util_matching_Regex().init___T__sc_Seq($$this$4, groupNames$3);
   this.strFilterType$1 = new $c_s_util_parsing_combinator_RegexParsers$$anon$2().init___s_util_parsing_combinator_RegexParsers__s_util_matching_Regex(this, r$3).$$tilde__F0__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$5$1) {
     return (function() {
-      var this$18 = $m_Lme_kerfume_Parser$();
+      var this$18 = $m_Lme_kerfume_fileviewer_Parser$();
       return $f_s_util_parsing_combinator_JavaTokenParsers__wholeNumber__s_util_parsing_combinator_Parsers$Parser(this$18).$$bar__F0__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this$1) {
         return (function() {
-          var this$19 = $m_Lme_kerfume_Parser$();
+          var this$19 = $m_Lme_kerfume_fileviewer_Parser$();
           return $f_s_util_parsing_combinator_JavaTokenParsers__stringLiteral__s_util_parsing_combinator_Parsers$Parser(this$19)
         })
       })(this$5$1)))
@@ -8804,9 +8804,9 @@ $c_Lme_kerfume_Parser$.prototype.init___ = (function() {
         var s = $as_T(x0$3.$$und2$1);
         var reps = $m_sjsr_RuntimeString$().replaceAll__T__T__T__T(s, "\"", "");
         if ((op$1 === "in")) {
-          return new $c_Lme_kerfume_Command$IN().init___T(reps)
+          return new $c_Lme_kerfume_fileviewer_Command$IN().init___T(reps)
         } else if ((op$1 === "=")) {
-          return new $c_Lme_kerfume_Command$EQ().init___T(reps)
+          return new $c_Lme_kerfume_fileviewer_Command$EQ().init___T(reps)
         } else {
           throw new $c_s_MatchError().init___O(op$1)
         }
@@ -8823,13 +8823,13 @@ $c_Lme_kerfume_Parser$.prototype.init___ = (function() {
     return (function(x0$4$2) {
       var x0$4 = $as_T(x0$4$2);
       if ((x0$4 === "+")) {
-        return $m_Lme_kerfume_Command$$plus$()
+        return $m_Lme_kerfume_fileviewer_Command$$plus$()
       } else if ((x0$4 === "-")) {
-        return $m_Lme_kerfume_Command$$minus$()
+        return $m_Lme_kerfume_fileviewer_Command$$minus$()
       } else if ((x0$4 === "*")) {
-        return $m_Lme_kerfume_Command$$times$()
+        return $m_Lme_kerfume_fileviewer_Command$$times$()
       } else if ((x0$4 === "/")) {
-        return $m_Lme_kerfume_Command$$div$()
+        return $m_Lme_kerfume_fileviewer_Command$$div$()
       } else {
         throw new $c_s_MatchError().init___O(x0$4)
       }
@@ -8837,15 +8837,15 @@ $c_Lme_kerfume_Parser$.prototype.init___ = (function() {
   })(this)));
   this.order$1 = this.column$1.$$tilde__F0__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$8$1) {
     return (function() {
-      return $m_Lme_kerfume_Parser$().orderType$1
+      return $m_Lme_kerfume_fileviewer_Parser$().orderType$1
     })
   })(this))).$$up$up__F1__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$9$1) {
     return (function(x0$5$2) {
       var x0$5 = $as_s_util_parsing_combinator_Parsers$$tilde(x0$5$2);
       if ((x0$5 !== null)) {
         var c = $as_T(x0$5.$$und1$1);
-        var t = $as_Lme_kerfume_Command$OrderType(x0$5.$$und2$1);
-        return new $c_Lme_kerfume_Order().init___T__Lme_kerfume_Command$OrderType(c, t)
+        var t = $as_Lme_kerfume_fileviewer_Command$OrderType(x0$5.$$und2$1);
+        return new $c_Lme_kerfume_fileviewer_Order().init___T__Lme_kerfume_fileviewer_Command$OrderType(c, t)
       } else {
         throw new $c_s_MatchError().init___O(x0$5)
       }
@@ -8853,9 +8853,9 @@ $c_Lme_kerfume_Parser$.prototype.init___ = (function() {
   })(this)));
   this.filter$1 = this.column$1.$$tilde__F0__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$10$1) {
     return (function() {
-      return $m_Lme_kerfume_Parser$().numFilterType$1.$$bar__F0__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this$2) {
+      return $m_Lme_kerfume_fileviewer_Parser$().numFilterType$1.$$bar__F0__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this$2) {
         return (function() {
-          return $m_Lme_kerfume_Parser$().strFilterType$1
+          return $m_Lme_kerfume_fileviewer_Parser$().strFilterType$1
         })
       })(this$10$1)))
     })
@@ -8864,8 +8864,8 @@ $c_Lme_kerfume_Parser$.prototype.init___ = (function() {
       var x0$6 = $as_s_util_parsing_combinator_Parsers$$tilde(x0$6$2);
       if ((x0$6 !== null)) {
         var c$1 = $as_T(x0$6.$$und1$1);
-        var t$1 = $as_Lme_kerfume_Command$FilterOperator(x0$6.$$und2$1);
-        return new $c_Lme_kerfume_Filter().init___T__Lme_kerfume_Command$FilterOperator(c$1, t$1)
+        var t$1 = $as_Lme_kerfume_fileviewer_Command$FilterOperator(x0$6.$$und2$1);
+        return new $c_Lme_kerfume_fileviewer_Filter().init___T__Lme_kerfume_fileviewer_Command$FilterOperator(c$1, t$1)
       } else {
         throw new $c_s_MatchError().init___O(x0$6)
       }
@@ -8873,18 +8873,18 @@ $c_Lme_kerfume_Parser$.prototype.init___ = (function() {
   })(this)));
   this.expr$1 = this.column$1.$$tilde__F0__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$12$1) {
     return (function() {
-      return $m_Lme_kerfume_Parser$().exprOperation$1
+      return $m_Lme_kerfume_fileviewer_Parser$().exprOperation$1
     })
   })(this))).$$tilde__F0__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$13$1) {
     return (function() {
-      return $m_Lme_kerfume_Parser$().column$1
+      return $m_Lme_kerfume_fileviewer_Parser$().column$1
     })
   })(this))).$$tilde__F0__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$14$1) {
     return (function() {
-      var this$23 = $m_Lme_kerfume_Parser$();
+      var this$23 = $m_Lme_kerfume_fileviewer_Parser$();
       return new $c_s_util_parsing_combinator_RegexParsers$$anon$1().init___s_util_parsing_combinator_RegexParsers__T(this$23, "=").$$tilde$greater__F0__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this$3) {
         return (function() {
-          return $m_Lme_kerfume_Parser$().column$1
+          return $m_Lme_kerfume_fileviewer_Parser$().column$1
         })
       })(this$14$1)))
     })
@@ -8899,8 +8899,8 @@ $c_Lme_kerfume_Parser$.prototype.init___ = (function() {
           var col2 = $as_T(p2.$$und2$1);
           if ((p3 !== null)) {
             var col1 = $as_T(p3.$$und1$1);
-            var op$2 = $as_Lme_kerfume_Command$ExprOperator(p3.$$und2$1);
-            return new $c_Lme_kerfume_Expr().init___T__T__T__Lme_kerfume_Command$ExprOperator(col1, col2, result, op$2)
+            var op$2 = $as_Lme_kerfume_fileviewer_Command$ExprOperator(p3.$$und2$1);
+            return new $c_Lme_kerfume_fileviewer_Expr().init___T__T__T__Lme_kerfume_fileviewer_Command$ExprOperator(col1, col2, result, op$2)
           }
         }
       };
@@ -8909,12 +8909,12 @@ $c_Lme_kerfume_Parser$.prototype.init___ = (function() {
   })(this)));
   return this
 });
-$c_Lme_kerfume_Parser$.prototype.decodeOrder__T__s_Option = (function(value) {
+$c_Lme_kerfume_fileviewer_Parser$.prototype.decodeOrder__T__s_Option = (function(value) {
   var p = this.order$1;
   var x1 = $f_s_util_parsing_combinator_RegexParsers__parse__s_util_parsing_combinator_Parsers$Parser__jl_CharSequence__s_util_parsing_combinator_Parsers$ParseResult(this, p, value);
   if ($is_s_util_parsing_combinator_Parsers$Success(x1)) {
     var x2 = $as_s_util_parsing_combinator_Parsers$Success(x1);
-    var o = $as_Lme_kerfume_Order(x2.result$2);
+    var o = $as_Lme_kerfume_fileviewer_Order(x2.result$2);
     var a = x2.next$2;
     if (a.atEnd__Z()) {
       return new $c_s_Some().init___O(o)
@@ -8922,19 +8922,19 @@ $c_Lme_kerfume_Parser$.prototype.decodeOrder__T__s_Option = (function(value) {
   };
   return $m_s_None$()
 });
-$c_Lme_kerfume_Parser$.prototype.scala$util$parsing$combinator$Parsers$$lastNoSuccessVar$lzycompute__p1__s_util_DynamicVariable = (function() {
+$c_Lme_kerfume_fileviewer_Parser$.prototype.scala$util$parsing$combinator$Parsers$$lastNoSuccessVar$lzycompute__p1__s_util_DynamicVariable = (function() {
   if ((!this.bitmap$0$1)) {
     this.scala$util$parsing$combinator$Parsers$$lastNoSuccessVar$1 = new $c_s_util_DynamicVariable().init___O($m_s_None$());
     this.bitmap$0$1 = true
   };
   return this.scala$util$parsing$combinator$Parsers$$lastNoSuccessVar$1
 });
-$c_Lme_kerfume_Parser$.prototype.decodeFilter__T__s_Option = (function(value) {
+$c_Lme_kerfume_fileviewer_Parser$.prototype.decodeFilter__T__s_Option = (function(value) {
   var p = this.filter$1;
   var x1 = $f_s_util_parsing_combinator_RegexParsers__parse__s_util_parsing_combinator_Parsers$Parser__jl_CharSequence__s_util_parsing_combinator_Parsers$ParseResult(this, p, value);
   if ($is_s_util_parsing_combinator_Parsers$Success(x1)) {
     var x2 = $as_s_util_parsing_combinator_Parsers$Success(x1);
-    var f = $as_Lme_kerfume_Filter(x2.result$2);
+    var f = $as_Lme_kerfume_fileviewer_Filter(x2.result$2);
     var a = x2.next$2;
     if (a.atEnd__Z()) {
       return new $c_s_Some().init___O(f)
@@ -8942,15 +8942,15 @@ $c_Lme_kerfume_Parser$.prototype.decodeFilter__T__s_Option = (function(value) {
   };
   return $m_s_None$()
 });
-$c_Lme_kerfume_Parser$.prototype.scala$util$parsing$combinator$Parsers$$lastNoSuccessVar__s_util_DynamicVariable = (function() {
+$c_Lme_kerfume_fileviewer_Parser$.prototype.scala$util$parsing$combinator$Parsers$$lastNoSuccessVar__s_util_DynamicVariable = (function() {
   return ((!this.bitmap$0$1) ? this.scala$util$parsing$combinator$Parsers$$lastNoSuccessVar$lzycompute__p1__s_util_DynamicVariable() : this.scala$util$parsing$combinator$Parsers$$lastNoSuccessVar$1)
 });
-$c_Lme_kerfume_Parser$.prototype.decodeExpr__T__s_Option = (function(value) {
+$c_Lme_kerfume_fileviewer_Parser$.prototype.decodeExpr__T__s_Option = (function(value) {
   var p = this.expr$1;
   var x1 = $f_s_util_parsing_combinator_RegexParsers__parse__s_util_parsing_combinator_Parsers$Parser__jl_CharSequence__s_util_parsing_combinator_Parsers$ParseResult(this, p, value);
   if ($is_s_util_parsing_combinator_Parsers$Success(x1)) {
     var x2 = $as_s_util_parsing_combinator_Parsers$Success(x1);
-    var f = $as_Lme_kerfume_Expr(x2.result$2);
+    var f = $as_Lme_kerfume_fileviewer_Expr(x2.result$2);
     var a = x2.next$2;
     if (a.atEnd__Z()) {
       return new $c_s_Some().init___O(f)
@@ -8958,22 +8958,22 @@ $c_Lme_kerfume_Parser$.prototype.decodeExpr__T__s_Option = (function(value) {
   };
   return $m_s_None$()
 });
-var $d_Lme_kerfume_Parser$ = new $TypeData().initClass({
-  Lme_kerfume_Parser$: 0
-}, false, "me.kerfume.Parser$", {
-  Lme_kerfume_Parser$: 1,
+var $d_Lme_kerfume_fileviewer_Parser$ = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_Parser$: 0
+}, false, "me.kerfume.fileviewer.Parser$", {
+  Lme_kerfume_fileviewer_Parser$: 1,
   O: 1,
   s_util_parsing_combinator_JavaTokenParsers: 1,
   s_util_parsing_combinator_RegexParsers: 1,
   s_util_parsing_combinator_Parsers: 1
 });
-$c_Lme_kerfume_Parser$.prototype.$classData = $d_Lme_kerfume_Parser$;
-var $n_Lme_kerfume_Parser$ = (void 0);
-function $m_Lme_kerfume_Parser$() {
-  if ((!$n_Lme_kerfume_Parser$)) {
-    $n_Lme_kerfume_Parser$ = new $c_Lme_kerfume_Parser$().init___()
+$c_Lme_kerfume_fileviewer_Parser$.prototype.$classData = $d_Lme_kerfume_fileviewer_Parser$;
+var $n_Lme_kerfume_fileviewer_Parser$ = (void 0);
+function $m_Lme_kerfume_fileviewer_Parser$() {
+  if ((!$n_Lme_kerfume_fileviewer_Parser$)) {
+    $n_Lme_kerfume_fileviewer_Parser$ = new $c_Lme_kerfume_fileviewer_Parser$().init___()
   };
-  return $n_Lme_kerfume_Parser$
+  return $n_Lme_kerfume_fileviewer_Parser$
 }
 function $is_T(obj) {
   return ((typeof obj) === "string")
@@ -10145,36 +10145,36 @@ function $m_Lcats_kernel_Monoid$() {
   return $n_Lcats_kernel_Monoid$
 }
 /** @constructor */
-function $c_Lme_kerfume_Functions$() {
+function $c_Lme_kerfume_fileviewer_Functions$() {
   $c_O.call(this)
 }
-$c_Lme_kerfume_Functions$.prototype = new $h_O();
-$c_Lme_kerfume_Functions$.prototype.constructor = $c_Lme_kerfume_Functions$;
+$c_Lme_kerfume_fileviewer_Functions$.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_Functions$.prototype.constructor = $c_Lme_kerfume_fileviewer_Functions$;
 /** @constructor */
-function $h_Lme_kerfume_Functions$() {
+function $h_Lme_kerfume_fileviewer_Functions$() {
   /*<skip>*/
 }
-$h_Lme_kerfume_Functions$.prototype = $c_Lme_kerfume_Functions$.prototype;
-$c_Lme_kerfume_Functions$.prototype.init___ = (function() {
+$h_Lme_kerfume_fileviewer_Functions$.prototype = $c_Lme_kerfume_fileviewer_Functions$.prototype;
+$c_Lme_kerfume_fileviewer_Functions$.prototype.init___ = (function() {
   return this
 });
-var $d_Lme_kerfume_Functions$ = new $TypeData().initClass({
-  Lme_kerfume_Functions$: 0
-}, false, "me.kerfume.Functions$", {
-  Lme_kerfume_Functions$: 1,
+var $d_Lme_kerfume_fileviewer_Functions$ = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_Functions$: 0
+}, false, "me.kerfume.fileviewer.Functions$", {
+  Lme_kerfume_fileviewer_Functions$: 1,
   O: 1,
-  Lme_kerfume_Functions: 1,
-  Lme_kerfume_FilterFunctions: 1,
-  Lme_kerfume_OrderFunctions: 1,
-  Lme_kerfume_ExprFunctions: 1
+  Lme_kerfume_fileviewer_Functions: 1,
+  Lme_kerfume_fileviewer_FilterFunctions: 1,
+  Lme_kerfume_fileviewer_OrderFunctions: 1,
+  Lme_kerfume_fileviewer_ExprFunctions: 1
 });
-$c_Lme_kerfume_Functions$.prototype.$classData = $d_Lme_kerfume_Functions$;
-var $n_Lme_kerfume_Functions$ = (void 0);
-function $m_Lme_kerfume_Functions$() {
-  if ((!$n_Lme_kerfume_Functions$)) {
-    $n_Lme_kerfume_Functions$ = new $c_Lme_kerfume_Functions$().init___()
+$c_Lme_kerfume_fileviewer_Functions$.prototype.$classData = $d_Lme_kerfume_fileviewer_Functions$;
+var $n_Lme_kerfume_fileviewer_Functions$ = (void 0);
+function $m_Lme_kerfume_fileviewer_Functions$() {
+  if ((!$n_Lme_kerfume_fileviewer_Functions$)) {
+    $n_Lme_kerfume_fileviewer_Functions$ = new $c_Lme_kerfume_fileviewer_Functions$().init___()
   };
-  return $n_Lme_kerfume_Functions$
+  return $n_Lme_kerfume_fileviewer_Functions$
 }
 /** @constructor */
 function $c_jl_ArithmeticException() {
@@ -12238,19 +12238,19 @@ function $m_Lcats_kernel_PartialOrder$() {
   return $n_Lcats_kernel_PartialOrder$
 }
 /** @constructor */
-function $c_Lme_kerfume_Command$$div$() {
+function $c_Lme_kerfume_fileviewer_Command$$div$() {
   $c_O.call(this);
   this.calc$1 = null
 }
-$c_Lme_kerfume_Command$$div$.prototype = new $h_O();
-$c_Lme_kerfume_Command$$div$.prototype.constructor = $c_Lme_kerfume_Command$$div$;
+$c_Lme_kerfume_fileviewer_Command$$div$.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_Command$$div$.prototype.constructor = $c_Lme_kerfume_fileviewer_Command$$div$;
 /** @constructor */
-function $h_Lme_kerfume_Command$$div$() {
+function $h_Lme_kerfume_fileviewer_Command$$div$() {
   /*<skip>*/
 }
-$h_Lme_kerfume_Command$$div$.prototype = $c_Lme_kerfume_Command$$div$.prototype;
-$c_Lme_kerfume_Command$$div$.prototype.init___ = (function() {
-  $n_Lme_kerfume_Command$$div$ = this;
+$h_Lme_kerfume_fileviewer_Command$$div$.prototype = $c_Lme_kerfume_fileviewer_Command$$div$.prototype;
+$c_Lme_kerfume_fileviewer_Command$$div$.prototype.init___ = (function() {
+  $n_Lme_kerfume_fileviewer_Command$$div$ = this;
   this.calc$1 = new $c_sjsr_AnonFunction2().init___sjs_js_Function2((function($this) {
     return (function(a$2, b$2) {
       var a = $uI(a$2);
@@ -12260,60 +12260,60 @@ $c_Lme_kerfume_Command$$div$.prototype.init___ = (function() {
   })(this));
   return this
 });
-$c_Lme_kerfume_Command$$div$.prototype.productPrefix__T = (function() {
+$c_Lme_kerfume_fileviewer_Command$$div$.prototype.productPrefix__T = (function() {
   return "/"
 });
-$c_Lme_kerfume_Command$$div$.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$$div$.prototype.productArity__I = (function() {
   return 0
 });
-$c_Lme_kerfume_Command$$div$.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Command$$div$.prototype.productElement__I__O = (function(x$1) {
   throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
 });
-$c_Lme_kerfume_Command$$div$.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_Command$$div$.prototype.toString__T = (function() {
   return "/"
 });
-$c_Lme_kerfume_Command$$div$.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$$div$.prototype.hashCode__I = (function() {
   return 47
 });
-$c_Lme_kerfume_Command$$div$.prototype.calc__F2 = (function() {
+$c_Lme_kerfume_fileviewer_Command$$div$.prototype.calc__F2 = (function() {
   return this.calc$1
 });
-$c_Lme_kerfume_Command$$div$.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_Command$$div$.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-var $d_Lme_kerfume_Command$$div$ = new $TypeData().initClass({
-  Lme_kerfume_Command$$div$: 0
-}, false, "me.kerfume.Command$$div$", {
-  Lme_kerfume_Command$$div$: 1,
+var $d_Lme_kerfume_fileviewer_Command$$div$ = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_Command$$div$: 0
+}, false, "me.kerfume.fileviewer.Command$$div$", {
+  Lme_kerfume_fileviewer_Command$$div$: 1,
   O: 1,
-  Lme_kerfume_Command$ExprOperator: 1,
+  Lme_kerfume_fileviewer_Command$ExprOperator: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_Command$$div$.prototype.$classData = $d_Lme_kerfume_Command$$div$;
-var $n_Lme_kerfume_Command$$div$ = (void 0);
-function $m_Lme_kerfume_Command$$div$() {
-  if ((!$n_Lme_kerfume_Command$$div$)) {
-    $n_Lme_kerfume_Command$$div$ = new $c_Lme_kerfume_Command$$div$().init___()
+$c_Lme_kerfume_fileviewer_Command$$div$.prototype.$classData = $d_Lme_kerfume_fileviewer_Command$$div$;
+var $n_Lme_kerfume_fileviewer_Command$$div$ = (void 0);
+function $m_Lme_kerfume_fileviewer_Command$$div$() {
+  if ((!$n_Lme_kerfume_fileviewer_Command$$div$)) {
+    $n_Lme_kerfume_fileviewer_Command$$div$ = new $c_Lme_kerfume_fileviewer_Command$$div$().init___()
   };
-  return $n_Lme_kerfume_Command$$div$
+  return $n_Lme_kerfume_fileviewer_Command$$div$
 }
 /** @constructor */
-function $c_Lme_kerfume_Command$$minus$() {
+function $c_Lme_kerfume_fileviewer_Command$$minus$() {
   $c_O.call(this);
   this.calc$1 = null
 }
-$c_Lme_kerfume_Command$$minus$.prototype = new $h_O();
-$c_Lme_kerfume_Command$$minus$.prototype.constructor = $c_Lme_kerfume_Command$$minus$;
+$c_Lme_kerfume_fileviewer_Command$$minus$.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_Command$$minus$.prototype.constructor = $c_Lme_kerfume_fileviewer_Command$$minus$;
 /** @constructor */
-function $h_Lme_kerfume_Command$$minus$() {
+function $h_Lme_kerfume_fileviewer_Command$$minus$() {
   /*<skip>*/
 }
-$h_Lme_kerfume_Command$$minus$.prototype = $c_Lme_kerfume_Command$$minus$.prototype;
-$c_Lme_kerfume_Command$$minus$.prototype.init___ = (function() {
-  $n_Lme_kerfume_Command$$minus$ = this;
+$h_Lme_kerfume_fileviewer_Command$$minus$.prototype = $c_Lme_kerfume_fileviewer_Command$$minus$.prototype;
+$c_Lme_kerfume_fileviewer_Command$$minus$.prototype.init___ = (function() {
+  $n_Lme_kerfume_fileviewer_Command$$minus$ = this;
   this.calc$1 = new $c_sjsr_AnonFunction2().init___sjs_js_Function2((function($this) {
     return (function(x$3$2, x$4$2) {
       var x$3 = $uI(x$3$2);
@@ -12323,60 +12323,60 @@ $c_Lme_kerfume_Command$$minus$.prototype.init___ = (function() {
   })(this));
   return this
 });
-$c_Lme_kerfume_Command$$minus$.prototype.productPrefix__T = (function() {
+$c_Lme_kerfume_fileviewer_Command$$minus$.prototype.productPrefix__T = (function() {
   return "-"
 });
-$c_Lme_kerfume_Command$$minus$.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$$minus$.prototype.productArity__I = (function() {
   return 0
 });
-$c_Lme_kerfume_Command$$minus$.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Command$$minus$.prototype.productElement__I__O = (function(x$1) {
   throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
 });
-$c_Lme_kerfume_Command$$minus$.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_Command$$minus$.prototype.toString__T = (function() {
   return "-"
 });
-$c_Lme_kerfume_Command$$minus$.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$$minus$.prototype.hashCode__I = (function() {
   return 45
 });
-$c_Lme_kerfume_Command$$minus$.prototype.calc__F2 = (function() {
+$c_Lme_kerfume_fileviewer_Command$$minus$.prototype.calc__F2 = (function() {
   return this.calc$1
 });
-$c_Lme_kerfume_Command$$minus$.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_Command$$minus$.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-var $d_Lme_kerfume_Command$$minus$ = new $TypeData().initClass({
-  Lme_kerfume_Command$$minus$: 0
-}, false, "me.kerfume.Command$$minus$", {
-  Lme_kerfume_Command$$minus$: 1,
+var $d_Lme_kerfume_fileviewer_Command$$minus$ = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_Command$$minus$: 0
+}, false, "me.kerfume.fileviewer.Command$$minus$", {
+  Lme_kerfume_fileviewer_Command$$minus$: 1,
   O: 1,
-  Lme_kerfume_Command$ExprOperator: 1,
+  Lme_kerfume_fileviewer_Command$ExprOperator: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_Command$$minus$.prototype.$classData = $d_Lme_kerfume_Command$$minus$;
-var $n_Lme_kerfume_Command$$minus$ = (void 0);
-function $m_Lme_kerfume_Command$$minus$() {
-  if ((!$n_Lme_kerfume_Command$$minus$)) {
-    $n_Lme_kerfume_Command$$minus$ = new $c_Lme_kerfume_Command$$minus$().init___()
+$c_Lme_kerfume_fileviewer_Command$$minus$.prototype.$classData = $d_Lme_kerfume_fileviewer_Command$$minus$;
+var $n_Lme_kerfume_fileviewer_Command$$minus$ = (void 0);
+function $m_Lme_kerfume_fileviewer_Command$$minus$() {
+  if ((!$n_Lme_kerfume_fileviewer_Command$$minus$)) {
+    $n_Lme_kerfume_fileviewer_Command$$minus$ = new $c_Lme_kerfume_fileviewer_Command$$minus$().init___()
   };
-  return $n_Lme_kerfume_Command$$minus$
+  return $n_Lme_kerfume_fileviewer_Command$$minus$
 }
 /** @constructor */
-function $c_Lme_kerfume_Command$$plus$() {
+function $c_Lme_kerfume_fileviewer_Command$$plus$() {
   $c_O.call(this);
   this.calc$1 = null
 }
-$c_Lme_kerfume_Command$$plus$.prototype = new $h_O();
-$c_Lme_kerfume_Command$$plus$.prototype.constructor = $c_Lme_kerfume_Command$$plus$;
+$c_Lme_kerfume_fileviewer_Command$$plus$.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_Command$$plus$.prototype.constructor = $c_Lme_kerfume_fileviewer_Command$$plus$;
 /** @constructor */
-function $h_Lme_kerfume_Command$$plus$() {
+function $h_Lme_kerfume_fileviewer_Command$$plus$() {
   /*<skip>*/
 }
-$h_Lme_kerfume_Command$$plus$.prototype = $c_Lme_kerfume_Command$$plus$.prototype;
-$c_Lme_kerfume_Command$$plus$.prototype.init___ = (function() {
-  $n_Lme_kerfume_Command$$plus$ = this;
+$h_Lme_kerfume_fileviewer_Command$$plus$.prototype = $c_Lme_kerfume_fileviewer_Command$$plus$.prototype;
+$c_Lme_kerfume_fileviewer_Command$$plus$.prototype.init___ = (function() {
+  $n_Lme_kerfume_fileviewer_Command$$plus$ = this;
   this.calc$1 = new $c_sjsr_AnonFunction2().init___sjs_js_Function2((function($this) {
     return (function(x$1$2, x$2$2) {
       var x$1 = $uI(x$1$2);
@@ -12386,60 +12386,60 @@ $c_Lme_kerfume_Command$$plus$.prototype.init___ = (function() {
   })(this));
   return this
 });
-$c_Lme_kerfume_Command$$plus$.prototype.productPrefix__T = (function() {
+$c_Lme_kerfume_fileviewer_Command$$plus$.prototype.productPrefix__T = (function() {
   return "+"
 });
-$c_Lme_kerfume_Command$$plus$.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$$plus$.prototype.productArity__I = (function() {
   return 0
 });
-$c_Lme_kerfume_Command$$plus$.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Command$$plus$.prototype.productElement__I__O = (function(x$1) {
   throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
 });
-$c_Lme_kerfume_Command$$plus$.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_Command$$plus$.prototype.toString__T = (function() {
   return "+"
 });
-$c_Lme_kerfume_Command$$plus$.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$$plus$.prototype.hashCode__I = (function() {
   return 43
 });
-$c_Lme_kerfume_Command$$plus$.prototype.calc__F2 = (function() {
+$c_Lme_kerfume_fileviewer_Command$$plus$.prototype.calc__F2 = (function() {
   return this.calc$1
 });
-$c_Lme_kerfume_Command$$plus$.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_Command$$plus$.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-var $d_Lme_kerfume_Command$$plus$ = new $TypeData().initClass({
-  Lme_kerfume_Command$$plus$: 0
-}, false, "me.kerfume.Command$$plus$", {
-  Lme_kerfume_Command$$plus$: 1,
+var $d_Lme_kerfume_fileviewer_Command$$plus$ = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_Command$$plus$: 0
+}, false, "me.kerfume.fileviewer.Command$$plus$", {
+  Lme_kerfume_fileviewer_Command$$plus$: 1,
   O: 1,
-  Lme_kerfume_Command$ExprOperator: 1,
+  Lme_kerfume_fileviewer_Command$ExprOperator: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_Command$$plus$.prototype.$classData = $d_Lme_kerfume_Command$$plus$;
-var $n_Lme_kerfume_Command$$plus$ = (void 0);
-function $m_Lme_kerfume_Command$$plus$() {
-  if ((!$n_Lme_kerfume_Command$$plus$)) {
-    $n_Lme_kerfume_Command$$plus$ = new $c_Lme_kerfume_Command$$plus$().init___()
+$c_Lme_kerfume_fileviewer_Command$$plus$.prototype.$classData = $d_Lme_kerfume_fileviewer_Command$$plus$;
+var $n_Lme_kerfume_fileviewer_Command$$plus$ = (void 0);
+function $m_Lme_kerfume_fileviewer_Command$$plus$() {
+  if ((!$n_Lme_kerfume_fileviewer_Command$$plus$)) {
+    $n_Lme_kerfume_fileviewer_Command$$plus$ = new $c_Lme_kerfume_fileviewer_Command$$plus$().init___()
   };
-  return $n_Lme_kerfume_Command$$plus$
+  return $n_Lme_kerfume_fileviewer_Command$$plus$
 }
 /** @constructor */
-function $c_Lme_kerfume_Command$$times$() {
+function $c_Lme_kerfume_fileviewer_Command$$times$() {
   $c_O.call(this);
   this.calc$1 = null
 }
-$c_Lme_kerfume_Command$$times$.prototype = new $h_O();
-$c_Lme_kerfume_Command$$times$.prototype.constructor = $c_Lme_kerfume_Command$$times$;
+$c_Lme_kerfume_fileviewer_Command$$times$.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_Command$$times$.prototype.constructor = $c_Lme_kerfume_fileviewer_Command$$times$;
 /** @constructor */
-function $h_Lme_kerfume_Command$$times$() {
+function $h_Lme_kerfume_fileviewer_Command$$times$() {
   /*<skip>*/
 }
-$h_Lme_kerfume_Command$$times$.prototype = $c_Lme_kerfume_Command$$times$.prototype;
-$c_Lme_kerfume_Command$$times$.prototype.init___ = (function() {
-  $n_Lme_kerfume_Command$$times$ = this;
+$h_Lme_kerfume_fileviewer_Command$$times$.prototype = $c_Lme_kerfume_fileviewer_Command$$times$.prototype;
+$c_Lme_kerfume_fileviewer_Command$$times$.prototype.init___ = (function() {
+  $n_Lme_kerfume_fileviewer_Command$$times$ = this;
   this.calc$1 = new $c_sjsr_AnonFunction2().init___sjs_js_Function2((function($this) {
     return (function(x$5$2, x$6$2) {
       var x$5 = $uI(x$5$2);
@@ -12449,177 +12449,177 @@ $c_Lme_kerfume_Command$$times$.prototype.init___ = (function() {
   })(this));
   return this
 });
-$c_Lme_kerfume_Command$$times$.prototype.productPrefix__T = (function() {
+$c_Lme_kerfume_fileviewer_Command$$times$.prototype.productPrefix__T = (function() {
   return "*"
 });
-$c_Lme_kerfume_Command$$times$.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$$times$.prototype.productArity__I = (function() {
   return 0
 });
-$c_Lme_kerfume_Command$$times$.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Command$$times$.prototype.productElement__I__O = (function(x$1) {
   throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
 });
-$c_Lme_kerfume_Command$$times$.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_Command$$times$.prototype.toString__T = (function() {
   return "*"
 });
-$c_Lme_kerfume_Command$$times$.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$$times$.prototype.hashCode__I = (function() {
   return 42
 });
-$c_Lme_kerfume_Command$$times$.prototype.calc__F2 = (function() {
+$c_Lme_kerfume_fileviewer_Command$$times$.prototype.calc__F2 = (function() {
   return this.calc$1
 });
-$c_Lme_kerfume_Command$$times$.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_Command$$times$.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-var $d_Lme_kerfume_Command$$times$ = new $TypeData().initClass({
-  Lme_kerfume_Command$$times$: 0
-}, false, "me.kerfume.Command$$times$", {
-  Lme_kerfume_Command$$times$: 1,
+var $d_Lme_kerfume_fileviewer_Command$$times$ = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_Command$$times$: 0
+}, false, "me.kerfume.fileviewer.Command$$times$", {
+  Lme_kerfume_fileviewer_Command$$times$: 1,
   O: 1,
-  Lme_kerfume_Command$ExprOperator: 1,
+  Lme_kerfume_fileviewer_Command$ExprOperator: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_Command$$times$.prototype.$classData = $d_Lme_kerfume_Command$$times$;
-var $n_Lme_kerfume_Command$$times$ = (void 0);
-function $m_Lme_kerfume_Command$$times$() {
-  if ((!$n_Lme_kerfume_Command$$times$)) {
-    $n_Lme_kerfume_Command$$times$ = new $c_Lme_kerfume_Command$$times$().init___()
+$c_Lme_kerfume_fileviewer_Command$$times$.prototype.$classData = $d_Lme_kerfume_fileviewer_Command$$times$;
+var $n_Lme_kerfume_fileviewer_Command$$times$ = (void 0);
+function $m_Lme_kerfume_fileviewer_Command$$times$() {
+  if ((!$n_Lme_kerfume_fileviewer_Command$$times$)) {
+    $n_Lme_kerfume_fileviewer_Command$$times$ = new $c_Lme_kerfume_fileviewer_Command$$times$().init___()
   };
-  return $n_Lme_kerfume_Command$$times$
+  return $n_Lme_kerfume_fileviewer_Command$$times$
 }
 /** @constructor */
-function $c_Lme_kerfume_Command$Asc$() {
+function $c_Lme_kerfume_fileviewer_Command$Asc$() {
   $c_O.call(this)
 }
-$c_Lme_kerfume_Command$Asc$.prototype = new $h_O();
-$c_Lme_kerfume_Command$Asc$.prototype.constructor = $c_Lme_kerfume_Command$Asc$;
+$c_Lme_kerfume_fileviewer_Command$Asc$.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_Command$Asc$.prototype.constructor = $c_Lme_kerfume_fileviewer_Command$Asc$;
 /** @constructor */
-function $h_Lme_kerfume_Command$Asc$() {
+function $h_Lme_kerfume_fileviewer_Command$Asc$() {
   /*<skip>*/
 }
-$h_Lme_kerfume_Command$Asc$.prototype = $c_Lme_kerfume_Command$Asc$.prototype;
-$c_Lme_kerfume_Command$Asc$.prototype.init___ = (function() {
+$h_Lme_kerfume_fileviewer_Command$Asc$.prototype = $c_Lme_kerfume_fileviewer_Command$Asc$.prototype;
+$c_Lme_kerfume_fileviewer_Command$Asc$.prototype.init___ = (function() {
   return this
 });
-$c_Lme_kerfume_Command$Asc$.prototype.productPrefix__T = (function() {
+$c_Lme_kerfume_fileviewer_Command$Asc$.prototype.productPrefix__T = (function() {
   return "Asc"
 });
-$c_Lme_kerfume_Command$Asc$.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$Asc$.prototype.productArity__I = (function() {
   return 0
 });
-$c_Lme_kerfume_Command$Asc$.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Command$Asc$.prototype.productElement__I__O = (function(x$1) {
   throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
 });
-$c_Lme_kerfume_Command$Asc$.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_Command$Asc$.prototype.toString__T = (function() {
   return "Asc"
 });
-$c_Lme_kerfume_Command$Asc$.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$Asc$.prototype.hashCode__I = (function() {
   return 66129
 });
-$c_Lme_kerfume_Command$Asc$.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_Command$Asc$.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-var $d_Lme_kerfume_Command$Asc$ = new $TypeData().initClass({
-  Lme_kerfume_Command$Asc$: 0
-}, false, "me.kerfume.Command$Asc$", {
-  Lme_kerfume_Command$Asc$: 1,
+var $d_Lme_kerfume_fileviewer_Command$Asc$ = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_Command$Asc$: 0
+}, false, "me.kerfume.fileviewer.Command$Asc$", {
+  Lme_kerfume_fileviewer_Command$Asc$: 1,
   O: 1,
-  Lme_kerfume_Command$OrderType: 1,
+  Lme_kerfume_fileviewer_Command$OrderType: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_Command$Asc$.prototype.$classData = $d_Lme_kerfume_Command$Asc$;
-var $n_Lme_kerfume_Command$Asc$ = (void 0);
-function $m_Lme_kerfume_Command$Asc$() {
-  if ((!$n_Lme_kerfume_Command$Asc$)) {
-    $n_Lme_kerfume_Command$Asc$ = new $c_Lme_kerfume_Command$Asc$().init___()
+$c_Lme_kerfume_fileviewer_Command$Asc$.prototype.$classData = $d_Lme_kerfume_fileviewer_Command$Asc$;
+var $n_Lme_kerfume_fileviewer_Command$Asc$ = (void 0);
+function $m_Lme_kerfume_fileviewer_Command$Asc$() {
+  if ((!$n_Lme_kerfume_fileviewer_Command$Asc$)) {
+    $n_Lme_kerfume_fileviewer_Command$Asc$ = new $c_Lme_kerfume_fileviewer_Command$Asc$().init___()
   };
-  return $n_Lme_kerfume_Command$Asc$
+  return $n_Lme_kerfume_fileviewer_Command$Asc$
 }
 /** @constructor */
-function $c_Lme_kerfume_Command$Desc$() {
+function $c_Lme_kerfume_fileviewer_Command$Desc$() {
   $c_O.call(this)
 }
-$c_Lme_kerfume_Command$Desc$.prototype = new $h_O();
-$c_Lme_kerfume_Command$Desc$.prototype.constructor = $c_Lme_kerfume_Command$Desc$;
+$c_Lme_kerfume_fileviewer_Command$Desc$.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_Command$Desc$.prototype.constructor = $c_Lme_kerfume_fileviewer_Command$Desc$;
 /** @constructor */
-function $h_Lme_kerfume_Command$Desc$() {
+function $h_Lme_kerfume_fileviewer_Command$Desc$() {
   /*<skip>*/
 }
-$h_Lme_kerfume_Command$Desc$.prototype = $c_Lme_kerfume_Command$Desc$.prototype;
-$c_Lme_kerfume_Command$Desc$.prototype.init___ = (function() {
+$h_Lme_kerfume_fileviewer_Command$Desc$.prototype = $c_Lme_kerfume_fileviewer_Command$Desc$.prototype;
+$c_Lme_kerfume_fileviewer_Command$Desc$.prototype.init___ = (function() {
   return this
 });
-$c_Lme_kerfume_Command$Desc$.prototype.productPrefix__T = (function() {
+$c_Lme_kerfume_fileviewer_Command$Desc$.prototype.productPrefix__T = (function() {
   return "Desc"
 });
-$c_Lme_kerfume_Command$Desc$.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$Desc$.prototype.productArity__I = (function() {
   return 0
 });
-$c_Lme_kerfume_Command$Desc$.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Command$Desc$.prototype.productElement__I__O = (function(x$1) {
   throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
 });
-$c_Lme_kerfume_Command$Desc$.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_Command$Desc$.prototype.toString__T = (function() {
   return "Desc"
 });
-$c_Lme_kerfume_Command$Desc$.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$Desc$.prototype.hashCode__I = (function() {
   return 2126513
 });
-$c_Lme_kerfume_Command$Desc$.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_Command$Desc$.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-var $d_Lme_kerfume_Command$Desc$ = new $TypeData().initClass({
-  Lme_kerfume_Command$Desc$: 0
-}, false, "me.kerfume.Command$Desc$", {
-  Lme_kerfume_Command$Desc$: 1,
+var $d_Lme_kerfume_fileviewer_Command$Desc$ = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_Command$Desc$: 0
+}, false, "me.kerfume.fileviewer.Command$Desc$", {
+  Lme_kerfume_fileviewer_Command$Desc$: 1,
   O: 1,
-  Lme_kerfume_Command$OrderType: 1,
+  Lme_kerfume_fileviewer_Command$OrderType: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_Command$Desc$.prototype.$classData = $d_Lme_kerfume_Command$Desc$;
-var $n_Lme_kerfume_Command$Desc$ = (void 0);
-function $m_Lme_kerfume_Command$Desc$() {
-  if ((!$n_Lme_kerfume_Command$Desc$)) {
-    $n_Lme_kerfume_Command$Desc$ = new $c_Lme_kerfume_Command$Desc$().init___()
+$c_Lme_kerfume_fileviewer_Command$Desc$.prototype.$classData = $d_Lme_kerfume_fileviewer_Command$Desc$;
+var $n_Lme_kerfume_fileviewer_Command$Desc$ = (void 0);
+function $m_Lme_kerfume_fileviewer_Command$Desc$() {
+  if ((!$n_Lme_kerfume_fileviewer_Command$Desc$)) {
+    $n_Lme_kerfume_fileviewer_Command$Desc$ = new $c_Lme_kerfume_fileviewer_Command$Desc$().init___()
   };
-  return $n_Lme_kerfume_Command$Desc$
+  return $n_Lme_kerfume_fileviewer_Command$Desc$
 }
 /** @constructor */
-function $c_Lme_kerfume_Command$EQ() {
+function $c_Lme_kerfume_fileviewer_Command$EQ() {
   $c_O.call(this);
   this.value$1 = null
 }
-$c_Lme_kerfume_Command$EQ.prototype = new $h_O();
-$c_Lme_kerfume_Command$EQ.prototype.constructor = $c_Lme_kerfume_Command$EQ;
+$c_Lme_kerfume_fileviewer_Command$EQ.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_Command$EQ.prototype.constructor = $c_Lme_kerfume_fileviewer_Command$EQ;
 /** @constructor */
-function $h_Lme_kerfume_Command$EQ() {
+function $h_Lme_kerfume_fileviewer_Command$EQ() {
   /*<skip>*/
 }
-$h_Lme_kerfume_Command$EQ.prototype = $c_Lme_kerfume_Command$EQ.prototype;
-$c_Lme_kerfume_Command$EQ.prototype.productPrefix__T = (function() {
+$h_Lme_kerfume_fileviewer_Command$EQ.prototype = $c_Lme_kerfume_fileviewer_Command$EQ.prototype;
+$c_Lme_kerfume_fileviewer_Command$EQ.prototype.productPrefix__T = (function() {
   return "EQ"
 });
-$c_Lme_kerfume_Command$EQ.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$EQ.prototype.productArity__I = (function() {
   return 1
 });
-$c_Lme_kerfume_Command$EQ.prototype.equals__O__Z = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Command$EQ.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
     return true
-  } else if ($is_Lme_kerfume_Command$EQ(x$1)) {
-    var EQ$1 = $as_Lme_kerfume_Command$EQ(x$1);
+  } else if ($is_Lme_kerfume_fileviewer_Command$EQ(x$1)) {
+    var EQ$1 = $as_Lme_kerfume_fileviewer_Command$EQ(x$1);
     return (this.value$1 === EQ$1.value$1)
   } else {
     return false
   }
 });
-$c_Lme_kerfume_Command$EQ.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Command$EQ.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
     case 0: {
       return this.value$1;
@@ -12630,73 +12630,73 @@ $c_Lme_kerfume_Command$EQ.prototype.productElement__I__O = (function(x$1) {
     }
   }
 });
-$c_Lme_kerfume_Command$EQ.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_Command$EQ.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lme_kerfume_Command$EQ.prototype.init___T = (function(value) {
+$c_Lme_kerfume_fileviewer_Command$EQ.prototype.init___T = (function(value) {
   this.value$1 = value;
   return this
 });
-$c_Lme_kerfume_Command$EQ.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$EQ.prototype.hashCode__I = (function() {
   var this$2 = $m_s_util_hashing_MurmurHash3$();
   return this$2.productHash__s_Product__I__I(this, (-889275714))
 });
-$c_Lme_kerfume_Command$EQ.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_Command$EQ.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-function $is_Lme_kerfume_Command$EQ(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_Command$EQ)))
+function $is_Lme_kerfume_fileviewer_Command$EQ(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_fileviewer_Command$EQ)))
 }
-function $as_Lme_kerfume_Command$EQ(obj) {
-  return (($is_Lme_kerfume_Command$EQ(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.Command$EQ"))
+function $as_Lme_kerfume_fileviewer_Command$EQ(obj) {
+  return (($is_Lme_kerfume_fileviewer_Command$EQ(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.fileviewer.Command$EQ"))
 }
-function $isArrayOf_Lme_kerfume_Command$EQ(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_Command$EQ)))
+function $isArrayOf_Lme_kerfume_fileviewer_Command$EQ(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_fileviewer_Command$EQ)))
 }
-function $asArrayOf_Lme_kerfume_Command$EQ(obj, depth) {
-  return (($isArrayOf_Lme_kerfume_Command$EQ(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.Command$EQ;", depth))
+function $asArrayOf_Lme_kerfume_fileviewer_Command$EQ(obj, depth) {
+  return (($isArrayOf_Lme_kerfume_fileviewer_Command$EQ(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.fileviewer.Command$EQ;", depth))
 }
-var $d_Lme_kerfume_Command$EQ = new $TypeData().initClass({
-  Lme_kerfume_Command$EQ: 0
-}, false, "me.kerfume.Command$EQ", {
-  Lme_kerfume_Command$EQ: 1,
+var $d_Lme_kerfume_fileviewer_Command$EQ = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_Command$EQ: 0
+}, false, "me.kerfume.fileviewer.Command$EQ", {
+  Lme_kerfume_fileviewer_Command$EQ: 1,
   O: 1,
-  Lme_kerfume_Command$FilterOperator: 1,
+  Lme_kerfume_fileviewer_Command$FilterOperator: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_Command$EQ.prototype.$classData = $d_Lme_kerfume_Command$EQ;
+$c_Lme_kerfume_fileviewer_Command$EQ.prototype.$classData = $d_Lme_kerfume_fileviewer_Command$EQ;
 /** @constructor */
-function $c_Lme_kerfume_Command$GE() {
+function $c_Lme_kerfume_fileviewer_Command$GE() {
   $c_O.call(this);
   this.value$1 = 0
 }
-$c_Lme_kerfume_Command$GE.prototype = new $h_O();
-$c_Lme_kerfume_Command$GE.prototype.constructor = $c_Lme_kerfume_Command$GE;
+$c_Lme_kerfume_fileviewer_Command$GE.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_Command$GE.prototype.constructor = $c_Lme_kerfume_fileviewer_Command$GE;
 /** @constructor */
-function $h_Lme_kerfume_Command$GE() {
+function $h_Lme_kerfume_fileviewer_Command$GE() {
   /*<skip>*/
 }
-$h_Lme_kerfume_Command$GE.prototype = $c_Lme_kerfume_Command$GE.prototype;
-$c_Lme_kerfume_Command$GE.prototype.productPrefix__T = (function() {
+$h_Lme_kerfume_fileviewer_Command$GE.prototype = $c_Lme_kerfume_fileviewer_Command$GE.prototype;
+$c_Lme_kerfume_fileviewer_Command$GE.prototype.productPrefix__T = (function() {
   return "GE"
 });
-$c_Lme_kerfume_Command$GE.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$GE.prototype.productArity__I = (function() {
   return 1
 });
-$c_Lme_kerfume_Command$GE.prototype.equals__O__Z = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Command$GE.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
     return true
-  } else if ($is_Lme_kerfume_Command$GE(x$1)) {
-    var GE$1 = $as_Lme_kerfume_Command$GE(x$1);
+  } else if ($is_Lme_kerfume_fileviewer_Command$GE(x$1)) {
+    var GE$1 = $as_Lme_kerfume_fileviewer_Command$GE(x$1);
     return (this.value$1 === GE$1.value$1)
   } else {
     return false
   }
 });
-$c_Lme_kerfume_Command$GE.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Command$GE.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
     case 0: {
       return this.value$1;
@@ -12707,74 +12707,74 @@ $c_Lme_kerfume_Command$GE.prototype.productElement__I__O = (function(x$1) {
     }
   }
 });
-$c_Lme_kerfume_Command$GE.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_Command$GE.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lme_kerfume_Command$GE.prototype.init___I = (function(value) {
+$c_Lme_kerfume_fileviewer_Command$GE.prototype.init___I = (function(value) {
   this.value$1 = value;
   return this
 });
-$c_Lme_kerfume_Command$GE.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$GE.prototype.hashCode__I = (function() {
   var acc = (-889275714);
   acc = $m_sr_Statics$().mix__I__I__I(acc, this.value$1);
   return $m_sr_Statics$().finalizeHash__I__I__I(acc, 1)
 });
-$c_Lme_kerfume_Command$GE.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_Command$GE.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-function $is_Lme_kerfume_Command$GE(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_Command$GE)))
+function $is_Lme_kerfume_fileviewer_Command$GE(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_fileviewer_Command$GE)))
 }
-function $as_Lme_kerfume_Command$GE(obj) {
-  return (($is_Lme_kerfume_Command$GE(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.Command$GE"))
+function $as_Lme_kerfume_fileviewer_Command$GE(obj) {
+  return (($is_Lme_kerfume_fileviewer_Command$GE(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.fileviewer.Command$GE"))
 }
-function $isArrayOf_Lme_kerfume_Command$GE(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_Command$GE)))
+function $isArrayOf_Lme_kerfume_fileviewer_Command$GE(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_fileviewer_Command$GE)))
 }
-function $asArrayOf_Lme_kerfume_Command$GE(obj, depth) {
-  return (($isArrayOf_Lme_kerfume_Command$GE(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.Command$GE;", depth))
+function $asArrayOf_Lme_kerfume_fileviewer_Command$GE(obj, depth) {
+  return (($isArrayOf_Lme_kerfume_fileviewer_Command$GE(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.fileviewer.Command$GE;", depth))
 }
-var $d_Lme_kerfume_Command$GE = new $TypeData().initClass({
-  Lme_kerfume_Command$GE: 0
-}, false, "me.kerfume.Command$GE", {
-  Lme_kerfume_Command$GE: 1,
+var $d_Lme_kerfume_fileviewer_Command$GE = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_Command$GE: 0
+}, false, "me.kerfume.fileviewer.Command$GE", {
+  Lme_kerfume_fileviewer_Command$GE: 1,
   O: 1,
-  Lme_kerfume_Command$FilterOperator: 1,
+  Lme_kerfume_fileviewer_Command$FilterOperator: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_Command$GE.prototype.$classData = $d_Lme_kerfume_Command$GE;
+$c_Lme_kerfume_fileviewer_Command$GE.prototype.$classData = $d_Lme_kerfume_fileviewer_Command$GE;
 /** @constructor */
-function $c_Lme_kerfume_Command$GT() {
+function $c_Lme_kerfume_fileviewer_Command$GT() {
   $c_O.call(this);
   this.value$1 = 0
 }
-$c_Lme_kerfume_Command$GT.prototype = new $h_O();
-$c_Lme_kerfume_Command$GT.prototype.constructor = $c_Lme_kerfume_Command$GT;
+$c_Lme_kerfume_fileviewer_Command$GT.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_Command$GT.prototype.constructor = $c_Lme_kerfume_fileviewer_Command$GT;
 /** @constructor */
-function $h_Lme_kerfume_Command$GT() {
+function $h_Lme_kerfume_fileviewer_Command$GT() {
   /*<skip>*/
 }
-$h_Lme_kerfume_Command$GT.prototype = $c_Lme_kerfume_Command$GT.prototype;
-$c_Lme_kerfume_Command$GT.prototype.productPrefix__T = (function() {
+$h_Lme_kerfume_fileviewer_Command$GT.prototype = $c_Lme_kerfume_fileviewer_Command$GT.prototype;
+$c_Lme_kerfume_fileviewer_Command$GT.prototype.productPrefix__T = (function() {
   return "GT"
 });
-$c_Lme_kerfume_Command$GT.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$GT.prototype.productArity__I = (function() {
   return 1
 });
-$c_Lme_kerfume_Command$GT.prototype.equals__O__Z = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Command$GT.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
     return true
-  } else if ($is_Lme_kerfume_Command$GT(x$1)) {
-    var GT$1 = $as_Lme_kerfume_Command$GT(x$1);
+  } else if ($is_Lme_kerfume_fileviewer_Command$GT(x$1)) {
+    var GT$1 = $as_Lme_kerfume_fileviewer_Command$GT(x$1);
     return (this.value$1 === GT$1.value$1)
   } else {
     return false
   }
 });
-$c_Lme_kerfume_Command$GT.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Command$GT.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
     case 0: {
       return this.value$1;
@@ -12785,74 +12785,74 @@ $c_Lme_kerfume_Command$GT.prototype.productElement__I__O = (function(x$1) {
     }
   }
 });
-$c_Lme_kerfume_Command$GT.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_Command$GT.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lme_kerfume_Command$GT.prototype.init___I = (function(value) {
+$c_Lme_kerfume_fileviewer_Command$GT.prototype.init___I = (function(value) {
   this.value$1 = value;
   return this
 });
-$c_Lme_kerfume_Command$GT.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$GT.prototype.hashCode__I = (function() {
   var acc = (-889275714);
   acc = $m_sr_Statics$().mix__I__I__I(acc, this.value$1);
   return $m_sr_Statics$().finalizeHash__I__I__I(acc, 1)
 });
-$c_Lme_kerfume_Command$GT.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_Command$GT.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-function $is_Lme_kerfume_Command$GT(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_Command$GT)))
+function $is_Lme_kerfume_fileviewer_Command$GT(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_fileviewer_Command$GT)))
 }
-function $as_Lme_kerfume_Command$GT(obj) {
-  return (($is_Lme_kerfume_Command$GT(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.Command$GT"))
+function $as_Lme_kerfume_fileviewer_Command$GT(obj) {
+  return (($is_Lme_kerfume_fileviewer_Command$GT(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.fileviewer.Command$GT"))
 }
-function $isArrayOf_Lme_kerfume_Command$GT(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_Command$GT)))
+function $isArrayOf_Lme_kerfume_fileviewer_Command$GT(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_fileviewer_Command$GT)))
 }
-function $asArrayOf_Lme_kerfume_Command$GT(obj, depth) {
-  return (($isArrayOf_Lme_kerfume_Command$GT(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.Command$GT;", depth))
+function $asArrayOf_Lme_kerfume_fileviewer_Command$GT(obj, depth) {
+  return (($isArrayOf_Lme_kerfume_fileviewer_Command$GT(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.fileviewer.Command$GT;", depth))
 }
-var $d_Lme_kerfume_Command$GT = new $TypeData().initClass({
-  Lme_kerfume_Command$GT: 0
-}, false, "me.kerfume.Command$GT", {
-  Lme_kerfume_Command$GT: 1,
+var $d_Lme_kerfume_fileviewer_Command$GT = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_Command$GT: 0
+}, false, "me.kerfume.fileviewer.Command$GT", {
+  Lme_kerfume_fileviewer_Command$GT: 1,
   O: 1,
-  Lme_kerfume_Command$FilterOperator: 1,
+  Lme_kerfume_fileviewer_Command$FilterOperator: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_Command$GT.prototype.$classData = $d_Lme_kerfume_Command$GT;
+$c_Lme_kerfume_fileviewer_Command$GT.prototype.$classData = $d_Lme_kerfume_fileviewer_Command$GT;
 /** @constructor */
-function $c_Lme_kerfume_Command$IN() {
+function $c_Lme_kerfume_fileviewer_Command$IN() {
   $c_O.call(this);
   this.value$1 = null
 }
-$c_Lme_kerfume_Command$IN.prototype = new $h_O();
-$c_Lme_kerfume_Command$IN.prototype.constructor = $c_Lme_kerfume_Command$IN;
+$c_Lme_kerfume_fileviewer_Command$IN.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_Command$IN.prototype.constructor = $c_Lme_kerfume_fileviewer_Command$IN;
 /** @constructor */
-function $h_Lme_kerfume_Command$IN() {
+function $h_Lme_kerfume_fileviewer_Command$IN() {
   /*<skip>*/
 }
-$h_Lme_kerfume_Command$IN.prototype = $c_Lme_kerfume_Command$IN.prototype;
-$c_Lme_kerfume_Command$IN.prototype.productPrefix__T = (function() {
+$h_Lme_kerfume_fileviewer_Command$IN.prototype = $c_Lme_kerfume_fileviewer_Command$IN.prototype;
+$c_Lme_kerfume_fileviewer_Command$IN.prototype.productPrefix__T = (function() {
   return "IN"
 });
-$c_Lme_kerfume_Command$IN.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$IN.prototype.productArity__I = (function() {
   return 1
 });
-$c_Lme_kerfume_Command$IN.prototype.equals__O__Z = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Command$IN.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
     return true
-  } else if ($is_Lme_kerfume_Command$IN(x$1)) {
-    var IN$1 = $as_Lme_kerfume_Command$IN(x$1);
+  } else if ($is_Lme_kerfume_fileviewer_Command$IN(x$1)) {
+    var IN$1 = $as_Lme_kerfume_fileviewer_Command$IN(x$1);
     return (this.value$1 === IN$1.value$1)
   } else {
     return false
   }
 });
-$c_Lme_kerfume_Command$IN.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Command$IN.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
     case 0: {
       return this.value$1;
@@ -12863,73 +12863,73 @@ $c_Lme_kerfume_Command$IN.prototype.productElement__I__O = (function(x$1) {
     }
   }
 });
-$c_Lme_kerfume_Command$IN.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_Command$IN.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lme_kerfume_Command$IN.prototype.init___T = (function(value) {
+$c_Lme_kerfume_fileviewer_Command$IN.prototype.init___T = (function(value) {
   this.value$1 = value;
   return this
 });
-$c_Lme_kerfume_Command$IN.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$IN.prototype.hashCode__I = (function() {
   var this$2 = $m_s_util_hashing_MurmurHash3$();
   return this$2.productHash__s_Product__I__I(this, (-889275714))
 });
-$c_Lme_kerfume_Command$IN.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_Command$IN.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-function $is_Lme_kerfume_Command$IN(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_Command$IN)))
+function $is_Lme_kerfume_fileviewer_Command$IN(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_fileviewer_Command$IN)))
 }
-function $as_Lme_kerfume_Command$IN(obj) {
-  return (($is_Lme_kerfume_Command$IN(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.Command$IN"))
+function $as_Lme_kerfume_fileviewer_Command$IN(obj) {
+  return (($is_Lme_kerfume_fileviewer_Command$IN(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.fileviewer.Command$IN"))
 }
-function $isArrayOf_Lme_kerfume_Command$IN(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_Command$IN)))
+function $isArrayOf_Lme_kerfume_fileviewer_Command$IN(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_fileviewer_Command$IN)))
 }
-function $asArrayOf_Lme_kerfume_Command$IN(obj, depth) {
-  return (($isArrayOf_Lme_kerfume_Command$IN(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.Command$IN;", depth))
+function $asArrayOf_Lme_kerfume_fileviewer_Command$IN(obj, depth) {
+  return (($isArrayOf_Lme_kerfume_fileviewer_Command$IN(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.fileviewer.Command$IN;", depth))
 }
-var $d_Lme_kerfume_Command$IN = new $TypeData().initClass({
-  Lme_kerfume_Command$IN: 0
-}, false, "me.kerfume.Command$IN", {
-  Lme_kerfume_Command$IN: 1,
+var $d_Lme_kerfume_fileviewer_Command$IN = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_Command$IN: 0
+}, false, "me.kerfume.fileviewer.Command$IN", {
+  Lme_kerfume_fileviewer_Command$IN: 1,
   O: 1,
-  Lme_kerfume_Command$FilterOperator: 1,
+  Lme_kerfume_fileviewer_Command$FilterOperator: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_Command$IN.prototype.$classData = $d_Lme_kerfume_Command$IN;
+$c_Lme_kerfume_fileviewer_Command$IN.prototype.$classData = $d_Lme_kerfume_fileviewer_Command$IN;
 /** @constructor */
-function $c_Lme_kerfume_Command$LE() {
+function $c_Lme_kerfume_fileviewer_Command$LE() {
   $c_O.call(this);
   this.value$1 = 0
 }
-$c_Lme_kerfume_Command$LE.prototype = new $h_O();
-$c_Lme_kerfume_Command$LE.prototype.constructor = $c_Lme_kerfume_Command$LE;
+$c_Lme_kerfume_fileviewer_Command$LE.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_Command$LE.prototype.constructor = $c_Lme_kerfume_fileviewer_Command$LE;
 /** @constructor */
-function $h_Lme_kerfume_Command$LE() {
+function $h_Lme_kerfume_fileviewer_Command$LE() {
   /*<skip>*/
 }
-$h_Lme_kerfume_Command$LE.prototype = $c_Lme_kerfume_Command$LE.prototype;
-$c_Lme_kerfume_Command$LE.prototype.productPrefix__T = (function() {
+$h_Lme_kerfume_fileviewer_Command$LE.prototype = $c_Lme_kerfume_fileviewer_Command$LE.prototype;
+$c_Lme_kerfume_fileviewer_Command$LE.prototype.productPrefix__T = (function() {
   return "LE"
 });
-$c_Lme_kerfume_Command$LE.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$LE.prototype.productArity__I = (function() {
   return 1
 });
-$c_Lme_kerfume_Command$LE.prototype.equals__O__Z = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Command$LE.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
     return true
-  } else if ($is_Lme_kerfume_Command$LE(x$1)) {
-    var LE$1 = $as_Lme_kerfume_Command$LE(x$1);
+  } else if ($is_Lme_kerfume_fileviewer_Command$LE(x$1)) {
+    var LE$1 = $as_Lme_kerfume_fileviewer_Command$LE(x$1);
     return (this.value$1 === LE$1.value$1)
   } else {
     return false
   }
 });
-$c_Lme_kerfume_Command$LE.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Command$LE.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
     case 0: {
       return this.value$1;
@@ -12940,74 +12940,74 @@ $c_Lme_kerfume_Command$LE.prototype.productElement__I__O = (function(x$1) {
     }
   }
 });
-$c_Lme_kerfume_Command$LE.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_Command$LE.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lme_kerfume_Command$LE.prototype.init___I = (function(value) {
+$c_Lme_kerfume_fileviewer_Command$LE.prototype.init___I = (function(value) {
   this.value$1 = value;
   return this
 });
-$c_Lme_kerfume_Command$LE.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$LE.prototype.hashCode__I = (function() {
   var acc = (-889275714);
   acc = $m_sr_Statics$().mix__I__I__I(acc, this.value$1);
   return $m_sr_Statics$().finalizeHash__I__I__I(acc, 1)
 });
-$c_Lme_kerfume_Command$LE.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_Command$LE.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-function $is_Lme_kerfume_Command$LE(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_Command$LE)))
+function $is_Lme_kerfume_fileviewer_Command$LE(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_fileviewer_Command$LE)))
 }
-function $as_Lme_kerfume_Command$LE(obj) {
-  return (($is_Lme_kerfume_Command$LE(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.Command$LE"))
+function $as_Lme_kerfume_fileviewer_Command$LE(obj) {
+  return (($is_Lme_kerfume_fileviewer_Command$LE(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.fileviewer.Command$LE"))
 }
-function $isArrayOf_Lme_kerfume_Command$LE(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_Command$LE)))
+function $isArrayOf_Lme_kerfume_fileviewer_Command$LE(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_fileviewer_Command$LE)))
 }
-function $asArrayOf_Lme_kerfume_Command$LE(obj, depth) {
-  return (($isArrayOf_Lme_kerfume_Command$LE(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.Command$LE;", depth))
+function $asArrayOf_Lme_kerfume_fileviewer_Command$LE(obj, depth) {
+  return (($isArrayOf_Lme_kerfume_fileviewer_Command$LE(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.fileviewer.Command$LE;", depth))
 }
-var $d_Lme_kerfume_Command$LE = new $TypeData().initClass({
-  Lme_kerfume_Command$LE: 0
-}, false, "me.kerfume.Command$LE", {
-  Lme_kerfume_Command$LE: 1,
+var $d_Lme_kerfume_fileviewer_Command$LE = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_Command$LE: 0
+}, false, "me.kerfume.fileviewer.Command$LE", {
+  Lme_kerfume_fileviewer_Command$LE: 1,
   O: 1,
-  Lme_kerfume_Command$FilterOperator: 1,
+  Lme_kerfume_fileviewer_Command$FilterOperator: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_Command$LE.prototype.$classData = $d_Lme_kerfume_Command$LE;
+$c_Lme_kerfume_fileviewer_Command$LE.prototype.$classData = $d_Lme_kerfume_fileviewer_Command$LE;
 /** @constructor */
-function $c_Lme_kerfume_Command$LT() {
+function $c_Lme_kerfume_fileviewer_Command$LT() {
   $c_O.call(this);
   this.value$1 = 0
 }
-$c_Lme_kerfume_Command$LT.prototype = new $h_O();
-$c_Lme_kerfume_Command$LT.prototype.constructor = $c_Lme_kerfume_Command$LT;
+$c_Lme_kerfume_fileviewer_Command$LT.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_Command$LT.prototype.constructor = $c_Lme_kerfume_fileviewer_Command$LT;
 /** @constructor */
-function $h_Lme_kerfume_Command$LT() {
+function $h_Lme_kerfume_fileviewer_Command$LT() {
   /*<skip>*/
 }
-$h_Lme_kerfume_Command$LT.prototype = $c_Lme_kerfume_Command$LT.prototype;
-$c_Lme_kerfume_Command$LT.prototype.productPrefix__T = (function() {
+$h_Lme_kerfume_fileviewer_Command$LT.prototype = $c_Lme_kerfume_fileviewer_Command$LT.prototype;
+$c_Lme_kerfume_fileviewer_Command$LT.prototype.productPrefix__T = (function() {
   return "LT"
 });
-$c_Lme_kerfume_Command$LT.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$LT.prototype.productArity__I = (function() {
   return 1
 });
-$c_Lme_kerfume_Command$LT.prototype.equals__O__Z = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Command$LT.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
     return true
-  } else if ($is_Lme_kerfume_Command$LT(x$1)) {
-    var LT$1 = $as_Lme_kerfume_Command$LT(x$1);
+  } else if ($is_Lme_kerfume_fileviewer_Command$LT(x$1)) {
+    var LT$1 = $as_Lme_kerfume_fileviewer_Command$LT(x$1);
     return (this.value$1 === LT$1.value$1)
   } else {
     return false
   }
 });
-$c_Lme_kerfume_Command$LT.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Command$LT.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
     case 0: {
       return this.value$1;
@@ -13018,122 +13018,122 @@ $c_Lme_kerfume_Command$LT.prototype.productElement__I__O = (function(x$1) {
     }
   }
 });
-$c_Lme_kerfume_Command$LT.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_Command$LT.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lme_kerfume_Command$LT.prototype.init___I = (function(value) {
+$c_Lme_kerfume_fileviewer_Command$LT.prototype.init___I = (function(value) {
   this.value$1 = value;
   return this
 });
-$c_Lme_kerfume_Command$LT.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_Command$LT.prototype.hashCode__I = (function() {
   var acc = (-889275714);
   acc = $m_sr_Statics$().mix__I__I__I(acc, this.value$1);
   return $m_sr_Statics$().finalizeHash__I__I__I(acc, 1)
 });
-$c_Lme_kerfume_Command$LT.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_Command$LT.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-function $is_Lme_kerfume_Command$LT(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_Command$LT)))
+function $is_Lme_kerfume_fileviewer_Command$LT(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_fileviewer_Command$LT)))
 }
-function $as_Lme_kerfume_Command$LT(obj) {
-  return (($is_Lme_kerfume_Command$LT(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.Command$LT"))
+function $as_Lme_kerfume_fileviewer_Command$LT(obj) {
+  return (($is_Lme_kerfume_fileviewer_Command$LT(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.fileviewer.Command$LT"))
 }
-function $isArrayOf_Lme_kerfume_Command$LT(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_Command$LT)))
+function $isArrayOf_Lme_kerfume_fileviewer_Command$LT(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_fileviewer_Command$LT)))
 }
-function $asArrayOf_Lme_kerfume_Command$LT(obj, depth) {
-  return (($isArrayOf_Lme_kerfume_Command$LT(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.Command$LT;", depth))
+function $asArrayOf_Lme_kerfume_fileviewer_Command$LT(obj, depth) {
+  return (($isArrayOf_Lme_kerfume_fileviewer_Command$LT(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.fileviewer.Command$LT;", depth))
 }
-var $d_Lme_kerfume_Command$LT = new $TypeData().initClass({
-  Lme_kerfume_Command$LT: 0
-}, false, "me.kerfume.Command$LT", {
-  Lme_kerfume_Command$LT: 1,
+var $d_Lme_kerfume_fileviewer_Command$LT = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_Command$LT: 0
+}, false, "me.kerfume.fileviewer.Command$LT", {
+  Lme_kerfume_fileviewer_Command$LT: 1,
   O: 1,
-  Lme_kerfume_Command$FilterOperator: 1,
+  Lme_kerfume_fileviewer_Command$FilterOperator: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_Command$LT.prototype.$classData = $d_Lme_kerfume_Command$LT;
+$c_Lme_kerfume_fileviewer_Command$LT.prototype.$classData = $d_Lme_kerfume_fileviewer_Command$LT;
 /** @constructor */
-function $c_Lme_kerfume_DoNothing$() {
+function $c_Lme_kerfume_fileviewer_DoNothing$() {
   $c_O.call(this)
 }
-$c_Lme_kerfume_DoNothing$.prototype = new $h_O();
-$c_Lme_kerfume_DoNothing$.prototype.constructor = $c_Lme_kerfume_DoNothing$;
+$c_Lme_kerfume_fileviewer_DoNothing$.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_DoNothing$.prototype.constructor = $c_Lme_kerfume_fileviewer_DoNothing$;
 /** @constructor */
-function $h_Lme_kerfume_DoNothing$() {
+function $h_Lme_kerfume_fileviewer_DoNothing$() {
   /*<skip>*/
 }
-$h_Lme_kerfume_DoNothing$.prototype = $c_Lme_kerfume_DoNothing$.prototype;
-$c_Lme_kerfume_DoNothing$.prototype.init___ = (function() {
+$h_Lme_kerfume_fileviewer_DoNothing$.prototype = $c_Lme_kerfume_fileviewer_DoNothing$.prototype;
+$c_Lme_kerfume_fileviewer_DoNothing$.prototype.init___ = (function() {
   return this
 });
-$c_Lme_kerfume_DoNothing$.prototype.productPrefix__T = (function() {
+$c_Lme_kerfume_fileviewer_DoNothing$.prototype.productPrefix__T = (function() {
   return "DoNothing"
 });
-$c_Lme_kerfume_DoNothing$.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_DoNothing$.prototype.productArity__I = (function() {
   return 0
 });
-$c_Lme_kerfume_DoNothing$.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_DoNothing$.prototype.productElement__I__O = (function(x$1) {
   throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
 });
-$c_Lme_kerfume_DoNothing$.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_DoNothing$.prototype.toString__T = (function() {
   return "DoNothing"
 });
-$c_Lme_kerfume_DoNothing$.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_DoNothing$.prototype.hashCode__I = (function() {
   return 1324576930
 });
-$c_Lme_kerfume_DoNothing$.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_DoNothing$.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-var $d_Lme_kerfume_DoNothing$ = new $TypeData().initClass({
-  Lme_kerfume_DoNothing$: 0
-}, false, "me.kerfume.DoNothing$", {
-  Lme_kerfume_DoNothing$: 1,
+var $d_Lme_kerfume_fileviewer_DoNothing$ = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_DoNothing$: 0
+}, false, "me.kerfume.fileviewer.DoNothing$", {
+  Lme_kerfume_fileviewer_DoNothing$: 1,
   O: 1,
-  Lme_kerfume_Outside: 1,
+  Lme_kerfume_fileviewer_Outside: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_DoNothing$.prototype.$classData = $d_Lme_kerfume_DoNothing$;
-var $n_Lme_kerfume_DoNothing$ = (void 0);
-function $m_Lme_kerfume_DoNothing$() {
-  if ((!$n_Lme_kerfume_DoNothing$)) {
-    $n_Lme_kerfume_DoNothing$ = new $c_Lme_kerfume_DoNothing$().init___()
+$c_Lme_kerfume_fileviewer_DoNothing$.prototype.$classData = $d_Lme_kerfume_fileviewer_DoNothing$;
+var $n_Lme_kerfume_fileviewer_DoNothing$ = (void 0);
+function $m_Lme_kerfume_fileviewer_DoNothing$() {
+  if ((!$n_Lme_kerfume_fileviewer_DoNothing$)) {
+    $n_Lme_kerfume_fileviewer_DoNothing$ = new $c_Lme_kerfume_fileviewer_DoNothing$().init___()
   };
-  return $n_Lme_kerfume_DoNothing$
+  return $n_Lme_kerfume_fileviewer_DoNothing$
 }
 /** @constructor */
-function $c_Lme_kerfume_Expr() {
+function $c_Lme_kerfume_fileviewer_Expr() {
   $c_O.call(this);
   this.column1$1 = null;
   this.column2$1 = null;
   this.result$1 = null;
   this.op$1 = null
 }
-$c_Lme_kerfume_Expr.prototype = new $h_O();
-$c_Lme_kerfume_Expr.prototype.constructor = $c_Lme_kerfume_Expr;
+$c_Lme_kerfume_fileviewer_Expr.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_Expr.prototype.constructor = $c_Lme_kerfume_fileviewer_Expr;
 /** @constructor */
-function $h_Lme_kerfume_Expr() {
+function $h_Lme_kerfume_fileviewer_Expr() {
   /*<skip>*/
 }
-$h_Lme_kerfume_Expr.prototype = $c_Lme_kerfume_Expr.prototype;
-$c_Lme_kerfume_Expr.prototype.productPrefix__T = (function() {
+$h_Lme_kerfume_fileviewer_Expr.prototype = $c_Lme_kerfume_fileviewer_Expr.prototype;
+$c_Lme_kerfume_fileviewer_Expr.prototype.productPrefix__T = (function() {
   return "Expr"
 });
-$c_Lme_kerfume_Expr.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_Expr.prototype.productArity__I = (function() {
   return 4
 });
-$c_Lme_kerfume_Expr.prototype.equals__O__Z = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Expr.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
     return true
-  } else if ($is_Lme_kerfume_Expr(x$1)) {
-    var Expr$1 = $as_Lme_kerfume_Expr(x$1);
+  } else if ($is_Lme_kerfume_fileviewer_Expr(x$1)) {
+    var Expr$1 = $as_Lme_kerfume_fileviewer_Expr(x$1);
     if ((((this.column1$1 === Expr$1.column1$1) && (this.column2$1 === Expr$1.column2$1)) && (this.result$1 === Expr$1.result$1))) {
       var x = this.op$1;
       var x$2 = Expr$1.op$1;
@@ -13145,7 +13145,7 @@ $c_Lme_kerfume_Expr.prototype.equals__O__Z = (function(x$1) {
     return false
   }
 });
-$c_Lme_kerfume_Expr.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Expr.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
     case 0: {
       return this.column1$1;
@@ -13168,76 +13168,76 @@ $c_Lme_kerfume_Expr.prototype.productElement__I__O = (function(x$1) {
     }
   }
 });
-$c_Lme_kerfume_Expr.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_Expr.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lme_kerfume_Expr.prototype.init___T__T__T__Lme_kerfume_Command$ExprOperator = (function(column1, column2, result, op) {
+$c_Lme_kerfume_fileviewer_Expr.prototype.hashCode__I = (function() {
+  var this$2 = $m_s_util_hashing_MurmurHash3$();
+  return this$2.productHash__s_Product__I__I(this, (-889275714))
+});
+$c_Lme_kerfume_fileviewer_Expr.prototype.productIterator__sc_Iterator = (function() {
+  return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
+});
+$c_Lme_kerfume_fileviewer_Expr.prototype.init___T__T__T__Lme_kerfume_fileviewer_Command$ExprOperator = (function(column1, column2, result, op) {
   this.column1$1 = column1;
   this.column2$1 = column2;
   this.result$1 = result;
   this.op$1 = op;
   return this
 });
-$c_Lme_kerfume_Expr.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__I(this, (-889275714))
-});
-$c_Lme_kerfume_Expr.prototype.productIterator__sc_Iterator = (function() {
-  return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
-});
-function $is_Lme_kerfume_Expr(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_Expr)))
+function $is_Lme_kerfume_fileviewer_Expr(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_fileviewer_Expr)))
 }
-function $as_Lme_kerfume_Expr(obj) {
-  return (($is_Lme_kerfume_Expr(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.Expr"))
+function $as_Lme_kerfume_fileviewer_Expr(obj) {
+  return (($is_Lme_kerfume_fileviewer_Expr(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.fileviewer.Expr"))
 }
-function $isArrayOf_Lme_kerfume_Expr(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_Expr)))
+function $isArrayOf_Lme_kerfume_fileviewer_Expr(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_fileviewer_Expr)))
 }
-function $asArrayOf_Lme_kerfume_Expr(obj, depth) {
-  return (($isArrayOf_Lme_kerfume_Expr(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.Expr;", depth))
+function $asArrayOf_Lme_kerfume_fileviewer_Expr(obj, depth) {
+  return (($isArrayOf_Lme_kerfume_fileviewer_Expr(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.fileviewer.Expr;", depth))
 }
-var $d_Lme_kerfume_Expr = new $TypeData().initClass({
-  Lme_kerfume_Expr: 0
-}, false, "me.kerfume.Expr", {
-  Lme_kerfume_Expr: 1,
+var $d_Lme_kerfume_fileviewer_Expr = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_Expr: 0
+}, false, "me.kerfume.fileviewer.Expr", {
+  Lme_kerfume_fileviewer_Expr: 1,
   O: 1,
-  Lme_kerfume_Command: 1,
+  Lme_kerfume_fileviewer_Command: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_Expr.prototype.$classData = $d_Lme_kerfume_Expr;
+$c_Lme_kerfume_fileviewer_Expr.prototype.$classData = $d_Lme_kerfume_fileviewer_Expr;
 /** @constructor */
-function $c_Lme_kerfume_ExprError() {
+function $c_Lme_kerfume_fileviewer_ExprError() {
   $c_O.call(this);
   this.msg$1 = null
 }
-$c_Lme_kerfume_ExprError.prototype = new $h_O();
-$c_Lme_kerfume_ExprError.prototype.constructor = $c_Lme_kerfume_ExprError;
+$c_Lme_kerfume_fileviewer_ExprError.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_ExprError.prototype.constructor = $c_Lme_kerfume_fileviewer_ExprError;
 /** @constructor */
-function $h_Lme_kerfume_ExprError() {
+function $h_Lme_kerfume_fileviewer_ExprError() {
   /*<skip>*/
 }
-$h_Lme_kerfume_ExprError.prototype = $c_Lme_kerfume_ExprError.prototype;
-$c_Lme_kerfume_ExprError.prototype.productPrefix__T = (function() {
+$h_Lme_kerfume_fileviewer_ExprError.prototype = $c_Lme_kerfume_fileviewer_ExprError.prototype;
+$c_Lme_kerfume_fileviewer_ExprError.prototype.productPrefix__T = (function() {
   return "ExprError"
 });
-$c_Lme_kerfume_ExprError.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_ExprError.prototype.productArity__I = (function() {
   return 1
 });
-$c_Lme_kerfume_ExprError.prototype.equals__O__Z = (function(x$1) {
+$c_Lme_kerfume_fileviewer_ExprError.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
     return true
-  } else if ($is_Lme_kerfume_ExprError(x$1)) {
-    var ExprError$1 = $as_Lme_kerfume_ExprError(x$1);
+  } else if ($is_Lme_kerfume_fileviewer_ExprError(x$1)) {
+    var ExprError$1 = $as_Lme_kerfume_fileviewer_ExprError(x$1);
     return (this.msg$1 === ExprError$1.msg$1)
   } else {
     return false
   }
 });
-$c_Lme_kerfume_ExprError.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_ExprError.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
     case 0: {
       return this.msg$1;
@@ -13248,68 +13248,68 @@ $c_Lme_kerfume_ExprError.prototype.productElement__I__O = (function(x$1) {
     }
   }
 });
-$c_Lme_kerfume_ExprError.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_ExprError.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lme_kerfume_ExprError.prototype.init___T = (function(msg) {
+$c_Lme_kerfume_fileviewer_ExprError.prototype.init___T = (function(msg) {
   this.msg$1 = msg;
   return this
 });
-$c_Lme_kerfume_ExprError.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_ExprError.prototype.hashCode__I = (function() {
   var this$2 = $m_s_util_hashing_MurmurHash3$();
   return this$2.productHash__s_Product__I__I(this, (-889275714))
 });
-$c_Lme_kerfume_ExprError.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_ExprError.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-function $is_Lme_kerfume_ExprError(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_ExprError)))
+function $is_Lme_kerfume_fileviewer_ExprError(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_fileviewer_ExprError)))
 }
-function $as_Lme_kerfume_ExprError(obj) {
-  return (($is_Lme_kerfume_ExprError(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.ExprError"))
+function $as_Lme_kerfume_fileviewer_ExprError(obj) {
+  return (($is_Lme_kerfume_fileviewer_ExprError(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.fileviewer.ExprError"))
 }
-function $isArrayOf_Lme_kerfume_ExprError(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_ExprError)))
+function $isArrayOf_Lme_kerfume_fileviewer_ExprError(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_fileviewer_ExprError)))
 }
-function $asArrayOf_Lme_kerfume_ExprError(obj, depth) {
-  return (($isArrayOf_Lme_kerfume_ExprError(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.ExprError;", depth))
+function $asArrayOf_Lme_kerfume_fileviewer_ExprError(obj, depth) {
+  return (($isArrayOf_Lme_kerfume_fileviewer_ExprError(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.fileviewer.ExprError;", depth))
 }
-var $d_Lme_kerfume_ExprError = new $TypeData().initClass({
-  Lme_kerfume_ExprError: 0
-}, false, "me.kerfume.ExprError", {
-  Lme_kerfume_ExprError: 1,
+var $d_Lme_kerfume_fileviewer_ExprError = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_ExprError: 0
+}, false, "me.kerfume.fileviewer.ExprError", {
+  Lme_kerfume_fileviewer_ExprError: 1,
   O: 1,
-  Lme_kerfume_Outside: 1,
+  Lme_kerfume_fileviewer_Outside: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_ExprError.prototype.$classData = $d_Lme_kerfume_ExprError;
+$c_Lme_kerfume_fileviewer_ExprError.prototype.$classData = $d_Lme_kerfume_fileviewer_ExprError;
 /** @constructor */
-function $c_Lme_kerfume_Filter() {
+function $c_Lme_kerfume_fileviewer_Filter() {
   $c_O.call(this);
   this.column$1 = null;
   this.op$1 = null
 }
-$c_Lme_kerfume_Filter.prototype = new $h_O();
-$c_Lme_kerfume_Filter.prototype.constructor = $c_Lme_kerfume_Filter;
+$c_Lme_kerfume_fileviewer_Filter.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_Filter.prototype.constructor = $c_Lme_kerfume_fileviewer_Filter;
 /** @constructor */
-function $h_Lme_kerfume_Filter() {
+function $h_Lme_kerfume_fileviewer_Filter() {
   /*<skip>*/
 }
-$h_Lme_kerfume_Filter.prototype = $c_Lme_kerfume_Filter.prototype;
-$c_Lme_kerfume_Filter.prototype.productPrefix__T = (function() {
+$h_Lme_kerfume_fileviewer_Filter.prototype = $c_Lme_kerfume_fileviewer_Filter.prototype;
+$c_Lme_kerfume_fileviewer_Filter.prototype.productPrefix__T = (function() {
   return "Filter"
 });
-$c_Lme_kerfume_Filter.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_Filter.prototype.productArity__I = (function() {
   return 2
 });
-$c_Lme_kerfume_Filter.prototype.equals__O__Z = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Filter.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
     return true
-  } else if ($is_Lme_kerfume_Filter(x$1)) {
-    var Filter$1 = $as_Lme_kerfume_Filter(x$1);
+  } else if ($is_Lme_kerfume_fileviewer_Filter(x$1)) {
+    var Filter$1 = $as_Lme_kerfume_fileviewer_Filter(x$1);
     if ((this.column$1 === Filter$1.column$1)) {
       var x = this.op$1;
       var x$2 = Filter$1.op$1;
@@ -13321,7 +13321,7 @@ $c_Lme_kerfume_Filter.prototype.equals__O__Z = (function(x$1) {
     return false
   }
 });
-$c_Lme_kerfume_Filter.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Filter.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
     case 0: {
       return this.column$1;
@@ -13336,74 +13336,74 @@ $c_Lme_kerfume_Filter.prototype.productElement__I__O = (function(x$1) {
     }
   }
 });
-$c_Lme_kerfume_Filter.prototype.init___T__Lme_kerfume_Command$FilterOperator = (function(column, op) {
+$c_Lme_kerfume_fileviewer_Filter.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
+});
+$c_Lme_kerfume_fileviewer_Filter.prototype.init___T__Lme_kerfume_fileviewer_Command$FilterOperator = (function(column, op) {
   this.column$1 = column;
   this.op$1 = op;
   return this
 });
-$c_Lme_kerfume_Filter.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
-});
-$c_Lme_kerfume_Filter.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_Filter.prototype.hashCode__I = (function() {
   var this$2 = $m_s_util_hashing_MurmurHash3$();
   return this$2.productHash__s_Product__I__I(this, (-889275714))
 });
-$c_Lme_kerfume_Filter.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_Filter.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-function $is_Lme_kerfume_Filter(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_Filter)))
+function $is_Lme_kerfume_fileviewer_Filter(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_fileviewer_Filter)))
 }
-function $as_Lme_kerfume_Filter(obj) {
-  return (($is_Lme_kerfume_Filter(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.Filter"))
+function $as_Lme_kerfume_fileviewer_Filter(obj) {
+  return (($is_Lme_kerfume_fileviewer_Filter(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.fileviewer.Filter"))
 }
-function $isArrayOf_Lme_kerfume_Filter(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_Filter)))
+function $isArrayOf_Lme_kerfume_fileviewer_Filter(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_fileviewer_Filter)))
 }
-function $asArrayOf_Lme_kerfume_Filter(obj, depth) {
-  return (($isArrayOf_Lme_kerfume_Filter(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.Filter;", depth))
+function $asArrayOf_Lme_kerfume_fileviewer_Filter(obj, depth) {
+  return (($isArrayOf_Lme_kerfume_fileviewer_Filter(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.fileviewer.Filter;", depth))
 }
-var $d_Lme_kerfume_Filter = new $TypeData().initClass({
-  Lme_kerfume_Filter: 0
-}, false, "me.kerfume.Filter", {
-  Lme_kerfume_Filter: 1,
+var $d_Lme_kerfume_fileviewer_Filter = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_Filter: 0
+}, false, "me.kerfume.fileviewer.Filter", {
+  Lme_kerfume_fileviewer_Filter: 1,
   O: 1,
-  Lme_kerfume_Command: 1,
+  Lme_kerfume_fileviewer_Command: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_Filter.prototype.$classData = $d_Lme_kerfume_Filter;
+$c_Lme_kerfume_fileviewer_Filter.prototype.$classData = $d_Lme_kerfume_fileviewer_Filter;
 /** @constructor */
-function $c_Lme_kerfume_FilterError() {
+function $c_Lme_kerfume_fileviewer_FilterError() {
   $c_O.call(this);
   this.msg$1 = null
 }
-$c_Lme_kerfume_FilterError.prototype = new $h_O();
-$c_Lme_kerfume_FilterError.prototype.constructor = $c_Lme_kerfume_FilterError;
+$c_Lme_kerfume_fileviewer_FilterError.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_FilterError.prototype.constructor = $c_Lme_kerfume_fileviewer_FilterError;
 /** @constructor */
-function $h_Lme_kerfume_FilterError() {
+function $h_Lme_kerfume_fileviewer_FilterError() {
   /*<skip>*/
 }
-$h_Lme_kerfume_FilterError.prototype = $c_Lme_kerfume_FilterError.prototype;
-$c_Lme_kerfume_FilterError.prototype.productPrefix__T = (function() {
+$h_Lme_kerfume_fileviewer_FilterError.prototype = $c_Lme_kerfume_fileviewer_FilterError.prototype;
+$c_Lme_kerfume_fileviewer_FilterError.prototype.productPrefix__T = (function() {
   return "FilterError"
 });
-$c_Lme_kerfume_FilterError.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_FilterError.prototype.productArity__I = (function() {
   return 1
 });
-$c_Lme_kerfume_FilterError.prototype.equals__O__Z = (function(x$1) {
+$c_Lme_kerfume_fileviewer_FilterError.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
     return true
-  } else if ($is_Lme_kerfume_FilterError(x$1)) {
-    var FilterError$1 = $as_Lme_kerfume_FilterError(x$1);
+  } else if ($is_Lme_kerfume_fileviewer_FilterError(x$1)) {
+    var FilterError$1 = $as_Lme_kerfume_fileviewer_FilterError(x$1);
     return (this.msg$1 === FilterError$1.msg$1)
   } else {
     return false
   }
 });
-$c_Lme_kerfume_FilterError.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_FilterError.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
     case 0: {
       return this.msg$1;
@@ -13414,277 +13414,272 @@ $c_Lme_kerfume_FilterError.prototype.productElement__I__O = (function(x$1) {
     }
   }
 });
-$c_Lme_kerfume_FilterError.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_FilterError.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lme_kerfume_FilterError.prototype.init___T = (function(msg) {
+$c_Lme_kerfume_fileviewer_FilterError.prototype.init___T = (function(msg) {
   this.msg$1 = msg;
   return this
 });
-$c_Lme_kerfume_FilterError.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_FilterError.prototype.hashCode__I = (function() {
   var this$2 = $m_s_util_hashing_MurmurHash3$();
   return this$2.productHash__s_Product__I__I(this, (-889275714))
 });
-$c_Lme_kerfume_FilterError.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_FilterError.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-function $is_Lme_kerfume_FilterError(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_FilterError)))
+function $is_Lme_kerfume_fileviewer_FilterError(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_fileviewer_FilterError)))
 }
-function $as_Lme_kerfume_FilterError(obj) {
-  return (($is_Lme_kerfume_FilterError(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.FilterError"))
+function $as_Lme_kerfume_fileviewer_FilterError(obj) {
+  return (($is_Lme_kerfume_fileviewer_FilterError(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.fileviewer.FilterError"))
 }
-function $isArrayOf_Lme_kerfume_FilterError(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_FilterError)))
+function $isArrayOf_Lme_kerfume_fileviewer_FilterError(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_fileviewer_FilterError)))
 }
-function $asArrayOf_Lme_kerfume_FilterError(obj, depth) {
-  return (($isArrayOf_Lme_kerfume_FilterError(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.FilterError;", depth))
+function $asArrayOf_Lme_kerfume_fileviewer_FilterError(obj, depth) {
+  return (($isArrayOf_Lme_kerfume_fileviewer_FilterError(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.fileviewer.FilterError;", depth))
 }
-var $d_Lme_kerfume_FilterError = new $TypeData().initClass({
-  Lme_kerfume_FilterError: 0
-}, false, "me.kerfume.FilterError", {
-  Lme_kerfume_FilterError: 1,
+var $d_Lme_kerfume_fileviewer_FilterError = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_FilterError: 0
+}, false, "me.kerfume.fileviewer.FilterError", {
+  Lme_kerfume_fileviewer_FilterError: 1,
   O: 1,
-  Lme_kerfume_Outside: 1,
+  Lme_kerfume_fileviewer_Outside: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_FilterError.prototype.$classData = $d_Lme_kerfume_FilterError;
+$c_Lme_kerfume_fileviewer_FilterError.prototype.$classData = $d_Lme_kerfume_fileviewer_FilterError;
 /** @constructor */
-function $c_Lme_kerfume_GetExpr$() {
+function $c_Lme_kerfume_fileviewer_GetExpr$() {
   $c_O.call(this)
 }
-$c_Lme_kerfume_GetExpr$.prototype = new $h_O();
-$c_Lme_kerfume_GetExpr$.prototype.constructor = $c_Lme_kerfume_GetExpr$;
+$c_Lme_kerfume_fileviewer_GetExpr$.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_GetExpr$.prototype.constructor = $c_Lme_kerfume_fileviewer_GetExpr$;
 /** @constructor */
-function $h_Lme_kerfume_GetExpr$() {
+function $h_Lme_kerfume_fileviewer_GetExpr$() {
   /*<skip>*/
 }
-$h_Lme_kerfume_GetExpr$.prototype = $c_Lme_kerfume_GetExpr$.prototype;
-$c_Lme_kerfume_GetExpr$.prototype.init___ = (function() {
+$h_Lme_kerfume_fileviewer_GetExpr$.prototype = $c_Lme_kerfume_fileviewer_GetExpr$.prototype;
+$c_Lme_kerfume_fileviewer_GetExpr$.prototype.init___ = (function() {
   return this
 });
-$c_Lme_kerfume_GetExpr$.prototype.productPrefix__T = (function() {
+$c_Lme_kerfume_fileviewer_GetExpr$.prototype.productPrefix__T = (function() {
   return "GetExpr"
 });
-$c_Lme_kerfume_GetExpr$.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_GetExpr$.prototype.productArity__I = (function() {
   return 0
 });
-$c_Lme_kerfume_GetExpr$.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_GetExpr$.prototype.productElement__I__O = (function(x$1) {
   throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
 });
-$c_Lme_kerfume_GetExpr$.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_GetExpr$.prototype.toString__T = (function() {
   return "GetExpr"
 });
-$c_Lme_kerfume_GetExpr$.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_GetExpr$.prototype.hashCode__I = (function() {
   return 1589099083
 });
-$c_Lme_kerfume_GetExpr$.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_GetExpr$.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-var $d_Lme_kerfume_GetExpr$ = new $TypeData().initClass({
-  Lme_kerfume_GetExpr$: 0
-}, false, "me.kerfume.GetExpr$", {
-  Lme_kerfume_GetExpr$: 1,
+var $d_Lme_kerfume_fileviewer_GetExpr$ = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_GetExpr$: 0
+}, false, "me.kerfume.fileviewer.GetExpr$", {
+  Lme_kerfume_fileviewer_GetExpr$: 1,
   O: 1,
-  Lme_kerfume_Outside: 1,
+  Lme_kerfume_fileviewer_Outside: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_GetExpr$.prototype.$classData = $d_Lme_kerfume_GetExpr$;
-var $n_Lme_kerfume_GetExpr$ = (void 0);
-function $m_Lme_kerfume_GetExpr$() {
-  if ((!$n_Lme_kerfume_GetExpr$)) {
-    $n_Lme_kerfume_GetExpr$ = new $c_Lme_kerfume_GetExpr$().init___()
+$c_Lme_kerfume_fileviewer_GetExpr$.prototype.$classData = $d_Lme_kerfume_fileviewer_GetExpr$;
+var $n_Lme_kerfume_fileviewer_GetExpr$ = (void 0);
+function $m_Lme_kerfume_fileviewer_GetExpr$() {
+  if ((!$n_Lme_kerfume_fileviewer_GetExpr$)) {
+    $n_Lme_kerfume_fileviewer_GetExpr$ = new $c_Lme_kerfume_fileviewer_GetExpr$().init___()
   };
-  return $n_Lme_kerfume_GetExpr$
+  return $n_Lme_kerfume_fileviewer_GetExpr$
 }
 /** @constructor */
-function $c_Lme_kerfume_GetFilter$() {
+function $c_Lme_kerfume_fileviewer_GetFilter$() {
   $c_O.call(this)
 }
-$c_Lme_kerfume_GetFilter$.prototype = new $h_O();
-$c_Lme_kerfume_GetFilter$.prototype.constructor = $c_Lme_kerfume_GetFilter$;
+$c_Lme_kerfume_fileviewer_GetFilter$.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_GetFilter$.prototype.constructor = $c_Lme_kerfume_fileviewer_GetFilter$;
 /** @constructor */
-function $h_Lme_kerfume_GetFilter$() {
+function $h_Lme_kerfume_fileviewer_GetFilter$() {
   /*<skip>*/
 }
-$h_Lme_kerfume_GetFilter$.prototype = $c_Lme_kerfume_GetFilter$.prototype;
-$c_Lme_kerfume_GetFilter$.prototype.init___ = (function() {
+$h_Lme_kerfume_fileviewer_GetFilter$.prototype = $c_Lme_kerfume_fileviewer_GetFilter$.prototype;
+$c_Lme_kerfume_fileviewer_GetFilter$.prototype.init___ = (function() {
   return this
 });
-$c_Lme_kerfume_GetFilter$.prototype.productPrefix__T = (function() {
+$c_Lme_kerfume_fileviewer_GetFilter$.prototype.productPrefix__T = (function() {
   return "GetFilter"
 });
-$c_Lme_kerfume_GetFilter$.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_GetFilter$.prototype.productArity__I = (function() {
   return 0
 });
-$c_Lme_kerfume_GetFilter$.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_GetFilter$.prototype.productElement__I__O = (function(x$1) {
   throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
 });
-$c_Lme_kerfume_GetFilter$.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_GetFilter$.prototype.toString__T = (function() {
   return "GetFilter"
 });
-$c_Lme_kerfume_GetFilter$.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_GetFilter$.prototype.hashCode__I = (function() {
   return (-1869476274)
 });
-$c_Lme_kerfume_GetFilter$.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_GetFilter$.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-var $d_Lme_kerfume_GetFilter$ = new $TypeData().initClass({
-  Lme_kerfume_GetFilter$: 0
-}, false, "me.kerfume.GetFilter$", {
-  Lme_kerfume_GetFilter$: 1,
+var $d_Lme_kerfume_fileviewer_GetFilter$ = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_GetFilter$: 0
+}, false, "me.kerfume.fileviewer.GetFilter$", {
+  Lme_kerfume_fileviewer_GetFilter$: 1,
   O: 1,
-  Lme_kerfume_Outside: 1,
+  Lme_kerfume_fileviewer_Outside: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_GetFilter$.prototype.$classData = $d_Lme_kerfume_GetFilter$;
-var $n_Lme_kerfume_GetFilter$ = (void 0);
-function $m_Lme_kerfume_GetFilter$() {
-  if ((!$n_Lme_kerfume_GetFilter$)) {
-    $n_Lme_kerfume_GetFilter$ = new $c_Lme_kerfume_GetFilter$().init___()
+$c_Lme_kerfume_fileviewer_GetFilter$.prototype.$classData = $d_Lme_kerfume_fileviewer_GetFilter$;
+var $n_Lme_kerfume_fileviewer_GetFilter$ = (void 0);
+function $m_Lme_kerfume_fileviewer_GetFilter$() {
+  if ((!$n_Lme_kerfume_fileviewer_GetFilter$)) {
+    $n_Lme_kerfume_fileviewer_GetFilter$ = new $c_Lme_kerfume_fileviewer_GetFilter$().init___()
   };
-  return $n_Lme_kerfume_GetFilter$
+  return $n_Lme_kerfume_fileviewer_GetFilter$
 }
 /** @constructor */
-function $c_Lme_kerfume_GetOrder$() {
+function $c_Lme_kerfume_fileviewer_GetOrder$() {
   $c_O.call(this)
 }
-$c_Lme_kerfume_GetOrder$.prototype = new $h_O();
-$c_Lme_kerfume_GetOrder$.prototype.constructor = $c_Lme_kerfume_GetOrder$;
+$c_Lme_kerfume_fileviewer_GetOrder$.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_GetOrder$.prototype.constructor = $c_Lme_kerfume_fileviewer_GetOrder$;
 /** @constructor */
-function $h_Lme_kerfume_GetOrder$() {
+function $h_Lme_kerfume_fileviewer_GetOrder$() {
   /*<skip>*/
 }
-$h_Lme_kerfume_GetOrder$.prototype = $c_Lme_kerfume_GetOrder$.prototype;
-$c_Lme_kerfume_GetOrder$.prototype.init___ = (function() {
+$h_Lme_kerfume_fileviewer_GetOrder$.prototype = $c_Lme_kerfume_fileviewer_GetOrder$.prototype;
+$c_Lme_kerfume_fileviewer_GetOrder$.prototype.init___ = (function() {
   return this
 });
-$c_Lme_kerfume_GetOrder$.prototype.productPrefix__T = (function() {
+$c_Lme_kerfume_fileviewer_GetOrder$.prototype.productPrefix__T = (function() {
   return "GetOrder"
 });
-$c_Lme_kerfume_GetOrder$.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_GetOrder$.prototype.productArity__I = (function() {
   return 0
 });
-$c_Lme_kerfume_GetOrder$.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_GetOrder$.prototype.productElement__I__O = (function(x$1) {
   throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
 });
-$c_Lme_kerfume_GetOrder$.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_GetOrder$.prototype.toString__T = (function() {
   return "GetOrder"
 });
-$c_Lme_kerfume_GetOrder$.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_GetOrder$.prototype.hashCode__I = (function() {
   return 2026475960
 });
-$c_Lme_kerfume_GetOrder$.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_GetOrder$.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-var $d_Lme_kerfume_GetOrder$ = new $TypeData().initClass({
-  Lme_kerfume_GetOrder$: 0
-}, false, "me.kerfume.GetOrder$", {
-  Lme_kerfume_GetOrder$: 1,
+var $d_Lme_kerfume_fileviewer_GetOrder$ = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_GetOrder$: 0
+}, false, "me.kerfume.fileviewer.GetOrder$", {
+  Lme_kerfume_fileviewer_GetOrder$: 1,
   O: 1,
-  Lme_kerfume_Outside: 1,
+  Lme_kerfume_fileviewer_Outside: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_GetOrder$.prototype.$classData = $d_Lme_kerfume_GetOrder$;
-var $n_Lme_kerfume_GetOrder$ = (void 0);
-function $m_Lme_kerfume_GetOrder$() {
-  if ((!$n_Lme_kerfume_GetOrder$)) {
-    $n_Lme_kerfume_GetOrder$ = new $c_Lme_kerfume_GetOrder$().init___()
+$c_Lme_kerfume_fileviewer_GetOrder$.prototype.$classData = $d_Lme_kerfume_fileviewer_GetOrder$;
+var $n_Lme_kerfume_fileviewer_GetOrder$ = (void 0);
+function $m_Lme_kerfume_fileviewer_GetOrder$() {
+  if ((!$n_Lme_kerfume_fileviewer_GetOrder$)) {
+    $n_Lme_kerfume_fileviewer_GetOrder$ = new $c_Lme_kerfume_fileviewer_GetOrder$().init___()
   };
-  return $n_Lme_kerfume_GetOrder$
+  return $n_Lme_kerfume_fileviewer_GetOrder$
 }
 /** @constructor */
-function $c_Lme_kerfume_GetTable$() {
+function $c_Lme_kerfume_fileviewer_GetTable$() {
   $c_O.call(this)
 }
-$c_Lme_kerfume_GetTable$.prototype = new $h_O();
-$c_Lme_kerfume_GetTable$.prototype.constructor = $c_Lme_kerfume_GetTable$;
+$c_Lme_kerfume_fileviewer_GetTable$.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_GetTable$.prototype.constructor = $c_Lme_kerfume_fileviewer_GetTable$;
 /** @constructor */
-function $h_Lme_kerfume_GetTable$() {
+function $h_Lme_kerfume_fileviewer_GetTable$() {
   /*<skip>*/
 }
-$h_Lme_kerfume_GetTable$.prototype = $c_Lme_kerfume_GetTable$.prototype;
-$c_Lme_kerfume_GetTable$.prototype.init___ = (function() {
+$h_Lme_kerfume_fileviewer_GetTable$.prototype = $c_Lme_kerfume_fileviewer_GetTable$.prototype;
+$c_Lme_kerfume_fileviewer_GetTable$.prototype.init___ = (function() {
   return this
 });
-$c_Lme_kerfume_GetTable$.prototype.productPrefix__T = (function() {
+$c_Lme_kerfume_fileviewer_GetTable$.prototype.productPrefix__T = (function() {
   return "GetTable"
 });
-$c_Lme_kerfume_GetTable$.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_GetTable$.prototype.productArity__I = (function() {
   return 0
 });
-$c_Lme_kerfume_GetTable$.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_GetTable$.prototype.productElement__I__O = (function(x$1) {
   throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
 });
-$c_Lme_kerfume_GetTable$.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_GetTable$.prototype.toString__T = (function() {
   return "GetTable"
 });
-$c_Lme_kerfume_GetTable$.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_GetTable$.prototype.hashCode__I = (function() {
   return 2030585400
 });
-$c_Lme_kerfume_GetTable$.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_GetTable$.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-var $d_Lme_kerfume_GetTable$ = new $TypeData().initClass({
-  Lme_kerfume_GetTable$: 0
-}, false, "me.kerfume.GetTable$", {
-  Lme_kerfume_GetTable$: 1,
+var $d_Lme_kerfume_fileviewer_GetTable$ = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_GetTable$: 0
+}, false, "me.kerfume.fileviewer.GetTable$", {
+  Lme_kerfume_fileviewer_GetTable$: 1,
   O: 1,
-  Lme_kerfume_Outside: 1,
+  Lme_kerfume_fileviewer_Outside: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_GetTable$.prototype.$classData = $d_Lme_kerfume_GetTable$;
-var $n_Lme_kerfume_GetTable$ = (void 0);
-function $m_Lme_kerfume_GetTable$() {
-  if ((!$n_Lme_kerfume_GetTable$)) {
-    $n_Lme_kerfume_GetTable$ = new $c_Lme_kerfume_GetTable$().init___()
+$c_Lme_kerfume_fileviewer_GetTable$.prototype.$classData = $d_Lme_kerfume_fileviewer_GetTable$;
+var $n_Lme_kerfume_fileviewer_GetTable$ = (void 0);
+function $m_Lme_kerfume_fileviewer_GetTable$() {
+  if ((!$n_Lme_kerfume_fileviewer_GetTable$)) {
+    $n_Lme_kerfume_fileviewer_GetTable$ = new $c_Lme_kerfume_fileviewer_GetTable$().init___()
   };
-  return $n_Lme_kerfume_GetTable$
+  return $n_Lme_kerfume_fileviewer_GetTable$
 }
 /** @constructor */
-function $c_Lme_kerfume_Order() {
+function $c_Lme_kerfume_fileviewer_Order() {
   $c_O.call(this);
   this.column$1 = null;
   this.orderType$1 = null
 }
-$c_Lme_kerfume_Order.prototype = new $h_O();
-$c_Lme_kerfume_Order.prototype.constructor = $c_Lme_kerfume_Order;
+$c_Lme_kerfume_fileviewer_Order.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_Order.prototype.constructor = $c_Lme_kerfume_fileviewer_Order;
 /** @constructor */
-function $h_Lme_kerfume_Order() {
+function $h_Lme_kerfume_fileviewer_Order() {
   /*<skip>*/
 }
-$h_Lme_kerfume_Order.prototype = $c_Lme_kerfume_Order.prototype;
-$c_Lme_kerfume_Order.prototype.productPrefix__T = (function() {
+$h_Lme_kerfume_fileviewer_Order.prototype = $c_Lme_kerfume_fileviewer_Order.prototype;
+$c_Lme_kerfume_fileviewer_Order.prototype.productPrefix__T = (function() {
   return "Order"
 });
-$c_Lme_kerfume_Order.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_Order.prototype.productArity__I = (function() {
   return 2
 });
-$c_Lme_kerfume_Order.prototype.init___T__Lme_kerfume_Command$OrderType = (function(column, orderType) {
-  this.column$1 = column;
-  this.orderType$1 = orderType;
-  return this
-});
-$c_Lme_kerfume_Order.prototype.equals__O__Z = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Order.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
     return true
-  } else if ($is_Lme_kerfume_Order(x$1)) {
-    var Order$1 = $as_Lme_kerfume_Order(x$1);
+  } else if ($is_Lme_kerfume_fileviewer_Order(x$1)) {
+    var Order$1 = $as_Lme_kerfume_fileviewer_Order(x$1);
     if ((this.column$1 === Order$1.column$1)) {
       var x = this.orderType$1;
       var x$2 = Order$1.orderType$1;
@@ -13696,7 +13691,7 @@ $c_Lme_kerfume_Order.prototype.equals__O__Z = (function(x$1) {
     return false
   }
 });
-$c_Lme_kerfume_Order.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_Order.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
     case 0: {
       return this.column$1;
@@ -13711,69 +13706,74 @@ $c_Lme_kerfume_Order.prototype.productElement__I__O = (function(x$1) {
     }
   }
 });
-$c_Lme_kerfume_Order.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_Order.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lme_kerfume_Order.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_Order.prototype.init___T__Lme_kerfume_fileviewer_Command$OrderType = (function(column, orderType) {
+  this.column$1 = column;
+  this.orderType$1 = orderType;
+  return this
+});
+$c_Lme_kerfume_fileviewer_Order.prototype.hashCode__I = (function() {
   var this$2 = $m_s_util_hashing_MurmurHash3$();
   return this$2.productHash__s_Product__I__I(this, (-889275714))
 });
-$c_Lme_kerfume_Order.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_Order.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-function $is_Lme_kerfume_Order(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_Order)))
+function $is_Lme_kerfume_fileviewer_Order(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_fileviewer_Order)))
 }
-function $as_Lme_kerfume_Order(obj) {
-  return (($is_Lme_kerfume_Order(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.Order"))
+function $as_Lme_kerfume_fileviewer_Order(obj) {
+  return (($is_Lme_kerfume_fileviewer_Order(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.fileviewer.Order"))
 }
-function $isArrayOf_Lme_kerfume_Order(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_Order)))
+function $isArrayOf_Lme_kerfume_fileviewer_Order(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_fileviewer_Order)))
 }
-function $asArrayOf_Lme_kerfume_Order(obj, depth) {
-  return (($isArrayOf_Lme_kerfume_Order(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.Order;", depth))
+function $asArrayOf_Lme_kerfume_fileviewer_Order(obj, depth) {
+  return (($isArrayOf_Lme_kerfume_fileviewer_Order(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.fileviewer.Order;", depth))
 }
-var $d_Lme_kerfume_Order = new $TypeData().initClass({
-  Lme_kerfume_Order: 0
-}, false, "me.kerfume.Order", {
-  Lme_kerfume_Order: 1,
+var $d_Lme_kerfume_fileviewer_Order = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_Order: 0
+}, false, "me.kerfume.fileviewer.Order", {
+  Lme_kerfume_fileviewer_Order: 1,
   O: 1,
-  Lme_kerfume_Command: 1,
+  Lme_kerfume_fileviewer_Command: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_Order.prototype.$classData = $d_Lme_kerfume_Order;
+$c_Lme_kerfume_fileviewer_Order.prototype.$classData = $d_Lme_kerfume_fileviewer_Order;
 /** @constructor */
-function $c_Lme_kerfume_OrderError() {
+function $c_Lme_kerfume_fileviewer_OrderError() {
   $c_O.call(this);
   this.msg$1 = null
 }
-$c_Lme_kerfume_OrderError.prototype = new $h_O();
-$c_Lme_kerfume_OrderError.prototype.constructor = $c_Lme_kerfume_OrderError;
+$c_Lme_kerfume_fileviewer_OrderError.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_OrderError.prototype.constructor = $c_Lme_kerfume_fileviewer_OrderError;
 /** @constructor */
-function $h_Lme_kerfume_OrderError() {
+function $h_Lme_kerfume_fileviewer_OrderError() {
   /*<skip>*/
 }
-$h_Lme_kerfume_OrderError.prototype = $c_Lme_kerfume_OrderError.prototype;
-$c_Lme_kerfume_OrderError.prototype.productPrefix__T = (function() {
+$h_Lme_kerfume_fileviewer_OrderError.prototype = $c_Lme_kerfume_fileviewer_OrderError.prototype;
+$c_Lme_kerfume_fileviewer_OrderError.prototype.productPrefix__T = (function() {
   return "OrderError"
 });
-$c_Lme_kerfume_OrderError.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_OrderError.prototype.productArity__I = (function() {
   return 1
 });
-$c_Lme_kerfume_OrderError.prototype.equals__O__Z = (function(x$1) {
+$c_Lme_kerfume_fileviewer_OrderError.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
     return true
-  } else if ($is_Lme_kerfume_OrderError(x$1)) {
-    var OrderError$1 = $as_Lme_kerfume_OrderError(x$1);
+  } else if ($is_Lme_kerfume_fileviewer_OrderError(x$1)) {
+    var OrderError$1 = $as_Lme_kerfume_fileviewer_OrderError(x$1);
     return (this.msg$1 === OrderError$1.msg$1)
   } else {
     return false
   }
 });
-$c_Lme_kerfume_OrderError.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_OrderError.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
     case 0: {
       return this.msg$1;
@@ -13784,67 +13784,67 @@ $c_Lme_kerfume_OrderError.prototype.productElement__I__O = (function(x$1) {
     }
   }
 });
-$c_Lme_kerfume_OrderError.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_OrderError.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lme_kerfume_OrderError.prototype.init___T = (function(msg) {
+$c_Lme_kerfume_fileviewer_OrderError.prototype.init___T = (function(msg) {
   this.msg$1 = msg;
   return this
 });
-$c_Lme_kerfume_OrderError.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_OrderError.prototype.hashCode__I = (function() {
   var this$2 = $m_s_util_hashing_MurmurHash3$();
   return this$2.productHash__s_Product__I__I(this, (-889275714))
 });
-$c_Lme_kerfume_OrderError.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_OrderError.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-function $is_Lme_kerfume_OrderError(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_OrderError)))
+function $is_Lme_kerfume_fileviewer_OrderError(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_fileviewer_OrderError)))
 }
-function $as_Lme_kerfume_OrderError(obj) {
-  return (($is_Lme_kerfume_OrderError(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.OrderError"))
+function $as_Lme_kerfume_fileviewer_OrderError(obj) {
+  return (($is_Lme_kerfume_fileviewer_OrderError(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.fileviewer.OrderError"))
 }
-function $isArrayOf_Lme_kerfume_OrderError(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_OrderError)))
+function $isArrayOf_Lme_kerfume_fileviewer_OrderError(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_fileviewer_OrderError)))
 }
-function $asArrayOf_Lme_kerfume_OrderError(obj, depth) {
-  return (($isArrayOf_Lme_kerfume_OrderError(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.OrderError;", depth))
+function $asArrayOf_Lme_kerfume_fileviewer_OrderError(obj, depth) {
+  return (($isArrayOf_Lme_kerfume_fileviewer_OrderError(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.fileviewer.OrderError;", depth))
 }
-var $d_Lme_kerfume_OrderError = new $TypeData().initClass({
-  Lme_kerfume_OrderError: 0
-}, false, "me.kerfume.OrderError", {
-  Lme_kerfume_OrderError: 1,
+var $d_Lme_kerfume_fileviewer_OrderError = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_OrderError: 0
+}, false, "me.kerfume.fileviewer.OrderError", {
+  Lme_kerfume_fileviewer_OrderError: 1,
   O: 1,
-  Lme_kerfume_Outside: 1,
+  Lme_kerfume_fileviewer_Outside: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_OrderError.prototype.$classData = $d_Lme_kerfume_OrderError;
+$c_Lme_kerfume_fileviewer_OrderError.prototype.$classData = $d_Lme_kerfume_fileviewer_OrderError;
 /** @constructor */
-function $c_Lme_kerfume_PrintTable() {
+function $c_Lme_kerfume_fileviewer_PrintTable() {
   $c_O.call(this);
   this.table$1 = null
 }
-$c_Lme_kerfume_PrintTable.prototype = new $h_O();
-$c_Lme_kerfume_PrintTable.prototype.constructor = $c_Lme_kerfume_PrintTable;
+$c_Lme_kerfume_fileviewer_PrintTable.prototype = new $h_O();
+$c_Lme_kerfume_fileviewer_PrintTable.prototype.constructor = $c_Lme_kerfume_fileviewer_PrintTable;
 /** @constructor */
-function $h_Lme_kerfume_PrintTable() {
+function $h_Lme_kerfume_fileviewer_PrintTable() {
   /*<skip>*/
 }
-$h_Lme_kerfume_PrintTable.prototype = $c_Lme_kerfume_PrintTable.prototype;
-$c_Lme_kerfume_PrintTable.prototype.productPrefix__T = (function() {
+$h_Lme_kerfume_fileviewer_PrintTable.prototype = $c_Lme_kerfume_fileviewer_PrintTable.prototype;
+$c_Lme_kerfume_fileviewer_PrintTable.prototype.productPrefix__T = (function() {
   return "PrintTable"
 });
-$c_Lme_kerfume_PrintTable.prototype.productArity__I = (function() {
+$c_Lme_kerfume_fileviewer_PrintTable.prototype.productArity__I = (function() {
   return 1
 });
-$c_Lme_kerfume_PrintTable.prototype.equals__O__Z = (function(x$1) {
+$c_Lme_kerfume_fileviewer_PrintTable.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
     return true
-  } else if ($is_Lme_kerfume_PrintTable(x$1)) {
-    var PrintTable$1 = $as_Lme_kerfume_PrintTable(x$1);
+  } else if ($is_Lme_kerfume_fileviewer_PrintTable(x$1)) {
+    var PrintTable$1 = $as_Lme_kerfume_fileviewer_PrintTable(x$1);
     var x = this.table$1;
     var x$2 = PrintTable$1.table$1;
     return ((x === null) ? (x$2 === null) : $f_sc_GenSeqLike__equals__O__Z(x, x$2))
@@ -13852,7 +13852,7 @@ $c_Lme_kerfume_PrintTable.prototype.equals__O__Z = (function(x$1) {
     return false
   }
 });
-$c_Lme_kerfume_PrintTable.prototype.productElement__I__O = (function(x$1) {
+$c_Lme_kerfume_fileviewer_PrintTable.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
     case 0: {
       return this.table$1;
@@ -13863,44 +13863,44 @@ $c_Lme_kerfume_PrintTable.prototype.productElement__I__O = (function(x$1) {
     }
   }
 });
-$c_Lme_kerfume_PrintTable.prototype.toString__T = (function() {
+$c_Lme_kerfume_fileviewer_PrintTable.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lme_kerfume_PrintTable.prototype.init___sci_Vector = (function(table) {
+$c_Lme_kerfume_fileviewer_PrintTable.prototype.init___sci_Vector = (function(table) {
   this.table$1 = table;
   return this
 });
-$c_Lme_kerfume_PrintTable.prototype.hashCode__I = (function() {
+$c_Lme_kerfume_fileviewer_PrintTable.prototype.hashCode__I = (function() {
   var this$2 = $m_s_util_hashing_MurmurHash3$();
   return this$2.productHash__s_Product__I__I(this, (-889275714))
 });
-$c_Lme_kerfume_PrintTable.prototype.productIterator__sc_Iterator = (function() {
+$c_Lme_kerfume_fileviewer_PrintTable.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
-function $is_Lme_kerfume_PrintTable(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_PrintTable)))
+function $is_Lme_kerfume_fileviewer_PrintTable(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_fileviewer_PrintTable)))
 }
-function $as_Lme_kerfume_PrintTable(obj) {
-  return (($is_Lme_kerfume_PrintTable(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.PrintTable"))
+function $as_Lme_kerfume_fileviewer_PrintTable(obj) {
+  return (($is_Lme_kerfume_fileviewer_PrintTable(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.fileviewer.PrintTable"))
 }
-function $isArrayOf_Lme_kerfume_PrintTable(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_PrintTable)))
+function $isArrayOf_Lme_kerfume_fileviewer_PrintTable(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_fileviewer_PrintTable)))
 }
-function $asArrayOf_Lme_kerfume_PrintTable(obj, depth) {
-  return (($isArrayOf_Lme_kerfume_PrintTable(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.PrintTable;", depth))
+function $asArrayOf_Lme_kerfume_fileviewer_PrintTable(obj, depth) {
+  return (($isArrayOf_Lme_kerfume_fileviewer_PrintTable(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.fileviewer.PrintTable;", depth))
 }
-var $d_Lme_kerfume_PrintTable = new $TypeData().initClass({
-  Lme_kerfume_PrintTable: 0
-}, false, "me.kerfume.PrintTable", {
-  Lme_kerfume_PrintTable: 1,
+var $d_Lme_kerfume_fileviewer_PrintTable = new $TypeData().initClass({
+  Lme_kerfume_fileviewer_PrintTable: 0
+}, false, "me.kerfume.fileviewer.PrintTable", {
+  Lme_kerfume_fileviewer_PrintTable: 1,
   O: 1,
-  Lme_kerfume_Outside: 1,
+  Lme_kerfume_fileviewer_Outside: 1,
   s_Product: 1,
   s_Equals: 1,
   s_Serializable: 1,
   Ljava_io_Serializable: 1
 });
-$c_Lme_kerfume_PrintTable.prototype.$classData = $d_Lme_kerfume_PrintTable;
+$c_Lme_kerfume_fileviewer_PrintTable.prototype.$classData = $d_Lme_kerfume_fileviewer_PrintTable;
 /** @constructor */
 function $c_T2() {
   $c_O.call(this);
@@ -19604,13 +19604,13 @@ $c_sci_HashSet$HashSetCollision1.prototype.foreach__F1__V = (function(f) {
   var this$3 = new $c_sc_LinearSeqLike$$anon$1().init___sc_LinearSeqLike(this$2);
   $f_sc_Iterator__foreach__F1__V(this$3, f)
 });
+$c_sci_HashSet$HashSetCollision1.prototype.size__I = (function() {
+  return this.ks$6.size__I()
+});
 $c_sci_HashSet$HashSetCollision1.prototype.iterator__sc_Iterator = (function() {
   var this$1 = this.ks$6;
   var this$2 = this$1.reverseList$1__p4__sci_List();
   return new $c_sc_LinearSeqLike$$anon$1().init___sc_LinearSeqLike(this$2)
-});
-$c_sci_HashSet$HashSetCollision1.prototype.size__I = (function() {
-  return this.ks$6.size__I()
 });
 $c_sci_HashSet$HashSetCollision1.prototype.init___I__sci_ListSet = (function(hash, ks) {
   this.hash$6 = hash;
@@ -22578,5 +22578,5 @@ var $d_scm_ArrayBuffer = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_scm_ArrayBuffer.prototype.$classData = $d_scm_ArrayBuffer;
-$e.EntryPoint = $m_Lme_kerfume_EntryPoint$();
-//# sourceMappingURL=file-viewer-fastopt.js.map
+$e.EntryPoint = $m_Lme_kerfume_fileviewer_EntryPoint$();
+//# sourceMappingURL=frontend-backend-fastopt.js.map

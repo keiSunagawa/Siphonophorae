@@ -1,6 +1,6 @@
-package me.kerfume
+package me.kerfume.fileviewer
 
-import me.kerfume.Outside.{ Header, Table }
+import Outside.{ Header, Table }
 
 object Functions
   extends Functions
