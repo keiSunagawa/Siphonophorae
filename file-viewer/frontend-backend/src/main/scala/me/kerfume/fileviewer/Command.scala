@@ -1,21 +1,5 @@
 package me.kerfume.fileviewer
 
-import cats.free.Free._
-import cats.free._
-import Outside.Table
-
-sealed trait Outside[A]
-case object GetTable extends Outside[Table]
-case object GetOrder extends Outside[String]
-case object GetFilter extends Outside[String]
-case object GetExpr extends Outside[String]
-case object DoNothing extends Outside[Unit] // これもうちょいいい書き方あるかも？
-
-case class PrintTable(table: Table) extends Outside[Unit]
-case class OrderError(msg: String) extends Outside[Unit]
-case class FilterError(msg: String) extends Outside[Unit]
-case class ExprError(msg: String) extends Outside[Unit]
-
 import Command._
 
 trait Command
@@ -62,31 +46,5 @@ object Command {
   }
   case object `/` extends ExprOperator {
     override val calc: (Int, Int) => Int = { (a, b) => if (b == 0) 0 else a / b}
-  }
-}
-
-object Outside {
-  type Table = Vector[Vector[String]]
-  type Header = Vector[String]
-  type OutSideF[A] = Free[Outside, A]
-
-  def doNothing() = liftF(DoNothing)
-  def getTable() = liftF(GetTable)
-  def getOrder() = liftF(GetOrder)
-  def getFilter() = liftF(GetFilter)
-  def getExpr() = liftF(GetExpr)
-
-  def printTable(table: Table) = liftF(PrintTable(table))
-  def orderError(res:  Either[String, _]) = res match {
-    case Left(msg) => liftF(OrderError(msg))
-    case Right(_) => doNothing()
-  }
-  def filterError(res: Either[String, _]) = res match {
-    case Left(msg) => liftF(FilterError(msg))
-    case Right(_) => doNothing()
-  }
-  def exprError(res: Either[String, _]) = res match {
-    case Left(msg) => liftF(ExprError(msg))
-    case Right(_) => doNothing()
   }
 }

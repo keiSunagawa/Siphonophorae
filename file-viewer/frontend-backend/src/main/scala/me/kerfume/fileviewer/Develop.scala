@@ -1,39 +1,30 @@
 package me.kerfume.fileviewer
 
-import cats.arrow.FunctionK
-import cats.{ Id, ~> }
-
 object Develop {
-  import Module._
+  import scalaz.zio._
 
-  def devCompiler(filter: String, expr: String, order: String): Outside ~> Id = new FunctionK[Outside, Id] {
-    override def apply[A](fa: Outside[A]): Id[A] = fa match {
-      case GetTable => Vector(
+  val tbl = Vector(
         Vector("id", "name", "age"),
         Vector("1", "taro", "18"),
         Vector("2", "john", "22"),
         Vector("3", "alice", "20")
-      )
-      case GetFilter => filter
-      case GetExpr => expr
-      case GetOrder => order
+  )
 
-      case DoNothing =>
-        ()
-      case PrintTable(tbl) =>
-        println(tbl)
-        ()
-      case FilterError(msg) =>
-        println(msg)
-        ()
-      case ExprError(msg) =>
-        println(msg)
-        ()
-      case OrderError(msg) =>
-        println(msg)
-        ()
+  trait PresenterDevelop extends Presenter {
+    override val presenter = new Presenter.Service {
+      def getTable(): UIO[Table] = IO.effectTotal(tbl)
+      def getOrder(): UIO[String] = IO.effectTotal("age asc")
+      def getFilter(): UIO[String] = IO.effectTotal("id >= 2")
+      def getExpr(): UIO[String] = IO.effectTotal("id + age = newAge")
+
+      def printTable(table: Table): UIO[Unit] = IO.effectTotal(println(table))
+      def orderError(errors: Seq[String]): UIO[Unit] = IO.effectTotal(println(errors))
+      def filterError(errors: Seq[String]): UIO[Unit] = IO.effectTotal(println(errors))
+      def exprError(errors: Seq[String]): UIO[Unit] = IO.effectTotal(println(errors))
     }
   }
 
-  def run(filter: String, expr: String, order: String) = processTable.foldMap(devCompiler(filter, expr, order))
+  val runtime = new DefaultRuntime {}
+  val dPre = new PresenterDevelop {}
+  val dev = Module.program.provide(dPre)
 }

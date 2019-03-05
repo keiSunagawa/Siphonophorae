@@ -1,7 +1,5 @@
 package me.kerfume.fileviewer
 
-import Outside.Table
-
 import scala.util.{ Failure, Success, Try }
 
 trait ExprFunctions { self: Functions =>

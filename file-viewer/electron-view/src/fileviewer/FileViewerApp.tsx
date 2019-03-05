@@ -1,18 +1,18 @@
 import * as React from 'react';
 
-import { EntryPoint } from '../scala/frontend-backend-fastopt'
+import { FileViewerEntryPoint } from '../scala/frontend-backend-fastopt'
 import { Button } from 'react-bootstrap';
 
 export class FileViewerApp extends React.Component {
   handleClick() {
-    const service = EntryPoint.compile(
+    const service = FileViewerEntryPoint.compile(
       // input
-      () => [['aaa', 'bbb'], ["aa", "bb"]],
+      () => [['aaa', 'bbb'], ["aa", "bb"], ["cc", "dd"]],
       () => {
-        return ''
+        return 'aaa = "aa"'
       },
-      () => '',
-      () => '',
+      () => "",
+      () => "aaa asc",
       // output
       (arr: String[][]) => {
         console.log(arr)

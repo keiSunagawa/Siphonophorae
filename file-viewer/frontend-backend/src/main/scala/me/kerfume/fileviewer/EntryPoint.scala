@@ -1,54 +1,60 @@
 package me.kerfume.fileviewer
 
-import cats.arrow.FunctionK
-import cats.{ Id, ~> }
+import scalaz.zio._
 
 import scala.scalajs.js
 import scala.scalajs.js.JSConverters._
 import scala.scalajs.js.annotation.{ JSExport, JSExportTopLevel }
 
-@JSExportTopLevel("EntryPoint")
-object EntryPoint {
+@JSExportTopLevel("FileViewerEntryPoint")
+object FileViewerEntryPoint {
   @JSExport
   def compile(
     // input
-    getTable: js.Function0[js.Array[js.Array[String]]],
-    getFilter: js.Function0[String],
-    getExpr: js.Function0[String],
-    getOrder: js.Function0[String],
+    getTableJs: js.Function0[js.Array[js.Array[String]]],
+    getFilterJs: js.Function0[String],
+    getExprJs: js.Function0[String],
+    getOrderJs: js.Function0[String],
     // output
-    printTable: js.Function1[js.Array[js.Array[String]], Unit],
-    filterError: js.Function1[String, Unit],
-    exprError: js.Function1[String, Unit],
-    orderError: js.Function1[String, Unit],
+    printTableJs: js.Function1[js.Array[js.Array[String]], Unit],
+    filterErrorJs: js.Function1[String, Unit],
+    exprErrorJs: js.Function1[String, Unit],
+    orderErrorJs: js.Function1[String, Unit],
   ): Service = {
-    val compiler = new FunctionK[Outside, Id] {
-      override def apply[A](fa: Outside[A]): Id[A] = fa match {
-        case GetTable => getTable.apply().map(_.toVector).toVector
-        case GetFilter => getFilter.apply()
-        case GetExpr => getExpr.apply()
-        case GetOrder => getOrder.apply()
 
-        case DoNothing =>
-          ()
+    trait PresenterLive extends Presenter {
+      override val presenter = new Presenter.Service {
+        def getTable(): UIO[Table] = IO.effectTotal { getTableJs.apply().map(_.toVector).toVector }
+        def getOrder(): UIO[String] = IO.effectTotal { getOrderJs.apply() }
+        def getFilter(): UIO[String] = IO.effectTotal { getFilterJs.apply() }
+        def getExpr(): UIO[String] = IO.effectTotal { getExprJs.apply() }
 
-        case PrintTable(tbl) =>
-          val converted = tbl.map(_.toJSArray).toJSArray
-          printTable.apply(converted)
-
-        case FilterError(msg) => filterError.apply(msg)
-        case ExprError(msg) => exprError.apply(msg)
-        case OrderError(msg) => orderError.apply(msg)
+        def printTable(table: Table): UIO[Unit] = IO.effectTotal {
+          val converted = table.map(_.toJSArray).toJSArray
+          printTableJs.apply(converted)
+        }
+        def orderError(errors: Seq[String]): UIO[Unit] = IO.effectTotal {
+          errors.foreach(orderErrorJs.apply)
+        }
+        def filterError(errors: Seq[String]): UIO[Unit] = IO.effectTotal {
+          errors.foreach(filterErrorJs.apply)
+        }
+        def exprError(errors: Seq[String]): UIO[Unit] = IO.effectTotal {
+          errors.foreach(exprErrorJs.apply)
+        }
       }
     }
+    object PresenterLive extends PresenterLive
 
-    new Service(compiler)
+    val program = Module.program.provide(PresenterLive)
+    new Service(program)
   }
 
   class Service(
-    compiler: Outside ~> Id
+    program: ZIO[Any, Throwable, Unit]
   ) {
+    val runtime = new DefaultRuntime {}
     @JSExport
-    def run(): Unit = Module.processTable.foldMap(compiler)
+    def run(): Unit = runtime.unsafeRun(program)
   }
 }

@@ -1,7 +1,5 @@
 package me.kerfume.fileviewer
 
-import Outside.{ Header, Table }
-
 object Functions
   extends Functions
   with FilterFunctions
