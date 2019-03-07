@@ -1,4 +1,4 @@
-package me.kerfume.negligentquery
+package me.kerfume.simql
 
 //import Outside._
 //
