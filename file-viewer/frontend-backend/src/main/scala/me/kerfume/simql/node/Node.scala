@@ -6,6 +6,8 @@ sealed trait Term extends Node
 case class StringWrapper(value: String) extends Term
 case class NumberWrapper(value: BigDecimal) extends Term
 case class SymbolWrapper(label: String) extends Term
+case class Accessor(point: Int, resolvedSymbol: Option[SymbolWrapper] = None) extends Node
+case class SymbolWithAccessor(symbol: SymbolWrapper, accessor: Option[Accessor]) extends Term
 
 case class BinaryOp(op: BinaryOp.Op) extends Node
 case class BinaryCond(op: BinaryOp, lhs: Term, rhs: Term) extends Node
@@ -18,7 +20,7 @@ case class JoinType(value: JoinType.Op) extends Node
 case class Join(joinType: JoinType, rhsTable: SymbolWrapper, on: Expr) extends Node
 
 case class From(lhs: SymbolWrapper, rhss: Seq[Join]) extends Node
-case class Select(values: Seq[SymbolWrapper]) extends Node // Nil is select all column
+case class Select(values: Seq[SymbolWithAccessor]) extends Node // Nil is select all column
 case class Where(value: Expr) extends Node
 
 case class SimqlRoot(from: From, select: Option[Select], where: Option[Where]) extends Node
@@ -45,9 +47,13 @@ object BinaryOp {
   case object NE extends Op {
     val label = "<>"
   }
-  case object IN extends Op {
-    val label = "in"
-  }
+  // TODO 扱いにこまる...
+  // case object IN extends Op {
+  //   val label = "in"
+  // }
+  // case object LIKE extends Op {
+  //   val label = "like"
+  // }
 }
 
 object LogicalOp {

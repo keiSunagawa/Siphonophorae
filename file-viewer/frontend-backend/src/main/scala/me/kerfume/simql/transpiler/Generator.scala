@@ -18,7 +18,12 @@ object SQLGenerator extends Generator {
         case StringWrapper(v) => v.replaceAll("\"", "'")
         case NumberWrapper(v) => v.toString
         case SymbolWrapper(v) => v
+        case SymbolWithAccessor(s, ac) =>
+          val accessorToken = ac.map(a => s"${toSQL(a)}.").getOrElse("")
+          s"${accessorToken}${toSQL(s)}"
       }
+      // この時点で未解決のシンボルはない前提...
+      case Accessor(_, resolveSymbol) => resolveSymbol.map(toSQL).getOrElse("")
       case BinaryOp(op) => op.label
       case LogicalOp(op) => op.label
       case JoinType(value) => value match {

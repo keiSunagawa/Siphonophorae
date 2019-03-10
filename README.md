@@ -3,9 +3,11 @@
 string ::= // simple string
 number ::= // decimal number
 symbol ::= [a-zA-Z][a-zA-Z0-9_]*
-term ::= (string | number | symbol)
+accessor ::= "$"[0-9]
+symbolWithAccessor ::= [accessor "."]symbol
+term ::= (symbolWithAccessor | string | number)
 
-binaryOp ::= (">" | "<" | ">=" | "<=" | "=" | "<>" | "in")
+binaryOp ::= (">" | "<" | ">=" | "<=" | "=" | "<>")
 binaryCond ::= term binaryOp term
 
 logicalOp ::= "&&" | "||"
@@ -16,7 +18,7 @@ joinType ::= "<<" | "><"
 join ::= joinType symbol "?" expr
 
 from ::= symbol {join}
-select ::= ":" symbol {symbol}
+select ::= ":" symbolWithAccessor {symbolWithAccessor}
 where ::= "?" expr
 
 simql ::= from [select] [where]

@@ -14,7 +14,12 @@ object Parser extends JavaTokenParsers {
   val string: Parser[StringWrapper] = stringLiteral ^^ { StringWrapper(_) }
   val number: Parser[NumberWrapper] = decimalNumber ^^ { s => NumberWrapper(BigDecimal(s)) }
   val symbol: Parser[SymbolWrapper] = """[a-zA-Z][a-zA-Z0-9_]*""".r ^^ { SymbolWrapper(_) }
-  val term: Parser[Term] = string | number | symbol
+  val accessor: Parser[Accessor] = """\$[0-9]""".r ^^ { case s => Accessor(s.tail.toInt) }
+  val symbolWithAccessor: Parser[SymbolWithAccessor] = opt(accessor~".")~symbol ^^ { case acOpt~s =>
+    val accessor = acOpt.map { case ac~_ => ac }
+    SymbolWithAccessor(s, accessor)
+  }
+  val term: Parser[Term] = symbolWithAccessor | string | number
 
   val binaryOp: Parser[BinaryOp] = """(>=|<=|>|<|=|<>|in)""".r ^^ { case opStr =>
     val op = opStr match {
@@ -24,7 +29,8 @@ object Parser extends JavaTokenParsers {
       case "<=" => BinaryOp.LE
       case "=" => BinaryOp.EQ
       case "<>" => BinaryOp.NE
-      case "in" => BinaryOp.IN // inはちょっとダサい
+      // case "in" => BinaryOp.IN
+      // case "like" => BinaryOp.LIKE
     }
     BinaryOp(op)
   }
@@ -57,7 +63,7 @@ object Parser extends JavaTokenParsers {
   val from = symbol~rep(join) ^^ { case table~joins =>
     From(table, joins)
   }
-  val select = ":"~symbol~rep(symbol) ^^ { case _~col1~cols =>
+  val select = ":"~symbolWithAccessor~rep(symbolWithAccessor) ^^ { case _~col1~cols =>
     Select(col1 +: cols)
   }
   val where = "?"~expr ^^ { case _~exp =>
