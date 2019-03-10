@@ -1,73 +1,68 @@
 package me.kerfume.simql
 
-import scalaz.zio._
-import scalaz.zio.clock._
-import scalaz.zio.duration._
-import scala.volatile
+import cats.{Id, InjectK, ~>, Monad}
+import cats.arrow.FunctionK
+import cats.catsInstancesForId
 
-object Develop3 {
-  import freestyle.free._
-  import freestyle.free.implicits._
+object CallBacker {
+  private var onNext: () => Unit = () => ()
+  private var onComplete: () => Unit = () => ()
 
-  import cats.implicits._
-  import cats.Id
-  implicit val outsideHandler = new Outside.Handler[Id] {
-    override def fetchSimqlQuery(): Id[String] = "accounts : id"
-    override def sendSQL(sql: String): Id[Unit] = println(sql)
+  def setCallBack(n: () => Unit, s: () => Unit) = {
+    onNext = n
+    onComplete = s
+  }
+  def next: Unit = onNext()
+  def stop: Unit = onComplete()
+}
+
+object Develop {
+  val presenter = new FunctionK[Presenter.Op, Id] {
+    import Presenter._
+    def apply[A](op: Op[A]) = op match {
+      case GetSimqlQuery => "accounts : id"
+      case PrintSQL(sql) => println(sql)
+    }
   }
 
-  def run = Application.program[Frontend.Op].interpret[Id]
+  val rdb = new FunctionK[RDB.Op, Id] {
+    import RDB._
+    def apply[A](op: Op[A]) = op match {
+      case SendSQL(sql) =>
+        println(s"send to... $sql")
+    }
+  }
+
+  val app = new Application[Id] {
+    import monix.execution.Cancelable
+    import monix.reactive._
+
+    implicit val M: Monad[Id] = catsInstancesForId
+    val interpreter: Module.SimqlApp ~> Id = presenter or rdb
+    val eventStream = Observable.unsafeCreate[Event] { s =>
+      CallBacker.setCallBack(
+        () => s.onNext(Submit),
+        () => s.onComplete()
+      )
+      Cancelable(() => ())
+    }
+
+    // init load
+    cancelable
+  }
 }
-// object Develop {
-//   import Presenter.PresenterError
 
-//   val runtime = new DefaultRuntime {}
-//   var query = "init : id"
-//   @volatile
-//   var realQueue: List[Int] = Nil
-//   // TODO clock
-//   val system = Module.system.provide(new PresenterDevelop {})
-//   val loop = (for {
-//     act <- system
-//     _ <- (for {
-//       qc <- IO.effectTotal(realQueue)
-//       _ <- if (qc.nonEmpty) {
-//         println("to send ===")
-//         act.send(qc.head)
-//       }
-//       else IO.effectTotal(())
-//       _ = {
-//         if (qc.nonEmpty) {
-//           println(qc)
-//           realQueue = qc.tail
-//         }
-//        }
-//     } yield ()).forever.fork
-//   } yield ())
-//   runtime.unsafeRunAsync_(loop)
+object Interactive {
+  implicit val M: Monad[Id] = catsInstancesForId
 
-//   def push(): Unit = {
-//     realQueue = 1 :: realQueue
-//   }
+  def interactivePresenter(in: String) = new FunctionK[Presenter.Op, Id] {
+    import Presenter._
+    def apply[A](op: Op[A]) = op match {
+      case GetSimqlQuery => in
+      case PrintSQL(sql) => println(sql)
+    }
+  }
+  def interpreter(simql: String): Module.SimqlApp ~> Id = interactivePresenter(simql) or Develop.rdb
 
-//   trait PresenterDevelop extends Presenter {
-//     override val presenter = new Presenter.Service {
-//       def getSimqlQuery(): ZIO[Presenter, PresenterError, String] = IO.effect(query)
-//       def sendSQL(sql: String): ZIO[Presenter, PresenterError, Unit] = IO.effect(println(sql))
-//     }
-//   }
-// }
-
-// object Develop2 {
-//   val a = for {
-//     q <- Queue.bounded[Int](10)
-//     fb <- (for {
-//       i <- q.take
-//       _ = println(s"== send and take $i")
-//     } yield ()).fork
-//     _ <- q.offer(1)
-//     _ <- fb.join
-//   } yield ()
-
-//   def run = (new DefaultRuntime() {}).unsafeRun(a)
-// }
+  def run(simql: String) = Module.program.foldMap(interpreter(simql))
+}

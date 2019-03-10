@@ -1,83 +1,48 @@
 package me.kerfume.simql
 
-import scalaz.zio._
-import scalaz.zio.clock.Clock
-import scalaz.zio.duration._
+import cats.free._
+import cats.free.Free._
+import cats.{Id, InjectK, ~>}
 
-// object Module {
-//   import Parser._
-//   import Presenter.PresenterError
-//   import Presenter.Helper._
+object Module {
+  import Parser._
 
-//   // private[this] val trigger: UIO[Queue[Unit]] = Queue.unbounded
-//   // val start: UIO[Unit] = for {
-//   //   q <- trigger
-//   //   _ <- q.offer(())
-//   // } yield ()
-//   abstract class IOActor {
-//     val qq: Queue[Int]
-//     def send(i: Int): UIO[Unit]
-//     def join(): Task[Unit]
-//   }
+  import cats.data.EitherK
 
-//   val system: ZIO[Presenter, Nothing, IOActor] = for {
-//     q <- Queue.bounded[Int](100)
-//     _ = println("== run ===")
-//     fiber <- (for {
-//       i <- q.take
-//       _ = println(s"== take == $i=")
-//       query <- getSimqlQuery()
-//       ast = paeseSimql(query)
-//       _ <- sendSQL(ast.toString)
-//     } yield ()).forever.fork
-//   } yield new IOActor {
-//     val qq = q
-//     override def send(i: Int): UIO[Unit] = for {
-//       _ <- q.offer(i)
-//     } yield ()
-//     override def join(): Task[Unit] = for {
-//       _ <- fiber.join
-//     } yield ()
-//   }
-// }
-
-trait Presenter {
-  def presenter: Presenter.Service
+  type SimqlApp[A] = EitherK[Presenter.Op, RDB.Op, A]
+  def program(implicit I : Presenter.Helper[SimqlApp], D : RDB.Helper[SimqlApp]): Free[SimqlApp, Unit] = {
+    import I._, D._
+    for {
+      simql <- getSimqlQuery()
+      sql = parseSimql(simql).toString
+      _ <- printSQL(sql)
+      _ <- sendSQL(sql)
+    } yield ()
+  }
 }
 
 object Presenter {
-  type PresenterError = Throwable
-  trait Service {
-    def getSimqlQuery(): ZIO[Presenter, PresenterError, String]
+  trait Op[A]
+  case object GetSimqlQuery extends Op[String]
+  case class PrintSQL(sql: String) extends Op[Unit]
 
-    def sendSQL(sql: String): ZIO[Presenter, PresenterError, Unit]
+  class Helper[F[_]](implicit I: InjectK[Op, F]) {
+    def getSimqlQuery(): Free[F, String] = Free.inject[Op, F](GetSimqlQuery)
+    def printSQL(sql: String): Free[F, Unit] = Free.inject[Op, F](PrintSQL(sql))
   }
-
   object Helper {
-    def getSimqlQuery(): ZIO[Presenter, PresenterError, String] = ZIO.accessM(_.presenter.getSimqlQuery())
-    def sendSQL(sql: String): ZIO[Presenter, PresenterError, Unit] = ZIO.accessM(_.presenter.sendSQL(sql))
+    implicit def presenterOp[F[_]](implicit I: InjectK[Op, F]): Helper[F] = new Helper[F]
   }
 }
 
-import freestyle.free._
-import freestyle.free.implicits._
+object RDB {
+  trait Op[A]
+  case class SendSQL(sql: String) extends Op[Unit] // TODO response value
 
-
-@module trait Frontend {
-  val outside: Outside
-}
-
-@free trait Outside {
-  def fetchSimqlQuery(): FS[String]
-  def sendSQL(sql: String): FS[Unit]
-}
-
-object Application {
-  def program[F[_]](implicit front: Frontend[F]): FreeS[F, Unit] = {
-    import front.outside._
-    for {
-      q <- fetchSimqlQuery()
-      _ <- sendSQL(q)
-    } yield ()
+  class Helper[F[_]](implicit I: InjectK[Op, F]) {
+    def sendSQL(sql: String): Free[F, Unit] = Free.inject[Op, F](SendSQL(sql))
+  }
+  object Helper {
+    implicit def rdbOp[F[_]](implicit I: InjectK[Op, F]): Helper[F] = new Helper[F]
   }
 }

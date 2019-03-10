@@ -5,7 +5,7 @@ import scala.util.parsing.combinator.JavaTokenParsers
 import node._
 
 object Parser extends JavaTokenParsers {
-  def paeseSimql(code: String): Option[SimqlRoot] = parse(simql, code) match {
+  def parseSimql(code: String): Option[SimqlRoot] = parse(simql, code) match {
     case Success(root, a) if (a.atEnd) => Some(root)
     case e =>
       println(s"parse failed. xx reason: $e")
