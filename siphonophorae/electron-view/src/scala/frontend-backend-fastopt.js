@@ -2643,7 +2643,7 @@ $c_Lme_kerfume_fileviewer_FileViewerEntryPoint$.prototype.init___ = (function() 
 });
 $c_Lme_kerfume_fileviewer_FileViewerEntryPoint$.prototype.compile__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__Lme_kerfume_fileviewer_FileViewerEntryPoint$Service = (function(getTableJs, getFilterJs, getExprJs, getOrderJs, printTableJs, filterErrorJs, exprErrorJs, orderErrorJs) {
   var PresenterLive$module = new $c_sr_LazyRef().init___();
-  var program = $m_Lme_kerfume_fileviewer_Module$().program__Lscalaz_zio_ZIO().provide__O__Lscalaz_zio_ZIO(this.PresenterLive$3__p1__sr_LazyRef__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__Lme_kerfume_fileviewer_FileViewerEntryPoint$PresenterLive$2$(PresenterLive$module, getTableJs, getOrderJs, getFilterJs, getExprJs, printTableJs, orderErrorJs, filterErrorJs, exprErrorJs));
+  var program = $m_Lme_kerfume_fileviewer_Module$().program$1.provide__O__Lscalaz_zio_ZIO(this.PresenterLive$3__p1__sr_LazyRef__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__Lme_kerfume_fileviewer_FileViewerEntryPoint$PresenterLive$2$(PresenterLive$module, getTableJs, getOrderJs, getFilterJs, getExprJs, printTableJs, orderErrorJs, filterErrorJs, exprErrorJs));
   return new $c_Lme_kerfume_fileviewer_FileViewerEntryPoint$Service().init___Lscalaz_zio_ZIO(program)
 });
 $c_Lme_kerfume_fileviewer_FileViewerEntryPoint$.prototype.$$js$exported$meth$compile__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function0__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__sjs_js_Function1__O = (function(getTableJs, getFilterJs, getExprJs, getOrderJs, printTableJs, filterErrorJs, exprErrorJs, orderErrorJs) {
@@ -2732,7 +2732,8 @@ var $d_Lme_kerfume_fileviewer_FileViewerEntryPoint$Service = new $TypeData().ini
 $c_Lme_kerfume_fileviewer_FileViewerEntryPoint$Service.prototype.$classData = $d_Lme_kerfume_fileviewer_FileViewerEntryPoint$Service;
 /** @constructor */
 function $c_Lme_kerfume_fileviewer_Module$() {
-  $c_O.call(this)
+  $c_O.call(this);
+  this.program$1 = null
 }
 $c_Lme_kerfume_fileviewer_Module$.prototype = new $h_O();
 $c_Lme_kerfume_fileviewer_Module$.prototype.constructor = $c_Lme_kerfume_fileviewer_Module$;
@@ -2742,10 +2743,8 @@ function $h_Lme_kerfume_fileviewer_Module$() {
 }
 $h_Lme_kerfume_fileviewer_Module$.prototype = $c_Lme_kerfume_fileviewer_Module$.prototype;
 $c_Lme_kerfume_fileviewer_Module$.prototype.init___ = (function() {
-  return this
-});
-$c_Lme_kerfume_fileviewer_Module$.prototype.program__Lscalaz_zio_ZIO = (function() {
-  return $m_Lme_kerfume_fileviewer_Presenter$Helper$().getTable__Lscalaz_zio_ZIO().flatMap__F1__Lscalaz_zio_ZIO(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
+  $n_Lme_kerfume_fileviewer_Module$ = this;
+  this.program$1 = $m_Lme_kerfume_fileviewer_Presenter$Helper$().getTable__Lscalaz_zio_ZIO().flatMap__F1__Lscalaz_zio_ZIO(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this) {
     return (function(table$2) {
       var table = $as_sci_Vector(table$2);
       return $m_Lme_kerfume_fileviewer_Presenter$Helper$().getOrder__Lscalaz_zio_ZIO().flatMap__F1__Lscalaz_zio_ZIO(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this$1, table$1) {
@@ -2921,7 +2920,8 @@ $c_Lme_kerfume_fileviewer_Module$.prototype.program__Lscalaz_zio_ZIO = (function
         })
       })($this, table)))
     })
-  })(this)))
+  })(this)));
+  return this
 });
 var $d_Lme_kerfume_fileviewer_Module$ = new $TypeData().initClass({
   Lme_kerfume_fileviewer_Module$: 0

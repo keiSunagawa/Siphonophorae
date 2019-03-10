@@ -14,8 +14,8 @@ lazy val frontendBackend = (project in file("frontend-backend"))
       "org.scala-lang.modules" %%% "scala-parser-combinators" % "1.1.1",
       "org.typelevel" %%% "cats-core" % "1.6.0",
       "org.typelevel" %%% "cats-free" % "1.6.0",
-      "io.monix" %% "monix" % "3.0.0-RC2", // TODO for scalajs
-      "org.scalaz" %% "scalaz-zio" % "1.0-RC1"
+      "io.monix" %%% "monix" % "3.0.0-RC2", // TODO for scalajs
+      "org.scalaz" %%% "scalaz-zio" % "1.0-RC1"
     ),
     scalacOptions ++= Seq(
       "-P:scalajs:sjsDefinedByDefault"
