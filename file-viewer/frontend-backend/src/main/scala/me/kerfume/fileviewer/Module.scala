@@ -8,8 +8,9 @@ object Module {
   import Functions._
   import Parser._
 
+
   // TODO Error型が雑…
-  def program: ZIO[Presenter, Throwable, Unit] = for {
+  val program: ZIO[Presenter, Throwable, Unit] = for {
     table <- getTable()
     orderStr <- getOrder()
     filterStr <- getFilter()

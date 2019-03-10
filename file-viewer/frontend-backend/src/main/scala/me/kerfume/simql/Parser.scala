@@ -5,6 +5,13 @@ import scala.util.parsing.combinator.JavaTokenParsers
 import node._
 
 object Parser extends JavaTokenParsers {
+  def paeseSimql(code: String): Option[SimqlRoot] = parse(simql, code) match {
+    case Success(root, a) if (a.atEnd) => Some(root)
+    case e =>
+      println(s"parse failed. xx reason: $e")
+      None
+  }
+
   val string: Parser[StringWrapper] = stringLiteral ^^ { StringWrapper(_) }
   val number: Parser[NumberWrapper] = decimalNumber ^^ { s => NumberWrapper(BigDecimal(s)) }
   val symbol: Parser[SymbolWrapper] = """[a-zA-Z][a-zA-Z0-9_]*""".r ^^ { SymbolWrapper(_) }
@@ -59,6 +66,6 @@ object Parser extends JavaTokenParsers {
   }
 
   val simql = from~opt(select)~opt(where) ^^ { case f~s~w =>
-    Root(f, s, w)
+    SimqlRoot(f, s, w)
   }
 }

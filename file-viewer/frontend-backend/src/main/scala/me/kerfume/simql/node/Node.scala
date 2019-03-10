@@ -21,7 +21,7 @@ case class From(lhs: SymbolWrapper, rhss: Seq[Join]) extends Node
 case class Select(values: Seq[SymbolWrapper]) extends Node // Nil is select all column
 case class Where(value: Expr) extends Node
 
-case class Root(from: From, select: Option[Select], where: Option[Where])
+case class SimqlRoot(from: From, select: Option[Select], where: Option[Where])
 
 object BinaryOp {
   sealed trait Op {
