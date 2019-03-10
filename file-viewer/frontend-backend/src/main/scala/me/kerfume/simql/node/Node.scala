@@ -8,7 +8,7 @@ case class NumberWrapper(value: BigDecimal) extends Term
 case class SymbolWrapper(label: String) extends Term
 
 case class BinaryOp(op: BinaryOp.Op) extends Node
-case class BinaryCond(op: BinaryOp, lhs: Term, rhs: Term)
+case class BinaryCond(op: BinaryOp, lhs: Term, rhs: Term) extends Node
 
 case class LogicalOp(op: LogicalOp.Op) extends Node
 case class ExprRhs(op: LogicalOp, value: BinaryCond) extends Node
@@ -21,7 +21,7 @@ case class From(lhs: SymbolWrapper, rhss: Seq[Join]) extends Node
 case class Select(values: Seq[SymbolWrapper]) extends Node // Nil is select all column
 case class Where(value: Expr) extends Node
 
-case class SimqlRoot(from: From, select: Option[Select], where: Option[Where])
+case class SimqlRoot(from: From, select: Option[Select], where: Option[Where]) extends Node
 
 object BinaryOp {
   sealed trait Op {

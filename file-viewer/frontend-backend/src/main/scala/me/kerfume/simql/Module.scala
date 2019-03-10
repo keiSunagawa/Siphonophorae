@@ -5,7 +5,7 @@ import cats.free.Free._
 import cats.{Id, InjectK, ~>}
 
 object Module {
-  import Parser._
+  import transpiler.Parser._
 
   import cats.data.EitherK
 
@@ -14,7 +14,8 @@ object Module {
     import I._, D._
     for {
       simql <- getSimqlQuery()
-      sql = parseSimql(simql).toString
+      ast = parseSimql(simql).toString
+      sql = ???
       _ <- printSQL(sql)
       _ <- sendSQL(sql)
     } yield ()

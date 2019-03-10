@@ -1,14 +1,13 @@
-package me.kerfume.simql
+package me.kerfume.simql.transpiler
 
 import scala.util.parsing.combinator.JavaTokenParsers
-
-import node._
+import me.kerfume.simql.node._
 
 object Parser extends JavaTokenParsers {
   def parseSimql(code: String): Option[SimqlRoot] = parse(simql, code) match {
     case Success(root, a) if (a.atEnd) => Some(root)
     case e =>
-      println(s"parse failed. xx reason: $e")
+      println(s"parse failed. reason: $e")
       None
   }
 
