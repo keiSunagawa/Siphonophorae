@@ -42,7 +42,7 @@ object SQLGenerator extends Generator {
       case From(lhs, rhss) =>
         s"${toSQL(lhs)} ${rhss.map(toSQL).mkString(" ")}"
       case Select(values) =>
-        s"""${if(values.isEmpty) "*" else values.map(toSQL).mkString(" ")}"""
+        s"""${if(values.isEmpty) "*" else values.map(toSQL).mkString(", ")}"""
       case Where(value) =>
         s"${toSQL(value)}"
       case SimqlRoot(from, select, where) =>

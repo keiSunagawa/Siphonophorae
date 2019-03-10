@@ -105,7 +105,6 @@ object AccessorResolver {
     }
   }
 
-  // TODO accessorなしのときは$0を適用
   private[this] def resolve0(node: SymbolWithAccessor, meta: ASTMetaData): Either[String, SymbolWithAccessor] = {
     node.accessor match {
       case None => Right(node.copy(

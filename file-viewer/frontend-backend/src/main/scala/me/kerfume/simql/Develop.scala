@@ -22,6 +22,7 @@ object Develop {
     def apply[A](op: Op[A]) = op match {
       case GetSimqlQuery => "accounts : id"
       case PrintSQL(sql) => println(sql)
+      case PrintError(error) => println(error)
     }
   }
 
@@ -60,6 +61,7 @@ object Interactive {
     def apply[A](op: Op[A]) = op match {
       case GetSimqlQuery => in
       case PrintSQL(sql) => println(sql)
+      case PrintError(error) => println(error)
     }
   }
   def interpreter(simql: String): Module.SimqlApp ~> Id = interactivePresenter(simql) or Develop.rdb
