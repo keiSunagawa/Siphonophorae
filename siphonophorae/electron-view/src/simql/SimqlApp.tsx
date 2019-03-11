@@ -1,14 +1,19 @@
 import { exec } from 'child_process'
+
 import * as React from 'react';
 import Highlight from 'react-highlight'
-
-import { SIMQL } from '../scala/frontend-backend-fastopt'
-import { TextAreaInput } from '../components/input'
-import { Button, Form } from 'react-bootstrap';
+import AceEditor from 'react-ace';
+import 'brace';
+import 'brace/mode/sql';
+import 'brace/theme/dawn';
 import "../../node_modules/highlight.js/styles/agate.css";
 
+import { SIMQL } from '../scala/frontend-backend-fastopt'
+import { Button, Form } from 'react-bootstrap';
+
+
 interface SimqlState {
-  simqlQuery: String
+  simqlQuery: string
   error: String
   sql: String
 }
@@ -56,10 +61,15 @@ export class SimqlApp extends React.Component<{}, SimqlState> {
       <div>
         <h2>SIMQL</h2>
         <Form>
-          <TextAreaInput
-            id="queryInput"
-            label="Query"
-            handler={this.handleQureyForm} />
+          <AceEditor
+            mode="sql"
+            theme="dawn"
+            height="100px"
+            value={this.state.simqlQuery}
+            onChange={this.handleQureyForm}
+            name="queryInput"
+            editorProps={{$blockScrolling: true}}
+          />,
         </Form>
         <Button
           variant="primary"
