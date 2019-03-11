@@ -40,9 +40,9 @@ object Develop {
 
     implicit val M: Monad[Id] = catsInstancesForId
     val interpreter: Module.SimqlApp ~> Id = presenter or rdb
-    val eventStream = Observable.unsafeCreate[Event] { s =>
+    val eventStream = Observable.unsafeCreate[Application.Event] { s =>
       CallBacker.setCallBack(
-        () => s.onNext(Submit),
+        () => s.onNext(Application.Submit),
         () => s.onComplete()
       )
       Cancelable(() => ())

@@ -15,6 +15,17 @@ export const TextInput = (props: TextInputProps) => (
   </Form.Group>
 )
 
+export const TextAreaInput = (props: TextInputProps) => (
+  <Form.Group controlId={props.id}>
+    <Form.Label>{props.label}</Form.Label>
+    <Form.Control
+      as="textarea"
+      type="text"
+      placeholder={props.placeholder}
+      onChange={(e: any) => props.handler(e.target.value)}/>
+  </Form.Group>
+)
+
 interface FileInputProps {
   id: string
   label: string

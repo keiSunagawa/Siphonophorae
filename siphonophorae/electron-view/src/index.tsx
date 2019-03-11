@@ -5,6 +5,7 @@ import { Route, Link, HashRouter } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 
 import { FileViewerApp } from './fileviewer/FileViewerApp'
+import { SimqlApp } from './simql/SimqlApp'
 
 const Header = () => (
   <div>
@@ -12,6 +13,7 @@ const Header = () => (
     <ul>
       <li><Link to="/">Home</Link></li>
       <li><Link to="/fv">FV</Link></li>
+      <li><Link to="/simql">SIMQL</Link></li>
     </ul>
   </div>
 );
@@ -29,6 +31,7 @@ const Root = () => (
         <Header />
         <Route exact path="/" component={Home} />
         <Route path="/fv" component={FileViewerApp} />
+        <Route path="/simql" component={SimqlApp} />
       </div>
     </HashRouter>
   </Container>

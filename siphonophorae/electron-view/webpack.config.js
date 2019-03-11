@@ -27,7 +27,7 @@ module.exports = {
             path.resolve(__dirname, "src"),
             "node_modules",
         ],
-        extensions: [".ts", ".tsx", ".js", ".jsx"]
+        extensions: [".ts", ".tsx", ".js", ".jsx", ".css"]
     },
 
     module: {
@@ -36,6 +36,13 @@ module.exports = {
                 // TypeScript のトランスパイル設定
                 test: /\.tsx?$/,
                 loader: "awesome-typescript-loader"
+            },
+            {
+                test: /\.css/,
+                use: [
+                    'style-loader',
+                    {loader: 'css-loader', options: {url: false}},
+                ],
             },
         ]
     },
