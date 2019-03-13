@@ -3,14 +3,12 @@ import { exec } from 'child_process'
 import * as React from 'react';
 import Highlight from 'react-highlight'
 import AceEditor from 'react-ace';
-import 'brace';
-import 'brace/mode/sql';
-import 'brace/theme/dawn';
-import "../../node_modules/highlight.js/styles/agate.css";
+import * as simqlMode from './syntax/mode.js'
+import 'brace/theme/terminal';
+import '../../node_modules/highlight.js/styles/agate.css';
 
 import { SIMQL } from '../scala/frontend-backend-fastopt'
 import { Button, Form } from 'react-bootstrap';
-
 
 interface SimqlState {
   simqlQuery: string
@@ -49,6 +47,11 @@ export class SimqlApp extends React.Component<{}, SimqlState> {
   }
 
   handleClick() {
+    console.log(simqlMode)
+    simqlMode.aceCompletionHelpe.items = [
+      "ass",
+      "bbbb"
+    ]
     this.appHandler.submit()
   }
 
@@ -58,23 +61,27 @@ export class SimqlApp extends React.Component<{}, SimqlState> {
 
   render() {
     return (
-      <div>
+      <div className="sipp-contemt">
         <h2>SIMQL</h2>
         <Form>
           <AceEditor
-            mode="sql"
-            theme="dawn"
+            mode="simql"
+            theme="terminal"
             height="100px"
+            enableBasicAutocompletion={true}
+            enableLiveAutocompletion={true}
             value={this.state.simqlQuery}
             onChange={this.handleQureyForm}
             name="queryInput"
             editorProps={{$blockScrolling: true}}
-          />,
+          />
         </Form>
-        <Button
-          variant="primary"
-          onClick={this.handleClick}
-        >Submit</Button>
+        <div className="sipp-contemt">
+          <Button
+            variant="primary"
+            onClick={this.handleClick}
+          >Submit</Button>
+        </div>
         <SQL code={this.state.sql} />
       </div>
     )
@@ -107,3 +114,4 @@ class SQLFormatter {
     })
   }
 }
+
