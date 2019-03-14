@@ -2,19 +2,25 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Route, Link, HashRouter } from 'react-router-dom';
 
-import { Container } from 'react-bootstrap';
+import { Container, ButtonGroup, Button } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 import { FileViewerApp } from './fileviewer/FileViewerApp'
 import { SimqlApp } from './simql/SimqlApp'
 
 const Header = () => (
-  <div>
-    <p>Header</p>
-    <ul>
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/fv">FV</Link></li>
-      <li><Link to="/simql">SIMQL</Link></li>
-    </ul>
+  <div className="sipp-header">
+    <ButtonGroup size="lg">
+      <LinkContainer to="/">
+        <Button>Home</Button>
+      </LinkContainer>
+      <LinkContainer to="/simql">
+        <Button>SIMQL</Button>
+      </LinkContainer>
+      <LinkContainer to="/fv">
+        <Button>FileViewer</Button>
+      </LinkContainer>
+    </ButtonGroup>
   </div>
 );
 
