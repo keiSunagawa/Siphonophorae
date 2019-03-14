@@ -6,6 +6,7 @@ out
 logs
 node_modules
 *.log
+simql-connection.yml
 
 # idea
 .idea_modules

@@ -2,8 +2,9 @@ import * as React from 'react';
 
 import { FileViewerEntryPoint } from '../scala/frontend-backend-fastopt'
 import { TextInput, FileInput } from '../components/input'
+import { ItemTable } from '../components/table'
 import { CsvLoader } from '../modules/FileLoader'
-import { Button, Table, Form } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 
 interface FileViewerState {
   rawTable: String[][]
@@ -116,28 +117,3 @@ export class FileViewerApp extends React.Component<{}, FileViewerState> {
     )
   }
 }
-
-interface TableProps {
-  header: String[]
-  body: String[][]
-}
-const ItemTable = (props: TableProps) => (
-    <Table responsive bordered hover size="sm">
-      <thead>
-        <tr>
-          <th></th>
-          {props.header.map((h: string) => <th>{h}</th>)}
-        </tr>
-      </thead>
-      <tbody>
-        {props.body.map((b: string[], i: number) => {
-           return (
-             <tr>
-               <th>{i+1}</th>
-               {b.map((bc: string) => <td>{bc}</td>)}
-             </tr>
-           )
-        })}
-      </tbody>
-    </Table>
-)

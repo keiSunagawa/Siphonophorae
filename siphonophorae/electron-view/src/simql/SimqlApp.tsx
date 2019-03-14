@@ -4,20 +4,27 @@ import * as React from 'react';
 import Highlight from 'react-highlight'
 import AceEditor from 'react-ace';
 import * as simqlMode from './syntax/mode.js'
-import 'brace/theme/terminal';
+import 'brace/theme/idle_fingers';
 import '../../node_modules/highlight.js/styles/agate.css';
+import * as R from 'ramda'
 
+import { MySQLAccessor } from '../modules/MySQLAccessor'
 import { SIMQL } from '../scala/frontend-backend-fastopt'
 import { Button, Form } from 'react-bootstrap';
+
+import { ItemTable } from '../components/table'
 
 interface SimqlState {
   simqlQuery: string
   error: String
   sql: String
+  header: String[]
+  body: String[][]
 }
 export class SimqlApp extends React.Component<{}, SimqlState> {
   appHandler: any
   formatter: SQLFormatter = new SQLFormatter()
+  mysql: MySQLAccessor = new MySQLAccessor('./simql-connection.yml')
 
   constructor(props: {}) {
     super(props)
@@ -25,7 +32,9 @@ export class SimqlApp extends React.Component<{}, SimqlState> {
     this.state = {
       simqlQuery: "",
       error: "",
-      sql: ""
+      sql: "",
+      header: [],
+      body: []
     }
 
     this.appHandler = SIMQL.compile(
@@ -39,19 +48,22 @@ export class SimqlApp extends React.Component<{}, SimqlState> {
         )
       },
       (error: String) => { console.log(error) },
-      (sql: String) => { console.log("send to..." + sql) }
+      (sql: String) => {
+        this.mysql.send(sql).then(({ header, body }) => {
+          this.setState({ header, body })
+        })
+      }
     )
 
     this.handleClick = this.handleClick.bind(this)
     this.handleQureyForm = this.handleQureyForm.bind(this)
+
+    this.mysql.schemaInfo().then((v) => {
+      simqlMode.aceCompletionHelper.items =  R.flatten(v.map((a) => a.colmns))
+    })
   }
 
   handleClick() {
-    console.log(simqlMode)
-    simqlMode.aceCompletionHelpe.items = [
-      "ass",
-      "bbbb"
-    ]
     this.appHandler.submit()
   }
 
@@ -66,8 +78,9 @@ export class SimqlApp extends React.Component<{}, SimqlState> {
         <Form>
           <AceEditor
             mode="simql"
-            theme="terminal"
+            theme="idle_fingers"
             height="100px"
+            width="800px"
             enableBasicAutocompletion={true}
             enableLiveAutocompletion={true}
             value={this.state.simqlQuery}
@@ -83,6 +96,10 @@ export class SimqlApp extends React.Component<{}, SimqlState> {
           >Submit</Button>
         </div>
         <SQL code={this.state.sql} />
+        <ItemTable
+          header={this.state.header}
+          body={this.state.body}
+        />
       </div>
     )
   }

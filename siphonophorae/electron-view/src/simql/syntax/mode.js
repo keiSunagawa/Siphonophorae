@@ -5,16 +5,11 @@ import './highlight-rule.js'
 
 class CompletionHelper {
   constructor() {
-    this.items = [
-      "/dev/sda1",
-      "/dev/sda2",
-      "PARTLABEL=foobar_boot",
-      "PARTLABEL=foobar_root"
-    ];
+    this.items = [];
   }
 }
 
-export const aceCompletionHelpe = new CompletionHelper()
+export const aceCompletionHelper = new CompletionHelper()
 
 ace.define('ace/mode/simql', ['require', 'exports', 'module', 'ace/lib/oop', 'ace/mode/text', 'ace/mode/simql_highlight_rules'],
            function(acequire, exports, module) {
@@ -26,10 +21,9 @@ ace.define('ace/mode/simql', ['require', 'exports', 'module', 'ace/lib/oop', 'ac
              var myCompleter = {
                identifierRegexps: [/[^\s]+/],
                getCompletions: function(editor, session, pos, prefix, callback) {
-                 console.info("myCompleter prefix:", prefix);
                  callback(
                    null,
-                   aceCompletionHelpe.items.filter(entry=>{
+                   aceCompletionHelper.items.filter(entry=>{
                      return entry.includes(prefix);
                    }).map(entry=>{
                      return {
