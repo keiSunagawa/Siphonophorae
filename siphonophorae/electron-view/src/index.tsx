@@ -11,7 +11,7 @@ import { SimqlApp } from './simql/SimqlApp'
 const Header = () => (
   <div className="sipp-header">
     <ButtonGroup size="lg">
-      <LinkContainer to="/">
+      <LinkContainer exact to="/">
         <Button>Home</Button>
       </LinkContainer>
       <LinkContainer to="/simql">
