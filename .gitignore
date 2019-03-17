@@ -29,3 +29,6 @@ simql-connection.yml
 
 # bloop
 .bloop/
+
+# scalajs file
+frontend-backend-fastopt.js
