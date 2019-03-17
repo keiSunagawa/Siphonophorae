@@ -26,7 +26,7 @@ ace.define('ace/mode/simql_highlight_rules', ['require', 'exports', 'module', 'a
         string({start: '"', escape: /\\[0'"bnrtZ\\%_]?/}),
         {
           token: 'keyword',
-          regex: '<<|><|<=|>=|=|<>|>|<|:|\\?|@'
+          regex: '<<|><|<=|>=|=|<>|>|<|:|\\?|@|/>|\\\\>'
         }, {
           token: 'paren.lparen',
           regex: '[\\(]'

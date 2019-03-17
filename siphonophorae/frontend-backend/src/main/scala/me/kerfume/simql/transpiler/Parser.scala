@@ -60,6 +60,14 @@ object Parser extends JavaTokenParsers {
     Join(jt, rightTable, exp)
   }
 
+  val orderType = """/>|\\>""".r ^^ { case opStr =>
+    val op = opStr match {
+      case "/>" => OrderType.ASC
+      case "\\>" => OrderType.DESC
+    }
+    OrderType(op)
+  }
+
   val from = symbol~rep(join) ^^ { case table~joins =>
     From(table, joins)
   }
@@ -73,8 +81,11 @@ object Parser extends JavaTokenParsers {
     val offset = offsetSyntax.map { case _~ofs => ofs }
     LimitOffset(limit, offset)
   }
+  val order = orderType~symbolWithAccessor~rep(symbolWithAccessor) ^^ { case tpe~col1~coln =>
+    Order(tpe, col1, coln)
+  }
 
-  val simql = from~opt(select)~opt(where)~opt(limitOffset) ^^ { case f~s~w~l =>
-    SimqlRoot(f, s, w, l)
+  val simql = from~opt(select)~opt(where)~opt(limitOffset)~opt(order) ^^ { case f~s~w~l~o =>
+    SimqlRoot(f, s, w, l, o)
   }
 }

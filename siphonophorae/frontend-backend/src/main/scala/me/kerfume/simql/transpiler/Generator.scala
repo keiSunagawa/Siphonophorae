@@ -30,6 +30,10 @@ object MySQLGenerator extends Generator {
         case JoinType.LeftJoin => "LEFT JOIN"
         case JoinType.InnerJoin => "INNER JOIN"
       }
+      case OrderType(value) => value match {
+        case OrderType.ASC => "ASC"
+        case OrderType.DESC => "DESC"
+      }
 
       case BinaryCond(op, lhs, rhs) =>
         s"${toSQL(lhs)} ${toSQL(op)} ${toSQL(rhs)}"
@@ -48,11 +52,19 @@ object MySQLGenerator extends Generator {
       case LimitOffset(limit, offset) =>
         val offsetSQL = offset.map(o => s"${toSQL(o)}, ").getOrElse("")
         s"$offsetSQL ${toSQL(limit)}"  // mysql dialect
-      case SimqlRoot(from, select, where, limit) =>
+      case Order(tpe, head, tail) =>
+        def pairToSQL(tpe: OrderType, symbol: SymbolWithAccessor): String = {
+          s"${toSQL(symbol)} ${toSQL(tpe)}"
+        }
+        val tailSyntax = tail.map { t => s", ${pairToSQL(tpe, t)}"}.mkString(" ")
+        s"${pairToSQL(tpe, head)} $tailSyntax"
+
+      case SimqlRoot(from, select, where, limit, order) =>
         val selectSQL = select.map(toSQL).getOrElse("*")
         val whereSQL = where.map(w => s"WHERE ${toSQL(w)}").getOrElse("")
         val limitOffsetSQL = limit.map(l => s"LIMIT ${toSQL(l)}").getOrElse("")
-        s"SELECT $selectSQL FROM ${toSQL(from)} $whereSQL $limitOffsetSQL"
+        val orderSQL = order.map(o => s"ORDER BY ${toSQL(o)}").getOrElse("")
+        s"SELECT $selectSQL FROM ${toSQL(from)} $whereSQL $limitOffsetSQL $orderSQL"
     }
   }
 }

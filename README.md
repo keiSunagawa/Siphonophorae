@@ -17,12 +17,15 @@ expr ::= binalyCond {logicalOp binaryCond}
 joinType ::= "<<" | "><"
 join ::= joinType symbol "?" expr
 
+orderType ::= "/>" | "\>"
+
 from ::= symbol {join}
 select ::= ":" symbolWithAccessor {symbolWithAccessor}
 where ::= "?" expr
 limitOffset ::= "@" number [- number] // TODO ignore float number
+order ::= orderType symbolWithAccessor {symbolWithAccessor}
 
-simql ::= from [select] [where] [limitOffset]
+simql ::= from [select] [where] [limitOffset] [order]
 
 order ::= // TODO
 groupBy ::= // TODO maybe omit

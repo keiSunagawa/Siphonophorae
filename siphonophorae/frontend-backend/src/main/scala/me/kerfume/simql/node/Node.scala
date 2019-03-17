@@ -19,12 +19,21 @@ case class Expr(lhs: BinaryCond, rhss: Seq[ExprRhs]) extends Node
 case class JoinType(value: JoinType.Op) extends Node
 case class Join(joinType: JoinType, rhsTable: SymbolWrapper, on: Expr) extends Node
 
+case class OrderType(value: OrderType.Op) extends Node
+
 case class From(lhs: SymbolWrapper, rhss: Seq[Join]) extends Node
 case class Select(values: Seq[SymbolWithAccessor]) extends Node // Nil is select all column
 case class Where(value: Expr) extends Node
 case class LimitOffset(limit: NumberWrapper, offset: Option[NumberWrapper]) extends Node // TODO ignore float number
+case class Order(orderType: OrderType, head: SymbolWithAccessor, tail: Seq[SymbolWithAccessor]) extends Node
 
-case class SimqlRoot(from: From, select: Option[Select], where: Option[Where], limitOffset: Option[LimitOffset]) extends Node
+case class SimqlRoot(
+  from: From,
+  select: Option[Select],
+  where: Option[Where],
+  limitOffset: Option[LimitOffset],
+  order: Option[Order]
+) extends Node
 
 object BinaryOp {
   sealed trait Op {
@@ -78,5 +87,17 @@ object JoinType {
   }
   case object InnerJoin extends Op {
     val label = "><"
+  }
+}
+
+object OrderType {
+  sealed trait Op {
+    val label: String
+  }
+  case object ASC extends Op {
+    val label = "/>"
+  }
+  case object DESC extends Op {
+    val label = "\\>"
   }
 }
