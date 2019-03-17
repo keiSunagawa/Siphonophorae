@@ -5221,7 +5221,7 @@ $c_Lme_kerfume_simql_Module$.prototype.program__Lme_kerfume_simql_Presenter$Help
           var x2$2 = $as_s_util_Right(this$6);
           var b$2 = x2$2.value$2;
           var resolved = $as_Lme_kerfume_simql_node_SimqlRoot(b$2);
-          var sql = $m_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$().toSQL__Lme_kerfume_simql_node_Node__T(resolved);
+          var sql = $m_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$().toSQL__Lme_kerfume_simql_node_Node__T(resolved);
           var this$8 = new $c_s_util_Right().init___O(new $c_T2().init___O__O(resolved, sql))
         } else {
           var this$8 = this$6
@@ -5680,7 +5680,8 @@ $c_Lme_kerfume_simql_transpiler_AccessorResolver$.prototype.resolve__Lme_kerfume
         var x2$8 = $as_s_util_Right(resolvedWhere);
         var b$7 = x2$8.value$2;
         var w$1 = $as_s_Option(b$7);
-        return new $c_s_util_Right().init___O(new $c_Lme_kerfume_simql_node_SimqlRoot().init___Lme_kerfume_simql_node_From__s_Option__s_Option(f, s, w$1))
+        var x$9 = ast.limitOffset$1;
+        return new $c_s_util_Right().init___O(new $c_Lme_kerfume_simql_node_SimqlRoot().init___Lme_kerfume_simql_node_From__s_Option__s_Option__s_Option(f, s, w$1, x$9))
       } else {
         return resolvedWhere
       }
@@ -5794,36 +5795,36 @@ function $m_Lme_kerfume_simql_transpiler_Analyzer$() {
   return $n_Lme_kerfume_simql_transpiler_Analyzer$
 }
 /** @constructor */
-function $c_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$() {
+function $c_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$() {
   $c_O.call(this)
 }
-$c_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$.prototype = new $h_O();
-$c_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$.prototype.constructor = $c_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$;
+$c_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$.prototype = new $h_O();
+$c_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$.prototype.constructor = $c_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$;
 /** @constructor */
-function $h_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$() {
+function $h_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$() {
   /*<skip>*/
 }
-$h_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$.prototype = $c_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$.prototype;
-$c_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$.prototype.init___ = (function() {
+$h_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$.prototype = $c_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$.prototype;
+$c_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$.prototype.init___ = (function() {
   return this
 });
-$c_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$.prototype.toSQL__Lme_kerfume_simql_node_Node__T = (function(node) {
+$c_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$.prototype.toSQL__Lme_kerfume_simql_node_Node__T = (function(node) {
   if ($is_Lme_kerfume_simql_node_Term(node)) {
-    var x15 = $as_Lme_kerfume_simql_node_Term(node);
-    if ($is_Lme_kerfume_simql_node_StringWrapper(x15)) {
-      var x2 = $as_Lme_kerfume_simql_node_StringWrapper(x15);
+    var x16 = $as_Lme_kerfume_simql_node_Term(node);
+    if ($is_Lme_kerfume_simql_node_StringWrapper(x16)) {
+      var x2 = $as_Lme_kerfume_simql_node_StringWrapper(x16);
       var v = x2.value$1;
       return $m_sjsr_RuntimeString$().replaceAll__T__T__T__T(v, "\"", "'")
-    } else if ($is_Lme_kerfume_simql_node_NumberWrapper(x15)) {
-      var x3 = $as_Lme_kerfume_simql_node_NumberWrapper(x15);
+    } else if ($is_Lme_kerfume_simql_node_NumberWrapper(x16)) {
+      var x3 = $as_Lme_kerfume_simql_node_NumberWrapper(x16);
       var v$2 = x3.value$1;
       return v$2.bigDecimal$3.toString__T()
-    } else if ($is_Lme_kerfume_simql_node_SymbolWrapper(x15)) {
-      var x4 = $as_Lme_kerfume_simql_node_SymbolWrapper(x15);
+    } else if ($is_Lme_kerfume_simql_node_SymbolWrapper(x16)) {
+      var x4 = $as_Lme_kerfume_simql_node_SymbolWrapper(x16);
       var v$3 = x4.label$1;
       return v$3
-    } else if ($is_Lme_kerfume_simql_node_SymbolWithAccessor(x15)) {
-      var x5 = $as_Lme_kerfume_simql_node_SymbolWithAccessor(x15);
+    } else if ($is_Lme_kerfume_simql_node_SymbolWithAccessor(x16)) {
+      var x5 = $as_Lme_kerfume_simql_node_SymbolWithAccessor(x16);
       var s = x5.symbol$1;
       var ac = x5.accessor$1;
       if (ac.isEmpty__Z()) {
@@ -5831,12 +5832,12 @@ $c_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$.prototype.toSQL__Lme_kerfum
       } else {
         var arg1 = ac.get__O();
         var a = $as_Lme_kerfume_simql_node_Accessor(arg1);
-        var this$1 = new $c_s_Some().init___O(($m_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$().toSQL__Lme_kerfume_simql_node_Node__T(a) + "."))
+        var this$1 = new $c_s_Some().init___O(($m_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$().toSQL__Lme_kerfume_simql_node_Node__T(a) + "."))
       };
       var accessorToken = $as_T((this$1.isEmpty__Z() ? "" : this$1.get__O()));
       return (("" + accessorToken) + this.toSQL__Lme_kerfume_simql_node_Node__T(s))
     } else {
-      throw new $c_s_MatchError().init___O(x15)
+      throw new $c_s_MatchError().init___O(x16)
     }
   } else if ($is_Lme_kerfume_simql_node_Accessor(node)) {
     var x2$2 = $as_Lme_kerfume_simql_node_Accessor(node);
@@ -5846,7 +5847,7 @@ $c_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$.prototype.toSQL__Lme_kerfum
     } else {
       var arg1$1 = resolveSymbol.get__O();
       var node$2 = $as_Lme_kerfume_simql_node_Node(arg1$1);
-      var this$2 = new $c_s_Some().init___O($m_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$().toSQL__Lme_kerfume_simql_node_Node__T(node$2))
+      var this$2 = new $c_s_Some().init___O($m_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$().toSQL__Lme_kerfume_simql_node_Node__T(node$2))
     };
     return $as_T((this$2.isEmpty__Z() ? "" : this$2.get__O()))
   } else if ($is_Lme_kerfume_simql_node_BinaryOp(node)) {
@@ -5890,7 +5891,7 @@ $c_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$.prototype.toSQL__Lme_kerfum
     var jsx$1 = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$5) {
       return (function(node$3$2) {
         var node$3 = $as_Lme_kerfume_simql_node_Node(node$3$2);
-        return $m_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$().toSQL__Lme_kerfume_simql_node_Node__T(node$3)
+        return $m_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$().toSQL__Lme_kerfume_simql_node_Node__T(node$3)
       })
     })(this));
     var this$3 = $m_sc_Seq$();
@@ -5909,7 +5910,7 @@ $c_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$.prototype.toSQL__Lme_kerfum
     var jsx$3 = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$6) {
       return (function(node$4$2) {
         var node$4 = $as_Lme_kerfume_simql_node_Node(node$4$2);
-        return $m_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$().toSQL__Lme_kerfume_simql_node_Node__T(node$4)
+        return $m_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$().toSQL__Lme_kerfume_simql_node_Node__T(node$4)
       })
     })(this));
     var this$4 = $m_sc_Seq$();
@@ -5923,7 +5924,7 @@ $c_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$.prototype.toSQL__Lme_kerfum
       var jsx$6 = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$7) {
         return (function(node$5$2) {
           var node$5 = $as_Lme_kerfume_simql_node_Node(node$5$2);
-          return $m_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$().toSQL__Lme_kerfume_simql_node_Node__T(node$5)
+          return $m_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$().toSQL__Lme_kerfume_simql_node_Node__T(node$5)
         })
       })(this));
       var this$8 = $m_sc_Seq$();
@@ -5934,45 +5935,67 @@ $c_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$.prototype.toSQL__Lme_kerfum
     var x13 = $as_Lme_kerfume_simql_node_Where(node);
     var value$3 = x13.value$1;
     return ("" + this.toSQL__Lme_kerfume_simql_node_Node__T(value$3))
-  } else if ($is_Lme_kerfume_simql_node_SimqlRoot(node)) {
-    var x14 = $as_Lme_kerfume_simql_node_SimqlRoot(node);
-    var from = x14.from$1;
-    var select = x14.select$1;
-    var where = x14.where$1;
-    if (select.isEmpty__Z()) {
+  } else if ($is_Lme_kerfume_simql_node_LimitOffset(node)) {
+    var x14 = $as_Lme_kerfume_simql_node_LimitOffset(node);
+    var limit = x14.limit$1;
+    var offset = x14.offset$1;
+    if (offset.isEmpty__Z()) {
       var this$9 = $m_s_None$()
     } else {
-      var arg1$2 = select.get__O();
-      var node$6 = $as_Lme_kerfume_simql_node_Node(arg1$2);
-      var this$9 = new $c_s_Some().init___O($m_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$().toSQL__Lme_kerfume_simql_node_Node__T(node$6))
+      var arg1$2 = offset.get__O();
+      var o = $as_Lme_kerfume_simql_node_NumberWrapper(arg1$2);
+      var this$9 = new $c_s_Some().init___O(($m_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$().toSQL__Lme_kerfume_simql_node_Node__T(o) + ", "))
     };
-    var jsx$8 = (this$9.isEmpty__Z() ? "*" : this$9.get__O());
-    var jsx$7 = this.toSQL__Lme_kerfume_simql_node_Node__T(from);
-    if (where.isEmpty__Z()) {
+    var offsetSQL = $as_T((this$9.isEmpty__Z() ? "" : this$9.get__O()));
+    return ((offsetSQL + " ") + this.toSQL__Lme_kerfume_simql_node_Node__T(limit))
+  } else if ($is_Lme_kerfume_simql_node_SimqlRoot(node)) {
+    var x15 = $as_Lme_kerfume_simql_node_SimqlRoot(node);
+    var from = x15.from$1;
+    var select = x15.select$1;
+    var where = x15.where$1;
+    var limit$2 = x15.limitOffset$1;
+    if (select.isEmpty__Z()) {
       var this$10 = $m_s_None$()
     } else {
-      var arg1$3 = where.get__O();
-      var w = $as_Lme_kerfume_simql_node_Where(arg1$3);
-      var this$10 = new $c_s_Some().init___O(("WHERE " + $m_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$().toSQL__Lme_kerfume_simql_node_Node__T(w)))
+      var arg1$3 = select.get__O();
+      var node$6 = $as_Lme_kerfume_simql_node_Node(arg1$3);
+      var this$10 = new $c_s_Some().init___O($m_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$().toSQL__Lme_kerfume_simql_node_Node__T(node$6))
     };
-    return ((((("SELECT " + jsx$8) + " FROM ") + jsx$7) + " ") + (this$10.isEmpty__Z() ? "" : this$10.get__O()))
+    var selectSQL = $as_T((this$10.isEmpty__Z() ? "*" : this$10.get__O()));
+    if (where.isEmpty__Z()) {
+      var this$11 = $m_s_None$()
+    } else {
+      var arg1$4 = where.get__O();
+      var w = $as_Lme_kerfume_simql_node_Where(arg1$4);
+      var this$11 = new $c_s_Some().init___O(("WHERE " + $m_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$().toSQL__Lme_kerfume_simql_node_Node__T(w)))
+    };
+    var whereSQL = $as_T((this$11.isEmpty__Z() ? "" : this$11.get__O()));
+    if (limit$2.isEmpty__Z()) {
+      var this$12 = $m_s_None$()
+    } else {
+      var arg1$5 = limit$2.get__O();
+      var l = $as_Lme_kerfume_simql_node_LimitOffset(arg1$5);
+      var this$12 = new $c_s_Some().init___O(("LIMIT " + $m_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$().toSQL__Lme_kerfume_simql_node_Node__T(l)))
+    };
+    var limitOffsetSQL = $as_T((this$12.isEmpty__Z() ? "" : this$12.get__O()));
+    return ((((((("SELECT " + selectSQL) + " FROM ") + this.toSQL__Lme_kerfume_simql_node_Node__T(from)) + " ") + whereSQL) + " ") + limitOffsetSQL)
   } else {
     throw new $c_s_MatchError().init___O(node)
   }
 });
-var $d_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$ = new $TypeData().initClass({
-  Lme_kerfume_simql_transpiler_SQLGenerator$syntax$: 0
-}, false, "me.kerfume.simql.transpiler.SQLGenerator$syntax$", {
-  Lme_kerfume_simql_transpiler_SQLGenerator$syntax$: 1,
+var $d_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$ = new $TypeData().initClass({
+  Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$: 0
+}, false, "me.kerfume.simql.transpiler.MySQLGenerator$syntax$", {
+  Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$: 1,
   O: 1
 });
-$c_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$.prototype.$classData = $d_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$;
-var $n_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$ = (void 0);
-function $m_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$() {
-  if ((!$n_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$)) {
-    $n_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$ = new $c_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$().init___()
+$c_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$.prototype.$classData = $d_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$;
+var $n_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$ = (void 0);
+function $m_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$() {
+  if ((!$n_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$)) {
+    $n_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$ = new $c_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$().init___()
   };
-  return $n_Lme_kerfume_simql_transpiler_SQLGenerator$syntax$
+  return $n_Lme_kerfume_simql_transpiler_MySQLGenerator$syntax$
 }
 /** @constructor */
 function $c_Lmonix_execution_Ack$AckExtensions$() {
@@ -20416,6 +20439,7 @@ function $c_Lme_kerfume_simql_transpiler_Parser$() {
   this.from$1 = null;
   this.select$1 = null;
   this.where$1 = null;
+  this.limitOffset$1 = null;
   this.simql$1 = null;
   this.whiteSpace$1 = null;
   this.Success$module$1 = null;
@@ -20464,9 +20488,9 @@ $c_Lme_kerfume_simql_transpiler_Parser$.prototype.init___ = (function() {
   var $$this$1 = this$7.repr$1;
   var r$1 = new $c_s_util_matching_Regex().init___T__sc_Seq($$this$1, groupNames$1);
   this.accessor$1 = new $c_s_util_parsing_combinator_RegexParsers$$anon$2().init___s_util_parsing_combinator_RegexParsers__s_util_matching_Regex(this, r$1).$$up$up__F1__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$4$1) {
-    return (function(x0$7$2) {
-      var x0$7 = $as_T(x0$7$2);
-      var this$10 = new $c_sci_StringOps().init___T(x0$7);
+    return (function(x0$9$2) {
+      var x0$9 = $as_T(x0$9$2);
+      var this$10 = new $c_sci_StringOps().init___T(x0$9);
       var x = $as_T($f_sc_IndexedSeqOptimized__tail__O(this$10));
       var this$12 = new $c_sci_StringOps().init___T(x);
       var this$14 = $m_jl_Integer$();
@@ -20490,26 +20514,26 @@ $c_Lme_kerfume_simql_transpiler_Parser$.prototype.init___ = (function() {
       return $m_Lme_kerfume_simql_transpiler_Parser$().symbol$1
     })
   })(this))).$$up$up__F1__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$7$1) {
-    return (function(x0$8$2) {
-      var x0$8 = $as_s_util_parsing_combinator_Parsers$$tilde(x0$8$2);
-      if ((x0$8 !== null)) {
-        var acOpt = $as_s_Option(x0$8.$$und1$1);
-        var s$3 = $as_Lme_kerfume_simql_node_SymbolWrapper(x0$8.$$und2$1);
+    return (function(x0$10$2) {
+      var x0$10 = $as_s_util_parsing_combinator_Parsers$$tilde(x0$10$2);
+      if ((x0$10 !== null)) {
+        var acOpt = $as_s_Option(x0$10.$$und1$1);
+        var s$3 = $as_Lme_kerfume_simql_node_SymbolWrapper(x0$10.$$und2$1);
         var f = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this$2) {
-          return (function(x0$9$2) {
-            var x0$9 = $as_s_util_parsing_combinator_Parsers$$tilde(x0$9$2);
-            if ((x0$9 !== null)) {
-              var ac = $as_Lme_kerfume_simql_node_Accessor(x0$9.$$und1$1);
+          return (function(x0$11$2) {
+            var x0$11 = $as_s_util_parsing_combinator_Parsers$$tilde(x0$11$2);
+            if ((x0$11 !== null)) {
+              var ac = $as_Lme_kerfume_simql_node_Accessor(x0$11.$$und1$1);
               return ac
             } else {
-              throw new $c_s_MatchError().init___O(x0$9)
+              throw new $c_s_MatchError().init___O(x0$11)
             }
           })
         })(this$7$1));
         var accessor = (acOpt.isEmpty__Z() ? $m_s_None$() : new $c_s_Some().init___O(f.apply__O__O(acOpt.get__O())));
         return new $c_Lme_kerfume_simql_node_SymbolWithAccessor().init___Lme_kerfume_simql_node_SymbolWrapper__s_Option(s$3, accessor)
       } else {
-        throw new $c_s_MatchError().init___O(x0$8)
+        throw new $c_s_MatchError().init___O(x0$10)
       }
     })
   })(this)));
@@ -20527,23 +20551,23 @@ $c_Lme_kerfume_simql_transpiler_Parser$.prototype.init___ = (function() {
   var $$this$3 = this$18.repr$1;
   var r$2 = new $c_s_util_matching_Regex().init___T__sc_Seq($$this$3, groupNames$2);
   this.binaryOp$1 = new $c_s_util_parsing_combinator_RegexParsers$$anon$2().init___s_util_parsing_combinator_RegexParsers__s_util_matching_Regex(this, r$2).$$up$up__F1__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$10$1) {
-    return (function(x0$10$2) {
-      var x0$10 = $as_T(x0$10$2);
-      if ((x0$10 === ">")) {
+    return (function(x0$12$2) {
+      var x0$12 = $as_T(x0$12$2);
+      if ((x0$12 === ">")) {
         var op = $m_Lme_kerfume_simql_node_BinaryOp$GT$()
-      } else if ((x0$10 === "<")) {
+      } else if ((x0$12 === "<")) {
         var op = $m_Lme_kerfume_simql_node_BinaryOp$LT$()
-      } else if ((x0$10 === ">=")) {
+      } else if ((x0$12 === ">=")) {
         var op = $m_Lme_kerfume_simql_node_BinaryOp$GE$()
-      } else if ((x0$10 === "<=")) {
+      } else if ((x0$12 === "<=")) {
         var op = $m_Lme_kerfume_simql_node_BinaryOp$LE$()
-      } else if ((x0$10 === "=")) {
+      } else if ((x0$12 === "=")) {
         var op = $m_Lme_kerfume_simql_node_BinaryOp$EQ$()
-      } else if ((x0$10 === "<>")) {
+      } else if ((x0$12 === "<>")) {
         var op = $m_Lme_kerfume_simql_node_BinaryOp$NE$()
       } else {
         var op;
-        throw new $c_s_MatchError().init___O(x0$10)
+        throw new $c_s_MatchError().init___O(x0$12)
       };
       return new $c_Lme_kerfume_simql_node_BinaryOp().init___Lme_kerfume_simql_node_BinaryOp$Op($as_Lme_kerfume_simql_node_BinaryOp$Op(op))
     })
@@ -20557,18 +20581,18 @@ $c_Lme_kerfume_simql_transpiler_Parser$.prototype.init___ = (function() {
       return $m_Lme_kerfume_simql_transpiler_Parser$().term$1
     })
   })(this))).$$up$up__F1__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$13$1) {
-    return (function(x0$11$2) {
-      var x0$11 = $as_s_util_parsing_combinator_Parsers$$tilde(x0$11$2);
-      if ((x0$11 !== null)) {
-        var p2 = $as_s_util_parsing_combinator_Parsers$$tilde(x0$11.$$und1$1);
-        var rhs = $as_Lme_kerfume_simql_node_Term(x0$11.$$und2$1);
+    return (function(x0$13$2) {
+      var x0$13 = $as_s_util_parsing_combinator_Parsers$$tilde(x0$13$2);
+      if ((x0$13 !== null)) {
+        var p2 = $as_s_util_parsing_combinator_Parsers$$tilde(x0$13.$$und1$1);
+        var rhs = $as_Lme_kerfume_simql_node_Term(x0$13.$$und2$1);
         if ((p2 !== null)) {
           var lhs = $as_Lme_kerfume_simql_node_Term(p2.$$und1$1);
           var op$1 = $as_Lme_kerfume_simql_node_BinaryOp(p2.$$und2$1);
           return new $c_Lme_kerfume_simql_node_BinaryCond().init___Lme_kerfume_simql_node_BinaryOp__Lme_kerfume_simql_node_Term__Lme_kerfume_simql_node_Term(op$1, lhs, rhs)
         }
       };
-      throw new $c_s_MatchError().init___O(x0$11)
+      throw new $c_s_MatchError().init___O(x0$13)
     })
   })(this)));
   var this$21 = new $c_sci_StringOps().init___T("(&&|\\|\\|)");
@@ -20576,15 +20600,15 @@ $c_Lme_kerfume_simql_transpiler_Parser$.prototype.init___ = (function() {
   var $$this$4 = this$21.repr$1;
   var r$3 = new $c_s_util_matching_Regex().init___T__sc_Seq($$this$4, groupNames$3);
   this.logicalOp$1 = new $c_s_util_parsing_combinator_RegexParsers$$anon$2().init___s_util_parsing_combinator_RegexParsers__s_util_matching_Regex(this, r$3).$$up$up__F1__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$14$1) {
-    return (function(x0$12$2) {
-      var x0$12 = $as_T(x0$12$2);
-      if ((x0$12 === "&&")) {
+    return (function(x0$14$2) {
+      var x0$14 = $as_T(x0$14$2);
+      if ((x0$14 === "&&")) {
         var op$2 = $m_Lme_kerfume_simql_node_LogicalOp$And$()
-      } else if ((x0$12 === "||")) {
+      } else if ((x0$14 === "||")) {
         var op$2 = $m_Lme_kerfume_simql_node_LogicalOp$Or$()
       } else {
         var op$2;
-        throw new $c_s_MatchError().init___O(x0$12)
+        throw new $c_s_MatchError().init___O(x0$14)
       };
       return new $c_Lme_kerfume_simql_node_LogicalOp().init___Lme_kerfume_simql_node_LogicalOp$Op($as_Lme_kerfume_simql_node_LogicalOp$Op(op$2))
     })
@@ -20604,20 +20628,20 @@ $c_Lme_kerfume_simql_transpiler_Parser$.prototype.init___ = (function() {
       return $f_s_util_parsing_combinator_Parsers__rep__F0__s_util_parsing_combinator_Parsers$Parser(this$23, p$1)
     })
   })(this))).$$up$up__F1__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$16$1) {
-    return (function(x0$13$2) {
-      var x0$13 = $as_s_util_parsing_combinator_Parsers$$tilde(x0$13$2);
-      if ((x0$13 !== null)) {
-        var b = $as_Lme_kerfume_simql_node_BinaryCond(x0$13.$$und1$1);
-        var body = $as_sci_List(x0$13.$$und2$1);
+    return (function(x0$15$2) {
+      var x0$15 = $as_s_util_parsing_combinator_Parsers$$tilde(x0$15$2);
+      if ((x0$15 !== null)) {
+        var b = $as_Lme_kerfume_simql_node_BinaryCond(x0$15.$$und1$1);
+        var body = $as_sci_List(x0$15.$$und2$1);
         var jsx$1 = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this$5) {
-          return (function(x0$14$2) {
-            var x0$14 = $as_s_util_parsing_combinator_Parsers$$tilde(x0$14$2);
-            if ((x0$14 !== null)) {
-              var lo = $as_Lme_kerfume_simql_node_LogicalOp(x0$14.$$und1$1);
-              var bc = $as_Lme_kerfume_simql_node_BinaryCond(x0$14.$$und2$1);
+          return (function(x0$16$2) {
+            var x0$16 = $as_s_util_parsing_combinator_Parsers$$tilde(x0$16$2);
+            if ((x0$16 !== null)) {
+              var lo = $as_Lme_kerfume_simql_node_LogicalOp(x0$16.$$und1$1);
+              var bc = $as_Lme_kerfume_simql_node_BinaryCond(x0$16.$$und2$1);
               return new $c_Lme_kerfume_simql_node_ExprRhs().init___Lme_kerfume_simql_node_LogicalOp__Lme_kerfume_simql_node_BinaryCond(lo, bc)
             } else {
-              throw new $c_s_MatchError().init___O(x0$14)
+              throw new $c_s_MatchError().init___O(x0$16)
             }
           })
         })(this$16$1));
@@ -20625,7 +20649,7 @@ $c_Lme_kerfume_simql_transpiler_Parser$.prototype.init___ = (function() {
         var rhss = $as_sci_List(body.map__F1__scg_CanBuildFrom__O(jsx$1, this$24.ReusableCBFInstance$2));
         return new $c_Lme_kerfume_simql_node_Expr().init___Lme_kerfume_simql_node_BinaryCond__sc_Seq(b, rhss)
       } else {
-        throw new $c_s_MatchError().init___O(x0$13)
+        throw new $c_s_MatchError().init___O(x0$15)
       }
     })
   })(this)));
@@ -20744,39 +20768,98 @@ $c_Lme_kerfume_simql_transpiler_Parser$.prototype.init___ = (function() {
       }
     })
   })(this)));
-  this.simql$1 = this.from$1.$$tilde__F0__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$29$1) {
+  this.limitOffset$1 = new $c_s_util_parsing_combinator_RegexParsers$$anon$1().init___s_util_parsing_combinator_RegexParsers__T(this, "@").$$tilde__F0__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$29$1) {
     return (function() {
-      var this$32 = $m_Lme_kerfume_simql_transpiler_Parser$();
-      var p$4 = new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this$8) {
-        return (function() {
-          return $m_Lme_kerfume_simql_transpiler_Parser$().select$1
-        })
-      })(this$29$1));
-      return $f_s_util_parsing_combinator_Parsers__opt__F0__s_util_parsing_combinator_Parsers$Parser(this$32, p$4)
+      return $m_Lme_kerfume_simql_transpiler_Parser$().number$1
     })
   })(this))).$$tilde__F0__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$30$1) {
     return (function() {
       var this$33 = $m_Lme_kerfume_simql_transpiler_Parser$();
-      var p$5 = new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this$9) {
+      var p$4 = new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this$8) {
         return (function() {
-          return $m_Lme_kerfume_simql_transpiler_Parser$().where$1
+          var this$32 = $m_Lme_kerfume_simql_transpiler_Parser$();
+          return new $c_s_util_parsing_combinator_RegexParsers$$anon$1().init___s_util_parsing_combinator_RegexParsers__T(this$32, "-").$$tilde__F0__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this$9) {
+            return (function() {
+              return $m_Lme_kerfume_simql_transpiler_Parser$().number$1
+            })
+          })($this$8)))
         })
       })(this$30$1));
-      return $f_s_util_parsing_combinator_Parsers__opt__F0__s_util_parsing_combinator_Parsers$Parser(this$33, p$5)
+      return $f_s_util_parsing_combinator_Parsers__opt__F0__s_util_parsing_combinator_Parsers$Parser(this$33, p$4)
     })
   })(this))).$$up$up__F1__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$31$1) {
     return (function(x0$6$2) {
       var x0$6 = $as_s_util_parsing_combinator_Parsers$$tilde(x0$6$2);
       if ((x0$6 !== null)) {
         var p2$3 = $as_s_util_parsing_combinator_Parsers$$tilde(x0$6.$$und1$1);
-        var w = $as_s_Option(x0$6.$$und2$1);
+        var offsetSyntax = $as_s_Option(x0$6.$$und2$1);
         if ((p2$3 !== null)) {
-          var f$1 = $as_Lme_kerfume_simql_node_From(p2$3.$$und1$1);
-          var s$4 = $as_s_Option(p2$3.$$und2$1);
-          return new $c_Lme_kerfume_simql_node_SimqlRoot().init___Lme_kerfume_simql_node_From__s_Option__s_Option(f$1, s$4, w)
+          var limit = $as_Lme_kerfume_simql_node_NumberWrapper(p2$3.$$und2$1);
+          var f$1 = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this$10) {
+            return (function(x0$7$2) {
+              var x0$7 = $as_s_util_parsing_combinator_Parsers$$tilde(x0$7$2);
+              if ((x0$7 !== null)) {
+                var ofs = $as_Lme_kerfume_simql_node_NumberWrapper(x0$7.$$und2$1);
+                return ofs
+              } else {
+                throw new $c_s_MatchError().init___O(x0$7)
+              }
+            })
+          })(this$31$1));
+          var offset = (offsetSyntax.isEmpty__Z() ? $m_s_None$() : new $c_s_Some().init___O(f$1.apply__O__O(offsetSyntax.get__O())));
+          return new $c_Lme_kerfume_simql_node_LimitOffset().init___Lme_kerfume_simql_node_NumberWrapper__s_Option(limit, offset)
         }
       };
       throw new $c_s_MatchError().init___O(x0$6)
+    })
+  })(this)));
+  this.simql$1 = this.from$1.$$tilde__F0__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$32$1) {
+    return (function() {
+      var this$34 = $m_Lme_kerfume_simql_transpiler_Parser$();
+      var p$5 = new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this$11) {
+        return (function() {
+          return $m_Lme_kerfume_simql_transpiler_Parser$().select$1
+        })
+      })(this$32$1));
+      return $f_s_util_parsing_combinator_Parsers__opt__F0__s_util_parsing_combinator_Parsers$Parser(this$34, p$5)
+    })
+  })(this))).$$tilde__F0__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$33$1) {
+    return (function() {
+      var this$35 = $m_Lme_kerfume_simql_transpiler_Parser$();
+      var p$6 = new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this$12) {
+        return (function() {
+          return $m_Lme_kerfume_simql_transpiler_Parser$().where$1
+        })
+      })(this$33$1));
+      return $f_s_util_parsing_combinator_Parsers__opt__F0__s_util_parsing_combinator_Parsers$Parser(this$35, p$6)
+    })
+  })(this))).$$tilde__F0__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function(this$34$1) {
+    return (function() {
+      var this$36 = $m_Lme_kerfume_simql_transpiler_Parser$();
+      var p$7 = new $c_sjsr_AnonFunction0().init___sjs_js_Function0((function($this$13) {
+        return (function() {
+          return $m_Lme_kerfume_simql_transpiler_Parser$().limitOffset$1
+        })
+      })(this$34$1));
+      return $f_s_util_parsing_combinator_Parsers__opt__F0__s_util_parsing_combinator_Parsers$Parser(this$36, p$7)
+    })
+  })(this))).$$up$up__F1__s_util_parsing_combinator_Parsers$Parser(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function(this$35$1) {
+    return (function(x0$8$2) {
+      var x0$8 = $as_s_util_parsing_combinator_Parsers$$tilde(x0$8$2);
+      if ((x0$8 !== null)) {
+        var p2$4 = $as_s_util_parsing_combinator_Parsers$$tilde(x0$8.$$und1$1);
+        var l = $as_s_Option(x0$8.$$und2$1);
+        if ((p2$4 !== null)) {
+          var p3$1 = $as_s_util_parsing_combinator_Parsers$$tilde(p2$4.$$und1$1);
+          var w = $as_s_Option(p2$4.$$und2$1);
+          if ((p3$1 !== null)) {
+            var f$2 = $as_Lme_kerfume_simql_node_From(p3$1.$$und1$1);
+            var s$4 = $as_s_Option(p3$1.$$und2$1);
+            return new $c_Lme_kerfume_simql_node_SimqlRoot().init___Lme_kerfume_simql_node_From__s_Option__s_Option__s_Option(f$2, s$4, w, l)
+          }
+        }
+      };
+      throw new $c_s_MatchError().init___O(x0$8)
     })
   })(this)));
   return this
@@ -30251,6 +30334,97 @@ function $m_Lme_kerfume_simql_node_JoinType$LeftJoin$() {
   return $n_Lme_kerfume_simql_node_JoinType$LeftJoin$
 }
 /** @constructor */
+function $c_Lme_kerfume_simql_node_LimitOffset() {
+  $c_O.call(this);
+  this.limit$1 = null;
+  this.offset$1 = null
+}
+$c_Lme_kerfume_simql_node_LimitOffset.prototype = new $h_O();
+$c_Lme_kerfume_simql_node_LimitOffset.prototype.constructor = $c_Lme_kerfume_simql_node_LimitOffset;
+/** @constructor */
+function $h_Lme_kerfume_simql_node_LimitOffset() {
+  /*<skip>*/
+}
+$h_Lme_kerfume_simql_node_LimitOffset.prototype = $c_Lme_kerfume_simql_node_LimitOffset.prototype;
+$c_Lme_kerfume_simql_node_LimitOffset.prototype.productPrefix__T = (function() {
+  return "LimitOffset"
+});
+$c_Lme_kerfume_simql_node_LimitOffset.prototype.productArity__I = (function() {
+  return 2
+});
+$c_Lme_kerfume_simql_node_LimitOffset.prototype.init___Lme_kerfume_simql_node_NumberWrapper__s_Option = (function(limit, offset) {
+  this.limit$1 = limit;
+  this.offset$1 = offset;
+  return this
+});
+$c_Lme_kerfume_simql_node_LimitOffset.prototype.equals__O__Z = (function(x$1) {
+  if ((this === x$1)) {
+    return true
+  } else if ($is_Lme_kerfume_simql_node_LimitOffset(x$1)) {
+    var LimitOffset$1 = $as_Lme_kerfume_simql_node_LimitOffset(x$1);
+    var x = this.limit$1;
+    var x$2 = LimitOffset$1.limit$1;
+    if (((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))) {
+      var x$3 = this.offset$1;
+      var x$4 = LimitOffset$1.offset$1;
+      return ((x$3 === null) ? (x$4 === null) : x$3.equals__O__Z(x$4))
+    } else {
+      return false
+    }
+  } else {
+    return false
+  }
+});
+$c_Lme_kerfume_simql_node_LimitOffset.prototype.productElement__I__O = (function(x$1) {
+  switch (x$1) {
+    case 0: {
+      return this.limit$1;
+      break
+    }
+    case 1: {
+      return this.offset$1;
+      break
+    }
+    default: {
+      throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
+    }
+  }
+});
+$c_Lme_kerfume_simql_node_LimitOffset.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
+});
+$c_Lme_kerfume_simql_node_LimitOffset.prototype.hashCode__I = (function() {
+  var this$2 = $m_s_util_hashing_MurmurHash3$();
+  return this$2.productHash__s_Product__I__I(this, (-889275714))
+});
+$c_Lme_kerfume_simql_node_LimitOffset.prototype.productIterator__sc_Iterator = (function() {
+  return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
+});
+function $is_Lme_kerfume_simql_node_LimitOffset(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_simql_node_LimitOffset)))
+}
+function $as_Lme_kerfume_simql_node_LimitOffset(obj) {
+  return (($is_Lme_kerfume_simql_node_LimitOffset(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "me.kerfume.simql.node.LimitOffset"))
+}
+function $isArrayOf_Lme_kerfume_simql_node_LimitOffset(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lme_kerfume_simql_node_LimitOffset)))
+}
+function $asArrayOf_Lme_kerfume_simql_node_LimitOffset(obj, depth) {
+  return (($isArrayOf_Lme_kerfume_simql_node_LimitOffset(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lme.kerfume.simql.node.LimitOffset;", depth))
+}
+var $d_Lme_kerfume_simql_node_LimitOffset = new $TypeData().initClass({
+  Lme_kerfume_simql_node_LimitOffset: 0
+}, false, "me.kerfume.simql.node.LimitOffset", {
+  Lme_kerfume_simql_node_LimitOffset: 1,
+  O: 1,
+  Lme_kerfume_simql_node_Node: 1,
+  s_Product: 1,
+  s_Equals: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lme_kerfume_simql_node_LimitOffset.prototype.$classData = $d_Lme_kerfume_simql_node_LimitOffset;
+/** @constructor */
 function $c_Lme_kerfume_simql_node_LogicalOp() {
   $c_O.call(this);
   this.op$1 = null
@@ -30525,7 +30699,8 @@ function $c_Lme_kerfume_simql_node_SimqlRoot() {
   $c_O.call(this);
   this.from$1 = null;
   this.select$1 = null;
-  this.where$1 = null
+  this.where$1 = null;
+  this.limitOffset$1 = null
 }
 $c_Lme_kerfume_simql_node_SimqlRoot.prototype = new $h_O();
 $c_Lme_kerfume_simql_node_SimqlRoot.prototype.constructor = $c_Lme_kerfume_simql_node_SimqlRoot;
@@ -30538,7 +30713,7 @@ $c_Lme_kerfume_simql_node_SimqlRoot.prototype.productPrefix__T = (function() {
   return "SimqlRoot"
 });
 $c_Lme_kerfume_simql_node_SimqlRoot.prototype.productArity__I = (function() {
-  return 3
+  return 4
 });
 $c_Lme_kerfume_simql_node_SimqlRoot.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
@@ -30550,14 +30725,21 @@ $c_Lme_kerfume_simql_node_SimqlRoot.prototype.equals__O__Z = (function(x$1) {
     if (((x === null) ? (x$2 === null) : x.equals__O__Z(x$2))) {
       var x$3 = this.select$1;
       var x$4 = SimqlRoot$1.select$1;
-      var jsx$1 = ((x$3 === null) ? (x$4 === null) : x$3.equals__O__Z(x$4))
+      var jsx$2 = ((x$3 === null) ? (x$4 === null) : x$3.equals__O__Z(x$4))
+    } else {
+      var jsx$2 = false
+    };
+    if (jsx$2) {
+      var x$5 = this.where$1;
+      var x$6 = SimqlRoot$1.where$1;
+      var jsx$1 = ((x$5 === null) ? (x$6 === null) : x$5.equals__O__Z(x$6))
     } else {
       var jsx$1 = false
     };
     if (jsx$1) {
-      var x$5 = this.where$1;
-      var x$6 = SimqlRoot$1.where$1;
-      return ((x$5 === null) ? (x$6 === null) : x$5.equals__O__Z(x$6))
+      var x$7 = this.limitOffset$1;
+      var x$8 = SimqlRoot$1.limitOffset$1;
+      return ((x$7 === null) ? (x$8 === null) : x$7.equals__O__Z(x$8))
     } else {
       return false
     }
@@ -30579,6 +30761,10 @@ $c_Lme_kerfume_simql_node_SimqlRoot.prototype.productElement__I__O = (function(x
       return this.where$1;
       break
     }
+    case 3: {
+      return this.limitOffset$1;
+      break
+    }
     default: {
       throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
     }
@@ -30587,18 +30773,19 @@ $c_Lme_kerfume_simql_node_SimqlRoot.prototype.productElement__I__O = (function(x
 $c_Lme_kerfume_simql_node_SimqlRoot.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
+$c_Lme_kerfume_simql_node_SimqlRoot.prototype.init___Lme_kerfume_simql_node_From__s_Option__s_Option__s_Option = (function(from, select, where, limitOffset) {
+  this.from$1 = from;
+  this.select$1 = select;
+  this.where$1 = where;
+  this.limitOffset$1 = limitOffset;
+  return this
+});
 $c_Lme_kerfume_simql_node_SimqlRoot.prototype.hashCode__I = (function() {
   var this$2 = $m_s_util_hashing_MurmurHash3$();
   return this$2.productHash__s_Product__I__I(this, (-889275714))
 });
 $c_Lme_kerfume_simql_node_SimqlRoot.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
-});
-$c_Lme_kerfume_simql_node_SimqlRoot.prototype.init___Lme_kerfume_simql_node_From__s_Option__s_Option = (function(from, select, where) {
-  this.from$1 = from;
-  this.select$1 = select;
-  this.where$1 = where;
-  return this
 });
 function $is_Lme_kerfume_simql_node_SimqlRoot(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lme_kerfume_simql_node_SimqlRoot)))

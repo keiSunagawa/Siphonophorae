@@ -69,8 +69,12 @@ object Parser extends JavaTokenParsers {
   val where = "?"~expr ^^ { case _~exp =>
     Where(exp)
   }
+  val limitOffset = "@"~number~opt("-"~number) ^^ { case _~limit~offsetSyntax =>
+    val offset = offsetSyntax.map { case _~ofs => ofs }
+    LimitOffset(limit, offset)
+  }
 
-  val simql = from~opt(select)~opt(where) ^^ { case f~s~w =>
-    SimqlRoot(f, s, w)
+  val simql = from~opt(select)~opt(where)~opt(limitOffset) ^^ { case f~s~w~l =>
+    SimqlRoot(f, s, w, l)
   }
 }

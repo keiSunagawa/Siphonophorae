@@ -22,8 +22,9 @@ case class Join(joinType: JoinType, rhsTable: SymbolWrapper, on: Expr) extends N
 case class From(lhs: SymbolWrapper, rhss: Seq[Join]) extends Node
 case class Select(values: Seq[SymbolWithAccessor]) extends Node // Nil is select all column
 case class Where(value: Expr) extends Node
+case class LimitOffset(limit: NumberWrapper, offset: Option[NumberWrapper]) extends Node // TODO ignore float number
 
-case class SimqlRoot(from: From, select: Option[Select], where: Option[Where]) extends Node
+case class SimqlRoot(from: From, select: Option[Select], where: Option[Where], limitOffset: Option[LimitOffset]) extends Node
 
 object BinaryOp {
   sealed trait Op {

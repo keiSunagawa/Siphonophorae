@@ -10,15 +10,15 @@ export const ItemTable = (props: TableProps) => (
       <thead>
         <tr>
           <th></th>
-          {props.header.map((h: string) => <th>{h}</th>)}
+          {props.header.map((h: string, i: number) => <th key={i}>{h}</th>)}
         </tr>
       </thead>
       <tbody>
         {props.body.map((b: string[], i: number) => {
            return (
-             <tr>
+             <tr key={i}>
                <th>{i+1}</th>
-               {b.map((bc: string) => <td>{bc}</td>)}
+               {b.map((bc: string, i2: number) => <td key={i2}>{bc}</td>)}
              </tr>
            )
         })}

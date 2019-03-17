@@ -20,8 +20,9 @@ join ::= joinType symbol "?" expr
 from ::= symbol {join}
 select ::= ":" symbolWithAccessor {symbolWithAccessor}
 where ::= "?" expr
+limitOffset ::= "@" number [- number] // TODO ignore float number
 
-simql ::= from [select] [where]
+simql ::= from [select] [where] [limitOffset]
 
 order ::= // TODO
 groupBy ::= // TODO maybe omit

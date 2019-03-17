@@ -19,7 +19,7 @@ object Module {
           ast <- Parser.parseSimql(simql).toRight("failed parse.")
           meta = Analyzer.analyze(ast)
           resolved <- AccessorResolver.resolve(ast, meta)
-          sql = SQLGenerator.generate(resolved)
+          sql = MySQLGenerator.generate(resolved)
         } yield sql) match {
           case Right(sql) => resultTo(sql)
           case Left(error) => printError(error)

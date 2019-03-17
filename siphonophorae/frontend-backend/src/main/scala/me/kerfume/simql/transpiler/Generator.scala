@@ -7,7 +7,7 @@ trait Generator {
   def generate(ast: SimqlRoot): Code
 }
 
-object SQLGenerator extends Generator {
+object MySQLGenerator extends Generator {
   def generate(ast: SimqlRoot): Code = syntax.toSQL(ast)
 
   object syntax {
@@ -45,8 +45,14 @@ object SQLGenerator extends Generator {
         s"""${if(values.isEmpty) "*" else values.map(toSQL).mkString(", ")}"""
       case Where(value) =>
         s"${toSQL(value)}"
-      case SimqlRoot(from, select, where) =>
-        s"SELECT ${select.map(toSQL).getOrElse("*")} FROM ${toSQL(from)} ${where.map(w => s"WHERE ${toSQL(w)}").getOrElse("")}"
+      case LimitOffset(limit, offset) =>
+        val offsetSQL = offset.map(o => s"${toSQL(o)}, ").getOrElse("")
+        s"$offsetSQL ${toSQL(limit)}"  // mysql dialect
+      case SimqlRoot(from, select, where, limit) =>
+        val selectSQL = select.map(toSQL).getOrElse("*")
+        val whereSQL = where.map(w => s"WHERE ${toSQL(w)}").getOrElse("")
+        val limitOffsetSQL = limit.map(l => s"LIMIT ${toSQL(l)}").getOrElse("")
+        s"SELECT $selectSQL FROM ${toSQL(from)} $whereSQL $limitOffsetSQL"
     }
   }
 }

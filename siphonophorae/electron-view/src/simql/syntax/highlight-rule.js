@@ -7,8 +7,6 @@ ace.define('ace/mode/simql_highlight_rules', ['require', 'exports', 'module', 'a
   const TextHighlightRules = acequire('./text_highlight_rules').TextHighlightRules;
 
   const SimqlHighlightRules = function() {
-    const operations = '<<|><|<|<=|>|>=|=|<>|?|:';
-
     function string(rule) {
       const start = rule.start;
       const escapeSeq = rule.escape;
@@ -28,7 +26,7 @@ ace.define('ace/mode/simql_highlight_rules', ['require', 'exports', 'module', 'a
         string({start: '"', escape: /\\[0'"bnrtZ\\%_]?/}),
         {
           token: 'keyword',
-          regex: '<<|><|<=|>=|=|<>|>|<|:|\\?'
+          regex: '<<|><|<=|>=|=|<>|>|<|:|\\?|@'
         }, {
           token: 'paren.lparen',
           regex: '[\\(]'
