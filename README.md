@@ -13,12 +13,13 @@ $ yarn start
 
 ## SIMQL syntax
 ```
-string ::= // simple string
+string ::= // string
 number ::= // decimal number
+null ::= "null"
 symbol ::= [a-zA-Z][a-zA-Z0-9_]*
 accessor ::= "$"[0-9]
 symbolWithAccessor ::= [accessor "."]symbol
-term ::= (symbolWithAccessor | string | number)
+term ::= (null | symbolWithAccessor | string | number)
 
 binaryOp ::= (">" | "<" | ">=" | "<=" | "=" | "<>")
 binaryCond ::= term binaryOp term

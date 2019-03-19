@@ -17,6 +17,7 @@ object MySQLGenerator extends Generator {
       case t: Term => t match {
         case StringWrapper(v) => v.replaceAll("\"", "'")
         case NumberWrapper(v) => v.toString
+        case NullLit => "null"
         case SymbolWrapper(v) => v
         case SymbolWithAccessor(s, ac) =>
           val accessorToken = ac.map(a => s"${toSQL(a)}.").getOrElse("")
@@ -35,8 +36,14 @@ object MySQLGenerator extends Generator {
         case OrderType.DESC => "DESC"
       }
 
-      case BinaryCond(op, lhs, rhs) =>
-        s"${toSQL(lhs)} ${toSQL(op)} ${toSQL(rhs)}"
+      case c: Cond => c match {
+        case BinaryCond(op, lhs, rhs) =>
+          s"${toSQL(lhs)} ${toSQL(op)} ${toSQL(rhs)}"
+        case IsNull(lhs) =>
+          s"${toSQL(lhs)} IS NULL"
+        case IsNotNull(lhs) =>
+          s"${toSQL(lhs)} IS NOT NULL"
+      }
       case ExprRhs(op, value) =>
         s"${toSQL(op)} ${toSQL(value)}"
       case Expr(lhs, rhss) =>

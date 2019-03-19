@@ -13,13 +13,14 @@ object Parser extends JavaTokenParsers {
 
   val string: Parser[StringWrapper] = stringLiteral ^^ { StringWrapper(_) }
   val number: Parser[NumberWrapper] = decimalNumber ^^ { s => NumberWrapper(BigDecimal(s)) }
+  val nullLit: Parser[NullLit.type] = "null" ^^ { _ => NullLit }
   val symbol: Parser[SymbolWrapper] = """[a-zA-Z][a-zA-Z0-9_]*""".r ^^ { SymbolWrapper(_) }
   val accessor: Parser[Accessor] = """\$[0-9]""".r ^^ { case s => Accessor(s.tail.toInt) }
   val symbolWithAccessor: Parser[SymbolWithAccessor] = opt(accessor~".")~symbol ^^ { case acOpt~s =>
     val accessor = acOpt.map { case ac~_ => ac }
     SymbolWithAccessor(s, accessor)
   }
-  val term: Parser[Term] = symbolWithAccessor | string | number
+  val term: Parser[Term] = nullLit | symbolWithAccessor | string | number
 
   val binaryOp: Parser[BinaryOp] = """(>=|<=|>|<|=|<>|in)""".r ^^ { case opStr =>
     val op = opStr match {

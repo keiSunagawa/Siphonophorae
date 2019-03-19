@@ -1,11 +1,9 @@
-package me.kerfume.simql.transpiler
+package me.kerfume.simql.transpiler.resolver
 
+import me.kerfume.simql.transpiler.ASTMetaData
 import me.kerfume.simql.node._
 
 import scala.util.{ Try, Success, Failure }
-trait Resolver {
-  def resolve(ast: SimqlRoot, meta: ASTMetaData): Either[String, SimqlRoot]
-}
 
 // TODO visitor patternのほうがいいかも?
 object AccessorResolver {
@@ -68,11 +66,17 @@ object AccessorResolver {
   }
 
   private[this] def exprResolve(node: Expr, meta: ASTMetaData): Either[String, Expr] = {
-    val resolvedLhs = bcondResolve(node.lhs, meta)
+    val resolvedLhs = node.lhs match {
+      case n: BinaryCond => bcondResolve(n, meta)
+      case o => Right(o) // TODO
+    }
     val resolvedRhss = node.rhss.foldLeft[Either[String, List[ExprRhs]]](Right(Nil)) { case (acm, unresolved) =>
       for {
         _acm <- acm
-        resolvedValue <- bcondResolve(unresolved.value, meta)
+        resolvedValue <- unresolved.value match {
+          case n: BinaryCond => bcondResolve(n, meta)
+          case o => Right(o)
+        }
       } yield unresolved.copy(
         value = resolvedValue
       ) :: _acm
