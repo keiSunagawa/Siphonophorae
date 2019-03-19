@@ -21,7 +21,7 @@ accessor ::= "$"[0-9]
 symbolWithAccessor ::= [accessor "."]symbol
 term ::= (null | symbolWithAccessor | string | number)
 
-binaryOp ::= (">" | "<" | ">=" | "<=" | "=" | "<>")
+binaryOp ::= (">" | "<" | ">=" | "<=" | "==" | "!=")
 binaryCond ::= term binaryOp term
 
 logicalOp ::= "&&" | "||"

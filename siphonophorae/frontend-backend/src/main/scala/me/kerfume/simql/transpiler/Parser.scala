@@ -22,14 +22,14 @@ object Parser extends JavaTokenParsers {
   }
   val term: Parser[Term] = nullLit | symbolWithAccessor | string | number
 
-  val binaryOp: Parser[BinaryOp] = """(>=|<=|>|<|=|<>|in)""".r ^^ { case opStr =>
+  val binaryOp: Parser[BinaryOp] = """(>=|<=|>|<|==|!=|in)""".r ^^ { case opStr =>
     val op = opStr match {
       case ">" => BinaryOp.GT
       case "<" => BinaryOp.LT
       case ">=" => BinaryOp.GE
       case "<=" => BinaryOp.LE
-      case "=" => BinaryOp.EQ
-      case "<>" => BinaryOp.NE
+      case "==" => BinaryOp.EQ
+      case "!=" => BinaryOp.NE
       // case "in" => BinaryOp.IN
       // case "like" => BinaryOp.LIKE
     }
