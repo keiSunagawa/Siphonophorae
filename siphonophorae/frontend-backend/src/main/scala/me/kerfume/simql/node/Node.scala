@@ -18,18 +18,18 @@ case class BinaryCond(op: BinaryOp, lhs: Term, rhs: Term) extends Cond
 
 case class LogicalOp(op: LogicalOp.Op) extends Node
 case class ExprRhs(op: LogicalOp, value: Cond) extends Node
-case class Expr(lhs: Cond, rhss: Seq[ExprRhs]) extends Node
+case class Expr(lhs: Cond, rhss: List[ExprRhs]) extends Node
 
 case class JoinType(value: JoinType.Op) extends Node
 case class Join(joinType: JoinType, rhsTable: SymbolWrapper, on: Expr) extends Node
 
 case class OrderType(value: OrderType.Op) extends Node
 
-case class From(lhs: SymbolWrapper, rhss: Seq[Join]) extends Node
-case class Select(values: Seq[SymbolWithAccessor]) extends Node // Nil is select all column
+case class From(lhs: SymbolWrapper, rhss: List[Join]) extends Node
+case class Select(values: List[SymbolWithAccessor]) extends Node // Nil is select all column
 case class Where(value: Expr) extends Node
 case class LimitOffset(limit: NumberWrapper, offset: Option[NumberWrapper]) extends Node // TODO ignore float number
-case class Order(orderType: OrderType, head: SymbolWithAccessor, tail: Seq[SymbolWithAccessor]) extends Node
+case class Order(orderType: OrderType, head: SymbolWithAccessor, tail: List[SymbolWithAccessor]) extends Node
 
 case class SimqlRoot(
   from: From,
