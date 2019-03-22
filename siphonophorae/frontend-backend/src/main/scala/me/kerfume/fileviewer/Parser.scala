@@ -30,38 +30,43 @@ object Parser extends JavaTokenParsers {
   private[this] val column: Parser[String] = """[a-zA-Z0-9_-]+""".r ^^ { _.toString }
 
   private[this] val orderType: Parser[OrderType] = """(asc|desc)""".r ^^ {
-    case "asc" => Asc
+    case "asc"  => Asc
     case "desc" => Desc
   }
 
-  private[this] val numFilterType: Parser[FilterOperator[NumberC]] = """(>=|<=|>|<)""".r~wholeNumber ^^ { case op~numstr =>
-    val n = numstr.toInt
-    op match {
-      case ">=" => GE(n)
-      case ">" => GT(n)
-      case "<=" => LE(n)
-      case "<" => LT(n)
-    }
+  private[this] val numFilterType: Parser[FilterOperator[NumberC]] = """(>=|<=|>|<)""".r ~ wholeNumber ^^ {
+    case op ~ numstr =>
+      val n = numstr.toInt
+      op match {
+        case ">=" => GE(n)
+        case ">"  => GT(n)
+        case "<=" => LE(n)
+        case "<"  => LT(n)
+      }
   }
 
-  private[this] val strFilterType: Parser[FilterOperator[StringC]] = """(in|=)""".r~(wholeNumber|stringLiteral) ^^ { case op~s =>
-    val reps = s.replaceAll("\"", "")
-    op match {
-      case "in" => IN(reps)
-      case "=" => EQ(reps)
-    }
+  private[this] val strFilterType: Parser[FilterOperator[StringC]] = """(in|=)""".r ~ (wholeNumber | stringLiteral) ^^ {
+    case op ~ s =>
+      val reps = s.replaceAll("\"", "")
+      op match {
+        case "in" => IN(reps)
+        case "="  => EQ(reps)
+      }
   }
 
-  val exprOperation: Parser[ExprOperator] = """(\+|-|\*|/)""".r ^^ { case op =>
-    op match {
-      case "+" => `+`
-      case "-" => `-`
-      case "*" => `*`
-      case "/" => `/`
-    }
+  val exprOperation: Parser[ExprOperator] = """(\+|-|\*|/)""".r ^^ {
+    case op =>
+      op match {
+        case "+" => PlusOp
+        case "-" => MinusOp
+        case "*" => MulOp
+        case "/" => DivOp
+      }
   }
 
-  private[this] val order: Parser[Order] = column~orderType ^^ { case c~t => Order(c, t) }
-  private[this] val filter: Parser[Filter] = column~(numFilterType|strFilterType) ^^ { case c~t => Filter(c, t) }
-  val expr: Parser[Expr] = column~exprOperation~column~("="~>column) ^^ { case col1~op~col2~result => Expr(col1, col2, result, op) }
+  private[this] val order: Parser[Order] = column ~ orderType ^^ { case c ~ t                         => Order(c, t) }
+  private[this] val filter: Parser[Filter] = column ~ (numFilterType | strFilterType) ^^ { case c ~ t => Filter(c, t) }
+  val expr: Parser[Expr] = column ~ exprOperation ~ column ~ ("=" ~> column) ^^ {
+    case col1 ~ op ~ col2 ~ result => Expr(col1, col2, result, op)
+  }
 }

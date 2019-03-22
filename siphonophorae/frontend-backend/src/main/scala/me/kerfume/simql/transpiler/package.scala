@@ -4,7 +4,5 @@ import me.kerfume.simql.node._
 
 package object transpiler {
   type TranspileError = String
-  case class ASTMetaData(
-    tables: Seq[SymbolWrapper]
-  )
+  case class ASTMetaData(tables: Seq[SymbolWrapper])
 }

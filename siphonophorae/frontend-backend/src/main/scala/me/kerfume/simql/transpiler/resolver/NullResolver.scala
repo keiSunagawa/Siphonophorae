@@ -3,7 +3,7 @@ package me.kerfume.simql.transpiler.resolver
 import me.kerfume.simql.transpiler._
 import me.kerfume.simql.node._
 import cats.instances.either._
-import scala.util.{ Try, Success, Failure }
+import scala.util.{Failure, Success, Try}
 
 // TODO visitor patternのほうがいいかも?
 object NullResolver extends Resolver {
@@ -18,7 +18,7 @@ object NullResolverVisitor extends ASTVisitor {
   override def visit(node: Cond): RE[Cond] = node match {
     case b: BinaryCond =>
       // 左辺がnullはスルー
-      if(b.rhs == NullLit && b.op.op == BinaryOp.EQ) for {
+      if (b.rhs == NullLit && b.op.op == BinaryOp.EQ) for {
         lhs <- visit(b.lhs)
       } yield IsNull(lhs)
       else if (b.rhs == NullLit && b.op.op == BinaryOp.NE) for {

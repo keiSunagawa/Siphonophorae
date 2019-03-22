@@ -2,8 +2,7 @@ package me.kerfume.fileviewer
 
 import Command._
 
-import scala.util.{ Failure, Success, Try }
-
+import scala.util.{Failure, Success, Try}
 
 trait OrderFunctions { self: Functions =>
   def procOrder(table: Table, order: Order): Either[String, Table] = withoutHeader(table) { (header, body) =>
@@ -17,7 +16,7 @@ trait OrderFunctions { self: Functions =>
   private[this] def orderBy(index: Int, tbl: Table): Table = {
     Try { tbl.sortBy(_(index).toInt) } match {
       case Success(sorted) => sorted
-      case Failure(_) => tbl.sortBy(_(index))
+      case Failure(_)      => tbl.sortBy(_(index))
     }
   }
 }

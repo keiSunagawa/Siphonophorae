@@ -1,10 +1,6 @@
 package me.kerfume.fileviewer
 
-object Functions
-  extends Functions
-  with FilterFunctions
-  with OrderFunctions
-  with ExprFunctions
+object Functions extends Functions with FilterFunctions with OrderFunctions with ExprFunctions
 
 trait Functions {
   protected[this] def columnIndex(header: Header, columnName: String): Either[String, Int] = {

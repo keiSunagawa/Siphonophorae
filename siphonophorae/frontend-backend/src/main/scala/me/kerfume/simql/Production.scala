@@ -1,6 +1,6 @@
 package me.kerfume.simql
 
-import cats.{Id, InjectK, ~>, Monad}
+import cats.{~>, Id, InjectK, Monad}
 import cats.Monad
 import cats.arrow.FunctionK
 import cats.catsInstancesForId
@@ -8,7 +8,7 @@ import monix.execution.Cancelable
 import monix.reactive._
 import scala.scalajs.js
 import scala.scalajs.js.JSConverters._
-import scala.scalajs.js.annotation.{ JSExport, JSExportTopLevel }
+import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 
 @JSExportTopLevel("SIMQL")
 object Production {
@@ -22,13 +22,13 @@ object Production {
     val presenter = new FunctionK[Presenter.Op, Id] {
       import Presenter._
       def apply[A](op: Op[A]) = op match {
-        case GetSimqlQuery => getSimqlQuery.apply()
-        case PrintSQL(sql) => printSQL.apply(sql)
+        case GetSimqlQuery     => getSimqlQuery.apply()
+        case PrintSQL(sql)     => printSQL.apply(sql)
         case PrintError(error) => printError.apply(error)
       }
     }
 
-    val rdb =  new FunctionK[RDB.Op, Id] {
+    val rdb = new FunctionK[RDB.Op, Id] {
       import RDB._
       def apply[A](op: Op[A]) = op match {
         case SendSQL(sql) =>
@@ -62,12 +62,12 @@ class ApplicationProd(val interpreter: Module.SimqlApp ~> Id) extends Applicatio
   implicit val M: Monad[Id] = catsInstancesForId
   var handler: EventStreamHandler = null
   val eventStream = Observable.unsafeCreate[Application.Event] { s =>
-      val h = new EventStreamHandler(
-        event => s.onNext(event),
-        () => s.onComplete(),
-        this
-      )
-      handler = h
-      Cancelable(() => ())
-    }
+    val h = new EventStreamHandler(
+      event => s.onNext(event),
+      () => s.onComplete(),
+      this
+    )
+    handler = h
+    Cancelable(() => ())
+  }
 }

@@ -4,7 +4,7 @@ import scalaz.zio._
 
 import scala.scalajs.js
 import scala.scalajs.js.JSConverters._
-import scala.scalajs.js.annotation.{ JSExport, JSExportTopLevel }
+import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 
 @JSExportTopLevel("FileViewerEntryPoint")
 object FileViewerEntryPoint {
@@ -19,7 +19,7 @@ object FileViewerEntryPoint {
     printTableJs: js.Function1[js.Array[js.Array[String]], Unit],
     filterErrorJs: js.Function1[String, Unit],
     exprErrorJs: js.Function1[String, Unit],
-    orderErrorJs: js.Function1[String, Unit],
+    orderErrorJs: js.Function1[String, Unit]
   ): Service = {
 
     trait PresenterLive extends Presenter {
@@ -50,9 +50,7 @@ object FileViewerEntryPoint {
     new Service(program)
   }
 
-  class Service(
-    program: ZIO[Any, Throwable, Unit]
-  ) {
+  class Service(program: ZIO[Any, Throwable, Unit]) {
     val runtime = new DefaultRuntime {}
     @JSExport
     def run(): Unit = runtime.unsafeRun(program)

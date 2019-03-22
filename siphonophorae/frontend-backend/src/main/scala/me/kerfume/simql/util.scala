@@ -7,7 +7,7 @@ import scala.language.higherKinds
 object functions {
   def transpose[A, B](opt: Option[Either[A, B]]): Either[A, Option[B]] = opt match {
     case Some(either) => either.map(Some(_))
-    case None => Right(None)
+    case None         => Right(None)
   }
 
   implicit class FoldableOps[A, B, F[_]: Foldable: MonoidK: Applicative](e: F[A]) {
@@ -16,7 +16,7 @@ object functions {
         case (before, x) =>
           before match {
             case Right(xs) => f(x).map(x2 => xs <+> Applicative[F].pure(x2))
-            case Left(e) => Left(e)
+            case Left(e)   => Left(e)
           }
       }
     }

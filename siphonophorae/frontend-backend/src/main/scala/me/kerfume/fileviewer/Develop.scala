@@ -4,10 +4,10 @@ object Develop {
   import scalaz.zio._
 
   val tbl = Vector(
-        Vector("id", "name", "age"),
-        Vector("1", "taro", "18"),
-        Vector("2", "john", "22"),
-        Vector("3", "alice", "20")
+    Vector("id", "name", "age"),
+    Vector("1", "taro", "18"),
+    Vector("2", "john", "22"),
+    Vector("3", "alice", "20")
   )
 
   trait PresenterDevelop extends Presenter {

@@ -8,7 +8,6 @@ object Module {
   import Functions._
   import Parser._
 
-
   // TODO Error型が雑…
   val program: ZIO[Presenter, Throwable, Unit] = for {
     table <- getTable()
@@ -62,10 +61,12 @@ object Presenter {
     def getFilter(): ZIO[Presenter, PresenterError, String] = ZIO.accessM(_.presenter.getFilter())
     def getExpr(): ZIO[Presenter, PresenterError, String] = ZIO.accessM(_.presenter.getExpr())
 
-
     def printTable(table: Table): ZIO[Presenter, PresenterError, Unit] = ZIO.accessM(_.presenter.printTable(table))
-    def orderError(errors: Seq[String]): ZIO[Presenter, PresenterError, Unit] = ZIO.accessM(_.presenter.orderError(errors))
-    def filterError(errors: Seq[String]): ZIO[Presenter, PresenterError, Unit] = ZIO.accessM(_.presenter.filterError(errors))
-    def exprError(errors: Seq[String]): ZIO[Presenter, PresenterError, Unit] = ZIO.accessM(_.presenter.exprError(errors))
+    def orderError(errors: Seq[String]): ZIO[Presenter, PresenterError, Unit] =
+      ZIO.accessM(_.presenter.orderError(errors))
+    def filterError(errors: Seq[String]): ZIO[Presenter, PresenterError, Unit] =
+      ZIO.accessM(_.presenter.filterError(errors))
+    def exprError(errors: Seq[String]): ZIO[Presenter, PresenterError, Unit] =
+      ZIO.accessM(_.presenter.exprError(errors))
   }
 }

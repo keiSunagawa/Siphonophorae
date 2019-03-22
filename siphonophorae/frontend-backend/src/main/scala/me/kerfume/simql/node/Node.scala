@@ -36,8 +36,8 @@ case class SimqlRoot(
   select: Option[Select],
   where: Option[Where],
   limitOffset: Option[LimitOffset],
-  order: Option[Order]
-) extends Node
+  order: Option[Order])
+    extends Node
 
 object BinaryOp {
   sealed trait Op {

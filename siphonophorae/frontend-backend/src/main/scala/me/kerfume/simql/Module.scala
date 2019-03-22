@@ -2,7 +2,7 @@ package me.kerfume.simql
 
 import cats.free._
 import cats.free.Free._
-import cats.{Id, InjectK, ~>}
+import cats.{~>, Id, InjectK}
 
 object Module {
   import transpiler.Module._
@@ -16,13 +16,13 @@ object Module {
     for {
       simql <- getSimqlQuery()
       _ <- simqlToMysql(simql) match {
-          case Right(sql) => resultTo(sql)
-          case Left(error) => printError(error)
-        }
+            case Right(sql)  => resultTo(sql)
+            case Left(error) => printError(error)
+          }
     } yield ()
   }
 
-  def resultTo(sql: String)(implicit I : Presenter.Helper[SimqlApp], D : RDB.Helper[SimqlApp]): Free[SimqlApp, Unit] = {
+  def resultTo(sql: String)(implicit I: Presenter.Helper[SimqlApp], D: RDB.Helper[SimqlApp]): Free[SimqlApp, Unit] = {
     import I._, D._
     for {
       _ <- printSQL(sql)

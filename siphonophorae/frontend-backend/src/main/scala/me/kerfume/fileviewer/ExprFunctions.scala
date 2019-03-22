@@ -1,6 +1,6 @@
 package me.kerfume.fileviewer
 
-import scala.util.{ Failure, Success, Try }
+import scala.util.{Failure, Success, Try}
 
 trait ExprFunctions { self: Functions =>
   def procExpr(table: Table, expr: Expr): Either[String, Table] = {
@@ -13,13 +13,19 @@ trait ExprFunctions { self: Functions =>
     } yield newHeader +: newBody
   }
 
-  private[this] def runCalc(tbl: Table, i1: Int, i2: Int, f: (Int, Int) => Int): Either[String, Table] = Try {
-    tbl.map { line =>
-      val res = f(line(i1).toInt, line(i2).toInt)
-      line :+ res.toString
+  private[this] def runCalc(
+    tbl: Table,
+    i1: Int,
+    i2: Int,
+    f: (Int, Int) => Int
+  ): Either[String, Table] =
+    Try {
+      tbl.map { line =>
+        val res = f(line(i1).toInt, line(i2).toInt)
+        line :+ res.toString
+      }
+    } match {
+      case Success(v) => Right(v)
+      case Failure(_) => Left("invalid expr target.")
     }
-  } match {
-    case Success(v) => Right(v)
-    case Failure(_) => Left("invalid expr target.")
-  }
 }

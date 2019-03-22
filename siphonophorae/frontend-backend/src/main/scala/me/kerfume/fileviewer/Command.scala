@@ -5,7 +5,12 @@ import Command._
 trait Command
 case class Order(column: String, orderType: OrderType) extends Command
 case class Filter(column: String, op: FilterOperator[ColumnType]) extends Command
-case class Expr(column1: String, column2: String, result: String, op: ExprOperator) extends Command
+case class Expr(
+  column1: String,
+  column2: String,
+  result: String,
+  op: ExprOperator)
+    extends Command
 
 object Command {
   sealed trait OrderType
@@ -35,16 +40,18 @@ object Command {
   sealed trait ExprOperator {
     val calc: (Int, Int) => Int
   }
-  case object `+` extends ExprOperator {
+  case object PlusOp extends ExprOperator {
     override val calc: (Int, Int) => Int = _ + _
   }
-  case object `-` extends ExprOperator{
+  case object MinusOp extends ExprOperator {
     override val calc: (Int, Int) => Int = _ - _
   }
-  case object `*` extends ExprOperator {
+  case object MulOp extends ExprOperator {
     override val calc: (Int, Int) => Int = _ * _
   }
-  case object `/` extends ExprOperator {
-    override val calc: (Int, Int) => Int = { (a, b) => if (b == 0) 0 else a / b}
+  case object DivOp extends ExprOperator {
+    override val calc: (Int, Int) => Int = { (a, b) =>
+      if (b == 0) 0 else a / b
+    }
   }
 }

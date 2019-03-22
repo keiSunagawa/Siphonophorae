@@ -15,17 +15,18 @@ object Module {
     for {
       ast <- Parser.parseSimql(query).toRight("failed parse.")
       meta = Analyzer.analyze(ast)
-      resolved <- resolvers.foldLeft[Either[TranspileError, SimqlRoot]](Right(ast)) { case (before, resolver) =>
-        before match {
-          case Right(target) => resolver.resolve(target, meta)
-          case Left(e) => Left(e)
-        }
-      }
+      resolved <- resolvers.foldLeft[Either[TranspileError, SimqlRoot]](Right(ast)) {
+                   case (before, resolver) =>
+                     before match {
+                       case Right(target) => resolver.resolve(target, meta)
+                       case Left(e)       => Left(e)
+                     }
+                 }
     } yield resolved
   }
 
   private[this] val resolvers: Seq[Resolver] = Seq(
     AccessorResolver,
-    NullResolver,
+    NullResolver
   )
 }
