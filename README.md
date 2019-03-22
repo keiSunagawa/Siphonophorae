@@ -18,8 +18,11 @@ number ::= // decimal number
 null ::= "null"
 symbol ::= [a-zA-Z][a-zA-Z0-9_]*
 accessor ::= "$"[0-9]
-symbolWithAccessor ::= [accessor "."]symbol
-term ::= (null | symbolWithAccessor | string | number)
+raw = "\$`.*`"
+macroSymbol ::= "\$[a-zA-Z][a-zA-Z0-9_]*" // TODO
+
+symbolWithAccessor ::= [accessor"."]symbol
+term ::= (null | symbolWithAccessor | string | number | raw)
 
 binaryOp ::= (">" | "<" | ">=" | "<=" | "==" | "!=")
 binaryCond ::= symbolWithAccessor binaryOp term
@@ -33,8 +36,10 @@ join ::= joinType symbol "?" expr
 
 orderType ::= "/>" | "\>"
 
+column = (symbolWithAccessor | raw)
+
 from ::= symbol {join}
-select ::= ":" symbolWithAccessor {symbolWithAccessor}
+select ::= ":" column {column}
 where ::= "?" expr
 limitOffset ::= "@" number [- number] // TODO ignore float number
 order ::= orderType symbolWithAccessor {symbolWithAccessor}
@@ -43,4 +48,7 @@ simql ::= from [select] [where] [limitOffset] [order]
 
 order ::= // TODO
 groupBy ::= // TODO maybe omit
+
+// define
+table = "deft" symbol "=" from // TODO
 ```

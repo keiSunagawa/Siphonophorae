@@ -7,8 +7,11 @@ case class StringWrapper(value: String) extends Term
 case class NumberWrapper(value: BigDecimal) extends Term
 case object NullLit extends Term
 case class SymbolWrapper(label: String) extends Term
-case class Accessor(point: Int, resolvedSymbol: Option[SymbolWrapper] = None) extends Node
-case class SymbolWithAccessor(symbol: SymbolWrapper, accessor: Option[Accessor]) extends Term
+
+sealed trait Column extends Node
+case class Raw(sql: String) extends Term with Column
+case class Accessor(point: Int, resolvedSymbol: Option[SymbolWrapper] = None)
+case class SymbolWithAccessor(symbol: SymbolWrapper, accessor: Option[Accessor]) extends Term with Column
 
 case class BinaryOp(op: BinaryOp.Op) extends Node
 sealed trait Cond extends Node
@@ -26,7 +29,7 @@ case class Join(joinType: JoinType, rhsTable: SymbolWrapper, on: Expr) extends N
 case class OrderType(value: OrderType.Op) extends Node
 
 case class From(lhs: SymbolWrapper, rhss: List[Join]) extends Node
-case class Select(values: List[SymbolWithAccessor]) extends Node // Nil is select all column
+case class Select(values: List[Column]) extends Node // Non Empty List
 case class Where(value: Expr) extends Node
 case class LimitOffset(limit: NumberWrapper, offset: Option[NumberWrapper]) extends Node // TODO ignore float number
 case class Order(orderType: OrderType, head: SymbolWithAccessor, tail: List[SymbolWithAccessor]) extends Node

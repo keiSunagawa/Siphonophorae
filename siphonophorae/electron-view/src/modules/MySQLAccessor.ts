@@ -49,28 +49,32 @@ export class MySQLAccessor {
       const connection = mysql.createConnection(this.conf);
       connection.connect()
       connection.query({ sql: <string> query, nestTables: '.' }, (error, results, fields) => {
-      if (error) { reject(error.message) }
-      else {
-        const header = fields.map((v) => `${v.orgTable}.${v.orgName}`)
-        const body = results.map((b) => header.map((h) => {
-          const v = b[h]
-          if (v == null || v == undefined) {
-            return ""
-          } else if (typeof v == "object") {
-            if (v instanceof Date) {
-              return moment(v).format("YYYY-MM-DDZ")
-            } else {
-              return v.toString()
-            }
-          } else {
-            return v
-          }
-        }))
+        if (error) { reject(error.message) }
+        else {
 
-        resolve({ header, body })
-      }
-    })
-    connection.end();
+          const header = fields.map((v) => {
+            const table = v.orgTable ? `${v.orgTable}` : ""
+            return `${table}.${v.orgName ? v.orgName : v.name}`
+          })
+          const body = results.map((b) => header.map((h) => {
+            const v = b[h]
+            if (v == null || v == undefined) {
+              return ""
+            } else if (typeof v == "object") {
+              if (v instanceof Date) {
+                return moment(v).format("YYYY-MM-DDZ")
+              } else {
+                return v.toString()
+              }
+            } else {
+              return v
+            }
+          }))
+
+          resolve({ header, body })
+        }
+      })
+      connection.end();
     })
   }
 }

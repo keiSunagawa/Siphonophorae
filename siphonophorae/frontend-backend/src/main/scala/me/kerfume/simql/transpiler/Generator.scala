@@ -16,20 +16,35 @@ object MySQLGenerator extends Generator {
     import scala.annotation.tailrec
     // TODO stack safe or @tailrec
     def toSQL(node: Node): String = node match {
+      case StringWrapper(v)          => v.replaceAll("\"", "'")
+      case NumberWrapper(v)          => v.toString
+      case NullLit                   => "null"
+      case Raw(sql)                  => s"($sql)"
+      case SymbolWrapper(v)          => v
+      case SymbolWithAccessor(s, ac) =>
+        // この時点で未解決のシンボルはない前提...
+        val accessorToken = ac.map(a => a.resolvedSymbol.map(s => s"${toSQL(s)}.").getOrElse("")).getOrElse("")
+        s"${accessorToken}${toSQL(s)}"
       case t: Term =>
         t match {
-          case StringWrapper(v) => v.replaceAll("\"", "'")
-          case NumberWrapper(v) => v.toString
-          case NullLit          => "null"
-          case SymbolWrapper(v) => v
-          case SymbolWithAccessor(s, ac) =>
-            val accessorToken = ac.map(a => s"${toSQL(a)}.").getOrElse("")
-            s"${accessorToken}${toSQL(s)}"
+          case n: StringWrapper      => toSQL(n)
+          case n: NumberWrapper      => toSQL(n)
+          case NullLit               => toSQL(NullLit)
+          case n: Raw                => toSQL(n)
+          case n: SymbolWrapper      => toSQL(n)
+          case n: SymbolWithAccessor => toSQL(n)
         }
-      // この時点で未解決のシンボルはない前提...
-      case Accessor(_, resolveSymbol) => resolveSymbol.map(toSQL).getOrElse("")
-      case BinaryOp(op)               => op.label
-      case LogicalOp(op)              => op.label
+      case c: Column =>
+        c match {
+          case n: Raw                => toSQL(n)
+          case n: SymbolWithAccessor => toSQL(n)
+        }
+      case BinaryOp(op) => op.label
+      case LogicalOp(op) =>
+        op match {
+          case LogicalOp.And => "AND"
+          case LogicalOp.Or  => "OR"
+        }
       case JoinType(value) =>
         value match {
           case JoinType.LeftJoin  => "LEFT JOIN"
@@ -59,7 +74,7 @@ object MySQLGenerator extends Generator {
       case From(lhs, rhss) =>
         s"${toSQL(lhs)} ${rhss.map(toSQL).mkString(" ")}"
       case Select(values) =>
-        s"""${if (values.isEmpty) "*" else values.map(toSQL).mkString(", ")}"""
+        s"""${if (values.isEmpty) "*" else values.map(s => toSQL(s)).mkString(", ")}"""
       case Where(value) =>
         s"${toSQL(value)}"
       case LimitOffset(limit, offset) =>

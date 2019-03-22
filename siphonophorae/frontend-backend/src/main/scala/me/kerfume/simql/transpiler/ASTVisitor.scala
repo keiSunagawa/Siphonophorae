@@ -14,6 +14,9 @@ trait ASTVisitor {
   def visit(node: NumberWrapper): RE[NumberWrapper] = re { _ =>
     Right(node)
   }
+  def visit(node: Raw): RE[Raw] = re { _ =>
+    Right(node)
+  }
   def visit(node: SymbolWrapper): RE[SymbolWrapper] = re { _ =>
     Right(node)
   }
@@ -24,12 +27,18 @@ trait ASTVisitor {
   def visit(node: Term): RE[Term] = node match {
     case n: StringWrapper      => (visit(n): RE[StringWrapper]).map(identity)
     case n: NumberWrapper      => (visit(n): RE[NumberWrapper]).map(identity)
+    case n: Raw                => (visit(n): RE[Raw]).map(identity)
     case n: SymbolWrapper      => (visit(n): RE[SymbolWrapper]).map(identity)
     case n: SymbolWithAccessor => (visit(n): RE[SymbolWithAccessor]).map(identity)
     case NullLit =>
       re { _ =>
         Right(NullLit)
       }
+  }
+
+  def visit(node: Column): RE[Column] = node match {
+    case n: Raw                => (visit(n): RE[Raw]).map(identity)
+    case n: SymbolWithAccessor => (visit(n): RE[SymbolWithAccessor]).map(identity)
   }
 
   def visit(node: BinaryCond): RE[BinaryCond] = {

@@ -19,13 +19,20 @@ object Parser extends JavaTokenParsers {
     NullLit
   }
   val symbol: Parser[SymbolWrapper] = """[a-zA-Z][a-zA-Z0-9_]*""".r ^^ { SymbolWrapper(_) }
+
+  val raw: Parser[Raw] = """\$`.*`""".r ^^ {
+    case s =>
+      val sql = s.tail.replaceAll("`", "")
+      Raw(sql)
+  }
   val accessor: Parser[Accessor] = """\$[0-9]""".r ^^ { case s => Accessor(s.tail.toInt) }
   val symbolWithAccessor: Parser[SymbolWithAccessor] = opt(accessor ~ ".") ~ symbol ^^ {
     case acOpt ~ s =>
       val accessor = acOpt.map { case ac ~ _ => ac }
       SymbolWithAccessor(s, accessor)
   }
-  val term: Parser[Term] = nullLit | symbolWithAccessor | string | number
+  val column: Parser[Column] = raw | symbolWithAccessor
+  val term: Parser[Term] = nullLit | raw | symbolWithAccessor | string | number
 
   val binaryOp: Parser[BinaryOp] = """(>=|<=|>|<|==|!=|in)""".r ^^ {
     case opStr =>
@@ -84,7 +91,7 @@ object Parser extends JavaTokenParsers {
     case table ~ joins =>
       From(table, joins)
   }
-  val select = ":" ~ symbolWithAccessor ~ rep(symbolWithAccessor) ^^ {
+  val select = ":" ~ column ~ rep(column) ^^ {
     case _ ~ col1 ~ cols =>
       Select(col1 +: cols)
   }
