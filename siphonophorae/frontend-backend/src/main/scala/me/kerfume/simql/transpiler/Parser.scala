@@ -41,7 +41,7 @@ object Parser extends JavaTokenParsers {
       }
       BinaryOp(op)
   }
-  val binaryCond = term ~ binaryOp ~ term ^^ { case lhs ~ op ~ rhs => BinaryCond(op, lhs, rhs) }
+  val binaryCond = symbolWithAccessor ~ binaryOp ~ term ^^ { case lhs ~ op ~ rhs => BinaryCond(op, lhs, rhs) }
 
   val logicalOp = """(&&|\|\|)""".r ^^ {
     case opStr =>

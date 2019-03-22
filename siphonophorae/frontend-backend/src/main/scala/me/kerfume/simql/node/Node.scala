@@ -14,7 +14,7 @@ case class BinaryOp(op: BinaryOp.Op) extends Node
 sealed trait Cond extends Node
 case class IsNull(lhs: Term) extends Cond // only generate by ast visitor
 case class IsNotNull(lhs: Term) extends Cond // only generate by ast visitor
-case class BinaryCond(op: BinaryOp, lhs: Term, rhs: Term) extends Cond
+case class BinaryCond(op: BinaryOp, lhs: SymbolWithAccessor, rhs: Term) extends Cond
 
 case class LogicalOp(op: LogicalOp.Op) extends Node
 case class ExprRhs(op: LogicalOp, value: Cond) extends Node

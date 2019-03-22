@@ -22,7 +22,7 @@ symbolWithAccessor ::= [accessor "."]symbol
 term ::= (null | symbolWithAccessor | string | number)
 
 binaryOp ::= (">" | "<" | ">=" | "<=" | "==" | "!=")
-binaryCond ::= term binaryOp term
+binaryCond ::= symbolWithAccessor binaryOp term
 
 logicalOp ::= "&&" | "||"
 
