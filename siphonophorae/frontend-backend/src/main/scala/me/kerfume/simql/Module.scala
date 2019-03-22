@@ -32,7 +32,7 @@ object Module {
   def resolve(ast: SimqlRoot, meta: ASTMetaData): Either[String, SimqlRoot] = {
     for {
       accessorResolved <- AccessorResolver.resolve(ast, meta)
-      nullResolved <- NullResolver.resolve(ast, meta)
+      nullResolved <- NullResolver.resolve(accessorResolved, meta)
     } yield nullResolved
   }
   def resultTo(sql: String)(implicit I : Presenter.Helper[SimqlApp], D : RDB.Helper[SimqlApp]): Free[SimqlApp, Unit] = {

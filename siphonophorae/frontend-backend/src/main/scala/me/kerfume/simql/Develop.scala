@@ -5,12 +5,20 @@ import me.kerfume.simql.transpiler.resolver._
 import me.kerfume.simql.node._
 
 object Develop {
-  def parseAndResolve(query: String): Either[String, SimqlRoot] = {
+  def parseAndResolve(query: String): Either[String, String] = {
     for {
       ast <- Parser.parseSimql(query).toRight("failed parse.")
       meta = Analyzer.analyze(ast)
-      resolved <- NullResolver.resolve(ast, meta)
-    } yield resolved
+      _ = println(meta)
+      resolved <- resolve(ast, meta)
+      sql = MySQLGenerator.generate(resolved)
+    } yield sql
+  }
+  def resolve(ast: SimqlRoot, meta: ASTMetaData): Either[String, SimqlRoot] = {
+    for {
+      accessorResolved <- AccessorResolver.resolve(ast, meta)
+      nullResolved <- NullResolver.resolve(accessorResolved, meta)
+    } yield nullResolved
   }
 }
 // import cats.{Id, InjectK, ~>, Monad}
