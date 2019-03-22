@@ -6,7 +6,7 @@ import cats.instances.either._
 import scala.util.{ Try, Success, Failure }
 
 // TODO visitor patternのほうがいいかも?
-object NullResolver {
+object NullResolver extends Resolver {
   def resolve(ast: SimqlRoot, meta: ASTMetaData): Either[String, SimqlRoot] = {
     NullResolverVisitor.visit(ast).run(meta)
   }

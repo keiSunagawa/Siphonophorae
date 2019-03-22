@@ -5,7 +5,7 @@ import me.kerfume.simql.node._
 
 import scala.util.{ Try, Success, Failure }
 
-object AccessorResolver {
+object AccessorResolver extends Resolver {
   def resolve(ast: SimqlRoot, meta: ASTMetaData): Either[String, SimqlRoot] = {
     AccessorResolverVisitor.visit(ast).run(meta)
   }

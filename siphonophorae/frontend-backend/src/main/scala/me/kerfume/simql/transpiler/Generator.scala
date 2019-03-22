@@ -3,11 +3,13 @@ package me.kerfume.simql.transpiler
 import me.kerfume.simql.node._
 
 trait Generator {
-  type Code = String
+  type Code
   def generate(ast: SimqlRoot): Code
 }
 
 object MySQLGenerator extends Generator {
+  type Code = String
+
   def generate(ast: SimqlRoot): Code = syntax.toSQL(ast)
 
   object syntax {

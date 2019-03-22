@@ -5,9 +5,8 @@ import cats.free.Free._
 import cats.{Id, InjectK, ~>}
 
 object Module {
-  import transpiler._
+  import transpiler.Module._
   import node.SimqlRoot
-  import transpiler.resolver._
 
   import cats.data.EitherK
 
@@ -16,25 +15,13 @@ object Module {
     import I._
     for {
       simql <- getSimqlQuery()
-      _ <- {
-        (for {
-          ast <- Parser.parseSimql(simql).toRight("failed parse.")
-          meta = Analyzer.analyze(ast)
-          resolved <- resolve(ast, meta)
-          sql = MySQLGenerator.generate(resolved)
-        } yield sql) match {
+      _ <- simqlToMysql(simql) match {
           case Right(sql) => resultTo(sql)
           case Left(error) => printError(error)
         }
-      }
     } yield ()
   }
-  def resolve(ast: SimqlRoot, meta: ASTMetaData): Either[String, SimqlRoot] = {
-    for {
-      accessorResolved <- AccessorResolver.resolve(ast, meta)
-      nullResolved <- NullResolver.resolve(accessorResolved, meta)
-    } yield nullResolved
-  }
+
   def resultTo(sql: String)(implicit I : Presenter.Helper[SimqlApp], D : RDB.Helper[SimqlApp]): Free[SimqlApp, Unit] = {
     import I._, D._
     for {
