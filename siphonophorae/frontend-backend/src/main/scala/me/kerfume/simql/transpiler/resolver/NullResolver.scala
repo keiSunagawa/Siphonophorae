@@ -2,18 +2,20 @@ package me.kerfume.simql.transpiler.resolver
 
 import me.kerfume.simql.transpiler._
 import me.kerfume.simql.node._
-
+import cats.instances.either._
 import scala.util.{ Try, Success, Failure }
 
 // TODO visitor patternのほうがいいかも?
 object NullResolver {
   def resolve(ast: SimqlRoot, meta: ASTMetaData): Either[String, SimqlRoot] = {
-    NullResolverVisitor.visit(ast)
+    NullResolverVisitor.visit(ast).run(meta)
   }
 }
 
 object NullResolverVisitor extends ASTVisitor {
-  override def visit(node: Cond): Either[TranspileError, Cond] = node match {
+  import ASTVisitor._
+
+  override def visit(node: Cond): RE[Cond] = node match {
     case b: BinaryCond =>
       // 左辺がnullはスルー
       if(b.rhs == NullLit && b.op.op == BinaryOp.EQ) for {
