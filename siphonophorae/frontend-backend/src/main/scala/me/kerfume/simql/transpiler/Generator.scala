@@ -13,88 +13,88 @@ object MySQLGenerator extends Generator {
   def generate(ast: SimqlRoot): Code = syntax.toSQL(ast)
 
   object syntax {
-    import scala.annotation.tailrec
+    def stringToSQL(node: StringWrapper): String = node.value.replaceAll("\"", "'")
+    def numberToSQL(node: NumberWrapper): String = node.value.toString
+    def nullToSQL(): String = "null"
+    def rawToSQL(node: Raw): String = s"(${node.sql})"
+    def symbolToSQL(node: SymbolWrapper): String = node.label
+    def symbolWithAccessorToSQL(node: SymbolWithAccessor): String = {
+      // この時点で未解決のシンボルはない前提...
+      val accessorToken =
+        node.accessor.map(a => a.resolvedSymbol.map(s => s"${symbolToSQL(s)}.").getOrElse("")).getOrElse("")
+      s"${accessorToken}${symbolToSQL(node.symbol)}"
+    }
+    def highSymbolToSQL(node: HighSymbol): String = node match {
+      case n: Raw                => rawToSQL(n)
+      case n: SymbolWithAccessor => symbolWithAccessorToSQL(n)
+      case n: MacroApply         => throw new RuntimeException(s"found unresolved macro. value: $n")
+    }
+    def termToSQL(node: Term): String = node match {
+      case n: StringWrapper => stringToSQL(n)
+      case n: NumberWrapper => numberToSQL(n)
+      case NullLit          => nullToSQL()
+      case n: SymbolWrapper => symbolToSQL(n)
+      case n: HighSymbol    => highSymbolToSQL(n)
+    }
+    def binaryOpToSQL(node: BinaryOp): String = node.op.label
+    def logicalOpToSQL(node: LogicalOp): String = node.op match {
+      case LogicalOp.And => "AND"
+      case LogicalOp.Or  => "OR"
+    }
+    def joinTypeToSQL(node: JoinType): String = node.value match {
+      case JoinType.LeftJoin  => "LEFT JOIN"
+      case JoinType.InnerJoin => "INNER JOIN"
+    }
+    def orderTypeToSQL(node: OrderType): String = node.value match {
+      case OrderType.ASC  => "ASC"
+      case OrderType.DESC => "DESC"
+    }
+    def condToSQL(node: Cond): String = node match {
+      case BinaryCond(op, lhs, rhs) =>
+        s"${highSymbolToSQL(lhs)} ${binaryOpToSQL(op)} ${termToSQL(rhs)}"
+      case IsNull(lhs) =>
+        s"${highSymbolToSQL(lhs)} IS NULL"
+      case IsNotNull(lhs) =>
+        s"${highSymbolToSQL(lhs)} IS NOT NULL"
+    }
+    def exprRhsToSQL(node: ExprRhs): String = {
+      s"${logicalOpToSQL(node.op)} ${condToSQL(node.value)}"
+    }
+    def exprToSQL(node: Expr): String = {
+      s"${condToSQL(node.lhs)} ${node.rhss.map(exprRhsToSQL).mkString(" ")}"
+    }
+    def joinToSQL(node: Join): String = {
+      s"${joinTypeToSQL(node.joinType)} ${symbolToSQL(node.rhsTable)} ON ${exprToSQL(node.on)}"
+    }
+    def fromToSQL(node: From): String = {
+      s"${symbolToSQL(node.lhs)} ${node.rhss.map(joinToSQL).mkString(" ")}"
+    }
+    def selectToSQL(node: Select): String = {
+      if (node.values.isEmpty) "*" else node.values.map(s => highSymbolToSQL(s)).mkString(", ")
+    }
+    def whereToSQL(node: Where): String = {
+      exprToSQL(node.value)
+    }
+    def limitOffsetToSQL(node: LimitOffset): String = {
+      val offsetSQL = node.offset.map(o => s"${numberToSQL(o)}, ").getOrElse("")
+      s"$offsetSQL ${numberToSQL(node.limit)}" // mysql dialect
+    }
+    def orderToSQL(node: Order): String = {
+      def pairToSQL(tpe: OrderType, symbol: HighSymbol): String = {
+        s"${highSymbolToSQL(symbol)} ${orderTypeToSQL(tpe)}" // TODO
+      }
+      val tailSyntax = node.tail.map { t =>
+        s", ${pairToSQL(node.orderType, t)}"
+      }.mkString(" ")
+      s"${pairToSQL(node.orderType, node.head)} $tailSyntax"
+    }
     // TODO stack safe or @tailrec
-    def toSQL(node: Node): String = node match {
-      case StringWrapper(v)          => v.replaceAll("\"", "'")
-      case NumberWrapper(v)          => v.toString
-      case NullLit                   => "null"
-      case Raw(sql)                  => s"($sql)"
-      case SymbolWrapper(v)          => v
-      case SymbolWithAccessor(s, ac) =>
-        // この時点で未解決のシンボルはない前提...
-        val accessorToken = ac.map(a => a.resolvedSymbol.map(s => s"${toSQL(s)}.").getOrElse("")).getOrElse("")
-        s"${accessorToken}${toSQL(s)}"
-      case c: HighSymbol =>
-        c match {
-          case n: Raw                => toSQL(n)
-          case n: SymbolWithAccessor => toSQL(n)
-          case n: MacroApply         => throw new RuntimeException(s"found unresolved macro. value: $n")
-        }
-      case t: Term =>
-        t match {
-          case n: StringWrapper => toSQL(n)
-          case n: NumberWrapper => toSQL(n)
-          case NullLit          => toSQL(NullLit)
-          case n: SymbolWrapper => toSQL(n)
-          case n: HighSymbol    => toSQL(n)
-        }
-      case BinaryOp(op) => op.label
-      case LogicalOp(op) =>
-        op match {
-          case LogicalOp.And => "AND"
-          case LogicalOp.Or  => "OR"
-        }
-      case JoinType(value) =>
-        value match {
-          case JoinType.LeftJoin  => "LEFT JOIN"
-          case JoinType.InnerJoin => "INNER JOIN"
-        }
-      case OrderType(value) =>
-        value match {
-          case OrderType.ASC  => "ASC"
-          case OrderType.DESC => "DESC"
-        }
-
-      case c: Cond =>
-        c match {
-          case BinaryCond(op, lhs, rhs) =>
-            s"${toSQL(lhs)} ${toSQL(op)} ${toSQL(rhs)}"
-          case IsNull(lhs) =>
-            s"${toSQL(lhs)} IS NULL"
-          case IsNotNull(lhs) =>
-            s"${toSQL(lhs)} IS NOT NULL"
-        }
-      case ExprRhs(op, value) =>
-        s"${toSQL(op)} ${toSQL(value)}"
-      case Expr(lhs, rhss) =>
-        s"${toSQL(lhs)} ${rhss.map(toSQL).mkString(" ")}"
-      case Join(jt, rhsTable, on) =>
-        s"${toSQL(jt)} ${toSQL(rhsTable)} ON ${toSQL(on)}"
-      case From(lhs, rhss) =>
-        s"${toSQL(lhs)} ${rhss.map(toSQL).mkString(" ")}"
-      case Select(values) =>
-        s"""${if (values.isEmpty) "*" else values.map(s => toSQL(s)).mkString(", ")}"""
-      case Where(value) =>
-        s"${toSQL(value)}"
-      case LimitOffset(limit, offset) =>
-        val offsetSQL = offset.map(o => s"${toSQL(o)}, ").getOrElse("")
-        s"$offsetSQL ${toSQL(limit)}" // mysql dialect
-      case Order(tpe, head, tail) =>
-        def pairToSQL(tpe: OrderType, symbol: HighSymbol): String = {
-          s"${toSQL(symbol)} ${toSQL(tpe)}" // TODO
-        }
-        val tailSyntax = tail.map { t =>
-          s", ${pairToSQL(tpe, t)}"
-        }.mkString(" ")
-        s"${pairToSQL(tpe, head)} $tailSyntax"
-
-      case SimqlRoot(from, select, where, limit, order) =>
-        val selectSQL = select.map(toSQL).getOrElse("*")
-        val whereSQL = where.map(w => s"WHERE ${toSQL(w)}").getOrElse("")
-        val limitOffsetSQL = limit.map(l => s"LIMIT ${toSQL(l)}").getOrElse("")
-        val orderSQL = order.map(o => s"ORDER BY ${toSQL(o)}").getOrElse("")
-        s"SELECT $selectSQL FROM ${toSQL(from)} $whereSQL $limitOffsetSQL $orderSQL"
+    def toSQL(node: SimqlRoot): String = {
+      val selectSQL = node.select.map(selectToSQL).getOrElse("*")
+      val whereSQL = node.where.map(w => s"WHERE ${whereToSQL(w)}").getOrElse("")
+      val limitOffsetSQL = node.limitOffset.map(l => s"LIMIT ${limitOffsetToSQL(l)}").getOrElse("")
+      val orderSQL = node.order.map(o => s"ORDER BY ${orderToSQL(o)}").getOrElse("")
+      s"SELECT $selectSQL FROM ${fromToSQL(node.from)} $whereSQL $limitOffsetSQL $orderSQL"
     }
   }
 }
