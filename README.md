@@ -19,7 +19,7 @@ null ::= "null"
 symbol ::= [a-zA-Z][a-zA-Z0-9_]*
 accessor ::= "$"[0-9]
 raw = "\$`.*`"
-macroArg ::= expr | symbol
+macroArg ::= expr | symbol | string | number
 macroApply ::= "\$[a-zA-Z][a-zA-Z0-9_]*"(" [macroArg] {"," macroArg} ")"
 
 symbolWithAccessor ::= [accessor"."]symbol
@@ -28,7 +28,7 @@ highSymbol ::= macroApply | raw | symbolWithAccessor
 term ::= (null | highSymbol | string | number)
 
 binaryOp ::= (">" | "<" | ">=" | "<=" | "==" | "!=")
-binaryCond ::= highSymbol binaryOp term
+binaryCond ::= (highSymbol binaryOp term) | macroApply
 
 logicalOp ::= "&&" | "||"
 
@@ -51,6 +51,6 @@ order ::= // TODO
 groupBy ::= // TODO maybe omit
 
 // define
-macroParam ::= symbol ":" ("Symbol" | "Expr") // 一旦二種類
+macroParam ::= symbol ":" ("String" | "Number" | "Symbol" | "Expr")
 macroFunc = "defun" symbol "="  // TODO
 ```

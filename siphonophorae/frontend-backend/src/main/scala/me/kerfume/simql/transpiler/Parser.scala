@@ -54,6 +54,7 @@ object Parser extends JavaTokenParsers {
       BinaryOp(op)
   }
   def binaryCond = highSymbol ~ binaryOp ~ term ^^ { case lhs ~ op ~ rhs => BinaryCond(op, lhs, rhs) }
+  def cond: Parser[Cond] = binaryCond | macroApply
 
   def logicalOp = """(&&|\|\|)""".r ^^ {
     case opStr =>
@@ -64,7 +65,7 @@ object Parser extends JavaTokenParsers {
       LogicalOp(op)
   }
 
-  def expr: Parser[Expr] = binaryCond ~ rep(logicalOp ~ binaryCond) ^^ {
+  def expr: Parser[Expr] = cond ~ rep(logicalOp ~ cond) ^^ {
     case b ~ body =>
       val rhss = body.map { case lo ~ bc => ExprRhs(lo, bc) }
       Expr(b, rhss)
@@ -119,7 +120,7 @@ object Parser extends JavaTokenParsers {
       SimqlRoot(f, s, w, l, o)
   }
 
-  def macroArg: Parser[MacroArg] = expr | symbol
+  def macroArg: Parser[MacroArg] = expr | symbol | string | number
   def macroApply: Parser[MacroApply] =
     """\$[a-zA-Z][a-zA-Z0-9_]*\(""".r ~ opt(macroArg) ~ rep("," ~ macroArg) ~ ")" ^^ {
       case s ~ a1 ~ an ~ _ =>

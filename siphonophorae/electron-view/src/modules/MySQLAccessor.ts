@@ -48,10 +48,12 @@ export class MySQLAccessor {
     return new Promise((resolve, reject) => {
       const connection = mysql.createConnection(this.conf);
       connection.connect()
+      console.log(query)
       connection.query({ sql: <string> query, nestTables: '.' }, (error, results, fields) => {
         if (error) { reject(error.message) }
         else {
-
+          console.log(fields)
+          console.log(results)
           const header = fields.map((v) => {
             const table = v.orgTable ? `${v.orgTable}` : ""
             return `${table}.${v.orgName ? v.orgName : v.name}`

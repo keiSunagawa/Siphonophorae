@@ -56,6 +56,9 @@ object MySQLGenerator extends Generator {
         s"${highSymbolToSQL(lhs)} IS NULL"
       case IsNotNull(lhs) =>
         s"${highSymbolToSQL(lhs)} IS NOT NULL"
+      case n: MacroApply =>
+        throw new RuntimeException(s"found unresolved macro. value: $n")
+      case n: Raw => rawToSQL(n)
     }
     def exprRhsToSQL(node: ExprRhs): String = {
       s"${logicalOpToSQL(node.op)} ${condToSQL(node.value)}"

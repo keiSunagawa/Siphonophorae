@@ -3,16 +3,16 @@ package me.kerfume.simql.node
 sealed trait Node
 
 sealed trait Term extends Node
-case class StringWrapper(value: String) extends Term
-case class NumberWrapper(value: BigDecimal) extends Term
+case class StringWrapper(value: String) extends Term with MacroArg
+case class NumberWrapper(value: BigDecimal) extends Term with MacroArg
 case object NullLit extends Term
 
 sealed trait HighSymbol extends Node with Term
 sealed trait TableSymbol extends Node
 sealed trait MacroArg extends Node
 case class SymbolWrapper(label: String) extends Term with TableSymbol with MacroArg
-case class Raw(sql: String) extends Term with HighSymbol with TableSymbol
-case class MacroApply(symbol: String, args: Seq[MacroArg]) extends HighSymbol with TableSymbol
+case class Raw(sql: String) extends Term with HighSymbol with TableSymbol with Cond
+case class MacroApply(symbol: String, args: Seq[MacroArg]) extends HighSymbol with TableSymbol with Cond
 case class Accessor(point: Int, resolvedSymbol: Option[SymbolWrapper] = None)
 case class SymbolWithAccessor(symbol: SymbolWrapper, accessor: Option[Accessor]) extends HighSymbol
 

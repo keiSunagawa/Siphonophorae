@@ -41,6 +41,20 @@ object MacroFuncResolverVisitor extends ASTVisitor {
     case _ => super.visitHighSymbol(node)
   }
 
+  override def visitCond(node: Cond): RE[Cond] = node match {
+    case MacroApply(key, args) =>
+      re { meta =>
+        for {
+          resolved <- meta.macroFuncs.condMacros.get(key) match {
+            case Some(f) => f.apply(args)
+            case None    => Left(s"not define macro. symbol: $key")
+          }
+          visited <- super.visitCond(resolved).run(meta)
+        } yield visited
+      }
+    case _ => super.visitCond(node)
+  }
+
   def resolve0(): RE[HighSymbol] = re { _ =>
     Right(Raw("COUNT(1)"))
   }
