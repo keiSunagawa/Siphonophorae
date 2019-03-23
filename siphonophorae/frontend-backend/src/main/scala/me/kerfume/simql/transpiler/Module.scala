@@ -14,7 +14,7 @@ object Module {
   private[this] def parseAndResolve(query: String): Either[TranspileError, SimqlRoot] = {
     for {
       ast <- Parser.parseSimql(query).toRight("failed parse.")
-      meta = Analyzer.analyze(ast)
+      meta = makeMetadata(ast)
       resolved <- resolvers.foldLeft[Either[TranspileError, SimqlRoot]](Right(ast)) {
                    case (before, resolver) =>
                      before match {
@@ -25,7 +25,18 @@ object Module {
     } yield resolved
   }
 
+  private[this] def makeMetadata(ast: SimqlRoot): ASTMetaData = {
+    import me.kerfume.simql.querymacro.buildin._
+    val analyzed = Analyzer.analyze(ast)
+    analyzed.copy(
+      macroFuncs = List(
+        Count
+      )
+    )
+  }
+
   private[this] val resolvers: Seq[Resolver] = Seq(
+    MacroFuncResolver,
     AccessorResolver,
     NullResolver
   )
