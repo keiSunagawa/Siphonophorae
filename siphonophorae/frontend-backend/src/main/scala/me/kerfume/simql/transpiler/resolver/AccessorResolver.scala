@@ -13,7 +13,7 @@ object AccessorResolver extends Resolver {
 object AccessorResolverVisitor extends ASTVisitor {
   import ASTVisitor._
 
-  override def visit(node: SymbolWithAccessor): RE[SymbolWithAccessor] = re { meta =>
+  override def visitSymbolWithAccessor(node: SymbolWithAccessor): RE[SymbolWithAccessor] = re { meta =>
     node.accessor match {
       case None =>
         Right(

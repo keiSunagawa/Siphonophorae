@@ -18,7 +18,7 @@ object MacroFuncResolverVisitor extends ASTVisitor {
   import ASTVisitor._
   import me.kerfume.simql.querymacro.MacroFunc._
 
-  override def visit(node: Term): RE[Term] =
+  override def visitTerm(node: Term): RE[Term] =
     node match {
       case n: HighSymbol =>
         n match {
@@ -27,7 +27,7 @@ object MacroFuncResolverVisitor extends ASTVisitor {
             resolve0().map(identity)
           case _ => super.visitHighSymbol(n).map(identity)
         }
-      case _ => super.visit(node)
+      case _ => super.visitTerm(node)
     }
 
   override def visitHighSymbol(node: HighSymbol): RE[HighSymbol] = node match {

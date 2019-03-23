@@ -8,19 +8,19 @@ import cats.instances.either._
 trait ASTVisitor {
   import ASTVisitor._
 
-  def visit(node: StringWrapper): RE[StringWrapper] = re { _ =>
+  def visitString(node: StringWrapper): RE[StringWrapper] = re { _ =>
     Right(node)
   }
-  def visit(node: NumberWrapper): RE[NumberWrapper] = re { _ =>
+  def visitNumber(node: NumberWrapper): RE[NumberWrapper] = re { _ =>
     Right(node)
   }
-  def visit(node: Raw): RE[Raw] = re { _ =>
+  def visitRaw(node: Raw): RE[Raw] = re { _ =>
     Right(node)
   }
-  def visit(node: SymbolWrapper): RE[SymbolWrapper] = re { _ =>
+  def visitSymbol(node: SymbolWrapper): RE[SymbolWrapper] = re { _ =>
     Right(node)
   }
-  def visit(node: SymbolWithAccessor): RE[SymbolWithAccessor] = re { _ =>
+  def visitSymbolWithAccessor(node: SymbolWithAccessor): RE[SymbolWithAccessor] = re { _ =>
     Right(node)
   }
   def visitMacroApply(node: MacroApply): RE[MacroApply] = re { _ =>
@@ -28,15 +28,15 @@ trait ASTVisitor {
   }
 
   def visitHighSymbol(node: HighSymbol): RE[HighSymbol] = node match {
-    case n: Raw                => (visit(n): RE[Raw]).map(identity)
-    case n: SymbolWithAccessor => (visit(n): RE[SymbolWithAccessor]).map(identity)
+    case n: Raw                => visitRaw(n).map(identity)
+    case n: SymbolWithAccessor => visitSymbolWithAccessor(n).map(identity)
     case n: MacroApply         => visitMacroApply(n).map(identity)
   }
 
-  def visit(node: Term): RE[Term] = node match {
-    case n: StringWrapper => (visit(n): RE[StringWrapper]).map(identity)
-    case n: NumberWrapper => (visit(n): RE[NumberWrapper]).map(identity)
-    case n: SymbolWrapper => (visit(n): RE[SymbolWrapper]).map(identity)
+  def visitTerm(node: Term): RE[Term] = node match {
+    case n: StringWrapper => visitString(n).map(identity)
+    case n: NumberWrapper => visitNumber(n).map(identity)
+    case n: SymbolWrapper => visitSymbol(n).map(identity)
     case n: HighSymbol    => visitHighSymbol(n).map(identity)
     case NullLit =>
       re { _ =>
@@ -44,17 +44,17 @@ trait ASTVisitor {
       }
   }
 
-  def visit(node: BinaryCond): RE[BinaryCond] = {
+  def visitBinaryCond(node: BinaryCond): RE[BinaryCond] = {
     for {
       lhs <- visitHighSymbol(node.lhs)
-      rhs <- visit(node.rhs)
+      rhs <- visitTerm(node.rhs)
     } yield
       node.copy(
         lhs = lhs,
         rhs = rhs
       )
   }
-  def visit(node: IsNull): RE[IsNull] = {
+  def visitIsNull(node: IsNull): RE[IsNull] = {
     for {
       lhs <- visitHighSymbol(node.lhs)
     } yield
@@ -62,7 +62,7 @@ trait ASTVisitor {
         lhs = lhs
       )
   }
-  def visit(node: IsNotNull): RE[IsNotNull] = {
+  def visitIsNotNull(node: IsNotNull): RE[IsNotNull] = {
     for {
       lhs <- visitHighSymbol(node.lhs)
     } yield
@@ -71,26 +71,26 @@ trait ASTVisitor {
       )
   }
 
-  def visit(node: Cond): RE[Cond] = node match {
-    case n: BinaryCond => (visit(n): RE[BinaryCond]).map(identity)
-    case n: IsNull     => (visit(n): RE[IsNull]).map(identity)
-    case n: IsNotNull  => (visit(n): RE[IsNotNull]).map(identity)
+  def visitCond(node: Cond): RE[Cond] = node match {
+    case n: BinaryCond => visitBinaryCond(n).map(identity)
+    case n: IsNull     => visitIsNull(n).map(identity)
+    case n: IsNotNull  => visitIsNotNull(n).map(identity)
   }
 
-  def visit(node: ExprRhs): RE[ExprRhs] = {
+  def visitExprRhs(node: ExprRhs): RE[ExprRhs] = {
     for {
-      value <- visit(node.value)
+      value <- visitCond(node.value)
     } yield
       node.copy(
         value = value
       )
   }
 
-  def visit(node: Expr): RE[Expr] = {
+  def visitExpr(node: Expr): RE[Expr] = {
     for {
-      lhs <- visit(node.lhs)
+      lhs <- visitCond(node.lhs)
       rhss <- re { env =>
-               node.rhss.mapE(n => visit(n).run(env))
+               node.rhss.mapE(n => visitExprRhs(n).run(env))
              }
     } yield
       node.copy(
@@ -99,10 +99,10 @@ trait ASTVisitor {
       )
   }
 
-  def visit(node: Join): RE[Join] = {
+  def visitJoin(node: Join): RE[Join] = {
     for {
-      rhsTable <- visit(node.rhsTable)
-      on <- visit(node.on)
+      rhsTable <- visitSymbol(node.rhsTable)
+      on <- visitExpr(node.on)
     } yield
       node.copy(
         rhsTable = rhsTable,
@@ -110,11 +110,11 @@ trait ASTVisitor {
       )
   }
 
-  def visit(node: From): RE[From] = {
+  def visitFrom(node: From): RE[From] = {
     for {
-      lhs <- visit(node.lhs)
+      lhs <- visitSymbol(node.lhs)
       rhss <- re { env =>
-               node.rhss.mapE(n => visit(n).run(env))
+               node.rhss.mapE(n => visitJoin(n).run(env))
              }
     } yield
       node.copy(
@@ -123,7 +123,7 @@ trait ASTVisitor {
       )
   }
 
-  def visit(node: Select): RE[Select] = {
+  def visitSelect(node: Select): RE[Select] = {
     for {
       values <- re { env =>
                  node.values.mapE(n => visitHighSymbol(n).run(env))
@@ -134,20 +134,20 @@ trait ASTVisitor {
       )
   }
 
-  def visit(node: Where): RE[Where] = {
+  def visitWhere(node: Where): RE[Where] = {
     for {
-      value <- visit(node.value)
+      value <- visitExpr(node.value)
     } yield
       node.copy(
         value = value
       )
   }
 
-  def visit(node: LimitOffset): RE[LimitOffset] = {
+  def visitLimitOffset(node: LimitOffset): RE[LimitOffset] = {
     for {
-      limit <- visit(node.limit)
+      limit <- visitNumber(node.limit)
       offset <- re { env =>
-                 transpose { node.offset.map(n => visit(n).run(env)) }
+                 transpose { node.offset.map(n => visitNumber(n).run(env)) }
                }
     } yield
       node.copy(
@@ -156,7 +156,7 @@ trait ASTVisitor {
       )
   }
 
-  def visit(node: Order): RE[Order] = {
+  def visitOrder(node: Order): RE[Order] = {
     for {
       head <- visitHighSymbol(node.head)
       tail <- re { env =>
@@ -171,18 +171,18 @@ trait ASTVisitor {
 
   def visit(node: SimqlRoot): RE[SimqlRoot] = {
     for {
-      from <- visit(node.from)
+      from <- visitFrom(node.from)
       select <- re { env =>
-                 transpose { node.select.map(n => visit(n).run(env)) }
+                 transpose { node.select.map(n => visitSelect(n).run(env)) }
                }
       where <- re { env =>
-                transpose { node.where.map(n => visit(n).run(env)) }
+                transpose { node.where.map(n => visitWhere(n).run(env)) }
               }
       limitOffset <- re { env =>
-                      transpose { node.limitOffset.map(n => visit(n).run(env)) }
+                      transpose { node.limitOffset.map(n => visitLimitOffset(n).run(env)) }
                     }
       order <- re { env =>
-                transpose { node.order.map(n => visit(n).run(env)) }
+                transpose { node.order.map(n => visitOrder(n).run(env)) }
               }
     } yield
       node.copy(

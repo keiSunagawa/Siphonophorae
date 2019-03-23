@@ -14,7 +14,7 @@ object NullResolver extends Resolver {
 object NullResolverVisitor extends ASTVisitor {
   import ASTVisitor._
 
-  override def visit(node: Cond): RE[Cond] = node match {
+  override def visitCond(node: Cond): RE[Cond] = node match {
     case b: BinaryCond =>
       // 左辺がnullはスルー
       if (b.rhs == NullLit && b.op.op == BinaryOp.EQ) for {
@@ -23,7 +23,7 @@ object NullResolverVisitor extends ASTVisitor {
       else if (b.rhs == NullLit && b.op.op == BinaryOp.NE) for {
         lhs <- visitHighSymbol(b.lhs)
       } yield IsNotNull(lhs)
-      else super.visit(b)
-    case _ => super.visit(node)
+      else super.visitCond(b)
+    case _ => super.visitCond(node)
   }
 }
