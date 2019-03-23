@@ -19,10 +19,10 @@ object NullResolverVisitor extends ASTVisitor {
     case b: BinaryCond =>
       // 左辺がnullはスルー
       if (b.rhs == NullLit && b.op.op == BinaryOp.EQ) for {
-        lhs <- visit(b.lhs)
+        lhs <- visitHighSymbol(b.lhs)
       } yield IsNull(lhs)
       else if (b.rhs == NullLit && b.op.op == BinaryOp.NE) for {
-        lhs <- visit(b.lhs)
+        lhs <- visitHighSymbol(b.lhs)
       } yield IsNotNull(lhs)
       else super.visit(b)
     case _ => super.visit(node)

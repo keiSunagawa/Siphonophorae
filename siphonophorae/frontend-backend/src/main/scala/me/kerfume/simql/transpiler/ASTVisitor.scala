@@ -23,27 +23,30 @@ trait ASTVisitor {
   def visit(node: SymbolWithAccessor): RE[SymbolWithAccessor] = re { _ =>
     Right(node)
   }
+  def visitMacroApply(node: MacroApply): RE[MacroApply] = re { _ =>
+    Right(node)
+  }
+
+  def visitHighSymbol(node: HighSymbol): RE[HighSymbol] = node match {
+    case n: Raw                => (visit(n): RE[Raw]).map(identity)
+    case n: SymbolWithAccessor => (visit(n): RE[SymbolWithAccessor]).map(identity)
+    case n: MacroApply         => visitMacroApply(n).map(identity)
+  }
 
   def visit(node: Term): RE[Term] = node match {
-    case n: StringWrapper      => (visit(n): RE[StringWrapper]).map(identity)
-    case n: NumberWrapper      => (visit(n): RE[NumberWrapper]).map(identity)
-    case n: Raw                => (visit(n): RE[Raw]).map(identity)
-    case n: SymbolWrapper      => (visit(n): RE[SymbolWrapper]).map(identity)
-    case n: SymbolWithAccessor => (visit(n): RE[SymbolWithAccessor]).map(identity)
+    case n: StringWrapper => (visit(n): RE[StringWrapper]).map(identity)
+    case n: NumberWrapper => (visit(n): RE[NumberWrapper]).map(identity)
+    case n: SymbolWrapper => (visit(n): RE[SymbolWrapper]).map(identity)
+    case n: HighSymbol    => visitHighSymbol(n).map(identity)
     case NullLit =>
       re { _ =>
         Right(NullLit)
       }
   }
 
-  def visit(node: Column): RE[Column] = node match {
-    case n: Raw                => (visit(n): RE[Raw]).map(identity)
-    case n: SymbolWithAccessor => (visit(n): RE[SymbolWithAccessor]).map(identity)
-  }
-
   def visit(node: BinaryCond): RE[BinaryCond] = {
     for {
-      lhs <- visit(node.lhs)
+      lhs <- visitHighSymbol(node.lhs)
       rhs <- visit(node.rhs)
     } yield
       node.copy(
@@ -53,7 +56,7 @@ trait ASTVisitor {
   }
   def visit(node: IsNull): RE[IsNull] = {
     for {
-      lhs <- visit(node.lhs)
+      lhs <- visitHighSymbol(node.lhs)
     } yield
       node.copy(
         lhs = lhs
@@ -61,7 +64,7 @@ trait ASTVisitor {
   }
   def visit(node: IsNotNull): RE[IsNotNull] = {
     for {
-      lhs <- visit(node.lhs)
+      lhs <- visitHighSymbol(node.lhs)
     } yield
       node.copy(
         lhs = lhs
@@ -123,7 +126,7 @@ trait ASTVisitor {
   def visit(node: Select): RE[Select] = {
     for {
       values <- re { env =>
-                 node.values.mapE(n => visit(n).run(env))
+                 node.values.mapE(n => visitHighSymbol(n).run(env))
                }
     } yield
       node.copy(
@@ -155,9 +158,9 @@ trait ASTVisitor {
 
   def visit(node: Order): RE[Order] = {
     for {
-      head <- visit(node.head)
+      head <- visitHighSymbol(node.head)
       tail <- re { env =>
-               node.tail.mapE(n => visit(n).run(env))
+               node.tail.mapE(n => visitHighSymbol(n).run(env))
              }
     } yield
       node.copy(

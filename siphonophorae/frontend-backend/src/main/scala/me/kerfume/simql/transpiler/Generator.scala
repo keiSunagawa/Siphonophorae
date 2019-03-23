@@ -25,19 +25,19 @@ object MySQLGenerator extends Generator {
         // この時点で未解決のシンボルはない前提...
         val accessorToken = ac.map(a => a.resolvedSymbol.map(s => s"${toSQL(s)}.").getOrElse("")).getOrElse("")
         s"${accessorToken}${toSQL(s)}"
-      case t: Term =>
-        t match {
-          case n: StringWrapper      => toSQL(n)
-          case n: NumberWrapper      => toSQL(n)
-          case NullLit               => toSQL(NullLit)
-          case n: Raw                => toSQL(n)
-          case n: SymbolWrapper      => toSQL(n)
-          case n: SymbolWithAccessor => toSQL(n)
-        }
-      case c: Column =>
+      case c: HighSymbol =>
         c match {
           case n: Raw                => toSQL(n)
           case n: SymbolWithAccessor => toSQL(n)
+          case n: MacroApply         => throw new RuntimeException(s"found unresolved macro. value: $n")
+        }
+      case t: Term =>
+        t match {
+          case n: StringWrapper => toSQL(n)
+          case n: NumberWrapper => toSQL(n)
+          case NullLit          => toSQL(NullLit)
+          case n: SymbolWrapper => toSQL(n)
+          case n: HighSymbol    => toSQL(n)
         }
       case BinaryOp(op) => op.label
       case LogicalOp(op) =>
@@ -81,8 +81,8 @@ object MySQLGenerator extends Generator {
         val offsetSQL = offset.map(o => s"${toSQL(o)}, ").getOrElse("")
         s"$offsetSQL ${toSQL(limit)}" // mysql dialect
       case Order(tpe, head, tail) =>
-        def pairToSQL(tpe: OrderType, symbol: SymbolWithAccessor): String = {
-          s"${toSQL(symbol)} ${toSQL(tpe)}"
+        def pairToSQL(tpe: OrderType, symbol: HighSymbol): String = {
+          s"${toSQL(symbol)} ${toSQL(tpe)}" // TODO
         }
         val tailSyntax = tail.map { t =>
           s", ${pairToSQL(tpe, t)}"

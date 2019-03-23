@@ -6,22 +6,25 @@ sealed trait Term extends Node
 case class StringWrapper(value: String) extends Term
 case class NumberWrapper(value: BigDecimal) extends Term
 case object NullLit extends Term
-case class SymbolWrapper(label: String) extends Term
 
-sealed trait Column extends Node
-case class Raw(sql: String) extends Term with Column
+sealed trait HighSymbol extends Node with Term
+sealed trait TableSymbol extends Node
+sealed trait MacroArg extends Node
+case class SymbolWrapper(label: String) extends Term with TableSymbol with MacroArg
+case class Raw(sql: String) extends Term with HighSymbol with TableSymbol
+case class MacroApply(symbol: String, args: Seq[MacroArg]) extends HighSymbol with TableSymbol
 case class Accessor(point: Int, resolvedSymbol: Option[SymbolWrapper] = None)
-case class SymbolWithAccessor(symbol: SymbolWrapper, accessor: Option[Accessor]) extends Term with Column
+case class SymbolWithAccessor(symbol: SymbolWrapper, accessor: Option[Accessor]) extends HighSymbol
 
 case class BinaryOp(op: BinaryOp.Op) extends Node
 sealed trait Cond extends Node
-case class IsNull(lhs: Term) extends Cond // only generate by ast visitor
-case class IsNotNull(lhs: Term) extends Cond // only generate by ast visitor
-case class BinaryCond(op: BinaryOp, lhs: SymbolWithAccessor, rhs: Term) extends Cond
+case class IsNull(lhs: HighSymbol) extends Cond // only generate by ast visitor
+case class IsNotNull(lhs: HighSymbol) extends Cond // only generate by ast visitor
+case class BinaryCond(op: BinaryOp, lhs: HighSymbol, rhs: Term) extends Cond
 
 case class LogicalOp(op: LogicalOp.Op) extends Node
 case class ExprRhs(op: LogicalOp, value: Cond) extends Node
-case class Expr(lhs: Cond, rhss: List[ExprRhs]) extends Node
+case class Expr(lhs: Cond, rhss: List[ExprRhs]) extends Node with MacroArg
 
 case class JoinType(value: JoinType.Op) extends Node
 case class Join(joinType: JoinType, rhsTable: SymbolWrapper, on: Expr) extends Node
@@ -29,10 +32,10 @@ case class Join(joinType: JoinType, rhsTable: SymbolWrapper, on: Expr) extends N
 case class OrderType(value: OrderType.Op) extends Node
 
 case class From(lhs: SymbolWrapper, rhss: List[Join]) extends Node
-case class Select(values: List[Column]) extends Node // Non Empty List
+case class Select(values: List[HighSymbol]) extends Node // Non Empty List
 case class Where(value: Expr) extends Node
 case class LimitOffset(limit: NumberWrapper, offset: Option[NumberWrapper]) extends Node // TODO ignore float number
-case class Order(orderType: OrderType, head: SymbolWithAccessor, tail: List[SymbolWithAccessor]) extends Node
+case class Order(orderType: OrderType, head: HighSymbol, tail: List[HighSymbol]) extends Node
 
 case class SimqlRoot(
   from: From,

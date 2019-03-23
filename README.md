@@ -19,30 +19,31 @@ null ::= "null"
 symbol ::= [a-zA-Z][a-zA-Z0-9_]*
 accessor ::= "$"[0-9]
 raw = "\$`.*`"
-macroSymbol ::= "\$[a-zA-Z][a-zA-Z0-9_]*" // TODO
+macroArg ::= expr | symbol
+macroApply ::= "\$[a-zA-Z][a-zA-Z0-9_]*"(" [macroArg] {"," macroArg} ")"
 
 symbolWithAccessor ::= [accessor"."]symbol
-term ::= (null | symbolWithAccessor | string | number | raw)
+tableSymbol ::= macroApply | raw | symbol
+highSymbol ::= macroApply | raw | symbolWithAccessor
+term ::= (null | highSymbol | string | number)
 
 binaryOp ::= (">" | "<" | ">=" | "<=" | "==" | "!=")
-binaryCond ::= symbolWithAccessor binaryOp term
+binaryCond ::= highSymbol binaryOp term
 
 logicalOp ::= "&&" | "||"
 
 expr ::= binalyCond {logicalOp binaryCond}
 
 joinType ::= "<<" | "><"
-join ::= joinType symbol "?" expr
+join ::= joinType TableSymbokl "?" expr
 
 orderType ::= "/>" | "\>"
 
-column = (symbolWithAccessor | raw)
-
-from ::= symbol {join}
-select ::= ":" column {column}
+from ::= TableSymbol {join}
+select ::= ":" highSymbol {highSymbol}
 where ::= "?" expr
 limitOffset ::= "@" number [- number] // TODO ignore float number
-order ::= orderType symbolWithAccessor {symbolWithAccessor}
+order ::= orderType highSymbol {highSymbol}
 
 simql ::= from [select] [where] [limitOffset] [order]
 
@@ -50,5 +51,6 @@ order ::= // TODO
 groupBy ::= // TODO maybe omit
 
 // define
-table = "deft" symbol "=" from // TODO
+macroParam ::= symbol ":" ("Symbol" | "Expr") // 一旦二種類
+macroFunc = "defun" symbol "="  // TODO
 ```
