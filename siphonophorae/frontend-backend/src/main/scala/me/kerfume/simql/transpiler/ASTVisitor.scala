@@ -75,7 +75,7 @@ trait ASTVisitor {
     case n: BinaryCond => visitBinaryCond(n).map(identity)
     case n: IsNull     => visitIsNull(n).map(identity)
     case n: IsNotNull  => visitIsNotNull(n).map(identity)
-    case n: Raw => visitRaw(n).map(identity)
+    case n: Raw        => visitRaw(n).map(identity)
     case n: MacroApply => ??? // TODO
   }
 

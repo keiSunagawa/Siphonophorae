@@ -16,7 +16,10 @@ object Parser extends JavaTokenParsers {
       None
   }
 
-  def string: Parser[StringWrapper] = stringLiteral ^^ { StringWrapper(_) }
+  def string: Parser[StringWrapper] = stringLiteral ^^ { s =>
+    val value = s.replaceAll("\"", "")
+    StringWrapper(value)
+  }
   def number: Parser[NumberWrapper] = decimalNumber ^^ { s =>
     NumberWrapper(BigDecimal(s))
   }

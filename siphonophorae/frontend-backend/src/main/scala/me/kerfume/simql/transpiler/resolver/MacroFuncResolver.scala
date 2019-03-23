@@ -46,9 +46,9 @@ object MacroFuncResolverVisitor extends ASTVisitor {
       re { meta =>
         for {
           resolved <- meta.macroFuncs.condMacros.get(key) match {
-            case Some(f) => f.apply(args)
-            case None    => Left(s"not define macro. symbol: $key")
-          }
+                       case Some(f) => f.apply(args)
+                       case None    => Left(s"not define macro. symbol: $key")
+                     }
           visited <- super.visitCond(resolved).run(meta)
         } yield visited
       }

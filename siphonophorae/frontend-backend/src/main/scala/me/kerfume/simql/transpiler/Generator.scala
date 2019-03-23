@@ -13,10 +13,14 @@ object MySQLGenerator extends Generator {
   def generate(ast: SimqlRoot): Code = syntax.toSQL(ast)
 
   object syntax {
-    def stringToSQL(node: StringWrapper): String = node.value.replaceAll("\"", "'")
+    def stringToSQL(node: StringWrapper): String = s"'${node.value}'"
     def numberToSQL(node: NumberWrapper): String = node.value.toString
     def nullToSQL(): String = "null"
-    def rawToSQL(node: Raw): String = s"(${node.sql})"
+    def rawToSQL(node: Raw): String = {
+      val argsSQL = node.args.map(termToSQL)
+      val sql = if (argsSQL.nonEmpty) node.sql.replaceAll("\\?", "%s").format(argsSQL: _*) else node.sql
+      s"($sql)"
+    }
     def symbolToSQL(node: SymbolWrapper): String = node.label
     def symbolWithAccessorToSQL(node: SymbolWithAccessor): String = {
       // この時点で未解決のシンボルはない前提...

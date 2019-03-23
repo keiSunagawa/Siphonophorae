@@ -19,7 +19,11 @@ abstract class HighSymbolMacro extends MacroFunc {
 }
 
 abstract class CondMacro extends MacroFunc {
-  def apply0(symbolArgs: Seq[SymbolWrapper], stringArgs: Seq[StringWrapper], numberArgs: Seq[NumberWrapper]): Either[TranspileError, Cond]
+  def apply0(
+    symbolArgs: Seq[SymbolWrapper],
+    stringArgs: Seq[StringWrapper],
+    numberArgs: Seq[NumberWrapper]
+  ): Either[TranspileError, Cond]
   def apply(args: Seq[MacroArg]): Either[TranspileError, Cond] = {
     val symbolArgs = args.collect { case a: SymbolWrapper => a }
     val stringArgs = args.collect { case a: StringWrapper => a }
@@ -52,18 +56,25 @@ object buildin {
     val key: String = "c"
     def apply0(args: Seq[SymbolWrapper]): Either[TranspileError, HighSymbol] = {
       if (args.length <= 1) {
-        val col = args.headOption.map(_.label).getOrElse("1")
-        Right(Raw(s"COUNT(${col})")) // TODO deffered resolve symbolWrapper
+        val col: Term = args.headOption.getOrElse(Raw("1"))
+        Right(Raw(s"COUNT(?)", Seq(col)))
       } else Left(s"invalid args. macro function $$$key.")
     }
   }
   case object Like extends CondMacro {
     val key: String = "like"
-    def apply0(symbolArgs: Seq[SymbolWrapper], stringArgs: Seq[StringWrapper], numberArgs: Seq[NumberWrapper]): Either[TranspileError, Cond] = {
+    def apply0(
+      symbolArgs: Seq[SymbolWrapper],
+      stringArgs: Seq[StringWrapper],
+      numberArgs: Seq[NumberWrapper]
+    ): Either[TranspileError, Cond] = {
       if (symbolArgs.length == 1 && stringArgs.length == 1 && numberArgs.isEmpty) {
-        val col = symbolArgs.head.label
-        val str = stringArgs.head.value.replaceAll("\"", "")
-        Right(Raw(s"${col} LIKE('%${str}%')")) // TODO deffered resolve symbolWrapper
+        val col = symbolArgs.head
+        val str = stringArgs.head
+        val likeStr = str.copy(
+          value = s"%${str.value}%"
+        )
+        Right(Raw(s"? LIKE(?)", Seq(col, likeStr)))
       } else Left(s"invalid args. macro function $$$key.")
     }
   }
