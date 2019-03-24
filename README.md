@@ -19,7 +19,7 @@ null ::= "null"
 symbol ::= [a-zA-Z][a-zA-Z0-9_]*
 accessor ::= "$"[0-9]
 raw = "\$`.*`"
-macroArg ::= expr | symbol | string | number
+macroArg ::= expr | symbolWithAccessor | string | number
 macroApply ::= "\$[a-zA-Z][a-zA-Z0-9_]*"(" [macroArg] {"," macroArg} ")"
 
 symbolWithAccessor ::= [accessor"."]symbol

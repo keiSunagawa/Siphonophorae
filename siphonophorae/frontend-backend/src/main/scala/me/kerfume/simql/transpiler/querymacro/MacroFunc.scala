@@ -8,9 +8,9 @@ trait MacroFunc {
 }
 
 abstract class HighSymbolMacro extends MacroFunc {
-  def apply0(args: Seq[SymbolWrapper]): Either[TranspileError, HighSymbol]
+  def apply0(args: Seq[SymbolWithAccessor]): Either[TranspileError, HighSymbol]
   def apply(args: Seq[MacroArg]): Either[TranspileError, HighSymbol] = {
-    val validArgs = args.collect { case a: SymbolWrapper => a } // TODO allowed string and number
+    val validArgs = args.collect { case a: SymbolWithAccessor => a } // TODO allowed string and number
     for {
       _ <- Either.cond(validArgs.length == args.length, (), s"args type mismatch. macro function $$$key.")
       res <- apply0(validArgs)
@@ -20,14 +20,14 @@ abstract class HighSymbolMacro extends MacroFunc {
 
 abstract class CondMacro extends MacroFunc {
   def apply0(
-    symbolArgs: Seq[SymbolWrapper],
+    symbolArgs: Seq[SymbolWithAccessor],
     stringArgs: Seq[StringWrapper],
     numberArgs: Seq[NumberWrapper]
   ): Either[TranspileError, Cond]
   def apply(args: Seq[MacroArg]): Either[TranspileError, Cond] = {
-    val symbolArgs = args.collect { case a: SymbolWrapper => a }
-    val stringArgs = args.collect { case a: StringWrapper => a }
-    val numberArgs = args.collect { case a: NumberWrapper => a }
+    val symbolArgs = args.collect { case a: SymbolWithAccessor => a }
+    val stringArgs = args.collect { case a: StringWrapper      => a }
+    val numberArgs = args.collect { case a: NumberWrapper      => a }
     val validArgs = symbolArgs ++ stringArgs ++ numberArgs
     for {
       _ <- Either.cond(validArgs.length == args.length, (), s"args type mismatch. macro function $$$key.")
@@ -54,17 +54,17 @@ object MacroFunc {
 object buildin {
   case object Count extends HighSymbolMacro {
     val key: String = "c"
-    def apply0(args: Seq[SymbolWrapper]): Either[TranspileError, HighSymbol] = {
+    def apply0(args: Seq[SymbolWithAccessor]): Either[TranspileError, HighSymbol] = {
       if (args.length <= 1) {
         val col: Term = args.headOption.getOrElse(Raw("1"))
-        Right(Raw(s"COUNT(?)", Seq(col)))
+        Right(Raw(s"COUNT(?)", List(col)))
       } else Left(s"invalid args. macro function $$$key.")
     }
   }
   case object Like extends CondMacro {
     val key: String = "like"
     def apply0(
-      symbolArgs: Seq[SymbolWrapper],
+      symbolArgs: Seq[SymbolWithAccessor],
       stringArgs: Seq[StringWrapper],
       numberArgs: Seq[NumberWrapper]
     ): Either[TranspileError, Cond] = {
@@ -74,7 +74,7 @@ object buildin {
         val likeStr = str.copy(
           value = s"%${str.value}%"
         )
-        Right(Raw(s"? LIKE(?)", Seq(col, likeStr)))
+        Right(Raw(s"? LIKE(?)", List(col, likeStr)))
       } else Left(s"invalid args. macro function $$$key.")
     }
   }

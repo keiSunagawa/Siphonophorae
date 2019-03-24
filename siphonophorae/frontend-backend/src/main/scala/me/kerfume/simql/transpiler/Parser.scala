@@ -123,7 +123,7 @@ object Parser extends JavaTokenParsers {
       SimqlRoot(f, s, w, l, o)
   }
 
-  def macroArg: Parser[MacroArg] = expr | symbol | string | number
+  def macroArg: Parser[MacroArg] = expr | symbolWithAccessor | string | number
   def macroApply: Parser[MacroApply] =
     """\$[a-zA-Z][a-zA-Z0-9_]*\(""".r ~ opt(macroArg) ~ rep("," ~ macroArg) ~ ")" ^^ {
       case s ~ a1 ~ an ~ _ =>

@@ -14,8 +14,10 @@ trait ASTVisitor {
   def visitNumber(node: NumberWrapper): RE[NumberWrapper] = re { _ =>
     Right(node)
   }
-  def visitRaw(node: Raw): RE[Raw] = re { _ =>
-    Right(node)
+  def visitRaw(node: Raw): RE[Raw] = re { env =>
+    for {
+      args <- node.args.mapE(a => visitTerm(a).run(env))
+    } yield node.copy(args = args)
   }
   def visitSymbol(node: SymbolWrapper): RE[SymbolWrapper] = re { _ =>
     Right(node)
