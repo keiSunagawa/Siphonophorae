@@ -1,9 +1,23 @@
-package me.kerfume.simql.transpiler
+package me.kerfume.simql.transpiler.parser
 
 import scala.util.parsing.combinator.JavaTokenParsers
-import me.kerfume.simql.node._
+import me.kerfume.simql.node.SimqlNode._
 
-object Parser extends JavaTokenParsers {
+trait CoreParser { self: JavaTokenParsers =>
+    def string: Parser[StringWrapper] = stringLiteral ^^ { s =>
+    val value = s.replaceAll("\"", "")
+    StringWrapper(value)
+  }
+  def number: Parser[NumberWrapper] = decimalNumber ^^ { s =>
+    NumberWrapper(BigDecimal(s))
+  }
+  def nullLit: Parser[NullLit.type] = "null" ^^ { _ =>
+    NullLit
+  }
+
+  def symbol: Parser[SymbolWrapper] = """[a-zA-Z][a-zA-Z0-9_]*""".r ^^ { SymbolWrapper(_) }
+}
+object Parser extends JavaTokenParsers with CoreParser with DefinitionParser {
   def parseSimql(code: String): Option[SimqlRoot] = parse(simql, code) match {
     case Success(root, a) if (a.atEnd) => Some(root)
     // TODO dump error detail
@@ -16,18 +30,6 @@ object Parser extends JavaTokenParsers {
       None
   }
 
-  def string: Parser[StringWrapper] = stringLiteral ^^ { s =>
-    val value = s.replaceAll("\"", "")
-    StringWrapper(value)
-  }
-  def number: Parser[NumberWrapper] = decimalNumber ^^ { s =>
-    NumberWrapper(BigDecimal(s))
-  }
-  def nullLit: Parser[NullLit.type] = "null" ^^ { _ =>
-    NullLit
-  }
-
-  def symbol: Parser[SymbolWrapper] = """[a-zA-Z][a-zA-Z0-9_]*""".r ^^ { SymbolWrapper(_) }
   def raw: Parser[Raw] = """\$`.*`""".r ^^ {
     case s =>
       val sql = s.tail.replaceAll("`", "")
@@ -51,8 +53,6 @@ object Parser extends JavaTokenParsers {
         case "<=" => BinaryOp.LE
         case "==" => BinaryOp.EQ
         case "!=" => BinaryOp.NE
-        // case "in" => BinaryOp.IN
-        // case "like" => BinaryOp.LIKE
       }
       BinaryOp(op)
   }

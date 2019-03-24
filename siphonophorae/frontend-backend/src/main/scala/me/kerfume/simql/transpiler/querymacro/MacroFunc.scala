@@ -1,7 +1,28 @@
-package me.kerfume.simql.querymacro
+package me.kerfume.simql.transpiler.querymacro
 
-import me.kerfume.simql.node._
+import me.kerfume.simql.node.SimqlNode._
+import me.kerfume.simql.node.DefinitionNode._
 import me.kerfume.simql.transpiler.TranspileError
+
+trait MacroFunc2 {
+  val key: String
+  type ReturnType
+
+  val parameters: Seq[MacroParam]
+
+  def apply(args: Seq[MacroArg]): Either[TranspileError, ReturnType] = {
+    // args type check
+
+    // apply body
+
+    // return SimqlNode
+    ???
+  }
+}
+
+abstract class HighSymbolMacro2 extends MacroFunc2 {
+  type ReturnType = HighSymbol
+}
 
 trait MacroFunc {
   val key: String

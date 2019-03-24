@@ -1,6 +1,7 @@
 package me.kerfume.simql.transpiler
 
-import me.kerfume.simql.node.SimqlRoot
+import me.kerfume.simql.node.SimqlNode.SimqlRoot
+import parser._
 import resolver._
 
 object Module {
@@ -26,7 +27,7 @@ object Module {
   }
 
   private[this] def makeMetadata(ast: SimqlRoot): ASTMetaData = {
-    import me.kerfume.simql.querymacro.buildin._
+    import me.kerfume.simql.transpiler.querymacro.buildin._
     val analyzed = Analyzer.analyze(ast)
     analyzed.copy(
       macroFuncs = List(

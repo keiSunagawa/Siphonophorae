@@ -1,6 +1,6 @@
 package me.kerfume.simql.transpiler
 
-import me.kerfume.simql.node._
+import me.kerfume.simql.node.SimqlNode._
 import me.kerfume.simql.functions._
 import cats.instances.list._
 import cats.instances.either._

@@ -51,6 +51,22 @@ order ::= // TODO
 groupBy ::= // TODO maybe omit
 
 // define
-macroParam ::= symbol ":" ("String" | "Number" | "Symbol" | "Expr")
-macroFunc = "defun" symbol "="  // TODO
+macroParamType ::= "String" | "Number" | "Symbol" | "Expr"
+macroParam ::= symbol ":" macroParamType
+macroReturnType ::= "Cond" | "Symbol"
+quasiquote ::= "q{"*"}"
+macroStatement ::= quasiquote // or TODO
+macroFuncBody ::= {macroStatement}
+macroFunc = "defun" symbol (" { macroParam } ")" "=>" macroReturnType "=" "{" macroFuncBody "}"
+
+definition ::= macroFunc // ひとまずmacroFuncのみ
+definitionBlock ::= define "{" {definition} "}"
+```
+
+## SIMQL macro function example
+```
+defun safeLowerLimit(col: Symbol, min: Number) => Cond = {
+  // TODO can use expressions
+  q{ $col >= min && $col != null }
+}
 ```

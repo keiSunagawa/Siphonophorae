@@ -1,6 +1,6 @@
 package me.kerfume.simql.transpiler
 
-import me.kerfume.simql.node.SimqlRoot
+import me.kerfume.simql.node.SimqlNode.SimqlRoot
 
 object Analyzer {
   def analyze(ast: SimqlRoot): ASTMetaData = {

@@ -1,12 +1,8 @@
 package me.kerfume.simql.transpiler.resolver
 
 import me.kerfume.simql.transpiler._
-import me.kerfume.simql.node._
+import me.kerfume.simql.node.SimqlNode._
 import cats.instances.either._
-import scala.util.{Failure, Success, Try}
-
-import me.kerfume.simql.functions._
-import cats.instances.list._
 
 object MacroFuncResolver extends Resolver {
   def resolve(ast: SimqlRoot, meta: ASTMetaData): Either[String, SimqlRoot] = {
@@ -16,14 +12,14 @@ object MacroFuncResolver extends Resolver {
 
 object MacroFuncResolverVisitor extends ASTVisitor {
   import ASTVisitor._
-  import me.kerfume.simql.querymacro.MacroFunc._
+  import me.kerfume.simql.transpiler.querymacro.MacroFunc._
 
   override def visitTerm(node: Term): RE[Term] =
     node match {
       case n: HighSymbol =>
         n match {
           case n: MacroApply =>
-            // TODO
+            // TODO implements Term macro
             resolve0().map(identity)
           case _ => super.visitHighSymbol(n).map(identity)
         }
@@ -56,6 +52,6 @@ object MacroFuncResolverVisitor extends ASTVisitor {
   }
 
   def resolve0(): RE[HighSymbol] = re { _ =>
-    Right(Raw("COUNT(1)"))
+    Right(Raw("UN IMPLEMENTS"))
   }
 }

@@ -6,7 +6,6 @@ import cats.{~>, Id, InjectK}
 
 object Module {
   import transpiler.Module._
-  import node.SimqlRoot
 
   import cats.data.EitherK
 

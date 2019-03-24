@@ -1,9 +1,23 @@
 package me.kerfume.simql
 
 import me.kerfume.simql.transpiler.Module._
+import me.kerfume.simql.transpiler.parser.Parser
 
 object Develop {
   def run(query: String): Either[String, String] = simqlToMysql(query)
+}
+
+object MacroTest {
+  import  me.kerfume.simql.transpiler.querymacro.MacroFuncGenerator
+
+  def run(qq: String) = {
+    val in = s"""defun f(a: Symbol) => Symbol = {
+                |  ${qq}
+                |}
+              """.stripMargin
+    val ast = Parser.parse(Parser.macroFunc, in).get
+    MacroFuncGenerator.generate(ast)
+  }
 }
 // import cats.{Id, InjectK, ~>, Monad}
 // import cats.arrow.FunctionK

@@ -1,6 +1,6 @@
 package me.kerfume.simql.transpiler
 
-import me.kerfume.simql.node._
+import me.kerfume.simql.node.SimqlNode._
 
 trait Generator {
   type Code

@@ -1,7 +1,7 @@
 package me.kerfume.simql.transpiler.resolver
 
 import me.kerfume.simql.transpiler._
-import me.kerfume.simql.node._
+import me.kerfume.simql.node.SimqlNode._
 
 import scala.util.{Failure, Success, Try}
 
