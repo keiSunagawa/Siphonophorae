@@ -31,7 +31,8 @@ object Module {
     analyzed.copy(
       macroFuncs = List(
         Count,
-        Like
+        Like,
+        JoinExample
       )
     )
   }

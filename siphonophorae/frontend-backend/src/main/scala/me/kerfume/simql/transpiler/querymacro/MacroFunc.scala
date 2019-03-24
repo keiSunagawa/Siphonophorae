@@ -78,4 +78,15 @@ object buildin {
       } else Left(s"invalid args. macro function $$$key.")
     }
   }
+  case object JoinExample extends CondMacro {
+    val key = "je"
+    def apply0(
+      symbolArgs: Seq[SymbolWithAccessor],
+      stringArgs: Seq[StringWrapper],
+      numberArgs: Seq[NumberWrapper]
+    ): Either[TranspileError, Cond] = {
+      // ignore args
+      Right(BinaryCond(BinaryOp(BinaryOp.EQ), SymbolWithAccessor(SymbolWrapper("id"), Some(Accessor(0))), SymbolWithAccessor(SymbolWrapper("author_id"), Some(Accessor(1)))))
+    }
+  }
 }
