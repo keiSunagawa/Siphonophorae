@@ -58,10 +58,10 @@ abstract class CondMacro extends MacroFunc {
 }
 
 object MacroFunc {
-  implicit class FuncsOps(fs: Seq[MacroFunc]) {
-    def highSymbolMacros: Map[String, HighSymbolMacro] =
+  implicit class FuncsOps(fs: Seq[MacroFunc2]) {
+    def highSymbolMacros: Map[String, HighSymbolMacro2] =
       fs.collect {
-        case m: HighSymbolMacro =>
+        case m: HighSymbolMacro2 =>
           m.key -> m
       }(collection.breakOut)
     def condMacros: Map[String, CondMacro] =
@@ -73,15 +73,17 @@ object MacroFunc {
 }
 
 object buildin {
-  case object Count extends HighSymbolMacro {
-    val key: String = "c"
-    def apply0(args: Seq[SymbolWithAccessor]): Either[TranspileError, HighSymbol] = {
-      if (args.length <= 1) {
-        val col: Term = args.headOption.getOrElse(Raw("1", Nil))
-        Right(Raw(s"COUNT(?)", List(col)))
-      } else Left(s"invalid args. macro function $$$key.")
-    }
-  }
+  import me.kerfume.simql.transpiler.parser.Parser
+
+  val countDefine: String = """defun c(col: Symbol) => Symbol = {
+                              |  q{ $`COUNT(?)`($col()) }
+                              |}""".stripMargin
+
+  val cAst = Parser.parse(Parser.macroFunc, countDefine).get
+  val Count = (for {
+    f <-  MacroFuncGenerator.generate(cAst)
+  } yield f).right.get
+
   case object Like extends CondMacro {
     val key: String = "like"
     def apply0(

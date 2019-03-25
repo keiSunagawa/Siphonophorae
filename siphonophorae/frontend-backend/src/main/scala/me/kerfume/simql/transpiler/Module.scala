@@ -31,9 +31,7 @@ object Module {
     val analyzed = Analyzer.analyze(ast)
     analyzed.copy(
       macroFuncs = List(
-        Count,
-        Like,
-        JoinExample
+        Count
       )
     )
   }
