@@ -30,10 +30,11 @@ object Parser extends JavaTokenParsers with CoreParser with DefinitionParser {
       None
   }
 
-  def raw: Parser[Raw] = """\$`.*`""".r ^^ {
-    case s =>
+  def raw: Parser[Raw] = """\$`.*`""".r ~ opt("("~>rep(term)<~")") ^^ {
+    case s~as =>
+      val args = as.toList.flatten
       val sql = s.tail.replaceAll("`", "")
-      Raw(sql)
+      Raw(sql, args)
   }
   def accessor: Parser[Accessor] = """\$[0-9]""".r ^^ { case s => Accessor(s.tail.toInt) }
   def symbolWithAccessor: Parser[SymbolWithAccessor] = opt(accessor ~ ".") ~ symbol ^^ {
@@ -57,7 +58,7 @@ object Parser extends JavaTokenParsers with CoreParser with DefinitionParser {
       BinaryOp(op)
   }
   def binaryCond = highSymbol ~ binaryOp ~ term ^^ { case lhs ~ op ~ rhs => BinaryCond(op, lhs, rhs) }
-  def cond: Parser[Cond] = binaryCond | macroApply
+  def cond: Parser[Cond] = binaryCond | macroApply | raw
 
   def logicalOp = """(&&|\|\|)""".r ^^ {
     case opStr =>

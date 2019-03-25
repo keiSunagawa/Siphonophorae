@@ -52,6 +52,6 @@ object MacroFuncResolverVisitor extends ASTVisitor {
   }
 
   def resolve0(): RE[HighSymbol] = re { _ =>
-    Right(Raw("UN IMPLEMENTS"))
+    Right(Raw("UN IMPLEMENTS", Nil))
   }
 }

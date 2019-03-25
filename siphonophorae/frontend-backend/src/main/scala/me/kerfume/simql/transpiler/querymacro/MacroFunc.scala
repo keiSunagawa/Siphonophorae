@@ -77,7 +77,7 @@ object buildin {
     val key: String = "c"
     def apply0(args: Seq[SymbolWithAccessor]): Either[TranspileError, HighSymbol] = {
       if (args.length <= 1) {
-        val col: Term = args.headOption.getOrElse(Raw("1"))
+        val col: Term = args.headOption.getOrElse(Raw("1", Nil))
         Right(Raw(s"COUNT(?)", List(col)))
       } else Left(s"invalid args. macro function $$$key.")
     }

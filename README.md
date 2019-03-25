@@ -18,7 +18,7 @@ number ::= // decimal number
 null ::= "null"
 symbol ::= [a-zA-Z][a-zA-Z0-9_]*
 accessor ::= "$"[0-9]
-raw = "\$`.*`"
+raw = "\$`.*`" [ "(" { term } ")" ]
 macroArg ::= expr | symbolWithAccessor | string | number
 macroApply ::= "\$[a-zA-Z][a-zA-Z0-9_]*"(" [macroArg] {"," macroArg} ")"
 
@@ -28,11 +28,12 @@ highSymbol ::= macroApply | raw | symbolWithAccessor
 term ::= (null | highSymbol | string | number)
 
 binaryOp ::= (">" | "<" | ">=" | "<=" | "==" | "!=")
-binaryCond ::= (highSymbol binaryOp term) | macroApply
+binaryCond ::= highSymbol binaryOp term
+cond ::= binaryCond | macroApply | cond
 
 logicalOp ::= "&&" | "||"
 
-expr ::= binalyCond {logicalOp binaryCond}
+expr ::= cond {logicalOp cond}
 
 joinType ::= "<<" | "><"
 join ::= joinType TableSymbokl "?" expr

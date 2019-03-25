@@ -10,13 +10,16 @@ object Develop {
 object MacroTest {
   import  me.kerfume.simql.transpiler.querymacro.MacroFuncGenerator
 
-  def run(qq: String) = {
+  def run(qq: String, sym: String) = {
+    import me.kerfume.simql.node.SimqlNode._
+
     val in = s"""defun f(a: Symbol) => Symbol = {
                 |  ${qq}
                 |}
               """.stripMargin
     val ast = Parser.parse(Parser.macroFunc, in).get
-    MacroFuncGenerator.generate(ast)
+    val args = Seq(SymbolWithAccessor(SymbolWrapper(sym), None))
+    MacroFuncGenerator.generate(ast).right.get.apply(args)
   }
 }
 // import cats.{Id, InjectK, ~>, Monad}
