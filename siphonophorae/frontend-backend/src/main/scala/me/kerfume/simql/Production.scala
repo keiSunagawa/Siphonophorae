@@ -58,7 +58,7 @@ class EventStreamHandler(
   }
 }
 // TODO interpreter convert to IO Monad
-class ApplicationProd(val interpreter: Module.SimqlApp ~> Id) extends Application[Id] {
+class ApplicationProd(val interpreter: Runner.SimqlApp ~> Id) extends Application[Id] {
   implicit val M: Monad[Id] = catsInstancesForId
   var handler: EventStreamHandler = null
   val eventStream = Observable.unsafeCreate[Application.Event] { s =>

@@ -4,8 +4,7 @@ import cats.free._
 import cats.free.Free._
 import cats.{~>, Id, InjectK}
 
-object Module {
-  import transpiler.Module._
+object Runner {
 
   import cats.data.EitherK
 
@@ -14,9 +13,9 @@ object Module {
     import I._
     for {
       simql <- getSimqlQuery()
-      _ <- simqlToMysql(simql) match {
+      _ <- Module.simqlToMysql(simql) match {
             case Right(sql)  => resultTo(sql)
-            case Left(error) => printError(error)
+            case Left(error) => printError(error.toString) // FIXME toString...
           }
     } yield ()
   }

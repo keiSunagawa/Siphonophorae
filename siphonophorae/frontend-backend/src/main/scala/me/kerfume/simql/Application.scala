@@ -12,12 +12,12 @@ trait Application[F[_]] {
   import Application._
 
   implicit def M: Monad[F]
-  def interpreter: Module.SimqlApp ~> F
+  def interpreter: Runner.SimqlApp ~> F
   def eventStream: Observable[Event]
 
   lazy val cancelable: Cancelable = eventStream.map {
     case Submit =>
-      Module.program.foldMap(interpreter)
+      Runner.program.foldMap(interpreter)
   }.subscribe()
 
   def start(): Cancelable = {
